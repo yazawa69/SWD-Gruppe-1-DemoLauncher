@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Test;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response(200);
 });
+
+Route::post('/add_szenario', [Test::class, 'create_szenario']);
+
