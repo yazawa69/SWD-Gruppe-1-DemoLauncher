@@ -17,5 +17,8 @@ Route::get('/', function () {
     return response(200);
 });
 
-Route::post('/add_szenario', [Test::class, 'create_szenario']);
+Route::post('/add_scenario', [Test::class, 'createScenario']);
+
+Route::post('/add_phase', [Test::class, 'createPhase']);
+
 
