@@ -13,11 +13,10 @@ class Phase extends Model
     protected $fillable = [
         'name',
     ];
-
-    protected $primaryKey = 'teacher_id';
+    
     private $name;
 
-    public function post(): BelongsTo
+    public function scenario(): BelongsTo
     {
         return $this->belongsTo(Scenario::class);
     }

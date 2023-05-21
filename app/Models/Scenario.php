@@ -15,7 +15,6 @@ class Scenario extends Model
         'description',
     ];
     
-    protected $primaryKey = 'scenario_id';
     private $name;
     private $description;
     

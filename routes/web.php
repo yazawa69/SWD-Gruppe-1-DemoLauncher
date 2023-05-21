@@ -21,4 +21,9 @@ Route::post('/add_scenario', [Test::class, 'createScenario']);
 
 Route::post('/add_phase', [Test::class, 'createPhase']);
 
+Route::post('/blub', function () {
+    
+    return response(200);
+});
+
 

@@ -15,10 +15,9 @@ class PhaseRepository
         echo "\n" . gettype($name);
 
         // create the phase with all fillable attributes
-        $phase = Phase::create([
-            'name' => $name,
-        ]);
-
+        $phase = new Phase();
+        $phase->name = $name;
+        
         // query the corresponding scneario
         $scenario = Scenario::find($scenario_id);
         if ($scenario === null)
@@ -33,7 +32,7 @@ class PhaseRepository
         // associate the phase with it's scenario
         $phase->scenario()->associate($scenario);
 
-        return $phase;
+        $phase->save();
     }
 
     public function update()
