@@ -4,11 +4,12 @@ namespace App\Repositories;
 
 use App\Models\Phase;
 use App\Models\Scenario;
+use App\Models\Device;
 
 class PhaseRepository
 {
 
-    public function create_and_save(int $scenario_id, String $name)
+    public function createAndSave(int $scenario_id, String $name)
     {
         // only for testing. Should be removed for prod.
         echo "creating phase";
@@ -26,7 +27,7 @@ class PhaseRepository
              * Send some message to User, that an error has occured. 
              * Whenever phases are created, a scenario should already exist. This can never be a user error.
              */
-            return response(401);
+            return null;
         }
 
         // associate the phase with it's scenario
@@ -35,19 +36,87 @@ class PhaseRepository
         $phase->save();
     }
 
-    public function update()
+    public function getAllByScenario($scenario_id)
     {
+        $scenario = Scenario::find($scenario_id);
+        if ($scenario === null)
+        {
+            return null;
+        }
 
+        $phases = $scenario->phases;
+        return $phases;
     }
 
-    public function read()
+    public function getById(int $phase_id)
     {
+        $phase = Phase::find($phase_id);
+        if ($phase === null)
+        {
+            return null;
+        }
 
+        return $phase;
     }
 
-    public function delete()
+    public function updateById(int $phase_id, String $name)
     {
+        $phase = Phase::find($phase_id);
+        if ($phase === null)
+        {
+            return null;
+        }
 
+        $phase->name = $name;
+        $phase->save();
     }
+
+    public function delete(int $phase_id)
+    {
+        $phase = Phase::find($phase_id);
+        if ($phase === null)
+        {
+            return null;
+        }
+
+        $phase->delete();
+    }
+
+    public function addDevice(int $phase_id, int $device_id)
+    {
+        $phase = Phase::find($phase_id);
+        if ($phase === null)
+        {
+            return null;
+        }
+
+        $device = Device::find($device_id);
+        if ($device === null)
+        {
+            return null;
+        }
+
+        $phase->devices()->attach($device);
+    }
+    
+    public function removeDevice(int $phase_id, int $device_id)
+    {
+        $phase = Phase::find($phase_id);
+        if ($phase === null)
+        {
+            return null;
+        }
+
+        $device = Device::find($device_id);
+        if ($device === null)
+        {
+            return null;
+        }
+
+        $phase->devices()->detach($device);
+    }
+
+
+    
 
 }

@@ -12,7 +12,7 @@ return new class extends Migration
         if(!Schema::hasTable('phases')){
             Schema::create('phases', function (Blueprint $table) {
                 $table->id();
-                $table->foreignId('scenario_id')->constrained();
+                $table->foreignId('scenario_id')->constrained()->onDelete('cascade');
                 $table->timestamps();
                 $table->string('name');
             });
