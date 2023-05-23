@@ -19,19 +19,19 @@ Route::get('/', function () {
 
 
 // scenarios
-// TODO: scenario overview page
+// scenario overview page
 Route::get('/scenarios', [Test::class, 'getAllScenarios']);
 
 // add new scenario
 Route::post('/scenarios', [Test::class, 'createScenario']);
 
-// TODO: fetch specific scenario
+// fetch specific scenario
 Route::get('/scenarios/{scenario_id}', [Test::class, 'getScenario']);
 
-// TODO: update scenario
+// update scenario
 Route::patch('/scenarios/{scenario_id}', [Test::class, 'updateScenario']);
 
-// TODO: delete scenario
+// delete scenario
 Route::delete('/scenarios/{scenario_id}', [Test::class, 'deleteScenario']);
 
 // phases
@@ -41,13 +41,13 @@ Route::get('/scenarios/{scenario_id}/phases', [Test::class, 'getAllPhases']);
 // add new phase
 Route::post('/scenarios/{scenario_id}/phases', [Test::class, 'createPhase']);
 
-// TODO: fetch specific phase
+// fetch specific phase
 Route::get('/scenarios/{scenario_id}/phases/{phase_id}', [Test::class, 'getPhase']);
 
-// TODO: update phase
+// update phase
 Route::patch('/scenarios/{scenario_id}/phases/{phase_id}', [Test::class, 'updatePhase']);
 
-// TODO: delete phase
+// delete phase
 Route::delete('/scenarios/{scenario_id}/phases/{phase_id}', [Test::class, 'deletePhase']);
 
 // add device to phase
@@ -57,7 +57,7 @@ Route::post('/scenarios/{scenario_id}/phases/{phase_id}', [Test::class, 'addDevi
 Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/{device_id}', [Test::class, 'removeDeviceFromPhase']);
 
 // devices
-// TODO: device overview
+// device overview
 Route::get('/devices', [Test::class, 'getAllDevices']);
 
 // fetch specific device
