@@ -17,6 +17,7 @@ Route::get('/', function () {
     return response(200);
 });
 
+Route::post('/phasedevices', [Test::class, 'createPhaseDevice']);
 
 // scenarios
 // scenario overview page

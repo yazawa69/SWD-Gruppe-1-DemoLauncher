@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 
 class Device extends Model
 {
@@ -22,9 +22,14 @@ class Device extends Model
     private $product_line;
     private $serial_number;
 
-    public function phases(): BelongsToMany
+    public function phaseDevices(): HasMany
     {
-        return $this->belongsToMany(Phase::class, 'phase_devices');
+        return $this->hasMany(PhaseDevice::class);
     }
 
+    // public function deviceType(): BelongsTo
+    // {
+    //     return $this->belongsTo(DeviceType::class);
+    // }
+    
 }

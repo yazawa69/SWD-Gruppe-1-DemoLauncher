@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Phase;
-use App\Repositories\{ScenarioRepository, PhaseRepository, DeviceRepository};
+use App\Repositories\{ScenarioRepository, PhaseRepository, DeviceRepository, PhaseDeviceRepository};
 use Illuminate\Http\Request;
 
 class Test extends Controller
@@ -12,13 +11,24 @@ class Test extends Controller
     protected ScenarioRepository $scenarios;
     protected PhaseRepository $phases;
     protected DeviceRepository $devices;
+    protected PhaseDeviceRepository $phaseDevices;
 
-    public function __construct(ScenarioRepository $scenarios, PhaseRepository $phases, DeviceRepository $devices)
+    public function __construct(ScenarioRepository $scenarios, PhaseRepository $phases, DeviceRepository $devices, PhaseDeviceRepository $phaseDevices)
     {
         $this->scenarios = $scenarios;
         $this->phases = $phases;
         $this->devices = $devices;
+        $this->phaseDevices = $phaseDevices;
     }
+
+    public function createPhaseDevice(Request $req)
+    {
+        $data = $req->all();
+        $this->phaseDevices->createAndSave($data['phase_id'], $data['device_id']);
+        return response(200);
+    }
+
+    
 
     public function createScenario(Request $req)
     {
@@ -34,7 +44,7 @@ class Test extends Controller
         {
             return response(404);
         }
-        return response()->json($scenarios);
+        return view('scenarios', ['scenarios' => $scenarios]);
     }
 
     public function getScenario(int $scenario_id)
@@ -101,18 +111,18 @@ class Test extends Controller
         return response(200);
     }
 
-    public function addDeviceToPhase(int $phase_id, Request $req)
-    {
-        $data = $req->all();
-        $this->phases->addDevice($phase_id, $data['device_id']);
-        return response(200);
-    }
+    // public function addDeviceToPhase(int $phase_id, Request $req)
+    // {
+    //     $data = $req->all();
+    //     $this->phases->addDevice($phase_id, $data['device_id']);
+    //     return response(200);
+    // }
 
-    public function removeDeviceFromPhase(int $phase_id, int $device_id)
-    {
-        $this->phases->removeDevice($phase_id, $device_id);
-        return response(200);
-    }
+    // public function removeDeviceFromPhase(int $phase_id, int $device_id)
+    // {
+    //     $this->phases->removeDevice($phase_id, $device_id);
+    //     return response(200);
+    // }
 
     // devices
     public function createDevice(Request $req)

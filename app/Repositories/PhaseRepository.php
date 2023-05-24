@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Phase;
 use App\Models\Scenario;
-use App\Models\Device;
+use App\Models\PhaseDevice;
 
 class PhaseRepository
 {
@@ -80,43 +80,12 @@ class PhaseRepository
         }
 
         $phase->delete();
-    }
+    } 
 
-    public function addDevice(int $phase_id, int $device_id)
+    public function getAllPhaseDevices()
     {
-        $phase = Phase::find($phase_id);
-        if ($phase === null)
-        {
-            return null;
-        }
-
-        $device = Device::find($device_id);
-        if ($device === null)
-        {
-            return null;
-        }
-
-        $phase->devices()->attach($device);
+        $phase_devices = PhaseDevice::all();
+        return $phase_devices;
     }
-    
-    public function removeDevice(int $phase_id, int $device_id)
-    {
-        $phase = Phase::find($phase_id);
-        if ($phase === null)
-        {
-            return null;
-        }
-
-        $device = Device::find($device_id);
-        if ($device === null)
-        {
-            return null;
-        }
-
-        $phase->devices()->detach($device);
-    }
-
-
-    
 
 }

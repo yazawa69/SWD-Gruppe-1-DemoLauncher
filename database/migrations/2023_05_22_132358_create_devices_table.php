@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            //$table->foreignId('device_type_id')->constrained();
             $table->string('name');
             $table->string('oem');
             $table->string('product_line');

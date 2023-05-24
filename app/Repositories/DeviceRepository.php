@@ -10,13 +10,13 @@ class DeviceRepository
 {
     public function createAndSave(String $name, String $oem, String $product_line, String $serial_number)
     {
-        $scenario = Device::create([
+        $device = Device::create([
             'name' => $name,
             'oem' => $oem,
             'product_line' => $product_line,
             'serial_number' => $serial_number,
         ]);
-        return $scenario;
+        return $device;
     }
 
     public function getAll()
