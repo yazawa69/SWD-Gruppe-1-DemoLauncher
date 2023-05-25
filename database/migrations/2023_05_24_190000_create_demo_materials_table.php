@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('demo_materials', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('demo_material_type_id')->constrained();
             $table->timestamps();
             $table->string('name');
-            $table->binary('data');
+            $table->binary('file');
         });
     }
 

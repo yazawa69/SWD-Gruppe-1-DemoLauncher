@@ -27,9 +27,9 @@ class Device extends Model
         return $this->hasMany(PhaseDevice::class);
     }
 
-    // public function deviceType(): BelongsTo
-    // {
-    //     return $this->belongsTo(DeviceType::class);
-    // }
+    public function deviceType(): BelongsTo
+    {
+        return $this->belongsTo(DeviceType::class);
+    }
     
 }

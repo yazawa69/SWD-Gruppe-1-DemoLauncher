@@ -57,7 +57,7 @@ Route::post('/scenarios/{scenario_id}/phases/{phase_id}', [Test::class, 'addDevi
 // remove device from phase
 Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/{device_id}', [Test::class, 'removeDeviceFromPhase']);
 
-// devices
+
 // device overview
 Route::get('/devices', [Test::class, 'getAllDevices']);
 
@@ -72,3 +72,17 @@ Route::patch('/devices/{device_id}', [Test::class, 'updateDevice']);
 
 // TODO: delete device
 Route::delete('/devices/{device_id}', [Test::class, 'deleteDevice']);
+
+// device types
+
+Route::get('/devicetypes', [Test::class, 'getAllDeviceTypes']);
+
+Route::post('/devicetypes', [Test::class, 'createDeviceType']);
+
+// demo material
+
+Route::post('/demomaterials', [Test::class, 'createDemoMaterial']);
+
+// demo material type
+
+Route::post('/demomaterialtypes', [Test::class, 'createDemoMaterialType']);

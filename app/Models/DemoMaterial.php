@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsToMany, BelongsTo};
 
 class DemoMaterial extends Model
 {
@@ -12,11 +12,16 @@ class DemoMaterial extends Model
 
     protected $fillable = [
         'name',
-        'data',
+        'file',
     ];
 
     private $name;
-    private $data;
+    private $file;
+
+    public function demoMaterialType(): BelongsTo
+    {
+        return $this->belongsTo(DemoMaterialType::class);
+    }
 
     public function phaseDevices(): BelongsToMany
     {

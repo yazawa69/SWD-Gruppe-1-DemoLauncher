@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\{ScenarioRepository, PhaseRepository, DeviceRepository, PhaseDeviceRepository};
+use App\Repositories\{ScenarioRepository, PhaseRepository, DeviceRepository, DeviceTypeRepository, PhaseDeviceRepository, DemoMaterialRepository, DemoMaterialTypeRepository};
 use Illuminate\Http\Request;
 
 class Test extends Controller
@@ -12,13 +12,19 @@ class Test extends Controller
     protected PhaseRepository $phases;
     protected DeviceRepository $devices;
     protected PhaseDeviceRepository $phaseDevices;
+    protected DeviceTypeRepository $deviceTypes;
+    protected DemoMaterialRepository $demoMaterials;
+    protected DemoMaterialTypeRepository $demoMaterialTypes;
 
-    public function __construct(ScenarioRepository $scenarios, PhaseRepository $phases, DeviceRepository $devices, PhaseDeviceRepository $phaseDevices)
+    public function __construct(ScenarioRepository $scenarios, PhaseRepository $phases, DeviceRepository $devices, PhaseDeviceRepository $phaseDevices, DeviceTypeRepository $deviceTypes, DemoMaterialRepository $demoMaterials, DemoMaterialTypeRepository $demoMaterialTypes)
     {
         $this->scenarios = $scenarios;
         $this->phases = $phases;
         $this->devices = $devices;
         $this->phaseDevices = $phaseDevices;
+        $this->deviceTypes = $deviceTypes;
+        $this->demoMaterials = $demoMaterials;
+        $this->demoMaterialTypes = $demoMaterialTypes;
     }
 
     public function createPhaseDevice(Request $req)
@@ -128,7 +134,7 @@ class Test extends Controller
     public function createDevice(Request $req)
     {
         $data = $req->all();
-        $this->devices->createAndSave($data['name'], $data['oem'], $data['product_line'], $data['serial_number']);
+        $this->devices->createAndSave($data['device_type_id'], $data['name'], $data['oem'], $data['product_line'], $data['serial_number']);
         return response(200);
     }
 
@@ -172,6 +178,42 @@ class Test extends Controller
     public function deleteDevice(int $device_id)
     {
         $this->devices->deleteById($device_id);
+        return response(200);
+    }
+
+
+    // device types
+    public function createDeviceType(Request $req)
+    {
+        $data = $req->all();
+        $this->deviceTypes->createAndSave($data['name'], $data['icon']);
+        return response(200);
+    }
+
+    public function getAllDeviceTypes()
+    {
+        $deviceTypes = $this->deviceTypes->getAll();
+        if ($deviceTypes === null)
+        {
+            return response(404);
+        }
+        return response()->json($deviceTypes);
+    }
+
+    // demo material
+    public function createDemoMaterial(Request $req)
+    {
+        $data = $req->all();
+        $this->demoMaterials->createAndSave($data['demo_material_type_id'], $data['name'], $data['file']);
+        return response(200);
+    }
+
+
+    // demo material type
+    public function createDemoMaterialType(Request $req)
+    {
+        $data = $req->all();
+        $this->demoMaterialTypes->createAndSave($data['filename_extension']);
         return response(200);
     }
 }

@@ -16,31 +16,42 @@ class PhaseController extends Controller
             $this->phases = $phases;
         }
 
-        public function show(int $scenario_id, int $phase_id)
+        public function new(Request $req)
         {
-            $phase = $this->phases->getById($phase_id);
-            if ($phase === null)
-            {
-                return response(404);
-            }
-            return response()->json($phase);
-        }
-
-        public function edit(int $scenario_id, int $phase_id)
-        {
-            $phase = $this->phases->getById($phase_id);
-            if ($phase === null)
-            {
-                return response(404);
-            }
-            return response()->json($phase);
+            // TODO: display phase creation view
+            return response(200);
         }
 
         public function create(int $scenario_id, Request $req)
         {
             $data = $req->all();
-            $this->phases->createAndSave($scenario_id, $data['name'], $data['description']);
+            if(!$this->phases->createAndSave($scenario_id, $data['name'], $data['description']))
+            {
+                return response(500);
+            }
             return response(200);
+        }
+
+        public function show(int $scenario_id, int $phase_id)
+        {
+            // TODO: will return the single phase view
+            $phase = $this->phases->getById($phase_id);
+            if (!$phase)
+            {
+                return response(500);
+            }
+            return response(200)->json($phase);
+        }
+
+        public function edit(int $scenario_id, int $phase_id)
+        {
+            // TODO: will return the edit phase view
+            $phase = $this->phases->getById($phase_id);
+            if (!$phase)
+            {
+                return response(500);
+            }
+            return response()->json($phase);
         }
 
         public function update(int $scenario_id, int $phase_id, Request $req)

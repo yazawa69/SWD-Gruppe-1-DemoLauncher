@@ -2,21 +2,30 @@
 
 namespace App\Repositories;
 
-use App\Models\Device;
-
-
+use App\Models\{Device, DeviceType};
 
 class DeviceRepository
 {
-    public function createAndSave(String $name, String $oem, String $product_line, String $serial_number)
+    public function createAndSave(int $device_type_id, String $name, String $oem, String $product_line, String $serial_number): bool
     {
-        $device = Device::create([
-            'name' => $name,
-            'oem' => $oem,
-            'product_line' => $product_line,
-            'serial_number' => $serial_number,
-        ]);
-        return $device;
+        $device = new Device();
+
+        $device->name = $name;
+        $device->oem = $oem;
+        $device->product_line = $product_line;
+        $device->serial_number = $serial_number;
+
+        $device_type = DeviceType::find($device_type_id);
+        if ($device_type === null)
+        {
+            return null;
+        }
+
+        $device->deviceType()->associate($device_type);
+
+        $saved = $device->save();
+
+        return $saved;
     }
 
     public function getAll()

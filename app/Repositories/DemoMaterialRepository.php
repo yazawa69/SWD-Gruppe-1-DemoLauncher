@@ -2,90 +2,45 @@
 
 namespace App\Repositories;
 
-use App\Models\{PhaseDevice, Phase, Device, DemoMaterial};
+use App\Models\{DemoMaterial, DemoMaterialType};
 
-class PhaseDeviceRepository
+class DemoMaterialRepository
 {
-    public function createAndSave(String $name, String $data): bool
+    public function createAndSave(int $demo_material_type_id, String $name, $file): bool
     {
-        $demo_material = DemoMaterial::create([
-            'name' => $name,
-            'data' => $data,
-        ]);
+        $demo_material = new DemoMaterial();
+        $demo_material->name = $name;
+        $demo_material->file = $file;
 
-        $phase = Phase::find($phase_id);
-        if ($phase === null)
+        $demo_material_type = DemoMaterialType::find($demo_material_type_id);
+        if ($demo_material_type === null)
         {
-            return null;
+            return false;
         }
 
-        $device = Device::find($device_id);
-        if ($device === null)
-        {
-            return null;
-        }
+        $demo_material->demoMaterialType()->associate($demo_material_type);
+        $demo_material->save();
 
-        $phase_device->phase_id = $phase_id;
-        $phase_device->device_id = $device_id;
-        
-        $saved = $phase_device->save();
-
-        return $saved;
+        return true;
     }
 
-    public function delete(String $phase_device_id): bool
+    public function getById(int $demo_material_id)
     {
-        $phase_device = PhaseDevice::find($phase_device_id);
-        if ($phase_device === null)
-        {
-            return null;
-        }
-
-        $deleted = $phase_device->delete();
-
-        return $deleted;
-    }
-
-    public function getById(int $phase_device_id)
-    {
-        $phase_device = PhaseDevice::find($phase_device_id);
-        return $phase_device;
-    }
-
-    public function addDemoMaterial($phase_device_id, $demo_material_id)
-    {
-        $phase_device = PhaseDevice::find($phase_device_id);
-        if ($phase_device === null)
-        {
-            return null;
-        }
-
         $demo_material = DemoMaterial::find($demo_material_id);
-        if ($demo_material === null)
-        {
-            return null;
-        }
-
-        $phase_device->demoMaterials()->attach($demo_material);
+        return $demo_material;
     }
 
-    public function removeDemoMaterial($phase_device_id, $demo_material_id)
+    public function getAllByType(int $demo_material_type_id)
     {
-        $phase_device = PhaseDevice::find($phase_device_id);
-        if ($phase_device === null)
-        {
-            return null;
-        }
-
-        $demo_material = DemoMaterial::find($demo_material_id);
-        if ($demo_material === null)
-        {
-            return null;
-        }
-
-        $phase_device->demoMaterials()->detach($demo_material);
+        $demo_materials = DemoMaterial::where('demo_material_type_id', $demo_material_type_id)->get();
+        return $demo_materials;
     }
 
+    public function deleteById(int $demo_material_id)
+    {
+        $demo_material = DemoMaterial::find($demo_material_id);
+        $demo_material->delete();
+    }
 }
 
 ?>

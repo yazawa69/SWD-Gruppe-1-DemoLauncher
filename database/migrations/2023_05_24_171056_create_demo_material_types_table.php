@@ -11,23 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('demo_material_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('device_type_id')->constrained();
             $table->timestamps();
-            $table->string('name');
-            $table->string('oem');
-            $table->string('product_line');
-            $table->string('serial_number');
-
+            $table->string('filename_extension');
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('demo_material_types');
     }
 };

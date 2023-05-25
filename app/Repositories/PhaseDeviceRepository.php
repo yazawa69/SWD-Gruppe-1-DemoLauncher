@@ -21,9 +21,9 @@ class PhaseDeviceRepository
         {
             return null;
         }
-
-        $phase_device->phase_id = $phase_id;
-        $phase_device->device_id = $device_id;
+        
+        $phase_device->phase()->associate($phase);
+        $phase_device->device()->associate($device);
         
         $saved = $phase_device->save();
 
