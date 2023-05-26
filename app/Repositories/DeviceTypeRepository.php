@@ -33,13 +33,6 @@ class DeviceTypeRepository
         $device_type->delete();
     }
 
-    public function getDevicesByDeviceType(int $device_type_id)
-    {
-        $device_type = DeviceType::find($device_type_id);
-        $devices = $device_type->devices;
-        return $devices;
-    }
-
 }
 
 ?>

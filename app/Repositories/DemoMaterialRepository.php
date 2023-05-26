@@ -6,22 +6,33 @@ use App\Models\{DemoMaterial, DemoMaterialType};
 
 class DemoMaterialRepository
 {
-    public function createAndSave(int $demo_material_type_id, String $name, $file): bool
+    public function createAndSave(int $demo_material_type_id, String $name, $file)
     {
         $demo_material = new DemoMaterial();
         $demo_material->name = $name;
         $demo_material->file = $file;
 
         $demo_material_type = DemoMaterialType::find($demo_material_type_id);
-        if ($demo_material_type === null)
+        if (!$demo_material_type)
         {
             return false;
         }
 
         $demo_material->demoMaterialType()->associate($demo_material_type);
-        $demo_material->save();
+        return $demo_material->save();
+    }
 
-        return true;
+    public function updateById(int $demo_material_id, String $name, $file)
+    {
+        $demo_material = DemoMaterial::find($demo_material_id);
+        if (!$demo_material)
+        {
+            return false;
+        }
+
+        $demo_material->name = $name;
+        $demo_material->file = $file;
+        return $demo_material->save();
     }
 
     public function getById(int $demo_material_id)
@@ -39,7 +50,7 @@ class DemoMaterialRepository
     public function deleteById(int $demo_material_id)
     {
         $demo_material = DemoMaterial::find($demo_material_id);
-        $demo_material->delete();
+        return $demo_material->delete();
     }
 }
 

@@ -6,31 +6,29 @@ use App\Models\{PhaseDevice, Phase, Device, DemoMaterial};
 
 class PhaseDeviceRepository
 {
-    public function createAndSave(String $phase_id, String $device_id): bool
+    public function createAndSave(String $phase_id, String $device_id)
     {
         $phase_device = new PhaseDevice();
 
         $phase = Phase::find($phase_id);
-        if ($phase === null)
+        if (!$phase)
         {
-            return null;
+            return false;
         }
 
         $device = Device::find($device_id);
-        if ($device === null)
+        if (!$device)
         {
-            return null;
+            return false;
         }
         
         $phase_device->phase()->associate($phase);
         $phase_device->device()->associate($device);
         
-        $saved = $phase_device->save();
-
-        return $saved;
+        return $phase_device->save();
     }
 
-    public function delete(String $phase_device_id): bool
+    public function deleteById(String $phase_device_id)
     {
         $phase_device = PhaseDevice::find($phase_device_id);
         if ($phase_device === null)
@@ -52,15 +50,15 @@ class PhaseDeviceRepository
     public function addDemoMaterial($phase_device_id, $demo_material_id)
     {
         $phase_device = PhaseDevice::find($phase_device_id);
-        if ($phase_device === null)
+        if (!$phase_device)
         {
-            return null;
+            return false;
         }
 
         $demo_material = DemoMaterial::find($demo_material_id);
-        if ($demo_material === null)
+        if (!$demo_material)
         {
-            return null;
+            return false;
         }
 
         $phase_device->demoMaterials()->attach($demo_material);
@@ -69,15 +67,15 @@ class PhaseDeviceRepository
     public function removeDemoMaterial($phase_device_id, $demo_material_id)
     {
         $phase_device = PhaseDevice::find($phase_device_id);
-        if ($phase_device === null)
+        if (!$phase_device)
         {
-            return null;
+            return false;
         }
 
         $demo_material = DemoMaterial::find($demo_material_id);
-        if ($demo_material === null)
+        if (!$demo_material)
         {
-            return null;
+            return false;
         }
 
         $phase_device->demoMaterials()->detach($demo_material);

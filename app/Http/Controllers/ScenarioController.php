@@ -8,7 +8,6 @@ use App\Repositories\ScenarioRepository;
 
 class ScenarioController extends Controller
 {
-    
     protected ScenarioRepository $scenarios;
 
     public function __construct(ScenarioRepository $scenarios)

@@ -6,7 +6,7 @@ use App\Models\{Device, DeviceType};
 
 class DeviceRepository
 {
-    public function createAndSave(int $device_type_id, String $name, String $oem, String $product_line, String $serial_number): bool
+    public function createAndSave(int $device_type_id, String $name, String $oem, String $product_line, String $serial_number)
     {
         $device = new Device();
 
@@ -16,16 +16,14 @@ class DeviceRepository
         $device->serial_number = $serial_number;
 
         $device_type = DeviceType::find($device_type_id);
-        if ($device_type === null)
+        if (!$device_type)
         {
-            return null;
+            return false;
         }
 
         $device->deviceType()->associate($device_type);
 
-        $saved = $device->save();
-
-        return $saved;
+        return $device->save();
     }
 
     public function getAll()
@@ -56,9 +54,9 @@ class DeviceRepository
         $device->delete();
     }
 
-    public function getAllByPhase(int $phase_id)
+    public function getAllByType(int $device_type_id)
     {
-        $devices = Device::where('phase_id', $phase_id)->get();
+        $devices = Device::where('device_type_id', $device_type_id)->get();
         return $devices;
     }
 
