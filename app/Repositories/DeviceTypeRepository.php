@@ -30,7 +30,7 @@ class DeviceTypeRepository
     public function deleteById(int $device_type_id)
     {
         $device_type = DeviceType::find($device_type_id);
-        $device_type->delete();
+        return $device_type->delete();
     }
 
 }

@@ -23,7 +23,7 @@ class DemoMaterialController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($demo_materials);
+        return response()->json($demo_materials);
     }
 
     public function new(Request $req)
@@ -42,7 +42,7 @@ class DemoMaterialController extends Controller
         return response(200);
     }
 
-    public function show(int $demo_material_id)
+    public function show(int $demo_material_type_id, int $demo_material_id)
     {
         // TODO: will return the single demo material view
         $demo_material = $this->demo_materials->getById($demo_material_id);
@@ -50,10 +50,10 @@ class DemoMaterialController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($demo_material);
+        return response()->json($demo_material);
     }
 
-    public function edit(int $demo_material_id)
+    public function edit(int $demo_material_type_id, int $demo_material_id)
     {
         // TODO: will return the edit demo materials view
         $demo_material = $this->demo_materials->getById($demo_material_id);
@@ -62,14 +62,14 @@ class DemoMaterialController extends Controller
             return response(500);
         }
         
-        return response(200)->json($demo_material);
+        return response()->json($demo_material);
     }
 
-    public function update(int $device_id, Request $req)
+    public function update(int $demo_material_type_id, int $demo_material_id, Request $req)
     {
         // TODO: this should update and then redirect to the show view of the updated demo material
         $data = $req->all();
-        if (!$this->demo_materials->updateById($device_id, $data['name'], $data['file']))
+        if (!$this->demo_materials->updateById($demo_material_id, $data['name'], $data['file']))
         {
             return response(500);
         }

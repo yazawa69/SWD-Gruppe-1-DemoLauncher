@@ -36,9 +36,7 @@ class PhaseDeviceRepository
             return null;
         }
 
-        $deleted = $phase_device->delete();
-
-        return $deleted;
+        return $phase_device->delete();
     }
 
     public function getById(int $phase_device_id)
@@ -62,6 +60,7 @@ class PhaseDeviceRepository
         }
 
         $phase_device->demoMaterials()->attach($demo_material);
+        return true;
     }
 
     public function removeDemoMaterial($phase_device_id, $demo_material_id)

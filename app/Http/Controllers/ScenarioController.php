@@ -52,7 +52,7 @@ class ScenarioController extends Controller
             return response(500);
         }
 
-        return response(200)->json($scenario);
+        return response()->json($scenario);
     }
     
     public function edit(int $scenario_id)
@@ -64,7 +64,7 @@ class ScenarioController extends Controller
             return response(500);
         }
         
-        return response(200)->json($scenario);
+        return response()->json($scenario);
     }
 
     public function update(int $scenario_id, Request $req)

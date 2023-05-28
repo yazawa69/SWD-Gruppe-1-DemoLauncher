@@ -15,13 +15,13 @@ class PhaseDeviceController extends Controller
         $this->phase_devices = $phase_devices;
     }
 
-    public function new(Request $req)
+    public function new(int $scenario_id, int $phase_id, Request $req)
     {
         // TODO: display phase device creation view
         return response(200);
     }
 
-    public function create(Request $req)
+    public function create(int $scenario_id, int $phase_id, Request $req)
     {
         $data = $req->all();
         if (!$this->phase_devices->createAndSave($data['phase_id'], $data['device_id']))
@@ -32,7 +32,7 @@ class PhaseDeviceController extends Controller
         return response(200);
     }
 
-    public function show($phase_device_id)
+    public function show(int $scenario_id, int $phase_id, $phase_device_id)
     {
         // TODO: will return the single phase device view
         $phase_device = $this->phase_devices->getById($phase_device_id);
@@ -40,10 +40,10 @@ class PhaseDeviceController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($phase_device);
+        return response()->json($phase_device);
     }
     
-    public function destroy(int $phase_device_id)
+    public function destroy(int $scenario_id, int $phase_id, int $phase_device_id)
     {
         // TODO: this should redirect to the index view
         if (!$this->phase_devices->deleteById($phase_device_id))
@@ -53,19 +53,20 @@ class PhaseDeviceController extends Controller
         return response(200);
     }
 
-    public function addDemoMaterial(int $phase_device_id, int $demo_material_id)
+    public function addDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req)
     {
-        
-        if (!$this->phase_devices->addDemoMaterial($phase_device_id, $demo_material_id))
+        $data = $req->all();
+        if (!$this->phase_devices->addDemoMaterial($phase_device_id, $data['demo_material_id']))
         {
-            return response(500);
+            return response()->json(['error' => 'Could not add demo material'], 500);
         }
         return response(200);
     }
 
-    public function removeDemoMaterial(int $phase_device_id, int $demo_material_id)
+    public function removeDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req)
     {
-        if (!$this->phase_devices->removeDemoMaterial($phase_device_id, $demo_material_id))
+        $data = $req->all();
+        if (!$this->phase_devices->removeDemoMaterial($phase_device_id, $data['demo_material_id']))
         {
             return response(500);
         }

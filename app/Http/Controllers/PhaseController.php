@@ -25,7 +25,7 @@ class PhaseController extends Controller
         public function create(int $scenario_id, Request $req)
         {
             $data = $req->all();
-            if(!$this->phases->createAndSave($scenario_id, $data['name'], $data['description']))
+            if(!$this->phases->createAndSave($scenario_id, $data['name']))
             {
                 return response(500);
             }
@@ -40,7 +40,7 @@ class PhaseController extends Controller
             {
                 return response(500);
             }
-            return response(200)->json($phase);
+            return response()->json($phase);
         }
 
         public function edit(int $scenario_id, int $phase_id)
@@ -57,11 +57,11 @@ class PhaseController extends Controller
         public function update(int $scenario_id, int $phase_id, Request $req)
         {
             $data = $req->all();
-            $this->phases->updateById($phase_id, $data['name'], $data['description']);
+            $this->phases->updateById($phase_id, $data['name']);
             return response(200);
         }
 
-        public function delete(int $scenario_id, int $phase_id)
+        public function destroy(int $scenario_id, int $phase_id)
         {
             $this->phases->delete($phase_id);
             return response(200);

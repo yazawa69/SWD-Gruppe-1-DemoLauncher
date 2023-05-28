@@ -23,7 +23,7 @@ class DeviceController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($devices);
+        return response()->json($devices);
     }
 
     public function new(Request $req)
@@ -50,7 +50,7 @@ class DeviceController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($device);
+        return response()->json($device);
     }
 
     public function edit(int $device_id)
@@ -62,7 +62,7 @@ class DeviceController extends Controller
             return response(500);
         }
         
-        return response(200)->json($device);
+        return response()->json($device);
     }
 
     public function update(int $device_id, Request $req)

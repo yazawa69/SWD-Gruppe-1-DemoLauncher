@@ -34,7 +34,7 @@ class PhaseRepository
         return $phase->save();
     }
 
-    public function getById(int $phase_id): bool
+    public function getById(int $phase_id)
     {
         $phase = Phase::find($phase_id);
         return $phase;

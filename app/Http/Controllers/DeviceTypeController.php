@@ -24,7 +24,7 @@ class DeviceTypeController extends Controller
         {
             return response(500);
         }
-        return response(200)->json($device_types);
+        return response()->json($device_types);
     }
 
     public function create(Request $req)
