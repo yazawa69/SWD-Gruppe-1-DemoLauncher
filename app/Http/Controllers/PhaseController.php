@@ -53,7 +53,12 @@ class PhaseController extends Controller
             {
                 return response(500);
             }
-            return response()->json($phase);
+
+            $phase_devices = $phase->phaseDevices;
+
+            return view('phase', ['phase' => $phase, 'phase_devices' => $phase_devices]);
+
+            // return response()->json($phase);
         }
 
         public function edit(int $scenario_id, int $phase_id)

@@ -26,10 +26,10 @@ class ScenarioController extends Controller
         return view('scenarios', ['scenarios' => $scenarios]);
     }
 
-    public function new(Request $req)
+    public function new()
     {
         // TODO: display scenario creation view
-        return response(200);
+        return view('scenario');
     }
 
     public function create(Request $req)
@@ -52,7 +52,8 @@ class ScenarioController extends Controller
             return response(500);
         }
 
-        return response()->json($scenario);
+        return view('scenario', ['scenario' => $scenario, 'phases' => $scenario->phases]);
+        // return response()->json($scenario);
     }
     
     public function edit(int $scenario_id)

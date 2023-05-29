@@ -17,7 +17,6 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('oem');
-            $table->string('product_line');
             $table->string('serial_number');
 
         });

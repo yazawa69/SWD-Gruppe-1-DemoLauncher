@@ -1,0 +1,117 @@
+body{
+    background-color: #2b3035 !important; 
+    color: white !important;
+}
+
+.nav-link{
+    color: white !important;
+    width: 85%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.active{
+    background-color: #03b670 !important;
+    border-radius: 15px !important;
+}
+.nav-link:hover{
+    background-color: #03b670 !important;
+    border-radius: 15px !important;
+}
+
+.logoimage{
+    width: 40px;
+    height: 40px;
+}
+#szenario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#szenariobutton{
+    border-radius: 15px !important;
+    width: 80%;
+    text-align: center;
+    background-color: #03b670 !important;
+}
+.dropdown-menu{
+    width: 80%;
+    text-align: center;
+}
+.textbox{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 80%;
+    padding: 15px;
+    height: 300px;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+    .overflow{
+        overflow: scroll;
+        height: 270px;
+        }
+}
+
+.startseitebearbeiten{
+    width: 50%;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #03b670 !important;    
+}
+.szenarienliste{
+    width: 100%;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #2b3035 !important; 
+    border-color: #03b670;
+}
+.szenarienliste:focus{
+    background-color: #03b670 !important; 
+}
+.szenarienbearbeiten{
+    width: 80%;
+    height: 50px;
+    margin: 6px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #03b670 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.headline{
+    width: 80%;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divider{
+    margin:80px;
+}
+.centered{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.starten{
+    padding: 0px;
+    margin-top: 10px;
+    font-size: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    height: 80px;
+    border-radius: 15px;
+    text-align: center;
+    border-color: #03b670 !important; 
+    border-width: 2px;
+    background-color: #2b3035 
+}
+.starten:focus{
+    background-color: #03b670;
+}

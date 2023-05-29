@@ -13,7 +13,7 @@ class DeviceRepository
         $device->name = $name;
         $device->oem = $oem;
         $device->serial_number = $serial_number;
-        $device->deviceType_id = $device_type_id;
+        $device->device_type_id = $device_type_id;
 
         return $device->save();
     }
