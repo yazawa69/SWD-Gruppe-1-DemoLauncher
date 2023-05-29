@@ -9,22 +9,10 @@ class PhaseDeviceRepository
     public function createAndSave(String $phase_id, String $device_id)
     {
         $phase_device = new PhaseDevice();
-
-        $phase = Phase::find($phase_id);
-        if (!$phase)
-        {
-            return false;
-        }
-
-        $device = Device::find($device_id);
-        if (!$device)
-        {
-            return false;
-        }
         
-        $phase_device->phase()->associate($phase);
-        $phase_device->device()->associate($device);
-        
+        $phase_device->phase_id = $phase_id;
+        $phase_device->device_id = $device_id;
+
         return $phase_device->save();
     }
 

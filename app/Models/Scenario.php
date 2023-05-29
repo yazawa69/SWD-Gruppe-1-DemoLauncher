@@ -17,7 +17,7 @@ class Scenario extends Model
     
     private $name;
     private $description;
-    
+
     public function phases(): HasMany
     {
         return $this->hasMany(Phase::class);

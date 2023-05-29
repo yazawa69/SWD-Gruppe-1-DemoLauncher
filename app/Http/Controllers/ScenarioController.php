@@ -39,7 +39,7 @@ class ScenarioController extends Controller
         {
             return response(500);
         }
-        
+
         return response(200);
     }
 

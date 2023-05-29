@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\PhaseRepository;
+use Exception;
 
 class PhaseController extends Controller
 {
@@ -25,10 +26,22 @@ class PhaseController extends Controller
         public function create(int $scenario_id, Request $req)
         {
             $data = $req->all();
-            if(!$this->phases->createAndSave($scenario_id, $data['name']))
+            
+            // catch DB related errors
+            try 
             {
+                $saved = $this->phases->createAndSave($scenario_id, $data['name']);
+            }
+            catch(Exception $e)
+            {
+                return response($e->getMessage(), 500);
+            }
+            if(!$saved) 
+            {
+                // entry could not be inserted into DB
                 return response(500);
             }
+
             return response(200);
         }
 

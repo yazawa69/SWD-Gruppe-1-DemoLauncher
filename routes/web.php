@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceController, PhaseDeviceController, DeviceTypeController, DemoMaterialController, DemoMaterialTypeController};
+use Illuminate\Database\QueryException;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,3 +138,55 @@ Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo
 
 Route::post('/demomaterialtypes', [Test::class, 'createDemoMaterialType']);
 
+// forests and trees
+
+Route::post('/forests', function(){
+    $forest = \App\Models\Forest::create();
+    return response(200);
+});
+
+Route::post('/trees', function(Illuminate\Http\Request $req){
+    $data = $req->all();
+    $tree = new \App\Models\Tree();
+    $forest= \App\Models\Forest::find($data['forest_id']);
+    // $tree->forest()->associate($forest);
+    $tree->forest_id = $data['forest_id'];
+    
+    try{
+        $tree->save();
+    }
+    catch(QueryException $e){
+        return response('Something went wrong', 500);
+    }
+    return response(200);
+});
+
+Route::get('/trees/forest', function(Illuminate\Http\Request $req){
+    $data = $req->all();
+    $tree = \App\Models\Tree::find($data['tree_id']);
+    $forest = $tree->forest;
+    return response()->json($forest);
+});
+
+Route::post('/tree-leaf', function(Illuminate\Http\Request $req){
+    $data = $req->all();
+    $leaf = new \App\Models\TreeLeaf();
+    $leaf->tree_id = $data['tree_id'];
+    $leaf->save();
+    return response(200);
+});
+
+Route::get('/trees/leaves', function(Illuminate\Http\Request $req){
+    $data = $req->all();
+    $tree = \App\Models\Tree::find($data['tree_id']);
+    $leaves = $tree->{\App\Models\Tree::ATTRIBUTE_TREE_LEAVES};
+    return response()->json([$leaves]);
+});
+
+
+Route::get('forests/trees', function(Illuminate\Http\Request $req){
+    $data = $req->all();
+    $forest = \App\Models\Forest::find($data['forest_id']);
+    $trees = $forest->trees;
+    return response()->json($trees);
+});

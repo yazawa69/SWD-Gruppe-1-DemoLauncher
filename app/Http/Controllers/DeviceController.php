@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\DeviceRepository;
+use Exception;
 
 class DeviceController extends Controller
 {
@@ -35,10 +36,22 @@ class DeviceController extends Controller
     public function create(int $device_type_id, Request $req)
     {
         $data = $req->all();
-        if (!$this->devices->createAndSave($device_type_id, $data['name'], $data['oem'], $data['product_line'], $data['serial_number']))
+        
+        // catch DB related errors
+        try 
         {
+            $saved = $this->devices->createAndSave($device_type_id, $data['name'], $data['oem'], $data['serial_number']);
+        }
+        catch(Exception $e)
+        {
+            return response($e->getMessage(), 500);
+        }
+        if(!$saved) 
+        {
+            // entry could not be inserted into DB
             return response(500);
         }
+
         return response(200);
     }
 
@@ -69,7 +82,7 @@ class DeviceController extends Controller
     {
         // TODO: this should update and then redirect to the show view of the updated device
         $data = $req->all();
-        if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['product_line'], $data['serial_number']))
+        if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['serial_number']))
         {
             return response(500);
         }

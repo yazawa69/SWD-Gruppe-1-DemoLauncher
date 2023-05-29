@@ -13,13 +13,11 @@ class Device extends Model
     protected $fillable = [
         'name',
         'oem',
-        'product_line',
         'serial_number',
     ];
     
     private $name;
     private $oem;
-    private $product_line;
     private $serial_number;
 
     public function phaseDevices(): HasMany

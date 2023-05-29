@@ -2,26 +2,18 @@
 
 namespace App\Repositories;
 
-use App\Models\{Device, DeviceType};
+use App\Models\Device;
 
 class DeviceRepository
 {
-    public function createAndSave(int $device_type_id, String $name, String $oem, String $product_line, String $serial_number)
+    public function createAndSave(int $device_type_id, String $name, String $oem, String $serial_number)
     {
         $device = new Device();
 
         $device->name = $name;
         $device->oem = $oem;
-        $device->product_line = $product_line;
         $device->serial_number = $serial_number;
-
-        $device_type = DeviceType::find($device_type_id);
-        if (!$device_type)
-        {
-            return false;
-        }
-
-        $device->deviceType()->associate($device_type);
+        $device->deviceType_id = $device_type_id;
 
         return $device->save();
     }
@@ -38,20 +30,19 @@ class DeviceRepository
         return $device;
     }
 
-    public function updateById(int $device_id, String $name, String $oem, String $product_line, String $serial_number)
+    public function updateById(int $device_id, String $name, String $oem, String $serial_number)
     {
         $device = Device::find($device_id);
         $device->name = $name;
         $device->oem = $oem;
-        $device->product_line = $product_line;
         $device->serial_number = $serial_number;
-        $device->save();
+        return $device->save();
     }
 
     public function deleteById(int $device_id)
     {
         $device = Device::find($device_id);
-        $device->delete();
+        return $device->delete();
     }
 
     public function getAllByType(int $device_type_id)
