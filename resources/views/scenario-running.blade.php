@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="de">
+@extends('base')
+
+@section('head')
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +14,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="../JavaScript-Dateien/main.js" defer></script>
 </head>
+@endsection
+
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./Index.html">
-            <img class="logo_image" src="../images/Logo.png"></img>
-          </a>
-        </div>
-      </nav>
-    </header>
+    @section('content')
     <main>
       <div class="headline">
         <h1>Szenario läuft</h1>
@@ -79,6 +74,7 @@
             Beenden
           </button>
       </div>
+      @endsection
     </main>
     <footer>
 

@@ -15,7 +15,7 @@ use Illuminate\Database\QueryException;
 */
 
 Route::get('/', function () {
-    return response(200);
+    return response(200);   
 });
 
 Route::post('/phase-devices', [Test::class, 'createPhaseDevice']);

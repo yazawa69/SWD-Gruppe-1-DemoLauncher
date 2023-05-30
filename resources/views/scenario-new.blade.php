@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="de">
+
+@extends('base')
+
+@section('head')
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,35 +18,10 @@
     @vite(['resources/js/app.js', 'resources/scss/app.scss', 'resources/css/app.css'])
 
 </head>
+@endsection
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="./Index.html">
-                <img class="logo_image" src="../images/Logo.png"></img>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="./Index.html">Startseite</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./SzenarienVerwalten.html">Szenarien verwalten</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./GeräteVerwaltenStart.html">Geräte verwalten</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./DemomaterialVerwaltenStart.html">Demomaterial verwalten</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
+    @section('content')
     <main>
       <div class="headline">
         <h1>Szenario verwalten</h1>
@@ -110,6 +87,7 @@
           </a>
         </div>
       </div>
+      @endsection
     </main>
     <footer>
 
