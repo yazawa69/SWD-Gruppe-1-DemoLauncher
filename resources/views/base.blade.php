@@ -19,7 +19,7 @@
                         <a class="nav-link" href="{{ url('/') }}">Startseite</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('/scenarios') }}">Szenarien verwalten</a>
+                        <a class="nav-link" href="{{ url('/scenarios') }}">Szenarien verwalten</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url('/device-types') }}">Geräte verwalten</a>
