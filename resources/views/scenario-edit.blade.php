@@ -65,7 +65,7 @@
                             <th>{{ $i }}</th>
                             <td>{{ $phases[$i]->name }}</td>
                             <td class="right">
-                                <button onclick="window.location.href='Phase.html';"
+                                <button onclick="window.location.href='/scenarios/{scenario_id}/phases/{phase_id}/edit';"
                                     class="btn btn-secondary button_very_small">bearbeiten</button>
                             </td>
                             </tr>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="plus_phase">
-            <a onclick="window.location.href='Phase.html';" class="btn btn-secondary button_small" href="#"
+            <a onclick="window.location.href='/scenarios/{scenario_id}/phases/new';" class="btn btn-secondary button_small" href="#"
                 data-bs-theme="dark">
                 <img class="plus_image" src="../images/Pluszeichen.png"></img>
                 Phase
@@ -92,7 +92,7 @@
                     Löschen
                 </a>
             </div>
-            <div onclick="window.location.href='SzenarienVerwalten.html';" class="three_buttons_spacing">
+            <div onclick="window.location.href='/scenarios';" class="three_buttons_spacing">
                 <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Abbrechen
                 </a>

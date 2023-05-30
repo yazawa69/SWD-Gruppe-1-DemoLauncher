@@ -89,7 +89,7 @@
                     Löschen
                 </a>
             </div>
-            <div onclick="window.location.href='Szenarien.html';" class="three_buttons_spacing">
+            <div onclick="window.location.href='/scenarios/{scenario_id}/edit';" class="three_buttons_spacing">
                 <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Abbrechen
                 </a>

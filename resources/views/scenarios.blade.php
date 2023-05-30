@@ -37,12 +37,12 @@
             </div>
         </div>
         <div class="divider"></div>
-        <div onclick="window.location.href='Szenarien.html';" class="centered">
+        <div onclick="window.location.href='/scenarios/{scenario_id}/edit';" class="centered">
             <a class="btn btn-secondary button_middle" href="" data-bs-theme="dark">
                 Szenario bearbeiten
             </a>
         </div>
-        <div onclick="window.location.href='Szenarien.html';" class="centered">
+        <div onclick="window.location.href='/scenarios/new';" class="centered">
             <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
                 Szenario erstellen
             </a>

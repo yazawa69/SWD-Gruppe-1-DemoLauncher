@@ -28,19 +28,19 @@
         </div>
         <div class="textbox_middle_main">
             <div class="box_middle">
-                <div onclick="window.location.href='GeräteVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/device-types/{device_type_id}/devices';" class="overflow_middle">
                     <img class="selection_image" src="../images/Bildschirm.png"></img>
                     <p class="selection_text">Bildschirme</p>
                 </div>
             </div>
             <div class="box_middle">
-                <div onclick="window.location.href='GeräteVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/device-types/{device_type_id}/devices';" class="overflow_middle">
                     <img class="selection_image" src="../images/VR-Brille.png"></img>
                     <p class="selection_text">VR-Brillen</p>
                 </div>
             </div>
             <div class="box_middle">
-                <div onclick="window.location.href='GeräteVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/device-types/{device_type_id}/devices';" class="overflow_middle">
                     <img class="selection_image" src="../images/Lampe.png"></img>
                     <p class="selection_text">Lampen</p>
                 </div>

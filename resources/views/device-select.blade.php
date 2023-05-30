@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        <div onclick="window.location.href='Gerät.html';" class="centered button_middle_main1">
+        <div onclick="window.location.href='/device-types/{device_type_id}/devices/{device_id}/edit';" class="centered button_middle_main1">
             <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
                 Gerät bearbeiten
             </a>
         </div>
-        <div onclick="window.location.href='Gerät.html';" class="centered button_middle_main2">
+        <div onclick="window.location.href='/device-types/{device_type_id}/devices/new';" class="centered button_middle_main2">
             <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
                 Gerät hinzufügen
             </a>

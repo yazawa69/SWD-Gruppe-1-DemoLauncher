@@ -28,19 +28,19 @@
         </div>
         <div class="textbox_middle_main">
             <div class="box_middle">
-                <div onclick="window.location.href='DemomaterialVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials';" class="overflow_middle">
                     <img class="selection_image" src="../images/PDF.png"></img>
                     <p class="selection_text">.pdf</p>
                 </div>
             </div>
             <div class="box_middle">
-                <div onclick="window.location.href='DemomaterialVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials';" class="overflow_middle">
                     <img class="selection_image" src="../images/Video.png"></img>
                     <p class="selection_text">.mp4</p>
                 </div>
             </div>
             <div class="box_middle">
-                <div onclick="window.location.href='DemomaterialVerwalten.html';" class="overflow_middle">
+                <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials';" class="overflow_middle">
                     <img class="selection_image" src="../images/Audio.png"></img>
                     <p class="selection_text">.mp3</p>
                 </div>

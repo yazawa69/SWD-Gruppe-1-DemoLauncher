@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        <div onclick="window.location.href='Demomaterial.html';" class="centered button_middle_main1">
+        <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/edit';" class="centered button_middle_main1">
             <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
                 Material bearbeiten
             </a>
         </div>
-        <div onclick="window.location.href='Demomaterial.html';" class="centered button_middle_main2">
+        <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/new';" class="centered button_middle_main2">
             <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
                 Material hinzufügen
             </a>

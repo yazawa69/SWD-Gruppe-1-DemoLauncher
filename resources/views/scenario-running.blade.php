@@ -75,7 +75,7 @@
             <p class="centered">Steuerung einfügen!</p>
         </div>
         <div class="centered">
-            <button onclick="window.location.href='Index.html';" class="btn btn-secondary start_end_button"
+            <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button"
                 type="button" data-bs-theme="dark">
                 Beenden
             </button>
