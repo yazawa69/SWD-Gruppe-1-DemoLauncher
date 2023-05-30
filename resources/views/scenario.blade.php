@@ -14,7 +14,7 @@
     <script src="../JavaScript-Dateien/main.js" defer></script>
 
     @vite(['resources/js/app.js', 'resources/scss/app.scss', 'resources/css/app.css'])
-
+   
 </head>
 <body>
     <header>

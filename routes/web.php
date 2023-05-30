@@ -42,6 +42,9 @@ Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update']);
 // delete scenario
 Route::delete('/scenarios/{scenario_id}', [ScenarioController::class, 'destroy']);
 
+// run scenario
+Route::get('/scenarios/{scenario_id}/run', [ScenarioController::class, 'run']);
+
 // phases
 // fetch phase creation view
 Route::get('/scenarios/{scenario_id}/phases/new', [PhaseController::class, 'new']);
@@ -104,13 +107,13 @@ Route::delete('/devicetypes/{device_type_id}/devices/{device_id}', [DeviceContro
 
 // device types
 // fetch device type overview view
-Route::get('/devicetypes', [DeviceTypeController::class, 'index']);
+Route::get('/device-types', [DeviceTypeController::class, 'index']);
 
 // add new device type
-Route::post('/devicetypes', [DeviceTypeController::class, 'create']);
+Route::post('/device-types', [DeviceTypeController::class, 'create']);
 
 // delete device type
-Route::delete('/devicetypes/{device_type_id}', [DeviceTypeController::class, 'destroy']);
+Route::delete('/device-types/{device_type_id}', [DeviceTypeController::class, 'destroy']);
 
 // demo material
 // fetch demo material overview view
@@ -134,7 +137,9 @@ Route::patch('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_
 // delete demo material
 Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'destroy']);
 
-// demo material type
+// demo material types
+Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index']);
 
+// demo material type
 Route::post('/demomaterialtypes', [Test::class, 'createDemoMaterialType']);
 
