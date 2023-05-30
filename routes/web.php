@@ -18,7 +18,7 @@ Route::get('/', function () {
     return response(200);
 });
 
-Route::post('/phasedevices', [Test::class, 'createPhaseDevice']);
+Route::post('/phase-devices', [Test::class, 'createPhaseDevice']);
 
 // scenarios
 // fetch scenario overview view
@@ -85,25 +85,25 @@ Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_de
 
 // devices
 // device overview
-Route::get('/devicetypes/{device_type_id}/devices', [DeviceController::class, 'index']);
+Route::get('/device-types/{device_type_id}/devices', [DeviceController::class, 'index']);
 
 // fetch device creation view
-Route::get('/devicetypes/{device_type_id}/devices/new', [DeviceController::class, 'new']);
+Route::get('/device-types/{device_type_id}/devices/new', [DeviceController::class, 'new']);
 
 // add new device
-Route::post('/devicetypes/{device_type_id}/devices', [DeviceController::class, 'create']);
+Route::post('/device-types/{device_type_id}/devices', [DeviceController::class, 'create']);
 
 // fetch specific device
-Route::get('/devicetypes/{device_type_id}/devices/{device_id}', [DeviceController::class, 'show']);
+Route::get('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'show']);
 
 // fetch device edit view
-Route::get('/devicetypes/{device_type_id}/devices/{device_id}/edit', [DeviceController::class, 'edit']);
+Route::get('/device-types/{device_type_id}/devices/{device_id}/edit', [DeviceController::class, 'edit']);
 
 // TODO: update device
-Route::patch('/devicetypes/{device_type_id}/devices/{device_id}', [DeviceController::class, 'update']);
+Route::patch('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'update']);
 
 // TODO: delete device
-Route::delete('/devicetypes/{device_type_id}/devices/{device_id}', [DeviceController::class, 'destroy']);
+Route::delete('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'destroy']);
 
 // device types
 // fetch device type overview view
@@ -141,5 +141,6 @@ Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo
 Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index']);
 
 // demo material type
-Route::post('/demomaterialtypes', [Test::class, 'createDemoMaterialType']);
+
+Route::post('/demo-material-types', [Test::class, 'createDemoMaterialType']);
 
