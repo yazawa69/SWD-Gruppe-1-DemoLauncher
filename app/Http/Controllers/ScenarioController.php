@@ -35,12 +35,12 @@ class ScenarioController extends Controller
     public function create(Request $req)
     {
         $data = $req->all();
-        if (!$this->scenarios->createAndSave($data['name'], $data['description']))
+        $scenario = $this->scenarios->createAndSave($data['name'], $data['description']);
+        if (!$scenario)
         {
             return response(500);
         }
-
-        return response(200);
+        return response()->json(['scenario' => $scenario]);
     }
 
     public function show($scenario_id)

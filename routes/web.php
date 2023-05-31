@@ -15,23 +15,23 @@ use Illuminate\Database\QueryException;
 */
 
 Route::get('/', function () {
-    return response(200);   
+    return redirect()->route('scenarios.index');
 });
 
 Route::post('/phase-devices', [Test::class, 'createPhaseDevice']);
 
 // scenarios
 // fetch scenario overview view
-Route::get('/scenarios', [ScenarioController::class, 'index']);
+Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
 
 // fetch scenario creation view
 Route::get('/scenarios/new', [ScenarioController::class, 'new']);
 
 // add new scenario
-Route::post('/scenarios', [ScenarioController::class, 'create']);
+Route::post('/scenarios', [ScenarioController::class, 'create'])->name('scenarios.create');
 
 // fetch scenario edit view
-Route::get('/scenarios/{scenario_id}/edit', [ScenarioController::class, 'edit']);
+Route::get('/scenarios/{scenario_id}/edit', [ScenarioController::class, 'edit'])->name('scenarios.edit');
 
 // update scenario
 Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update']);
