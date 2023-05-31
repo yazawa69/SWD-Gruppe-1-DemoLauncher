@@ -28,14 +28,14 @@
                     <div class="col-auto">
                     </div>
                     <div class="col-auto">
-                        <input type="Name" class="form-control" placeholder="Name">
+                        <p>{{ $scenario->name }}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="textbox_middle">
             <div class="overflow_middle" data-bs-theme="dark">
-                <textarea class="form-control description_small" placeholder="Beschreibung"></textarea>
+                <p>{{ $scenario->description }}</p>
             </div>
         </div>
     </div>

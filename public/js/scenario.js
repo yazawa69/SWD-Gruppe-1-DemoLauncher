@@ -10,6 +10,8 @@ function create_scenario(event){
 
     event.preventDefault();
 
+    let scenario_id;
+
     const scenario_name_value = scenario_name.value;
     const scenario_description_value = scenario_description.value;
 
@@ -25,12 +27,16 @@ function create_scenario(event){
         },
         body: JSON.stringify(scenario)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            return response.json(); // Parse the response body as JSON
+        } else {
+            throw new Error('Request failed.'); // Throw an error for non-successful response
+        }
+    })
     .then(data => {
         // Process the JSON data
-        console.log(data);
-        console.log(data['name']);
-        console.log(data['id']);
+        scenario_id = data.scenario.id;
         // Perform further actions based on the response data
         if (data.success) {
             // Show success message
@@ -38,7 +44,11 @@ function create_scenario(event){
             // Show error message
         }
     })
+    .then(() => {
+        window.location.href = "/scenarios/" + scenario_id + "/edit";
+    })
     .catch(error => {
         console.error('An error occurred:', error);
     });
+
 }
