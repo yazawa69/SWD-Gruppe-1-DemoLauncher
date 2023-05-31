@@ -20,7 +20,7 @@ class PhaseController extends Controller
         public function new(Request $req)
         {
             // TODO: display phase creation view
-            return response(200);
+            return view('phase-new');
         }
 
         public function create(int $scenario_id, Request $req)
@@ -57,8 +57,6 @@ class PhaseController extends Controller
             $phase_devices = $phase->phaseDevices;
 
             return view('phase', ['phase' => $phase, 'phase_devices' => $phase_devices]);
-
-            // return response()->json($phase);
         }
 
         public function edit(int $scenario_id, int $phase_id)
@@ -69,7 +67,10 @@ class PhaseController extends Controller
             {
                 return response(500);
             }
-            return response()->json($phase);
+
+            $phase_devices = $phase->phaseDevices;
+
+            return view('phases.edit', ['phase' => $phase, 'phase_devices' => $phase_devices]);
         }
 
         public function update(int $scenario_id, int $phase_id, Request $req)
@@ -84,5 +85,4 @@ class PhaseController extends Controller
             $this->phases->delete($phase_id);
             return response(200);
         }
-
 }

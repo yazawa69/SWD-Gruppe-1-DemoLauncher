@@ -30,9 +30,6 @@ Route::get('/scenarios/new', [ScenarioController::class, 'new']);
 // add new scenario
 Route::post('/scenarios', [ScenarioController::class, 'create']);
 
-// fetch specific scenario
-Route::get('/scenarios/{scenario_id}', [ScenarioController::class, 'show']);
-
 // fetch scenario edit view
 Route::get('/scenarios/{scenario_id}/edit', [ScenarioController::class, 'edit']);
 
@@ -43,7 +40,7 @@ Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update']);
 Route::delete('/scenarios/{scenario_id}', [ScenarioController::class, 'destroy']);
 
 // run scenario
-Route::get('/scenarios/{scenario_id}/run', [ScenarioController::class, 'run']);
+Route::get('/scenarios/{scenario_id}/run/phase/{phase_id}', [ScenarioController::class, 'run']);
 
 // phases
 // fetch phase creation view
@@ -143,4 +140,15 @@ Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])
 // demo material type
 
 Route::post('/demo-material-types', [Test::class, 'createDemoMaterialType']);
+
+
+// get som
+Route::get('/das', function(){
+    $scenario = \App\Models\Scenario::find(2);
+
+    $phases = $scenario->phases;
+
+    return response()->json($phases);
+});
+
 

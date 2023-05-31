@@ -24,13 +24,13 @@ class DeviceController extends Controller
         {
             return response(500);
         }
-        return response()->json($devices);
+        return view('devices.index', ['devices' => $devices]);
     }
 
-    public function new(Request $req)
+    public function new()
     {
         // TODO: display device creation view
-        return response(200);
+        return view('devices.new');
     }
 
     public function create(int $device_type_id, Request $req)
@@ -75,7 +75,7 @@ class DeviceController extends Controller
             return response(500);
         }
         
-        return response()->json($device);
+        return view('devices.edit', ['device' => $device]);
     }
 
     public function update(int $device_id, Request $req)

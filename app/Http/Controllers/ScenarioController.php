@@ -23,13 +23,13 @@ class ScenarioController extends Controller
         {
             return response(500);
         }
-        return view('scenarios', ['scenarios' => $scenarios]);
+        return view('scenarios.index', ['scenarios' => $scenarios]);
     }
 
     public function new()
     {
         // TODO: display scenario creation view
-        return view('scenario');
+        return view('scenario-new');
     }
 
     public function create(Request $req)
@@ -45,15 +45,7 @@ class ScenarioController extends Controller
 
     public function show($scenario_id)
     {
-        // TODO: will return the single scenario view
-        $scenario = $this->scenarios->getById($scenario_id);
-        if (!$scenario)
-        {
-            return response(500);
-        }
-
-        return view('scenario', ['scenario' => $scenario, 'phases' => $scenario->phases]);
-        // return response()->json($scenario);
+        // TODO: remove this method - not necessary for scenarios. Should be documented in some way. 
     }
     
     public function edit(int $scenario_id)
@@ -65,7 +57,7 @@ class ScenarioController extends Controller
             return response(500);
         }
         
-        return response()->json($scenario);
+        return view('scenarios.edit', ['scenario' => $scenario, 'phases' => $scenario->phases]);
     }
 
     public function update(int $scenario_id, Request $req)
@@ -87,6 +79,24 @@ class ScenarioController extends Controller
             return response(500);
         }
         return response(200);
+    }
+
+    public function run(int $scenario_id, int $phase_id)
+    {
+        $scenario = $this->scenarios->getById($scenario_id);
+        if (!$scenario)
+        {
+            return response(500);
+        }
+
+        $phase = $this->scenarios->getScenarioPhase($scenario_id, $phase_id);
+        if (!$phase)
+        {
+            return response(500);
+        }
+        $phase_devices = $phase->phaseDevices;
+        
+        return view('scenarios.run', ['scenario' => $scenario, 'phase' => $phase, 'phase_devices' => $phase_devices]);
     }
 
 }

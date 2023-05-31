@@ -22,4 +22,7 @@ class Scenario extends Model
     {
         return $this->hasMany(Phase::class);
     }
+
+    
+
 }

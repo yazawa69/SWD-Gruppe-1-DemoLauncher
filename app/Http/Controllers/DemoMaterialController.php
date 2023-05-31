@@ -23,13 +23,13 @@ class DemoMaterialController extends Controller
         {
             return response(500);
         }
-        return response()->json($demo_materials);
+        return view('demo-materials.index', ['demo_materials' => $demo_materials]);
     }
 
     public function new(Request $req)
     {
         // TODO: display demo material creation view
-        return response(200);
+        return view('demo-materials.new');
     }
 
     public function create(int $demo_material_type_id, Request $req)
@@ -62,7 +62,7 @@ class DemoMaterialController extends Controller
             return response(500);
         }
         
-        return response()->json($demo_material);
+        return view('demo-materials.edit', ['demo_material' => $demo_material]);
     }
 
     public function update(int $demo_material_type_id, int $demo_material_id, Request $req)

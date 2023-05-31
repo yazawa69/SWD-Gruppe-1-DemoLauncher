@@ -52,4 +52,18 @@ class ScenarioRepository
 
         return $scenario->delete();
     }
+
+    public function getScenarioPhase(int $scenario_id, int $phase_id)
+    {
+        $scenario = Scenario::find($scenario_id);
+        if (!$scenario)
+        {
+            return false;
+        }
+
+        $phase = $scenario->phases()->find($phase_id);
+
+        return $phase;
+    }
+
 }
