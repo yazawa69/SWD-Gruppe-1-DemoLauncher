@@ -29,6 +29,11 @@ function edit_device(event){
 }
 
 function add_device(event){
+    event.preventDefault();
+
+    if (device_type_id != null) {
+        window.location.href = "/device-types/" + device_type_id + "/devices/new";
+    }
 
 }
 

@@ -24,7 +24,7 @@
 <div class="textbox_middle_main">
     @foreach($device_types as $device_type)
     <div class="box_middle">
-        <div onclick="window.location.href='/device-types/{{ $device_type->id }}/devices';" class="overflow_middle">
+        <div onclick="window.location.href='{{ route('device.index', ['device_type_id' => $device_type->id]) }}'" class="overflow_middle">
             <img class="selection_image" src="../images/Bildschirm.png"></img>
             <p class="selection_text text-nowrap">{{ $device_type->name }}</p>
         </div>

@@ -19,13 +19,13 @@
                         <a class="nav-link" href="{{ url('/') }}">Startseite</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/scenarios') }}">Szenarien verwalten</a>
+                        <a class="nav-link" href="{{ route('scenarios.index') }}">Szenarien verwalten</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/device-types') }}">Geräte verwalten</a>
+                        <a class="nav-link" href="{{ route('device-types.index') }}">Geräte verwalten</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/demo-material-types') }}">Demomaterial verwalten</a>
+                        <a class="nav-link" href="{{ route('demo-material-types.index') }}">Demomaterial verwalten</a>
                       </li>
                     </ul>
                   </div>

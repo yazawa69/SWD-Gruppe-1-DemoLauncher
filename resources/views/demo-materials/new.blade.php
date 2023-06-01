@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/demo-material-new.js') }}" defer></script>
 @endsection
 
 <body>
@@ -27,7 +28,7 @@
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
-                            <input type="Name" class="form-control" placeholder="Name">
+                            <input type="Name" class="form-control" id="demo_material_name" placeholder="Name">
                         </div>
                     </div>
                 </div>
@@ -41,24 +42,23 @@
         <div class="textbox_big_main">
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
-                    <textarea class="form-control description" placeholder="Beschreibung"></textarea>
+                    <textarea class="form-control description" id="demo_material_desc placeholder="Beschreibung"></textarea>
                 </div>
             </div>
         </div>
         <div class="three_buttons">
-            <div onclick="window.location.href='DemomaterialVerwalten.html';" class="three_buttons_spacing">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            <div class="three_buttons_spacing" id="demo_materials_save_btn">
+                <a class="btn btn-secondary button_small" data-bs-theme="dark">
                     Speichern
                 </a>
             </div>
-            <div onclick="window.location.href='DemomaterialVerwalten.html';" class="three_buttons_spacing">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            <div class="three_buttons_spacing" id="demo_materials_delete_btn">
+                <a class="btn btn-secondary button_small" data-bs-theme="dark">
                     Löschen
                 </a>
             </div>
-            <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials';"
-                class="three_buttons_spacing">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            <div class="three_buttons_spacing">
+                <a class="btn btn-secondary button_small" id="demo_materials_cancel_btn" data-bs-theme="dark">
                     Abbrechen
                 </a>
             </div>

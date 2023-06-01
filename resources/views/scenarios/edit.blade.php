@@ -83,7 +83,7 @@
             Löschen
         </a>
     </div>
-    <div onclick="window.location.href='/scenarios';" class="three_buttons_spacing">
+    <div onclick="window.location.href='{{ route('scenarios.index') }}';" class="three_buttons_spacing">
         <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
             Abbrechen
         </a>

@@ -32,12 +32,12 @@
     </div>
 </div>
 <div class="centered button_middle_main1" id="demo_material_edit_btn">
-    <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
+    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
         Material bearbeiten
     </a>
 </div>
 <div class="centered button_middle_main2" id="demo_material_add_btn">
-    <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
+    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
         Material hinzufügen
     </a>
 </div>

@@ -31,6 +31,10 @@ function edit_demo_material(event){
 }
 
 function add_demo_material(event){
+    event.preventDefault();
 
+    if (demo_material_type_id != null) {
+        window.location.href = "/demo-material-types/" + demo_material_type_id + "/demo-materials/new";
+    }
 }
 

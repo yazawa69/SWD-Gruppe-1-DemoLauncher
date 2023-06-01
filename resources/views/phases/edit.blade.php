@@ -83,17 +83,17 @@
 </div>
 <div class="three_buttons">
     <div class="three_buttons_spacing" id="phase_save_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+        <a class="btn btn-secondary button_small" data-bs-theme="dark">
             Speichern
         </a>
     </div>
     <div class="three_buttons_spacing" id="phase_delete_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+        <a class="btn btn-secondary button_small" data-bs-theme="dark">
             Löschen
         </a>
     </div>
     <div class="three_buttons_spacing" id="phase_cancel_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+        <a class="btn btn-secondary button_small" data-bs-theme="dark">
             Abbrechen
         </a>
     </div>

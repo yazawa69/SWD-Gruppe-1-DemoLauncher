@@ -82,7 +82,7 @@ Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_de
 
 // devices
 // device overview
-Route::get('/device-types/{device_type_id}/devices', [DeviceController::class, 'index']);
+Route::get('/device-types/{device_type_id}/devices', [DeviceController::class, 'index'])->name('device.index');
 
 // fetch device creation view
 Route::get('/device-types/{device_type_id}/devices/new', [DeviceController::class, 'new']);
@@ -104,7 +104,7 @@ Route::delete('/device-types/{device_type_id}/devices/{device_id}', [DeviceContr
 
 // device types
 // fetch device type overview view
-Route::get('/device-types', [DeviceTypeController::class, 'index']);
+Route::get('/device-types', [DeviceTypeController::class, 'index'])->name('device-types.index');
 
 // add new device type
 Route::post('/device-types', [DeviceTypeController::class, 'create']);
@@ -114,10 +114,10 @@ Route::delete('/device-types/{device_type_id}', [DeviceTypeController::class, 'd
 
 // demo material
 // fetch demo material overview view
-Route::get('/demo-material-types/{demo_material_type_id}/demo-materials', [DemoMaterialController::class, 'index']);
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials', [DemoMaterialController::class, 'index'])->name('demo_material.index');
 
 // fetch demo material creation view
-Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/new', [DemoMaterialController::class, 'new']);
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/new', [DemoMaterialController::class, 'new'])->name('demo_mateial.new');
 
 // add new demo material
 Route::post('/demo-material-types/{demo_material_type_id}/demo-materials', [DemoMaterialController::class, 'create']);
@@ -135,7 +135,7 @@ Route::patch('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_
 Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'destroy']);
 
 // demo material types
-Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index']);
+Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])->name('demo-material-types.index');
 
 // demo material type
 

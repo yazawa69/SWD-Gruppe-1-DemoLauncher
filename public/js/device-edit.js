@@ -2,9 +2,9 @@ const save_btn = document.getElementById("device_save_btn");
 const delete_btn = document.getElementById("device_delete_btn");
 const cancel_btn = document.getElementById("device_cancel_btn");
 
-save_btn.addEventListener("click", demo_material_save);
-delete_btn.addEventListener("click", demo_material_delete);
-cancel_btn.addEventListener("click", demo_material_cancel);
+save_btn.addEventListener("click", device_save);
+delete_btn.addEventListener("click", device_delete);
+cancel_btn.addEventListener("click", device_cancel);
 
     let device_type_id;
     let device_id;
@@ -19,7 +19,7 @@ cancel_btn.addEventListener("click", demo_material_cancel);
         }
     }
 
-function demo_material_save(event){
+function device_save(event){
     event.preventDefault();
 
     const device_name = document.getElementById("device_name").innerHTML;
@@ -56,7 +56,7 @@ function demo_material_save(event){
     });
 }
 
-function demo_material_delete(event){
+function device_delete(event){
     event.preventDefault();
 
     fetch("/device-types/" + device_type_id + "/devices/" + device_id, {
@@ -70,7 +70,7 @@ function demo_material_delete(event){
     });
 }
 
-function demo_material_cancel(event){
+function device_cancel(event){
     event.preventDefault();
 
     window.location.href = "/device-types/" + device_type_id + "/devices";
