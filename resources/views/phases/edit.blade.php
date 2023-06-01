@@ -69,14 +69,14 @@
                         </div>
                     </td>
                     </tr>
+                    @endfor
                     <tr>
                         <th>
-
-                            <img class="plus_image" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" src="../images/Pluszeichen.png"></img>
-
+                            <img class="plus_image" id="add-phase-device-btn" data-bs-toggle="modal"
+                                data-bs-target="#device-selection-modal" src="../images/Pluszeichen.png"></img>
                         </th>
                     </tr>
-                    @endfor
+                    
             </tbody>
         </table>
     </div>
@@ -100,7 +100,8 @@
 </div>
 
 <!-- add demo material modal -->
-<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceTypeModal" aria-hidden="true" style="margin-top: 15vh;">
+<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceTypeModal" aria-hidden="true"
+    style="margin-top: 15vh;">
     @livewire('device-selection-modal')
 </div>
 
