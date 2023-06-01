@@ -34,7 +34,7 @@ Route::post('/scenarios', [ScenarioController::class, 'create'])->name('scenario
 Route::get('/scenarios/{scenario_id}/edit', [ScenarioController::class, 'edit'])->name('scenarios.edit');
 
 // update scenario
-Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update']);
+Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update'])->name('scenarios.save');
 
 // delete scenario
 Route::delete('/scenarios/{scenario_id}', [ScenarioController::class, 'destroy']);
