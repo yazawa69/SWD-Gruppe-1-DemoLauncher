@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/demo-material-edit.js') }}" defer></script>
 @endsection
 
 <body>
@@ -39,18 +40,17 @@
             </div>
         </div>
         <div class="three_buttons">
-            <div onclick="window.location.href='DemomaterialVerwalten.html';" class="three_buttons_spacing">
+            <div class="three_buttons_spacing" id="demo_material_save_btn">
                 <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Speichern
                 </a>
             </div>
-            <div onclick="window.location.href='DemomaterialVerwalten.html';" class="three_buttons_spacing">
+            <div class="three_buttons_spacing" id="demo_material_delete_btn">
                 <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Löschen
                 </a>
             </div>
-            <div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials';"
-                class="three_buttons_spacing">
+            <div class="three_buttons_spacing" id="demo_material_cancel_btn">
                 <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Abbrechen
                 </a>

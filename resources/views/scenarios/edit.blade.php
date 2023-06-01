@@ -54,10 +54,10 @@
             </thead>
             <tbody>
                 @for ($i = 0; $i < count($phases); $i++) <tr>
-                    <th>{{ $i }}</th>
+                    <th>{{ $i + 1 }}</th>
                     <td>{{ $phases[$i]->name }}</td>
                     <td class="right">
-                        <button onclick="window.location.href='/scenarios/{scenario_id}/phases/{phase_id}/edit';"
+                        <button onclick="window.location.href='/scenarios/{{ $scenario->id }}/phases/{{ $phases[$i]->id }}/edit';"
                             class="btn btn-secondary button_very_small">bearbeiten</button>
                     </td>
                     </tr>

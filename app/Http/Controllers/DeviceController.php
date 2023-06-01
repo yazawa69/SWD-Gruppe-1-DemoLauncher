@@ -72,7 +72,7 @@ class DeviceController extends Controller
         $device = $this->devices->getById($device_id);
         if (!$device)
         {
-            return response(500);
+            return response("can't edit device", 500);
         }
         
         return view('devices.edit', ['device' => $device]);

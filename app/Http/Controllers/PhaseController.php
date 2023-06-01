@@ -26,7 +26,6 @@ class PhaseController extends Controller
         public function create(int $scenario_id, Request $req)
         {
             $data = $req->all();
-            console.log("test");
             
             // catch DB related errors
             try 

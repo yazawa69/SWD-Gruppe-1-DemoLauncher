@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/demo-material-index.js') }}" defer></script>
 @endsection
 
 
@@ -25,19 +26,17 @@
     <div class="overflow_big">
         <div>
             @foreach($demo_materials as $demo_material)
-            <button class="btn btn-secondary list">{{ $demo_material->name }}</button>
+            <button onclick="set_demo_material_id({{ $demo_material->id }})" class="btn btn-secondary list">{{ $demo_material->name }}</button>
             @endforeach
         </div>
     </div>
 </div>
-<div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/edit';"
-    class="centered button_middle_main1">
+<div class="centered button_middle_main1" id="demo_material_edit_btn">
     <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
         Material bearbeiten
     </a>
 </div>
-<div onclick="window.location.href='/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/new';"
-    class="centered button_middle_main2">
+<div class="centered button_middle_main2" id="demo_material_add_btn">
     <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
         Material hinzufügen
     </a>

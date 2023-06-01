@@ -3,27 +3,27 @@ const phase_create_btn = document.getElementById("create_phase_btn");
 const scenario_save_btn = document.getElementById("scenario_save_btn");
 const scenario_delete_btn = document.getElementById("scenario_delete_btn");
 
-phase_create_btn.addEventListener("click", create_phase);
+phase_create_btn.addEventListener("click", phase_edit);
 scenario_save_btn.addEventListener("click", scenario_save);
 scenario_delete_btn.addEventListener("click", scenario_delete);
 
+let scenario_id;
 const queryString = window.location.href;
-const regex = /\/(\d+)\//;
-const match = queryString.match(regex);
-const scenario_id = match[1];
+const pathArray = window.location.pathname.split('/');
+for (i=0; i < pathArray.length; i++) {
+    if (pathArray[i] == "scenarios") {
+        scenario_id = pathArray[i+1];
+    }
+}
 
-function create_phase(event){
+function phase_edit(event){
     event.preventDefault();
-
-    let phase_id;
 
     const phase_name_value = phase_name.value;
 
     const phase = {
         name: phase_name_value
     }
-
-    console.log(phase);
 
     fetch("/scenarios/" + scenario_id + "/phases", {
         method: "POST",
@@ -32,31 +32,14 @@ function create_phase(event){
         },
         body: JSON.stringify(phase)
     })
-
     .then(response => {
-        if (response.ok) {
-            return response.json(); // Parse the response body as JSON
-        } else {
+        if (!response.ok) {
             throw new Error('Request failed.'); // Throw an error for non-successful response
         }
     })
-
-    // .then(data => {
-    //     // Process the JSON data
-    //     phase_id = data.phase.id;
-    //     // Perform further actions based on the response data
-    //     if (data.success) {
-    //         // Show success message
-    //     } else {
-    //         // Show error message
-    //     }
-    // })
-    // .then(() => {
-    //     window.location.href = "/scenarios/" + scenarios_id + "/phases" + phase_id + "/edit";
-    // })
-    // .catch(error => {
-    //     console.error('An error occurred:', error);
-    // });
+    .then(() => {
+        window.location.href = "/scenarios/" + scenario_id + "/edit";
+    })
 }
 
 function scenario_save(event){
@@ -96,15 +79,6 @@ function scenario_delete(event){
 
     fetch("/scenarios/" + scenario_id, {
         method: "DELETE"
-    })
-    .then(data => {
-        // Process the JSON data
-        // Perform further actions based on the response data
-        if (data.success) {
-            // Show success message
-        } else {
-            // Show error message
-        }
     })
     .then(() => {
         window.location.href = "/scenarios";
