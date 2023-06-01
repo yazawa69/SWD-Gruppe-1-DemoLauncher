@@ -108,7 +108,7 @@
             <div class="textbox_middle_main_modal" >
                 @foreach($device_types as $device_type)
                 <div class="box_middle">
-                    <div onclick="window.location.href='/device-types/{{ $device_type->id }}/devices';" class="overflow_middle">
+                    <div onclick="set_scenario_id({{ $scenario->id }})" data-bs-dismiss="modal" class="overflow_middle">
                         <img class="selection_image" src="../images/Bildschirm.png"></img>
                         <p class="selection_text text-nowrap">{{ $device_type->name }}</p>
                     </div>
@@ -118,25 +118,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary button_small_empty" data-bs-dismiss="modal">Schließen</button>
-            <button type="button" class="btn btn-primary button_small" id="create_scenario_btn" data-toggle="modal" data-target="#device-modal" data-dismiss="modal">Erstellen</button>
-        </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="device-modal" tabindex="-1" aria-labelledby="DeviceModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="deviceModal">Gerät hinzufügen</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>hello</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary button_small_empty" data-bs-dismiss="modal">Schließen</button>
-            <button type="submit" class="btn btn-primary button_small" id="create_scenario_btn">Erstellen</button>
+            <button type="button" class="btn btn-primary button_small" id="create_scenario_btn">Erstellen</button>
         </div>
         </div>
     </div>
