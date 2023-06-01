@@ -4,8 +4,8 @@ const scenario_save_btn = document.getElementById("scenario_save_btn");
 const scenario_delete_btn = document.getElementById("scenario_delete_btn");
 
 phase_create_btn.addEventListener("click", create_phase);
-scenario_save_btn.addEventListener("click", save_scenario);
-scenario_delete_btn.addEventListener("click", delete_scenario);
+scenario_save_btn.addEventListener("click", scenario_save);
+scenario_delete_btn.addEventListener("click", scenario_delete);
 
 const queryString = window.location.href;
 const regex = /\/(\d+)\//;
@@ -59,7 +59,7 @@ function create_phase(event){
     // });
 }
 
-function save_scenario(event){
+function scenario_save(event){
     event.preventDefault();
 
     const scenario_name = document.getElementById("scenario_name").innerHTML;
@@ -86,35 +86,17 @@ function save_scenario(event){
         }
     })
 
-    .then(data => {
-        // Process the JSON data
-        // Perform further actions based on the response data
-        if (data.success) {
-            // Show success message
-        } else {
-            // Show error message
-        }
-    })
     .catch(error => {
         console.error('An error occurred:', error);
     });
 }
 
-function delete_scenario(event){
+function scenario_delete(event){
     event.preventDefault();
 
     fetch("/scenarios/" + scenario_id, {
         method: "DELETE"
     })
-
-    .then(response => {
-        if (response.ok) {
-            return response.json(); // Parse the response body as JSON
-        } else {
-            throw new Error('Request failed.'); // Throw an error for non-successful response
-        }
-    })
-
     .then(data => {
         // Process the JSON data
         // Perform further actions based on the response data
