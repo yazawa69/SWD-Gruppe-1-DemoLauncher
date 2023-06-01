@@ -62,7 +62,8 @@
                         </div>
                         @endforeach
                         <div class="textbox_very_small">
-                            <div class="overflow_very_small" id="loadModalBtn">
+                            <div class="overflow_very_small" data-bs-toggle="modal"
+                            data-bs-target="#demo-material-selection-modal">
                                 <img class="x_image_2" src="../images/Pluszeichen.png"></img>
                                 <p class="text_phase">Hinzufügen</p>
                             </div>
@@ -100,9 +101,14 @@
 </div>
 
 <!-- add demo material modal -->
-<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceTypeModal" aria-hidden="true"
+<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceSelectionModal" aria-hidden="true"
     style="margin-top: 15vh;">
     @livewire('device-selection-modal')
+</div>
+
+<div class="modal fade" id="demo-material-selection-modal" aria-labelledby="DemoMaterialModal" aria-hidden="true"
+    style="margin-top: 15vh;">
+    @livewire('demo-material-selection-modal')
 </div>
 
 

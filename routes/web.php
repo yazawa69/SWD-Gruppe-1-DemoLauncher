@@ -14,13 +14,9 @@ use Illuminate\Database\QueryException;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('scenarios.index');
-});
+// return landing page
+Route::get('/', [ScenarioController::class, 'landing']);
 
-Route::post('/phase-devices', [Test::class, 'createPhaseDevice']);
-
-// scenarios
 // fetch scenario overview view
 Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
 

@@ -12,7 +12,6 @@ class DeviceSelectionModal extends Component
     public $device_type;
     public $devices;
     
-
     public function mount()
     {
         $this->device_types = DeviceType::all();
