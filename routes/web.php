@@ -141,6 +141,14 @@ Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])
 
 Route::post('/demo-material-types', [Test::class, 'createDemoMaterialType']);
 
+// raw demo materials 
+
+Route::get('/demo-materials-types/raw', function(){
+    $demo_material_types = \App\Models\DemoMaterialType::all();
+
+    return view('demo-material-types-modal', ['demo_material_types' => $demo_material_types]);
+});
+
 
 // get som
 Route::get('/das', function(){
