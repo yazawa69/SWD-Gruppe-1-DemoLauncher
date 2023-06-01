@@ -15,6 +15,16 @@ class ScenarioController extends Controller
         $this->scenarios = $scenarios;
     }
 
+    public function landing()
+    {
+        $scenarios = $this->scenarios->getAll();
+        if (!$scenarios)
+        {
+            return response(500);
+        }
+        return view('scenarios.landing', ['scenarios' => $scenarios]);
+    }
+
     public function index()
     {
         // TODO: display scenario overview view
