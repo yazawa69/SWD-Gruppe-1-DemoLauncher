@@ -6,15 +6,6 @@
         }
 
         .box_middle {
-            /* margin-left: auto;
-            margin-right: auto;
-            margin-top: 0vh;
-            margin-bottom: 0vh;
-            width: 50vw;
-            padding: 0px;
-            height: 20px;
-            border: solid 3px #03b670;
-            border-radius: 5px; */
             margin: 0;
             margin-left: auto;
             margin-right: auto;

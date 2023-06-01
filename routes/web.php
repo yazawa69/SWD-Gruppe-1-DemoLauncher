@@ -53,7 +53,7 @@ Route::post('/scenarios/{scenario_id}/phases', [PhaseController::class, 'create'
 Route::get('/scenarios/{scenario_id}/phases/{phase_id}', [PhaseController::class, 'show']);
 
 // fetch the phase edit view
-Route::get('/scenarios/{scenario_id}/phases/{phase_id}/edit', [PhaseController::class, 'edit']);
+Route::get('/scenarios/{scenario_id}/phases/{phase_id}/edit', [PhaseController::class, 'edit'])->name('phases.edit');
 
 // update phase
 Route::patch('/scenarios/{scenario_id}/phases/{phase_id}', [PhaseController::class, 'update']);

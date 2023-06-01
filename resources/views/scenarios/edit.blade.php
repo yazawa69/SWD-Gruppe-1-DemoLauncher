@@ -57,7 +57,7 @@
                     <th>{{ $i + 1 }}</th>
                     <td>{{ $phases[$i]->name }}</td>
                     <td class="right">
-                        <button onclick="window.location.href='/scenarios/{{ $scenario->id }}/phases/{{ $phases[$i]->id }}/edit';"
+                        <button onclick="window.location.href = '{{ route('phases.edit', ['scenario_id' => $scenario->id, 'phase_id' => $phases[$i]->id]) }}'"
                             class="btn btn-secondary button_very_small">bearbeiten</button>
                     </td>
                     </tr>
