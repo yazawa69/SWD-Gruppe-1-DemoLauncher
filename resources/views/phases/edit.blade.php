@@ -14,7 +14,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+{{-- <script src="../JavaScript-Dateien/main.js" defer></script> --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/phase-edit.js') }}" defer></script>
+@livewireStyles
 @endsection
 
 
@@ -59,7 +62,7 @@
                         </div>
                         @endforeach
                         <div class="textbox_very_small">
-                            <div class="overflow_very_small">
+                            <div class="overflow_very_small" id="loadModalBtn">
                                 <img class="x_image_2" src="../images/Pluszeichen.png"></img>
                                 <p class="text_phase">Hinzufügen</p>
                             </div>
@@ -68,7 +71,9 @@
                     </tr>
                     <tr>
                         <th>
-                            <img class="plus_image" src="../images/Pluszeichen.png"></img>
+
+                            <img class="plus_image" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" src="../images/Pluszeichen.png"></img>
+
                         </th>
                     </tr>
                     @endfor
@@ -93,4 +98,12 @@
         </a>
     </div>
 </div>
+
+<!-- add demo material modal -->
+<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceTypeModal" aria-hidden="true" style="margin-top: 15vh;">
+    @livewire('device-selection-modal')
+</div>
+
+
+@livewireScripts
 @endsection
