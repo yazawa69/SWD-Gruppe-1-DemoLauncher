@@ -30,7 +30,9 @@
           @endif
         <ul class="dropdown-menu" data-bs-theme="dark">
           @foreach ($scenarios as $scenario)
+            @if ($scenario != $scenarios[0])
             <li><button class="dropdown-item" onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button></li>
+            @endif
           @endforeach
         </ul>
       </div>
