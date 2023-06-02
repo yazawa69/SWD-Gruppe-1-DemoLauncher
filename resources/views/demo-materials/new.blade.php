@@ -28,37 +28,42 @@
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
-                            <input type="Name" class="form-control" id="demo_material_name" placeholder="Name">
+                            <label for="demo_material_name">Titel</label>
+                            <input name="name" type="Name" class="form-control" id="demo_material_name" placeholder="Name">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <input class="form-control" type="file" id="formFile">
+                    <div class="row g-3 align-items-center">
+                    <label for="demo_material_file">Datei</label>
+                    <input name="file" class="form-control" type="file" id="demo_material_file">
+                </div>
                 </div>
             </div>
         </div>
         <div class="textbox_big_main">
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
-                    <textarea class="form-control description" id="demo_material_desc placeholder="Beschreibung"></textarea>
+                    <label for="demo_material_desc">Beschreibung</label>
+                    <textarea name="description" class="form-control description" id="demo_material_description"></textarea>
                 </div>
             </div>
         </div>
         <div class="three_buttons">
             <div class="three_buttons_spacing" id="demo_materials_save_btn">
-                <a class="btn btn-secondary button_small" data-bs-theme="dark">
+                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Speichern
                 </a>
             </div>
             <div class="three_buttons_spacing" id="demo_materials_delete_btn">
-                <a class="btn btn-secondary button_small" data-bs-theme="dark">
+                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Löschen
                 </a>
             </div>
-            <div class="three_buttons_spacing">
-                <a class="btn btn-secondary button_small" id="demo_materials_cancel_btn" data-bs-theme="dark">
+            <div class="three_buttons_spacing" id="demo_materials_cancel_btn">
+                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
                     Abbrechen
                 </a>
             </div>

@@ -11,6 +11,7 @@ class DemoMaterialRepository
         $demo_material = new DemoMaterial();
         $demo_material->name = $name;
         $demo_material->file_path = $file_path;
+        $demo_material->description = '';
 
         $demo_material_type = DemoMaterialType::find($demo_material_type_id);
         if (!$demo_material_type)

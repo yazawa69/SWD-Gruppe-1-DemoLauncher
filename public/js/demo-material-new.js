@@ -16,20 +16,21 @@ for (i=0; i < pathArray.length; i++) {
 }
 
 console.log(demo_material_type_id);
-console.log(demo_material_id);
 
 function demo_materials_new(event){
     event.preventDefault();
 
-    const demo_material_name = document.getElementById('demo_material_name').innerHTML;
-    const demo_material_file = document.getElementById('demo_material_file');
-    const demo_material_description = document.getElementById('demo_material_description').innerHTML;
+    const demo_material_name = document.getElementById('demo_material_name').value;
+    const demo_material_file = document.getElementById('demo_material_file').files[0];
+    const demo_material_description = document.getElementById('demo_material_description').value;
 
     const demo_material = {
         name: demo_material_name,
         file: demo_material_file,
-        description: demo_material_description
+        description: demo_material_description,
     };
+
+    console.log(demo_material);
 
     fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials', {
         method: 'POST',
@@ -37,13 +38,13 @@ function demo_materials_new(event){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(demo_material)
-    })
-    .then(() => {
-        // window.location.href = '/scenarios/' + scenario_id + '/edit';
-    })
-    .catch(error => {
-        console.error('An error occurred:', error);
     });
+    // .then(() => {
+    //     // window.location.href = '/scenarios/' + scenario_id + '/edit';
+    // })
+    // .catch(error => {
+    //     console.error('An error occurred:', error);
+    // });
 }
 
 function demo_materials_cancel(event){
