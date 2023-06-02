@@ -21,33 +21,22 @@ function demo_materials_new(event){
     event.preventDefault();
 
     const demo_material_name = document.getElementById('demo_material_name').value;
-    console.log(demo_material_name);
-    const demo_material_file = document.getElementById('formFile').files[0];
-    console.log(demo_material_file);
-    const demo_material_description = document.getElementById('demo_material_desc').innerHTML;
+    const demo_material_file = document.getElementById('demo_material_file').files[0];
+    const demo_material_description = document.getElementById('demo_material_description').value;
 
-    // von ChatGPT
-    // const demo_material = new FormData(); // Create a new FormData object
-    // demo_material.append('name', demo_material_name); // Append the file to the form data
-    // demo_material.append('file', demo_material_file); // Append the file to the form data
-
-    const demo_material = {
-        name: demo_material_name,
-        file: demo_material_file
-        // description: demo_material_description
-    };
+    let form_data = new FormData();
+    form_data.append('name', demo_material_name);
+    form_data.append('file', demo_material_file);
+    form_data.append('description', demo_material_description);
 
     console.log(demo_material);
 
     fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: (demo_material)
+        body: form_data
     })
     .then(() => {
-        // window.location.href = '/scenarios/' + scenario_id + '/edit';
+        window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
     })
     .catch(error => {
         console.error('An error occurred:', error);

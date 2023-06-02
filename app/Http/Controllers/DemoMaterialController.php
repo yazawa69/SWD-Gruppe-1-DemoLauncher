@@ -70,7 +70,7 @@ class DemoMaterialController extends Controller
             }
         });
         
-        return response($this->demo_materials->getAllNamesByType($demo_material_type_id), 200);
+        return response(200);
     }
 
     public function show(int $demo_material_type_id, int $demo_material_id)

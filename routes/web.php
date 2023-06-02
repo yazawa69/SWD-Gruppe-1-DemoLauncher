@@ -133,26 +133,6 @@ Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo
 // demo material types
 Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])->name('demo-material-types.index');
 
-// demo material type
-
-Route::post('/demo-material-types', [Test::class, 'createDemoMaterialType']);
-
-// raw demo materials 
-
-Route::get('/demo-materials-types/raw', function(){
-    $demo_material_types = \App\Models\DemoMaterialType::all();
-
-    return view('demo-material-types-modal', ['demo_material_types' => $demo_material_types]);
-});
-
-
-// get som
-Route::get('/das', function(){
-    $scenario = \App\Models\Scenario::find(2);
-
-    $phases = $scenario->phases;
-
-    return response()->json($phases);
-});
+Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
 
 
