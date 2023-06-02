@@ -29,8 +29,6 @@ function demo_materials_new(event){
     form_data.append('file', demo_material_file);
     form_data.append('description', demo_material_description);
 
-    console.log(demo_material);
-
     fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials', {
         method: 'POST',
         body: form_data

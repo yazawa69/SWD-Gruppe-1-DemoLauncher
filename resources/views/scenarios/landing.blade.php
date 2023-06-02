@@ -19,9 +19,15 @@
         <h1>Startseite</h1>
       </div>
       <div class="dropdown szenario">
-        <button class="btn btn-secondary dropdown-toggle gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-theme="dark">
-          {{ $scenarios[0]->name }}
-        </button>
+          @if (count($scenarios) > 0)
+          <button class="btn btn-secondary dropdown-toggle gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button" id="add_scenario_button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-theme="dark">
+            {{ $scenarios[0]->name }}
+          </button>
+          @else
+          <button class="btn btn-secondary gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button" type="button"  aria-expanded="false" data-bs-theme="dark">
+            Szenario erstellen
+          </button>
+          @endif
         <ul class="dropdown-menu" data-bs-theme="dark">
           @foreach ($scenarios as $scenario)
             <li><button class="dropdown-item" onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button></li>
@@ -31,7 +37,10 @@
       <div class="textbox_big">
         <div class="overflow_big">
           <p id="szenario">
+            @if ( count($scenarios) > 0)
             {{ $scenarios[0]->description }}
+                
+            @endif
           </p>
         </div>
       </div>
