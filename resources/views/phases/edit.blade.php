@@ -30,7 +30,7 @@
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input type="Name" class="form-control" placeholder="Titel">
+                    <input type="Name" class="form-control" placeholder="Titel" id="phase_name">
                 </div>
             </div>
         </div>

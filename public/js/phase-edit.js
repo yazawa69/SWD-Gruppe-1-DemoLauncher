@@ -1,6 +1,7 @@
 const phase_save_btn = document.getElementById("phase_save_btn");
 const phase_delete_btn = document.getElementById("phase_delete_btn");
 const phase_cancel_btn = document.getElementById("phase_cancel_btn");
+const phase_name = document.getElementById("phase_name");
 
 phase_save_btn.addEventListener("click", phase_save);
 phase_delete_btn.addEventListener("click", phase_delete);
@@ -22,12 +23,19 @@ for (i=0; i < pathArray.length; i++) {
 function phase_save(event){
     event.preventDefault();
 
-    fetch("/scenarios/" + scenario_id, {
+    const phase_name_value = phase_name.value;
+
+    const phase = {
+        name: phase_name_value
+    }
+    event.preventDefault();
+
+    fetch("/scenarios/" + scenario_id + "/phases/" + phase_id, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(scenario)
+        body: JSON.stringify(phase)
     })
     .then(() => {
         window.location.href = "/scenarios/" + scenario_id + "/edit";

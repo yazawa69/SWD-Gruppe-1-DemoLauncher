@@ -58,8 +58,13 @@ function create_scenario(event){
 }
 
 
-function set_scenario_id(id) {
+function select_scenario(id) {
     scenario_id = id;
+
+    const scenario_description = document.getElementById("scenario_description");
+    const scenario_dropdown = document.getElementById("add_scenario_button");
+    scenario_dropdown.innerHTML = "Szenario auswählen";
+    scenario_description.innerHTML = "Beschreibung";
 }
 
 function edit_scenario(event) {

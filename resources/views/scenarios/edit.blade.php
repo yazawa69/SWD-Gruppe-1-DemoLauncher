@@ -101,7 +101,7 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="phase-creation-title">Titel</label>
-                    <input type="text" class="form-control modal_textbox container-fluid" id="phase-creation-title"
+                    <input type="text" class="form-control modal_textbox container-fluid" id="phase_creation_title"
                         placeholder=". . ." required="">
                 </div>
             </div>

@@ -1,4 +1,4 @@
-const phase_name = document.getElementById("phase-creation-title");
+const phase_name = document.getElementById("phase_creation_title");
 const phase_create_btn = document.getElementById("create_phase_btn");
 const scenario_save_btn = document.getElementById("scenario_save_btn");
 const scenario_delete_btn = document.getElementById("scenario_delete_btn");
@@ -67,6 +67,10 @@ function scenario_save(event){
         } else {
             throw new Error('Request failed.'); // Throw an error for non-successful response
         }
+    })
+
+    .then(() => {
+        window.location.href = "/scenarios";
     })
 
     .catch(error => {
