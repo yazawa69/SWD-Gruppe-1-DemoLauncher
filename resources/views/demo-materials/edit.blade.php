@@ -28,14 +28,26 @@
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
-                            <p>{{ $demo_material->name }}</p>
+                            <label for="demo_material_name">Titel</label>
+                            <input type="Name" class="form-control" id="demo_material_name" placeholder="{{ $demo_material->name }}" readonly>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <p></p>
+                    <div class="row g-3 align-items-center">
+                    <label for="formFile">Datei</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="textbox_big_main">
+            <div class="textbox_big">
+                <div class="overflow_big" data-bs-theme="dark">
+                    <label for="demo_material_desc">Beschreibung</label>
+                    <textarea class="form-control description" id="demo_material_desc" placeholder="{{ $demo_material->description}}"></textarea>
                 </div>
             </div>
         </div>

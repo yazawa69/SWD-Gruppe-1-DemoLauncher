@@ -20,6 +20,6 @@ class DemoMaterialType extends Model
     {
         return $this->hasMany(DemoMaterial::class);
     }
-
+    
 
 }

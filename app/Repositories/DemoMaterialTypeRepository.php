@@ -25,6 +25,12 @@ class DemoMaterialTypeRepository
         return $demo_material_types;
     }
 
+    public function getById($demo_material_type_id)
+    {
+        $demo_material_type = DemoMaterialType::find($demo_material_type_id);
+        return $demo_material_type;
+    }
+
     public function deleteById($demo_material_type_id)
     {
         $demo_material_type = DemoMaterialType::find($demo_material_type_id);

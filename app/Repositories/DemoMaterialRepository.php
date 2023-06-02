@@ -6,11 +6,11 @@ use App\Models\{DemoMaterial, DemoMaterialType};
 
 class DemoMaterialRepository
 {
-    public function createAndSave(int $demo_material_type_id, String $name, $file)
+    public function createAndSave(int $demo_material_type_id, String $name, String $file_path)
     {
         $demo_material = new DemoMaterial();
         $demo_material->name = $name;
-        $demo_material->file = $file;
+        $demo_material->file_path = $file_path;
 
         $demo_material_type = DemoMaterialType::find($demo_material_type_id);
         if (!$demo_material_type)
@@ -45,6 +45,12 @@ class DemoMaterialRepository
     {
         $demo_materials = DemoMaterial::where('demo_material_type_id', $demo_material_type_id)->get();
         return $demo_materials;
+    }
+
+    public function getAllNamesByType(int $demo_material_type_id)
+    {
+        $demo_material_names = DemoMaterial::where('demo_material_type_id', $demo_material_type_id)->get('name');
+        return $demo_material_names;
     }
 
     public function deleteById(int $demo_material_id)

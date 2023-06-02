@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('demo_material_type_id')->constrained();
             $table->timestamps();
             $table->string('name');
-            $table->binary('file');
+            $table->string('file_path');
+            $table->string('description');
         });
     }
 

@@ -12,11 +12,17 @@ class DemoMaterial extends Model
 
     protected $fillable = [
         'name',
-        'file',
+        'file_path',
+        'description',
+    ];
+
+    protected $attributes = [
+        'description' => '',
     ];
 
     private $name;
-    private $file;
+    private $file_path;
+    private $description;
 
     public function demoMaterialType(): BelongsTo
     {

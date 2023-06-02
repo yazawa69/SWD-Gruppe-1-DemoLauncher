@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\DemoMaterialRepository;
+use App\Repositories\{DemoMaterialRepository, DemoMaterialTypeRepository};
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
 class DemoMaterialController extends Controller
 {
     protected DemoMaterialRepository $demo_materials;
+    protected DemoMaterialTypeRepository $demo_material_types;
 
-    public function __construct(DemoMaterialRepository $demo_materials)
+    public function __construct(DemoMaterialRepository $demo_materials, DemoMaterialTypeRepository $demo_material_types)
     {
         $this->demo_materials = $demo_materials;
+        $this->demo_material_types = $demo_material_types;
     }
 
     public function index(int $demo_material_type_id)
@@ -34,12 +39,38 @@ class DemoMaterialController extends Controller
 
     public function create(int $demo_material_type_id, Request $req)
     {
-        $data = $req->all();
-        if (!$this->demo_materials->createAndSave($demo_material_type_id, $data['name'], $data['file']))
+        // check if the filetypes match
+        $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
+        $extension = $req->file->extension();
+        if (".$extension" != $demo_material_type->filename_extension)
         {
-            return response(500);
+            return response("File doesn't match the selected filetype", 500);
         }
-        return response(200);
+        // check if name already taken
+        if ($this->demo_materials->getAllNamesByType($demo_material_type_id)->contains('name', $req->name))
+        {
+            return response("Name already taken", 500);
+        }
+
+        DB::transaction(function() use ($demo_material_type, $req) {
+            
+            // insert the demo material entry into database
+            $extension = $req->file->extension();
+            $file_name = "$req->name.$extension";
+            $file_path = "materials/$extension/$file_name";
+            if (!$this->demo_materials->createAndSave($demo_material_type->id, $req->name, $file_path))
+            {
+                throw new Exception("Failed to create demo material");
+            }
+
+            // store the file
+            if (!$req->file->storeAs("materials/$extension", $file_name))
+            {
+                throw new Exception("Failed to store file");
+            }
+        });
+        
+        return response($this->demo_materials->getAllNamesByType($demo_material_type_id), 200);
     }
 
     public function show(int $demo_material_type_id, int $demo_material_id)
