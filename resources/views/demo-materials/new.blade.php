@@ -42,7 +42,7 @@
         <div class="textbox_big_main">
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
-                    <textarea class="form-control description" id="demo_material_desc placeholder="Beschreibung"></textarea>
+                    <textarea class="form-control description" id="demo_material_desc" placeholder="Beschreibung"></textarea>
                 </div>
             </div>
         </div>
