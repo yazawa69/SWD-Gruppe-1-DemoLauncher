@@ -53,7 +53,7 @@ class ScenarioRepository
         return $scenario->delete();
     }
 
-    public function getScenarioPhase(int $scenario_id, int $phase_id)
+    public function getScenarioPhase(int $scenario_id, int $phase_position)
     {
         $scenario = Scenario::find($scenario_id);
         if (!$scenario)
@@ -61,7 +61,7 @@ class ScenarioRepository
             return false;
         }
 
-        $phase = $scenario->phases()->find($phase_id);
+        $phase = $scenario->phases()->where('position', $phase_position)->first();
 
         return $phase;
     }

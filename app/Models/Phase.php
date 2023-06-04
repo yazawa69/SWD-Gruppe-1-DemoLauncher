@@ -15,6 +15,7 @@ class Phase extends Model
     ];
     
     private $name;
+    private $position;
 
     public function scenario(): BelongsTo
     {

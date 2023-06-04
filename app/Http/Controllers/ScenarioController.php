@@ -91,7 +91,7 @@ class ScenarioController extends Controller
         return response(200);
     }
 
-    public function run(int $scenario_id, int $phase_id)
+    public function run(int $scenario_id, int $phase_position)
     {
         $scenario = $this->scenarios->getById($scenario_id);
         if (!$scenario)
@@ -99,7 +99,7 @@ class ScenarioController extends Controller
             return response(500);
         }
 
-        $phase = $this->scenarios->getScenarioPhase($scenario_id, $phase_id);
+        $phase = $this->scenarios->getScenarioPhase($scenario_id, $phase_position);
         if (!$phase)
         {
             return response(500);

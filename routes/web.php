@@ -36,7 +36,7 @@ Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update'])-
 Route::delete('/scenarios/{scenario_id}', [ScenarioController::class, 'destroy']);
 
 // run scenario
-Route::get('/scenarios/{scenario_id}/run/phase/{phase_id}', [ScenarioController::class, 'run']);
+Route::get('/scenarios/{scenario_id}/run/phases/{position}', [ScenarioController::class, 'run']);
 
 // phases
 // fetch phase creation view

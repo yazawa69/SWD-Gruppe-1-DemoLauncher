@@ -15,6 +15,7 @@ return new class extends Migration
                 $table->foreignId('scenario_id')->constrained()->onDelete('cascade');
                 $table->timestamps();
                 $table->string('name');
+                $table->integer('position');
             });
         }
     }

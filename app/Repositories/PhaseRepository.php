@@ -3,36 +3,33 @@
 namespace App\Repositories;
 
 use App\Models\Phase;
-use Illuminate\Support\Facades\DB;
+use App\Models\Scenario;
 
 class PhaseRepository
 {
     public function createAndSave(int $scenario_id, String $name)
     {
-        // only for testing. Should be removed for prod.
-        echo "creating phase";
-        echo "\n" . gettype($name);
-
-        // create the phase with all fillable attributes
+        // create the phase
         $phase = new Phase();
+
+        $scenario = Scenario::find($scenario_id);
+        if (!$scenario)
+        {
+            return false;
+        }
+
         $phase->scenario_id = $scenario_id;
         $phase->name = $name;
-        // // query the corresponding scneario
-        // $scenario = Scenario::find($scenario_id);
-        // if (!$scenario)
-        // {
-        //     /**
-        //      * Send some message to User, that an error has occured. 
-        //      * Whenever phases are created, a scenario should already exist. This can never be a user error.
-        //      */
-        //     return false;
-        // }
 
-        // // associate the phase with it's scenario
-        // $phase->scenario()->associate($scenario);
-        
-        return $phase->save();
-        
+        $position = $scenario->phases->count() + 1;
+        $taken_positions = $scenario->phases()->pluck('position');
+        if ($taken_positions->contains($position))
+        {
+            return false;
+        }
+        $phase->position = $position;
+
+        return $phase->save();        
     }
 
     public function getById(int $phase_id)
