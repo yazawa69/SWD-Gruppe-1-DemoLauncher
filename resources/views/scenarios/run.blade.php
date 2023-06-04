@@ -26,9 +26,7 @@
             <div class="textbox_middle">
                 <div class="overflow_middle">
                     <p>
-                        HEDONIST ROOTS
-                        Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not
-                        Latin, though it looks like it"
+                        {{ $scenario->description}}
                     </p>
                 </div>
             </div>

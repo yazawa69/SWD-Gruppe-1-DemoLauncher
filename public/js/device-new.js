@@ -29,7 +29,6 @@ function device_save (event){
         serial_number: device_serial_number
     }
 
-    console.log("device: " + JSON.stringify(device));
 
     fetch("/device-types/" + device_type_id + "/devices", {
         method: "POST",
