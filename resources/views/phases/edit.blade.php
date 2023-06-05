@@ -36,11 +36,11 @@
         </div>
     </div>
 </div>
-<div class="headline_szenario_h4">
+<div class="headline_phase_h4">
     <h4>{{ $phase->name }} - Elemente</h4>
 </div>
-<div class="textbox_big_szenario_verwalten">
-    <div class="overflow_big_szenario" data-bs-theme="dark">
+<div class="textbox_big_phase_verwalten">
+    <div class="overflow_big_phase" data-bs-theme="dark">
         <table class="table">
             <thead>
                 <tr>

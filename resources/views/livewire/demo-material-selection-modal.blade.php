@@ -102,19 +102,50 @@
         gap: 30px;
     }
 
-    .device_select_modal_body {
-        height: 40vh;
-    }
+        
 
-    .buffering-header {
-        margin-left: auto;
-        margin-right: auto;
-    }
+        .buffering-header {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .textbox_big_popup {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            height: 300px;
+            border: solid 3px #03b670;
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            border-color: #495057;
+            /* border-bottom: 0 none; */
+        }
+
+        .modal-footer {
+            border-color: #495057;
+            border-top: 0 none;
+        }
+
+        .device_select_modal_body {
+            height: 60vh;
+            background-color: #212529;
+
+        }
+
+        .device_select_modal_header{
+            background-color: #212529;
+        }
+
+        
+
     </style>
 
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-content border border-secondary ">
+            <div class="modal-header device_select_modal_header">
                 <h1 class="modal-title fs-5">Demomaterial hinzufügen</h1>
                 <button type="button" class="btn-close" wire:click="resetDemoMaterials()" data-bs-dismiss="modal"
                     aria-label="Close"></button>
@@ -139,21 +170,16 @@
                 <div class="headline_modal">
                     <h1>{{ $demo_material_type->filename_extension }}</h1>
                 </div>
-                <div class="textbox_middle_main_modal">
-                    <div class="gapped_flex_container">
-                        @foreach($demo_materials as $demo_material)
-                        <div class="box_middle" wire:key="demo_material-{{ $demo_material->id }}" onclick="add_demo_material({{ $demo_material->id }})">
-                            <div class="overflow_middle">
-                                <img class="selection_image" src="../images/Bildschirm.png"></img>
-                                <p class="selection_text text-nowrap">{{ $demo_material->name }}</p>
-                            </div>
+                <div class="textbox_big_popup">
+                    @foreach($demo_materials as $demo_material)
+                    <div class="overflow_big">
+                        <div>
+                            <button class="btn btn-secondary list" onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
                         </div>
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
                 @endif
-            </div>
-            <div class="modal-footer">
             </div>
         </div>
     </div>
