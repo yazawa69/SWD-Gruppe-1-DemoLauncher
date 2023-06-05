@@ -115,7 +115,7 @@ function add_demo_material(demo_material_id){
         body: JSON.stringify(phase_device)
     })
     .then(() => {
-        location.reload();
+        // location.reload();
     })
     .catch(error => {
         console.error('An error occurred:', error);

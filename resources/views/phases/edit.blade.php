@@ -40,7 +40,7 @@
     <h4>{{ $phase->name }} - Elemente</h4>
 </div>
 <div class="textbox_big_phase_verwalten">
-    <div class="overflow_big_szenario" data-bs-theme="dark">
+    <div class="overflow_big_phase" data-bs-theme="dark">
         <table class="table">
             <thead>
                 <tr>

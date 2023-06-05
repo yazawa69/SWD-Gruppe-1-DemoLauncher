@@ -5,7 +5,7 @@ body {
   color: white !important;
 }
 
-/*NEW CSS 05.06.2023*/
+/*NEW CSS from mattis 05.06.2023*/
 
 .textbox_big_phase_verwalten {
   position: fixed;
@@ -25,6 +25,13 @@ body {
   margin-top: 20vh;
   text-align: center;
 }
+
+.overflow_big_phase{
+  overflow: scroll;
+  height: 40vh;
+}
+
+/*NEW CSS from mattis 05.06.2023 until here*/
 
 /*NAVIGATION*/
 
@@ -118,6 +125,7 @@ body {
   position: fixed;
   margin-top: 15vh;
 }
+
 
 .textbox_big_szenario {
   position: fixed;

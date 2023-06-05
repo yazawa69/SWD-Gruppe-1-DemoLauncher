@@ -174,9 +174,7 @@
                     @foreach($demo_materials as $demo_material)
                     <div class="overflow_big">
                         <div>
-                            <button class="btn btn-secondary list">{{ $demo_material->name }}</button>
-                            {{-- <img class="selection_image" src="../images/Bildschirm.png"></img>
-                            <p class="selection_text text-nowrap">{{ $demo_material->name }}</p> --}}
+                            <button class="btn btn-secondary list" onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
                         </div>
                     </div>
                     @endforeach
