@@ -5,6 +5,27 @@ body {
   color: white !important;
 }
 
+/*NEW CSS 05.06.2023*/
+
+.textbox_big_phase_verwalten {
+  position: fixed;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 25vh;
+  width: 80vw;
+  padding: 15px;
+  height: 45vh;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
+
+.headline_phase_h4 {
+  width: 100vw;
+  position: fixed;
+  margin-top: 20vh;
+  text-align: center;
+}
+
 /*NAVIGATION*/
 
 .container-fluid {
