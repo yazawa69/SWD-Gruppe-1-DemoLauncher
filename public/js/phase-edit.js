@@ -9,6 +9,7 @@ phase_cancel_btn.addEventListener("click", phase_cancel);
 
 let scenario_id;
 let phase_id;
+let phase_device_id;
 const queryString = window.location.href;
 const pathArray = window.location.pathname.split('/');
 for (i=0; i < pathArray.length; i++) {
@@ -63,4 +64,61 @@ function phase_cancel(event){
     event.preventDefault();
 
     window.location.href = "/scenarios/" + scenario_id + "/edit";
+}
+
+function set_phase_device_id(id) {
+    phase_device_id = id;
+}
+
+function add_phase_device(device_id){
+    
+    const phase_device = {
+        phase_id: phase_id,
+        device_id: device_id
+    }
+    fetch("/scenarios/" + scenario_id + "/phases/" + phase_id + "/phasedevices", {
+        
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(phase_device)
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
+
+}
+
+function phase_cancel(event){
+    event.preventDefault();
+
+    window.location.href = "/scenarios/" + scenario_id + "/edit";
+}
+
+function add_demo_material(demo_material_id){
+    
+    const phase_device = {
+        demo_material_id: demo_material_id
+    }
+
+    console.log(phase_device);
+    fetch("/scenarios/" + scenario_id + "/phases/" + phase_id + "/phasedevices/" + phase_device_id + "/demomaterials", {
+        
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(phase_device)
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
+
 }
