@@ -22,9 +22,9 @@ cancel_btn.addEventListener("click", device_cancel);
 function device_save(event){
     event.preventDefault();
 
-    const device_name = document.getElementById("device_name").innerHTML;
-    const device_oem = document.getElementById("device_oem").innerHTML;
-    const device_serial_number = document.getElementById("device_serial_number").innerHTML;
+    const device_name = document.getElementById("device_name").value;
+    const device_oem = document.getElementById("device_oem").value;
+    const device_serial_number = document.getElementById("device_serial_number").value;
 
     const device = {
         name: device_name,

@@ -29,8 +29,9 @@
     <div class="textbox_small">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <input type="Name" class="form-control" placeholder="Titel" id="phase_name">
+                <div>
+                    <label>Titel:</label>
+                    <input type="Name" class="form-control" value="{{ $phase->name }}" id="phase_name">
                 </div>
             </div>
         </div>

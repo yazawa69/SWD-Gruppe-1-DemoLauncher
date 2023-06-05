@@ -26,27 +26,30 @@
         <div class="textbox_middle_main">
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center hundred">
                         <div class="col-auto">
-                            <p id="device_name">{{ $device->name }}</p>
+                            <label>Name:</label>
+                            <input type="Name" class="form-control" value="{{ $device->name }}" id="device_name">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center hundred">
                         <div class="col-auto">
-                            <p id="device_oem">{{ $device->oem }}</p>
+                            <label>Hersteller:</label>
+                            <input type="Name" class="form-control" value="{{ $device->oem }}" id="device_oem">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center hundred">
                         <div class="col-auto">
-                            <p id="device_serial_number">{{ $device->serial_number }}</p>
+                            <label>Seriennummer:</label>
+                            <input type="Name" class="form-control" value="{{ $device->serial_number }}" id="device_serial_number">
                         </div>
                     </div>
                 </div>

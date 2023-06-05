@@ -23,34 +23,22 @@ for (i=0; i < pathArray.length; i++) {
 function demo_material_save(event){
     event.preventDefault();
 
-    const device_name = document.getElementById("device_name").innerHTML;
-    const device_oem = document.getElementById("device_oem").innerHTML;
-    const device_serial_number = document.getElementById("device_serial_number").innerHTML;
+    const demo_material_name = document.getElementById('demo_material_name').value;
+    const demo_material_file = document.getElementById('demo_material_file').files[0];
+    const demo_material_description = document.getElementById('demo_material_description').value;
 
-    const device = {
-        name: device_name,
-        oem: device_oem,
-        serial_number: device_serial_number
-    }
+    let form_data = new FormData();
+    form_data.append('name', demo_material_name);
+    form_data.append('file', demo_material_file);
+    form_data.append('description', demo_material_description);
 
 
-    fetch("/device-types/" + device_type_id + "/devices/" + device_id, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(device)
-    })
-
-    .then(response => {
-        if (response.ok) {
-            return response.json(); // Parse the response body as JSON
-        } else {
-            throw new Error('Request failed.'); // Throw an error for non-successful response
-        }
+    fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials/' + demo_material_id, {
+        method: 'PATCH',
+        body: form_data
     })
     .then(() => {
-        window.location.href = "/device-types/" + device_type_id + "/devices";
+        // window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
     })
     .catch(error => {
         console.error('An error occurred:', error);
