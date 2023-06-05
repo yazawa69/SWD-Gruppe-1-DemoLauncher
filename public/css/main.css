@@ -89,6 +89,15 @@ body {
   border: solid 3px #03b670;
   border-radius: 15px;
 }
+.textbox_big_popup {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  height: 300px;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
 .overflow_big {
   overflow: scroll;
   height: 270px;
@@ -96,6 +105,7 @@ body {
 .textbox_big_main{
   position: fixed;
   margin-top: 15vh;
+  width: 100vw;
 }
 
 .textbox_big_szenario {
@@ -122,9 +132,26 @@ body {
   border-radius: 15px;
 }
 
+.textbox_big_phase_verwalten {
+  position: fixed;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 25vh;
+  width: 80vw;
+  padding: 15px;
+  height: 45vh;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
+
 .overflow_big_szenario {
   overflow: scroll;
   height: 25vh;
+}
+
+.overflow_big_phase{
+  overflow: scroll;
+  height: 40vh;
 }
 
 .box_middle {
@@ -155,15 +182,34 @@ body {
   width: 100vw;
   margin-top: 5vh;
 }
+.textbox_middle_main_popup{
+  width: 100%;
+}
 .overflow_middle {
+  display: flex;
+  overflow: scroll;
+  height: 6vh;
+}
+.overflow_middle_running {
   display: flex;
   overflow: scroll;
   height: 10vh;
 }
-
 .textbox_small {
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  padding: 13px;
+  height: 90px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
+.textbox_small_geraete {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17vh;
   margin-bottom: 5%;
   width: 80%;
   padding: 13px;
@@ -174,7 +220,7 @@ body {
 .overflow_small {
   display: flex;
   overflow: scroll;
-  height: 40px;
+  height: 65px;
 }
 
 .textbox_very_small {
@@ -220,6 +266,20 @@ body {
   height: 50px;
   border-radius: 15px;
   text-align: center;
+  color: white;
+  background-color: #03b670 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_small_popup {
+  width: 35vw;
+  height: 50px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
   background-color: #03b670 !important;
   display: flex;
   flex-wrap: wrap;
@@ -239,7 +299,23 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.button_very_small_outline {
+  width: 100px;
+  height: 25px;
+  padding: 0%;
+  border-style: solid;
+  border-color: #03b670;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #2b3035 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.button_very_small_outline:focus {
+  background-color: #03b670 !important;
+}
 .three_buttons {
   position: fixed;
   margin-top: 80vh;
@@ -344,7 +420,10 @@ body {
 
 .steuerung{
   position: fixed;
-  margin-top: 65vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 62vh;
+  width: 100vw;
 }
 
 .headline {
@@ -365,7 +444,14 @@ body {
 .headline_szenario_h4 {
   width: 100vw;
   position: fixed;
-  margin-top: 35vh;
+  margin-top: 36vh;
+  text-align: center;
+}
+
+.headline_phase_h4 {
+  width: 100vw;
+  position: fixed;
+  margin-top: 20vh;
   text-align: center;
 }
 
@@ -393,15 +479,19 @@ body {
 }
 
 /*FORMAT STUFF*/
-
 .space {
   height: 60px
 }
-
+.hundred{
+  width: 100%;
+}
 .divider {
   margin: 80px;
 }
-
+.fixed{
+  position: fixed;
+  margin-top: 10vh;
+}
 .centered {
   display: flex;
   flex-wrap: wrap;
@@ -415,27 +505,4 @@ body {
   flex-wrap: wrap;
   justify-content: right;
 }
-
-.modal-body{
-    background-color: #2b3035;
-}
-
-.modal-header{
-  background-color: #2b3035;
-}
-
-.modal-footer{
-    background-color: #2b3035;
-}
-
-.modal_textbox{
-  border: solid 3px #03b670;
-  border-radius: 15px;
-  color: white !important;
-}
-
-.modal_textbox::placeholder{
-  color: white;
-}
-
 /*# sourceMappingURL=main.css.map */

@@ -106,7 +106,7 @@ class ScenarioController extends Controller
         }
         $phase_devices = $phase->phaseDevices;
         
-        return view('scenarios.run', ['scenario' => $scenario, 'phase' => $phase, 'phase_devices' => $phase_devices]);
+        return view('scenarios.run', ['scenario' => $scenario, 'phases' => $scenario->phases, 'phase' => $phase, 'phase_devices' => $phase_devices]);
     }
 
 }
