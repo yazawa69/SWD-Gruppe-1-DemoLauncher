@@ -79,7 +79,6 @@ function start_scenario(event) {
     event.preventDefault();
 
     if (scenario_id != null) {
-        const phase_id = 2;
-        window.location.href = "/scenarios/" + scenario_id + "/run/phase/" + phase_id;
+        window.location.href = "/scenarios/" + scenario_id + "/run/phases/" + 1;
     }
 }

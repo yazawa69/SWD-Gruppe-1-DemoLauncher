@@ -63,7 +63,7 @@
                         @endforeach
                         <div class="textbox_very_small">
                             <div class="overflow_very_small" data-bs-toggle="modal"
-                            data-bs-target="#demo-material-selection-modal">
+                            data-bs-target="#demo-material-selection-modal" onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
                                 <img class="x_image_2" src="../images/Pluszeichen.png"></img>
                                 <p class="text_phase">Hinzufügen</p>
                             </div>

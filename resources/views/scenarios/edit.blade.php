@@ -25,17 +25,17 @@
     <div class="textbox_small">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                </div>
-                <div class="col-auto">
-                    <p id="scenario_name">{{ $scenario->name }}</p>
+                <div>
+                    <label>Name:</label>
+                    <input type="Name" class="form-control" id="scenario_name" value="{{ $scenario->name }}">
                 </div>
             </div>
         </div>
     </div>
     <div class="textbox_middle">
+        <label>Beschreibung:</label>
         <div class="overflow_middle" data-bs-theme="dark">
-            <p id="scenario_description">{{ $scenario->description }}</p>
+            <textarea class="form-control description_small" id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
@@ -57,7 +57,8 @@
                     <th>{{ $i + 1 }}</th>
                     <td>{{ $phases[$i]->name }}</td>
                     <td class="right">
-                        <button onclick="window.location.href = '{{ route('phases.edit', ['scenario_id' => $scenario->id, 'phase_id' => $phases[$i]->id]) }}'"
+                        <button
+                            onclick="window.location.href = '{{ route('phases.edit', ['scenario_id' => $scenario->id, 'phase_id' => $phases[$i]->id]) }}'"
                             class="btn btn-secondary button_very_small">bearbeiten</button>
                     </td>
                     </tr>
@@ -113,5 +114,3 @@
     </div>
 </div>
 @endsection
-
-

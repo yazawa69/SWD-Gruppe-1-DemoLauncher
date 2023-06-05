@@ -45,8 +45,8 @@ function phase_edit(event){
 function scenario_save(event){
     event.preventDefault();
 
-    const scenario_name = document.getElementById("scenario_name").innerHTML;
-    const scenario_description = document.getElementById("scenario_description").innerHTML;
+    const scenario_name = document.getElementById("scenario_name").value;
+    const scenario_description = document.getElementById("scenario_description").value;
 
     const scenario = {
         name: scenario_name,
