@@ -171,13 +171,13 @@
                     <h1>{{ $demo_material_type->filename_extension }}</h1>
                 </div>
                 <div class="textbox_big_popup">
-                    @foreach($demo_materials as $demo_material)
                     <div class="overflow_big">
+                        @foreach($demo_materials as $demo_material)
                         <div>
                             <button class="btn btn-secondary list" onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
                 </div>
                 @endif
             </div>
