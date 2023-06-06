@@ -107,7 +107,7 @@
     }
     </style>
 
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" data-bs-theme="dark">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Gerät hinzufügen</h1>
@@ -138,7 +138,8 @@
                 <div class="textbox_middle_main_modal">
                     <div class="gapped_flex_container">
                         @foreach($devices as $device)
-                        <div class="box_middle" wire:key="device-{{ $device->id }}" onclick="add_phase_device({{ $device->id }})">
+                        <div class="box_middle" wire:key="device-{{ $device->id }}"
+                            onclick="add_phase_device({{ $device->id }})">
                             <div class="overflow_middle">
                                 <img class="selection_image" src="../images/Bildschirm.png"></img>
                                 <p class="selection_text text-nowrap">{{ $device->name }}</p>

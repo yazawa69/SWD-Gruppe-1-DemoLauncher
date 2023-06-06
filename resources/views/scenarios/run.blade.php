@@ -102,9 +102,9 @@
                 @endfor
 
                 <button class="carousel-control-prev fixed" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="next">
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden">Prev</span>
                 </button>
                 <button class="carousel-control-next fixed" type="button" data-bs-target="#carouselExample"
                     data-bs-slide="next">
