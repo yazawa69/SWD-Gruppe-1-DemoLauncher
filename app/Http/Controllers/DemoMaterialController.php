@@ -57,7 +57,7 @@ class DemoMaterialController extends Controller
             $extension = $req->file->extension();
             $file_name = "$req->name.$extension";
             $file_path = "materials/$extension/$file_name";
-            if (!$this->demo_materials->createAndSave($demo_material_type->id, $req->name, $file_path))
+            if (!$this->demo_materials->createAndSave($demo_material_type->id, $req->name, $file_path, $req->description))
             {
                 throw new Exception("Failed to create demo material");
             }

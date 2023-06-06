@@ -6,12 +6,12 @@ use App\Models\{DemoMaterial, DemoMaterialType};
 
 class DemoMaterialRepository
 {
-    public function createAndSave(int $demo_material_type_id, String $name, String $file_path)
+    public function createAndSave(int $demo_material_type_id, String $name, String $file_path, String $description)
     {
         $demo_material = new DemoMaterial();
         $demo_material->name = $name;
         $demo_material->file_path = $file_path;
-        $demo_material->description = '';
+        $demo_material->description = $description;
 
         $demo_material_type = DemoMaterialType::find($demo_material_type_id);
         if (!$demo_material_type)

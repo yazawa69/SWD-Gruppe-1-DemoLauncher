@@ -38,7 +38,7 @@
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                     <label for="formFile">Datei:</label>
-                    <input class="form-control" type="file" id="demo_material_file">
+                    <input class="form-control" type="file" id="demo_material_file" placeholder="hallo.txt">
                 </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
                     <label for="demo_material_desc">Beschreibung:</label>
-                    <textarea class="form-control description" id="demo_material_description" value="{{ $demo_material->description}}"></textarea>
+                    <textarea class="form-control description" id="demo_material_description" >{{ $demo_material->description}}</textarea>
                 </div>
             </div>
         </div>

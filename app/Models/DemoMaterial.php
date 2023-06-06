@@ -16,10 +16,6 @@ class DemoMaterial extends Model
         'description',
     ];
 
-    protected $attributes = [
-        'description' => '',
-    ];
-
     private $name;
     private $file_path;
     private $description;
