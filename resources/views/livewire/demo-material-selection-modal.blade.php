@@ -102,48 +102,45 @@
         gap: 30px;
     }
 
-        
 
-        .buffering-header {
-            margin-left: auto;
-            margin-right: auto;
-        }
 
-        .textbox_big_popup {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 15px;
-            height: 300px;
-            border: solid 3px #03b670;
-            border-radius: 15px;
-        }
+    .buffering-header {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        .modal-header {
-            border-color: #495057;
-            /* border-bottom: 0 none; */
-        }
+    .textbox_big_popup {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        height: 300px;
+        border: solid 3px #03b670;
+        border-radius: 15px;
+    }
 
-        .modal-footer {
-            border-color: #495057;
-            border-top: 0 none;
-        }
+    .modal-header {
+        border-color: #495057;
+        /* border-bottom: 0 none; */
+    }
 
-        .device_select_modal_body {
-            height: 60vh;
-            background-color: #212529;
+    .modal-footer {
+        border-color: #495057;
+        border-top: 0 none;
+    }
 
-        }
+    .device_select_modal_body {
+        height: 60vh;
+        background-color: #212529;
 
-        .device_select_modal_header{
-            background-color: #212529;
-        }
+    }
 
-        
-
+    .device_select_modal_header {
+        background-color: #212529;
+    }
     </style>
 
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" data-bs-theme="dark">
         <div class="modal-content border border-secondary ">
             <div class="modal-header device_select_modal_header">
                 <h1 class="modal-title fs-5">Demomaterial hinzufügen</h1>
@@ -158,7 +155,8 @@
                 </div>
                 <div class="gapped_flex_container">
                     @foreach($demo_material_types as $demo_material_type)
-                    <div class="box_middle" wire:key="demo_material_type-{{ $demo_material_type->id }}" wire:click="loadDemoMaterials({{ $demo_material_type->id }})">
+                    <div class="box_middle" wire:key="demo_material_type-{{ $demo_material_type->id }}"
+                        wire:click="loadDemoMaterials({{ $demo_material_type->id }})">
                         <div class="overflow_middle">
                             <img class="selection_image" src="../images/Bildschirm.png"></img>
                             <p class="selection_text text-nowrap">{{ $demo_material_type->filename_extension }}</p>
@@ -174,7 +172,8 @@
                     <div class="overflow_big">
                         @foreach($demo_materials as $demo_material)
                         <div>
-                            <button class="btn btn-secondary list" onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
+                            <button class="btn btn-secondary list"
+                                onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
                         </div>
                         @endforeach
                     </div>

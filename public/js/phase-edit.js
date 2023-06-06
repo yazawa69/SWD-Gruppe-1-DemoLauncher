@@ -105,7 +105,6 @@ function add_demo_material(demo_material_id){
         demo_material_id: demo_material_id
     }
 
-    console.log(phase_device);
     fetch("/scenarios/" + scenario_id + "/phases/" + phase_id + "/phasedevices/" + phase_device_id + "/demomaterials", {
         
         method: "POST",

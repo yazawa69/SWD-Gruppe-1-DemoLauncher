@@ -26,10 +26,10 @@
         <div class="textbox_middle_main">
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-center hundred">
                         <div class="col-auto">
-                            <label for="demo_material_name">Titel</label>
-                            <input type="Name" class="form-control" id="demo_material_name" placeholder="{{ $demo_material->name }}" readonly>
+                            <label for="demo_material_name">Titel:</label>
+                            <input type="Name" class="form-control" id="demo_material_name" value="{{ $demo_material->name }}">
                         </div>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
-                    <label for="formFile">Datei</label>
-                    <input class="form-control" type="file" id="formFile">
+                    <label for="formFile">Datei:</label>
+                    <input class="form-control" type="file" id="demo_material_file">
                 </div>
                 </div>
             </div>
@@ -46,8 +46,8 @@
         <div class="textbox_big_main">
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
-                    <label for="demo_material_desc">Beschreibung</label>
-                    <textarea class="form-control description" id="demo_material_desc" placeholder="{{ $demo_material->description}}"></textarea>
+                    <label for="demo_material_desc">Beschreibung:</label>
+                    <textarea class="form-control description" id="demo_material_description" value="{{ $demo_material->description}}"></textarea>
                 </div>
             </div>
         </div>
