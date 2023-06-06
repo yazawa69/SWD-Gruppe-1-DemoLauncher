@@ -78,7 +78,6 @@
                                 data-bs-target="#device-selection-modal" src="../images/Pluszeichen.png"></img>
                         </th>
                     </tr>
-                    
             </tbody>
         </table>
     </div>
