@@ -15,8 +15,6 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
-console.log(demo_material_type_id);
-
 function demo_materials_new(event){
     event.preventDefault();
 

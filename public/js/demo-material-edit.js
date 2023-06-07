@@ -32,13 +32,12 @@ function demo_material_save(event){
     form_data.append('file', demo_material_file);
     form_data.append('description', demo_material_description);
 
-
-    fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials/' + demo_material_id, {
-        method: 'PATCH',
+    fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials/' + demo_material_id + '/update', {
+        method: 'POST',
         body: form_data
     })
     .then(() => {
-        // window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
+        window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
     })
     .catch(error => {
         console.error('An error occurred:', error);

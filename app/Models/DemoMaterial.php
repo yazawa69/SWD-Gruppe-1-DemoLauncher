@@ -16,6 +16,8 @@ class DemoMaterial extends Model
         'description',
     ];
 
+    protected $guarded = [];
+
     private $name;
     private $file_path;
     private $description;

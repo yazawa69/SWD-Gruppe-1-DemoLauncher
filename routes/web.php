@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceController, PhaseDeviceController, DeviceTypeController, DemoMaterialController, DemoMaterialTypeController};
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,15 @@ use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceContr
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// test
+Route::get('/test', function(){
+    return view('test');
+});
+Route::post('/test/submit', function(Request $req){
+    return response($req, 200);
+})->name('test.submit');
+
 
 // return landing page
 Route::get('/', [ScenarioController::class, 'landing']);
@@ -121,11 +130,11 @@ Route::post('/demo-material-types/{demo_material_type_id}/demo-materials', [Demo
 // fetch specific demo material
 Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'show']);
 
-// fetch demo material edit view
+// fetch demo material edit view    
 Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/edit', [DemoMaterialController::class, 'edit']);
 
 // update demo material
-Route::patch('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'update']);
+Route::post('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/update', [DemoMaterialController::class, 'update']);
 
 // delete demo material
 Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'destroy']);
@@ -134,5 +143,12 @@ Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo
 Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])->name('demo-material-types.index');
 
 Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
+
+Route::post('file-test', function(Request $req){
+    if ($req->file->getSize() === 0) {
+        return response("File is empty!", 500);
+    }
+    return response($req->file->extension(), 200);
+});
 
 

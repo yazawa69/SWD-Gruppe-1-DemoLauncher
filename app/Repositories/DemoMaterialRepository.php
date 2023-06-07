@@ -23,16 +23,20 @@ class DemoMaterialRepository
         return $demo_material->save();
     }
 
-    public function updateById(int $demo_material_id, String $name, $file)
+    public function updateById(int $demo_material_id, array $material_update_data)
     {
+
         $demo_material = DemoMaterial::find($demo_material_id);
         if (!$demo_material)
         {
             return false;
         }
 
-        $demo_material->name = $name;
-        $demo_material->file = $file;
+        $demo_material->fill(array(
+            'name' => $material_update_data['name'],
+            'description' => $material_update_data['description'],
+            'file_path' => $material_update_data['file_path'],
+        ));        
         return $demo_material->save();
     }
 

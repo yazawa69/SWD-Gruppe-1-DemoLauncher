@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\{DemoMaterialRepository, DemoMaterialTypeRepository};
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Exception;
 
 class DemoMaterialController extends Controller
@@ -38,12 +39,17 @@ class DemoMaterialController extends Controller
 
     public function create(int $demo_material_type_id, Request $req)
     {
+        $file = $req->file;
+        // check if file is empty
+        if ($file->getSize() === 0) {
+            return response("File is empty!", 500);
+        }
         // check if the filetypes match
         $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
-        $extension = $req->file->extension();
+        $extension = $file->extension();
         if (".$extension" != $demo_material_type->filename_extension)
         {
-            return response("File doesn't match the selected filetype", 500);
+            return response("File doesn't match the selected filetype!", 500);
         }
         // check if name already taken
         if ($this->demo_materials->getAllNamesByType($demo_material_type_id)->contains('name', $req->name))
@@ -52,10 +58,12 @@ class DemoMaterialController extends Controller
         }
 
         DB::transaction(function() use ($demo_material_type, $req) {
-            
+            $file = $req->file;
+
             // insert the demo material entry into database
-            $extension = $req->file->extension();
-            $file_name = "$req->name.$extension";
+            $extension = $file->extension();
+            $org_file_name = $file->getClientOriginalName();
+            $file_name = "$req->name-$org_file_name";
             $file_path = "materials/$extension/$file_name";
             if (!$this->demo_materials->createAndSave($demo_material_type->id, $req->name, $file_path, $req->description))
             {
@@ -97,18 +105,65 @@ class DemoMaterialController extends Controller
 
     public function update(int $demo_material_type_id, int $demo_material_id, Request $req)
     {
-        // TODO: this should update and then redirect to the show view of the updated demo material
+        // get the current demo material
+        $current_demo_mat = $this->demo_materials->getById($demo_material_id);
         $data = $req->all();
-        if (!$this->demo_materials->updateById($demo_material_id, $data['name'], $data['file']))
+        // check if name already taken
+        if ($current_demo_mat->name != $req->name){
+            if ($this->demo_materials->getAllNamesByType($demo_material_type_id)->contains('name', $req->name))
+            {
+                return response("Name already taken", 500);
+            }
+        }
+
+        $file = $req->file;
+        // check if file is empty
+        if ($file->getSize() === 0) {
+            return response("File is empty!", 500);
+        }
+        // check if the filetypes match
+        $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
+        $extension = $file->extension();
+        if (".$extension" != $demo_material_type->filename_extension)
+        {
+            return response("File doesn't match the selected filetype!", 500);
+        }
+        
+        $org_file_name = $file->getClientOriginalName();
+        $file_name = "$req->name-$org_file_name";
+        $file_path = "materials/$extension/$file_name";
+        $data = ['name'=>$data['name'], 'description'=>$data['description'], 'file_path'=>$file_path];
+
+        // delete the old file (if it won't be overwritten)
+        $former_file_path = $current_demo_mat->file_path;
+        if ($former_file_path != $file_path)
+        {
+            Storage::delete($former_file_path);
+        }
+
+        // store the file
+        if (!$req->file->storeAs("materials/$extension", $file_name))
+        {
+            throw new Exception("Failed to store file");
+        }
+
+        if (!$this->demo_materials->updateById($demo_material_id, $data))
         {
             return response(500);
         }
+
         return response(200);
     }
 
-    public function destroy(int $demo_material_id)
+    public function destroy(int $demo_material_type_id, int $demo_material_id)
     {
-        // TODO: this should redirect to the index view
+        $current_demo_mat = $this->demo_materials->getById($demo_material_id);
+        $file_path = $current_demo_mat->file_path;
+
+        // delete the file
+        Storage::delete($file_path);
+        
+
         if (!$this->demo_materials->deleteById($demo_material_id))
         {
             return response(500);
