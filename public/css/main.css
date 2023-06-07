@@ -47,10 +47,10 @@ body {
   margin-right: auto;
 }
 
-.active {
+/* .active {
   background-color: #03b670 !important;
   border-radius: 15px !important;
-}
+} */
 
 .nav-link:hover {
   background-color: #03b670 !important;

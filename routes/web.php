@@ -14,15 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 
-// test
-Route::get('/test', function(){
-    return view('test');
-});
-Route::post('/test/submit', function(Request $req){
-    return response($req, 200);
-})->name('test.submit');
-
-
 // return landing page
 Route::get('/', [ScenarioController::class, 'landing']);
 
@@ -144,11 +135,6 @@ Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])
 
 Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
 
-Route::post('file-test', function(Request $req){
-    if ($req->file->getSize() === 0) {
-        return response("File is empty!", 500);
-    }
-    return response($req->file->extension(), 200);
-});
+
 
 
