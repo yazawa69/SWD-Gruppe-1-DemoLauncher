@@ -16,6 +16,15 @@
 </script>
 @endsection
 
+
+<style>
+
+    .test{
+        background-color: #000000;
+    }
+
+</style>
+
 <body>
     <main>
         @section('content')
@@ -26,7 +35,7 @@
             <div class="textbox_middle">
                 <div class="overflow_middle_running">
                     <p>
-                        {{ $scenario->description}}
+                        {{ $scenario->description }}
                     </p>
                 </div>
             </div>
@@ -48,29 +57,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($phase_devices as $phase_device)
+                                    @for ($i = 0; $i < count($phase_devices); $i++)
                                     <tr>
                                         <th><button class="btn btn-secondary button_very_small_outline"
-                                                data-bs-theme="dark">{{ $phase_device->device->name }}</button></th>
+                                                data-bs-theme="dark">{{ $phase_devices[$i]->device->name }}</button></th>
 
-                                        @if($phase_device->demoMaterials->count() != 0) {
+                                        @if($phase_devices[$i]->demoMaterials->count() != 0)
                                             <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
-                                            data-bs-target="#RunningPopUp">
-                                            {{ $phase_device->demoMaterials[0]->name }}
+                                            data-bs-target="#RunningPopUp{{$i}}">
+                                            {{ $phase_devices[$i]->demoMaterials[0]->name }}
                                         </td>
-                                        }
-                                        @endif
                                         
-
+                                        @endif
                                     </tr>
-                                    @endforeach
+                                    @endfor
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                @for($i = 1; $i < count($phases); $i++) <div class="carousel-item">
+                @for($i = 1; $i < count($phases); $i++) 
+                <div class="carousel-item">
                     <div class="headline_szenario_h3">
                         <h3>{{ $phases[$i]->name }}</h3>
                     </div>
@@ -101,8 +109,9 @@
                             </table>
                         </div>
                     </div>
+                    @endfor
             </div>
-            @endfor
+            
 
             <button class="carousel-control-prev fixed" type="button" data-bs-target="#carouselExample"
                 data-bs-slide="prev">
@@ -115,7 +124,9 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class="modal fade" id="RunningPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+
+        @for ($i = 0; $i < count($phase_devices); $i++)
+        <div class="modal fade" id="RunningPopUp{{ $i }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
             data-bs-theme="dark">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -127,7 +138,7 @@
                         <div class="textbox_big_popup">
                             <div class="overflow_big">
                                 <div>
-                                    @foreach($phase_device->demoMaterials as $demo_material)
+                                    @foreach($phase_devices[$i]->demoMaterials as $demo_material)
                                     <button class="btn btn-secondary list"
                                         data-bs-dismiss="modal">{{ $demo_material->name }}</button>
                                     @endforeach
@@ -138,6 +149,8 @@
                 </div>
             </div>
         </div>
+        @endfor
+
         <div class="steuerung">
             <button class="btn"><img src="../images/iconback.png" alt=""></button>
             <button class="btn"><img src="../images/iconplay.png" alt=""></button>
