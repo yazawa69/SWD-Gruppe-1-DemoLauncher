@@ -53,11 +53,14 @@
                                         <th><button class="btn btn-secondary button_very_small_outline"
                                                 data-bs-theme="dark">{{ $phase_device->device->name }}</button></th>
 
-
-                                        <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
+                                        @if($phase_device->demoMaterials->count() != 0) {
+                                            <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
                                             data-bs-target="#RunningPopUp">
                                             {{ $phase_device->demoMaterials[0]->name }}
                                         </td>
+                                        }
+                                        @endif
+                                        
 
                                     </tr>
                                     @endforeach
