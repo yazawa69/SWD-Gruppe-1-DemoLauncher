@@ -38,7 +38,7 @@
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                     <label for="formFile">Datei:</label>
-                    <input class="form-control" type="file" id="demo_material_file" placeholder="hallo.txt">
+                    <input class="form-control" type="file" id="demo_material_file" value="{{ $demo_material->file }}">
                 </div>
                 </div>
             </div>

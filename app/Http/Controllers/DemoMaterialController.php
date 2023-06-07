@@ -106,7 +106,7 @@ class DemoMaterialController extends Controller
         return response(200);
     }
 
-    public function destroy(int $demo_material_id)
+    public function destroy(int $demo_material_type_id, int $demo_material_id)
     {
         // TODO: this should redirect to the index view
         if (!$this->demo_materials->deleteById($demo_material_id))
