@@ -32,18 +32,17 @@
 </div>
 
 <style>
-    .textbox_big_szenario_new {
-  /* position: fixed; */
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-top: 30vh;
-  width: 80vw;
-  padding: 15px;
-  height: 30vh;
-  border: solid 3px #03b670;
-  border-radius: 15px;
+.textbox_big_szenario_new {
+    /* position: fixed; */
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 30vh;
+    width: 80vw;
+    padding: 15px;
+    height: 30vh;
+    border: solid 3px #03b670;
+    border-radius: 15px;
 }
-
 </style>
 
 
@@ -60,7 +59,7 @@
                         <thead>
                             <tr>
                                 <th>Auswahl</th>
-                                <th>Steuerung</th>
+                                <th>{{ count($phases) }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,7 +110,8 @@
                                     </button>
                                 </th>
                                 @if($phase_devices[$x]->demoMaterials()->exists())
-                                <td data-bs-toggle="modal" data-bs-target="#RunningPopUp{{ $i.$x }}">
+                                <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}">
                                     {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                 </td>
                                 @endif
@@ -141,49 +141,46 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a> --}}
+
+<div class="steuerung">
+    <button class="btn"><img src="../images/iconback.png" alt=""></button>
+    <button class="btn"><img src="../images/iconplay.png" alt=""></button>
+    <button class="btn"><img src="../images/iconforward.png" alt=""></button>
+</div>
+<div class="centered">
+    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button" type="button"
+        data-bs-theme="dark">
+        Beenden
+    </button>
 </div>
 
 
 {{-- create modal for each phase device x in each phase i --}}
-@for($i = 0; $i < count($phases); $i++) @for ($x=0; $x < count($phase_devices); $x++) <div class="modal fade"
-    id="RunningPopUp{{ $i.$x }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    data-bs-theme="dark">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Material auswählen</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="textbox_big_popup">
-                    <div class="overflow_big">
-                        <div>
-                            @php
-                            $phase_devices = $phases[$i]->phaseDevices;
-                            @endphp
-                            @foreach($phase_devices[$x]->demoMaterials as $demo_material)
-                            <button class="btn btn-secondary list" data-bs-dismiss="modal">{{ $demo_material->name
+@for($i = 0; $i < count($phases); $i++) @php $phase_devices=$phases[$i]->phaseDevices;
+    @endphp
+    @for ($x=0; $x < count($phase_devices); $x++) <div class="modal fade" id="RunningPopUp{{ $i.$x }}" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Material auswählen</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="textbox_big_popup">
+                        <div class="overflow_big">
+                            <div>
+
+                                @foreach($phase_devices[$x]->demoMaterials as $demo_material)
+                                <button class="btn btn-secondary list" data-bs-dismiss="modal">{{ $demo_material->name
                                 }}</button>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    @endfor
-    @endfor
-    <div class="steuerung">
-        <button class="btn"><img src="../images/iconback.png" alt=""></button>
-        <button class="btn"><img src="../images/iconplay.png" alt=""></button>
-        <button class="btn"><img src="../images/iconforward.png" alt=""></button>
-    </div>
-    <div class="centered">
-        <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button"
-            type="button" data-bs-theme="dark">
-            Beenden
-        </button>
-    </div>
-    </div>
-    @endsection
+        @endfor
+        @endfor
+        @endsection
