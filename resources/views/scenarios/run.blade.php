@@ -91,7 +91,7 @@
             <div class="headline_szenario_h3">
                 <h3>{{ $phases[$i]->name }}</h3>
             </div>
-            <div class="textbox_big_szenario" data-bs-theme="dark">
+            <div class="textbox_big_szenario_new" data-bs-theme="dark">
                 <div class="overflow_big_szenario_new">
                     <table class="table">
                         <thead>
