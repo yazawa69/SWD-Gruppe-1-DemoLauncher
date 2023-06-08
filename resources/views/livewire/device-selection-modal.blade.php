@@ -107,7 +107,8 @@
     }
     </style>
 
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" data-bs-theme="dark">
+
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Gerät hinzufügen</h1>
@@ -115,10 +116,9 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body device_select_modal_body">
-
                 @if (!$devices)
                 <div class="headline_modal">
-                    <h1>Gerät-Typ</h1>
+                    <h1>Geräte-Typ</h1>
                 </div>
                 <div class="gapped_flex_container">
                     @foreach($device_types as $device_type)
@@ -154,5 +154,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
