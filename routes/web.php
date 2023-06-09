@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
-
+use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceController, PhaseDeviceController, DeviceTypeController, DemoMaterialController, DemoMaterialTypeController};
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,157 +14,127 @@ use App\Http\Controllers;
 |
 */
 
-# laravel index
-Route::get('/', function () {
-    return view('welcome');
-});
+// return landing page
+Route::get('/', [ScenarioController::class, 'landing']);
 
-# Load Szenario Views
-# Szenario index
-Route::get(
-    '/szenario_index',
-    function () { return view('szenarioIndex');
-});
+// fetch scenario overview view
+Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
 
-# Szenario management
-Route::get(
-    '/szenario_management',
-    function () { return view('szenarioManagement');
-});
+// fetch scenario creation view
+Route::get('/scenarios/new', [ScenarioController::class, 'new']);
 
-# Szenario Editor
-Route::get(
-    '/szenario_editor',
-    function () { return view('szenarioEditor');
-});
+// add new scenario
+Route::post('/scenarios', [ScenarioController::class, 'create'])->name('scenarios.create');
 
-# Szenario Runner
-Route::get(
-    '\szenario_runner',
-    function () { return view('szenarioRunner');
-});
+// fetch scenario edit view
+Route::get('/scenarios/{scenario_id}/edit', [ScenarioController::class, 'edit'])->name('scenarios.edit');
 
-# load Classes from Szenario Controller
-# Save Szenario
-Route::get(
-    '\save_szenario',
-    [Controllers\ScenarioController::class, 'Save']
-);
+// update scenario
+Route::patch('/scenarios/{scenario_id}', [ScenarioController::class, 'update'])->name('scenarios.save');
 
-# Update Szenario
-Route::get(
-    '\update_szenario',
-    [Controllers\ScenarioController::class, 'Update']
-);
+// delete scenario
+Route::delete('/scenarios/{scenario_id}', [ScenarioController::class, 'destroy']);
 
-# delete Szenario
-Route::get(
-    '\delete_szenario',
-    [Controllers\ScenarioController::class, 'Delete']
-);
+// run scenario
+Route::get('/scenarios/{scenario_id}/run/phases/{position}', [ScenarioController::class, 'run']);
 
-# fetch all Szenarios
-Route::get(
-    '\fetch_szenarios',
-    [Controllers\ScenarioController::class, 'FetchAll']
-);
+// phases
+// fetch phase creation view
+Route::get('/scenarios/{scenario_id}/phases/new', [PhaseController::class, 'new']);
 
-# fetch Szenario
-Route::get(
-    '\fetch_szenario',
-    [Controllers\ScenarioController::class, 'Fetch']
-);
+// add new phase
+Route::post('/scenarios/{scenario_id}/phases', [PhaseController::class, 'create']);
 
-# launch Szenario
-Route::get(
-    '\launch_szenario',
-    [Controllers\ScenarioController::class, 'Launch']
-);
+// fetch specific phase
+Route::get('/scenarios/{scenario_id}/phases/{phase_id}', [PhaseController::class, 'show']);
 
-# stop Szenario
-Route::get(
-    '\stop_szenario',
-    [Controllers\ScenarioController::class, 'Stop']
-);
+// fetch the phase edit view
+Route::get('/scenarios/{scenario_id}/phases/{phase_id}/edit', [PhaseController::class, 'edit'])->name('phases.edit');
 
-# Load Appliance Views
-# Appliance Management
-Route::get(
-    '\appliance_management',
-    function () { return view('applianceManagement');
-});
+// update phase
+Route::patch('/scenarios/{scenario_id}/phases/{phase_id}', [PhaseController::class, 'update']);
 
-# Appliance Editor
-Route::get(
-    '\appliance_editor',
-    function () { return view('applianceEditor');
-});
+// delete phase
+Route::delete('/scenarios/{scenario_id}/phases/{phase_id}', [PhaseController::class, 'destroy']);
 
-# Load Classes from Appliance Controller
-# Save appliance
-Route::get(
-    '\save_appliance',
-    [Controllers\ApplianceController::class, 'Save']
-);
+// phase devices
+// fetch phase device creation view
+Route::get('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/new', [PhaseDeviceController::class, 'new']);
 
-# Update appliance
-Route::get(
-    '\update_appliance',
-    [Controllers\ApplianceController::class, 'Update']
-);
+// add new phase device
+Route::post('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices', [PhaseDeviceController::class, 'create']);
 
-# Delete appliance
-Route::get(
-    '\delete_appliance',
-    [Controllers\ApplianceController::class, 'Delete']
-);
+// fetch specific phase device
+Route::get('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_device_id}', [PhaseDeviceController::class, 'show']);
 
-# Fetch all appliances
-Route::get(
-    '\fetch_appliances',
-    [Controllers\ApplianceController::class, 'FetchAll']
-);
+// delete phase device
+Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_device_id}', [PhaseDeviceController::class, 'destroy']);
 
-# Fetch appliance
-Route::get(
-    '\fetch_appliance',
-    [Controllers\ApplianceController::class, 'Fetch']
-);
+// add demo material to phase device
+Route::post('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_device_id}/demomaterials', [PhaseDeviceController::class, 'addDemoMaterial']);
 
-# Load Demo Views
-# Demo Editor
-Route::get(
-    '\demo_editor',
-    function () { return view('demoEditor');
-});
+// remove demo material from phase device
+Route::delete('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_device_id}/demomaterials/{demo_material_id}', [PhaseDeviceController::class, 'removeDemoMaterial']);
 
-# Load Classes from Demo Controller
-# Save Demo
-Route::get(
-    '\save_demo',
-    [Controllers\DemoMaterialController::class, 'Save']
-);
+// devices
+// device overview
+Route::get('/device-types/{device_type_id}/devices', [DeviceController::class, 'index'])->name('device.index');
 
-# Update Demo
-Route::get(
-    '\update_demo',
-    [Controllers\DemoMaterialController::class, 'Update']
-);
+// fetch device creation view
+Route::get('/device-types/{device_type_id}/devices/new', [DeviceController::class, 'new']);
 
-# Delete Demo
-Route::get(
-    '\delete_demo',
-    [Controllers\DemoMaterialController::class, 'Delete']
-);
+// add new device
+Route::post('/device-types/{device_type_id}/devices', [DeviceController::class, 'create']);
 
-# Fetch all demos
-Route::get(
-    '\fetch_demos',
-    [Controllers\DemoMaterialController::class, 'FetchAll']
-);
+// fetch specific device
+Route::get('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'show']);
 
-# Fetch demo
-Route::get(
-    '\fetch_demo',
-    [Controllers\DemoMaterialController::class, 'Fetch']
-);
+// fetch device edit view
+Route::get('/device-types/{device_type_id}/devices/{device_id}/edit', [DeviceController::class, 'edit']);
+
+// TODO: update device
+Route::patch('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'update']);
+
+// TODO: delete device
+Route::delete('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'destroy']);
+
+// device types
+// fetch device type overview view
+Route::get('/device-types', [DeviceTypeController::class, 'index'])->name('device-types.index');
+
+// add new device type
+Route::post('/device-types', [DeviceTypeController::class, 'create']);
+
+// delete device type
+Route::delete('/device-types/{device_type_id}', [DeviceTypeController::class, 'destroy']);
+
+// demo material
+// fetch demo material overview view
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials', [DemoMaterialController::class, 'index'])->name('demo_material.index');
+
+// fetch demo material creation view
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/new', [DemoMaterialController::class, 'new'])->name('demo_mateial.new');
+
+// add new demo material
+Route::post('/demo-material-types/{demo_material_type_id}/demo-materials', [DemoMaterialController::class, 'create']);
+
+// fetch specific demo material
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'show']);
+
+// fetch demo material edit view    
+Route::get('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/edit', [DemoMaterialController::class, 'edit']);
+
+// update demo material
+Route::post('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}/update', [DemoMaterialController::class, 'update']);
+
+// delete demo material
+Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo_material_id}', [DemoMaterialController::class, 'destroy']);
+
+// demo material types
+Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])->name('demo-material-types.index');
+
+Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
+
+
+
+
