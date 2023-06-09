@@ -110,6 +110,3 @@ class ScenarioController extends Controller
     }
 
 }
-
-    }
-}
