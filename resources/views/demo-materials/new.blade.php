@@ -21,15 +21,16 @@
     <main>
         @section('content')
         <div class="headline">
-            <h1>Demomaterial</h1>
+            <h1>Demomaterial hinzufügen</h1>
+            <h2>{{ $demo_material_type->filename_extension }}</h2>
         </div>
         <div class="textbox_middle_main">
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
-                            <label for="demo_material_name">Titel</label>
-                            <input name="name" type="Name" class="form-control" id="demo_material_name" placeholder="Name">
+                            <label for="demo_material_name">Datei</label>
+                            <p id="demo_material_name">Bitte Datei hochladen...</p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +38,7 @@
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
-                    <label for="demo_material_file">Datei</label>
+                    <label for="demo_material_file">Datei hochladen</label>
                     <input name="file" class="form-control" type="file" id="demo_material_file">
                 </div>
                 </div>
@@ -52,11 +53,12 @@
             </div>
         </div>
         <div class="three_buttons">
-            <div class="three_buttons_spacing" id="demo_materials_save_btn">
-                <a class="btn btn-secondary button_small" data-bs-theme="dark">
+            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_save_btn">
+                {{-- <a class="btn btn-secondary button_small" data-bs-theme="dark">
                     Speichern
-                </a>
-            </div>
+                </a> --}}
+                Speichern
+            </button>
             <div class="three_buttons_spacing" id="demo_materials_delete_btn">
                 <a class="btn btn-secondary button_small" data-bs-theme="dark">
                     Löschen
