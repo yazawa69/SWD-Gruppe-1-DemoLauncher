@@ -21,7 +21,8 @@
     <main>
         @section('content')
         <div class="headline">
-            <h1>Geräte</h1>
+            <h1>Geräte verwalten</h1>
+            <h2>{{ $device_type->name }}</h2>
         </div>
         <div class="textbox_big">
             <div class="overflow_big">

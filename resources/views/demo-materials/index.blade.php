@@ -20,7 +20,8 @@
 
 @section('content')
 <div class="headline">
-    <h1>Demomaterial</h1>
+    <h1>Demomaterial verwalten</h1>
+    <h2>{{ $demo_material_type->filename_extension }}</h2>
 </div>
 <div class="textbox_big">
     <div class="overflow_big">

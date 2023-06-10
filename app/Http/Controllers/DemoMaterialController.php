@@ -23,12 +23,13 @@ class DemoMaterialController extends Controller
     public function index(int $demo_material_type_id)
     {
         // TODO: will return view with all demo material of specified type
+        $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
         $demo_materials = $this->demo_materials->getAllByType($demo_material_type_id);
         if (!$demo_materials)
         {
             return response(500);
         }
-        return view('demo-materials.index', ['demo_materials' => $demo_materials]);
+        return view('demo-materials.index', ['demo_materials' => $demo_materials, 'demo_material_type' => $demo_material_type]);
     }
 
     public function new(int $demo_material_type_id)

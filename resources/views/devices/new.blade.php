@@ -21,6 +21,7 @@
 @section('content')
 <div class="headline">
     <h1>Gerät</h1>
+    <h2>{{ $device_type->name }}</h2>
 </div>
 <div class="textbox_middle_main">
     <div class="textbox_small">

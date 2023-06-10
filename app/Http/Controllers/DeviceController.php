@@ -4,33 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\DeviceRepository;
+use App\Repositories\{DeviceRepository, DeviceTypeRepository};
 use Exception;
 
 class DeviceController extends Controller
 {
     protected DeviceRepository $devices;
 
-    public function __construct(DeviceRepository $devices)
+    public function __construct(DeviceRepository $devices, DeviceTypeRepository $device_types)
     {
         $this->devices = $devices;
+        $this->device_types = $device_types;
+
     }
 
     public function index(int $device_type_id)
     {
         // TODO: will return view with all devices of specified type
+        $device_type = $this->device_types->getById($device_type_id);
+        
+        
         $devices = $this->devices->getAllByType($device_type_id);
         if (!$devices)
         {
             return response(500);
         }
-        return view('devices.index', ['devices' => $devices]);
+        return view('devices.index', ['devices' => $devices, 'device_type' => $device_type]);
     }
 
-    public function new()
+    public function new(int $device_type_id)
     {
+        $device_types = $this->device_types->getById($device_type_id);
         // TODO: display device creation view
-        return view('devices.new');
+        return view('devices.new', ['device_type' => $device_types]);
     }
 
     public function create(int $device_type_id, Request $req)
@@ -66,16 +72,17 @@ class DeviceController extends Controller
         return response()->json($device);
     }
 
-    public function edit(int $device_id)
+    public function edit(int $device_type_id, int $device_id)
     {
         // TODO: will return the edit device view
+        $device_types = $this->device_types->getById($device_type_id);
         $device = $this->devices->getById($device_id);
         if (!$device)
         {
             return response("can't edit device", 500);
         }
         
-        return view('devices.edit', ['device' => $device]);
+        return view('devices.edit', ['device' => $device, 'device_type' => $device_types]);
     }
 
     public function update(int $device_id, Request $req)
