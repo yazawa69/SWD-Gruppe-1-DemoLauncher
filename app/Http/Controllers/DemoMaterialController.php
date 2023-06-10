@@ -113,42 +113,45 @@ class DemoMaterialController extends Controller
         // get the current demo material
         $current_demo_mat = $this->demo_materials->getById($demo_material_id);
         $data = $req->all();
-        // check if name already taken
-        if ($this->demo_materials->getAllNamesByType($demo_material_type_id)->contains('name', $req->name))
-        {
-            return response("Name already taken", 500);
+        $file_path = null;
+
+        if ($req->hasFile('file')){ 
+            // check if name already taken
+            if ($this->demo_materials->getAllNamesByType($demo_material_type_id)->contains('name', $req->name))
+            {
+                return response("Name already taken", 500);
+            }
+
+            $file = $req->file;
+            // check if file is empty
+            if ($file->getSize() === 0) {
+                return response("File is empty!", 500);
+            }
+            // check if the filetypes match
+            $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
+            $extension = $file->extension();
+            if (".$extension" != $demo_material_type->filename_extension)
+            {
+                return response("File doesn't match the selected filetype!", 500);
+            }
+            
+            // set file path
+            $org_file_name = $file->getClientOriginalName();
+            $file_path = "materials/$extension/$org_file_name";
+            // delete the old file (if it won't be overwritten)
+            $former_file_path = $current_demo_mat->file_path;
+            if ($former_file_path != $file_path)
+            {
+                Storage::delete($former_file_path);
+            }
+            // store the file
+            if (!$req->file->storeAs("materials/$extension", $req->name))
+            {
+                throw new Exception("Failed to store file");
+            }
         }
-        
-        $file = $req->file;
-        // check if file is empty
-        if ($file->getSize() === 0) {
-            return response("File is empty!", 500);
-        }
-        // check if the filetypes match
-        $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
-        $extension = $file->extension();
-        if (".$extension" != $demo_material_type->filename_extension)
-        {
-            return response("File doesn't match the selected filetype!", 500);
-        }
-        
-        $org_file_name = $file->getClientOriginalName();
-        $file_path = "materials/$extension/$org_file_name";
+
         $data = ['name'=>$data['name'], 'description'=>$data['description'], 'file_path'=>$file_path];
-
-        // delete the old file (if it won't be overwritten)
-        $former_file_path = $current_demo_mat->file_path;
-        if ($former_file_path != $file_path)
-        {
-            Storage::delete($former_file_path);
-        }
-
-        // store the file
-        if (!$req->file->storeAs("materials/$extension", $req->name))
-        {
-            throw new Exception("Failed to store file");
-        }
-
         if (!$this->demo_materials->updateById($demo_material_id, $data))
         {
             return response(500);

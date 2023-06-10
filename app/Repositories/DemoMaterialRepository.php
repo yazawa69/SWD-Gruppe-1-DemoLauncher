@@ -32,11 +32,16 @@ class DemoMaterialRepository
             return false;
         }
 
-        $demo_material->fill(array(
-            'name' => $material_update_data['name'],
-            'description' => $material_update_data['description'],
-            'file_path' => $material_update_data['file_path'],
-        ));        
+        $fill_array = [];
+        foreach ($material_update_data as $key => $value)
+        {
+            if ($value)
+            {
+                $fill_array[$key] = $value;
+            }
+        } 
+
+        $demo_material->fill($fill_array);        
         return $demo_material->save();
     }
 

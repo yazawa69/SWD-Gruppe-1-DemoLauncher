@@ -22,7 +22,7 @@ for (i=0; i < pathArray.length; i++) {
 }
 
 demo_material_file.onchange = function () {
-    demo_material_name.innerHTML = demo_material_file.files[0].name;
+    demo_material_name.innerHTML = demo_material_file.files[0].name.replace(/\.[^/.]+$/, ""); // filename without extension
     activate_button();
 };
 

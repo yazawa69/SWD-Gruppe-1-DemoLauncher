@@ -25,11 +25,9 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
-
 demo_material_file.onchange = function () {
-    demo_material_name.innerHTML = demo_material_file.files[0].name;
-};
-
+    demo_material_name.innerHTML = demo_material_file.files[0].name.replace(/\.[^/.]+$/, ""); // filename without extension
+}
 
 function demo_material_save(event){
     event.preventDefault();
@@ -42,14 +40,15 @@ function demo_material_save(event){
     form_data.append('name', demo_material_name_val);
     form_data.append('file', demo_material_file_val);
     form_data.append('description', demo_material_description_val);
+    
+    console.log(form_data);
 
     fetch('/demo-material-types/' + demo_material_type_id + '/demo-materials/' + demo_material_id + '/update', {
         method: 'POST',
-
         body: form_data
     })
     .then(() => {
-        window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
+        // window.location.href = '/demo-material-types/' + demo_material_type_id + '/demo-materials';
     })
     .catch(error => {
         console.error('An error occurred:', error);

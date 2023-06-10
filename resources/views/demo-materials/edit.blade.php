@@ -30,7 +30,7 @@
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
                             <label for="demo_material_name">Datei</label>
-                            <p id="demo_material_name">{{ $demo_material->name . $demo_material->demoMaterialType->filename_extension }}</p>
+                            <p id="demo_material_name">{{ $demo_material->name }}</p>
                         </div>
                     </div>
                 </div>
@@ -41,6 +41,14 @@
                     <label for="demo_material_file">Datei hochladen</label>
                     <input name="file" class="form-control" type="file" id="demo_material_file">
                 </div>
+                </div>
+            </div>
+        </div>
+        <div class="textbox_big_main">
+            <div class="textbox_big">
+                <div class="overflow_big" data-bs-theme="dark">
+                    <label for="demo_material_desc">Beschreibung</label>
+                    <textarea name="description" class="form-control description" id="demo_material_description">{{ $demo_material->description }}</textarea>
                 </div>
             </div>
         </div>
