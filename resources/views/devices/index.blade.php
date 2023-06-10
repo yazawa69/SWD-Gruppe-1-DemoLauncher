@@ -19,12 +19,14 @@
 
 <body>
     <main>
-        @section('content')
-        <div class="headline">
-            <h1>Geräte verwalten</h1>
-            <h2>{{ $device_type->name }}</h2>
+        @section('headline')
+        <div class="headline_new">
+            <h1 class="heading">Geräte verwalten</h1>
+            <h2 class="subheading">{{ $device_type->name }}</h2>
         </div>
-        <div class="textbox_big">
+        @endsection
+        @section('content')
+        <div class="textbox_big_new">
             <div class="overflow_big">
                 <div>
                     @foreach($devices as $device)

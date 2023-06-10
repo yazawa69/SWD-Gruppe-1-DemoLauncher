@@ -19,18 +19,9 @@
 
 <style>    
 
-    /* header{
-        width: 100vw;
-        position: absolute;
-        top: 0;
-    } */
-
     .headline_new{
         width: fit-content;
         margin-left: 15vw;
-        /* margin-right: auto; */
-        /* margin-left: 10vw;
-        margin-right: auto; */
         /* background-color: #343a40; */
     }
 
