@@ -65,6 +65,9 @@ function select_scenario(scenario_data) {
     const scenario_dropdown = document.getElementById("add_scenario_button");
     scenario_dropdown.innerHTML = scenario_data['name'];
     scenario_description.innerHTML = scenario_data['description'];
+
+    scenario_edit_btn.disabled = false;
+    scenario_start_btn.disabled = false;
 }
 
 function edit_scenario(event) {

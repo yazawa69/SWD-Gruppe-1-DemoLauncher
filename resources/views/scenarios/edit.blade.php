@@ -88,7 +88,7 @@
 </div>
 
 <!-- add phase modal -->
-<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true">
+<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -104,7 +104,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                <button type="button" class="btn btn-primary" id="create_phase_btn">Erstellen</button>
+                <button type="button" class="btn btn-primary" id="create_phase_btn" disabled>Erstellen</button>
             </div>
         </div>
     </div>

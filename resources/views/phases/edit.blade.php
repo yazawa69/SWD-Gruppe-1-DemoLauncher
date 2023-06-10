@@ -23,7 +23,7 @@
 
 @section('content')
 <div class="headline">
-    <h1>Szenario verwalten</h1>
+    <h1>Phase verwalten</h1>
 </div>
 <div class="textbox_middle_main">
     <div class="textbox_small">

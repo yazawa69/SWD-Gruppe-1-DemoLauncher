@@ -76,6 +76,8 @@ function create_scenario(event){
 
 function set_scenario_id(id) {
     scenario_id = id;
+    scenario_edit_btn.disabled = false;
+    scenario_start_btn.disabled = false;
 }
 
 function edit_scenario(event) {

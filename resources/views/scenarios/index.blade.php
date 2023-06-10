@@ -25,56 +25,52 @@
     <div class="overflow_big">
         <div>
             @foreach ($scenarios as $scenario)
-            <button class="btn btn-secondary list" onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button>
+            <button class="btn btn-secondary list"
+                onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button>
             @endforeach
         </div>
     </div>
 </div>
-<div class="centered button_middle_main1">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark" id="scenario_edit_btn">
-        Szenario bearbeiten
-    </a>
-</div>
-<div class="centered button_middle_main2">
-    <a class="btn btn-secondary button_middle" data-bs-toggle="modal" data-bs-target="#scenario_modal"
-        data-bs-theme="dark">
-        Szenario erstellen
-    </a>
-</div>
-<div class="centered button_middle_main3">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark" id="scenario_start_btn">
+<button class="centered button_middle_main1 btn btn-secondary button_middle" id="scenario_edit_btn" disabled>
+    Szenario bearbeiten
+</button>
+<button class="centered button_middle_main2 btn btn-secondary button_middle" data-bs-toggle="modal"
+    data-bs-target="#scenario_modal">
+    Szenario erstellen
+    </buttonv>
+    <button class="centered button_middle_main3 btn btn-secondary button_middle" id="scenario_start_btn" disabled>
         Ausgewähltes Szenario starten
-    </a>
-</div>
+    </button>
 
-<!-- add scenario modal -->
-<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="scenarioModal">Szenario erstellen</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group mx-2 mb-3">
-                    <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" class="form-control modal_textbox container-fluid"
-                        id="scenario-creation-name" placeholder=". . ." required="">
+    <!-- add scenario modal -->
+    <div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="scenarioModal">Szenario erstellen</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="form-group mx-2">
-                    <label for="scenario-creation-description">Beschreibung</label>
-                    <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
-                        name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
-                        required></textarea>
-                </div>
+                <div class="modal-body">
+                    <div class="form-group mx-2 mb-3">
+                        <label for="scenario-creation-title">Titel</label>
+                        <input name="scenario-creation-title" type="text"
+                            class="form-control modal_textbox container-fluid" id="scenario-creation-name"
+                            placeholder=". . ." required="">
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="scenario-creation-description">Beschreibung</label>
+                        <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
+                            name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
+                            required></textarea>
+                    </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                <button type="submit" class="btn btn-primary" id="create_scenario_btn">Erstellen</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    <button type="submit" class="btn btn-primary" id="create_scenario_btn" disabled>Erstellen</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-@endsection
+    @endsection

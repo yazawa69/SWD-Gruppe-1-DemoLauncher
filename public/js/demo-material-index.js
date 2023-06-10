@@ -20,6 +20,7 @@ demo_material_add_btn.addEventListener("click", add_demo_material);
 
 function set_demo_material_id(id){
     demo_material_id = id;
+    demo_material_edit_btn.disabled = false;
 }
 
 function edit_demo_material(event){

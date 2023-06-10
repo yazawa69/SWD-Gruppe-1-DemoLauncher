@@ -18,6 +18,7 @@ for (i=0; i < pathArray.length; i++) {
 
 function set_device_id(id) {
     device_id = id;
+    device_edit_btn.disabled = false;
 }
 
 function edit_device(event){

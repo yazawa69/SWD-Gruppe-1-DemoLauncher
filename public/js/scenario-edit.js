@@ -28,6 +28,15 @@ function activate_button(){
     }
 };
 
+phase_name.oninput = function () {
+    if (phase_name.value != "") {
+        phase_create_btn.disabled = false;
+    }
+    else {
+        phase_create_btn.disabled = true;
+    }
+};
+
 phase_create_btn.addEventListener("click", phase_edit);
 scenario_save_btn.addEventListener("click", scenario_save);
 scenario_delete_btn.addEventListener("click", scenario_delete);
