@@ -41,7 +41,7 @@
     </div>
 </div>
 <div class="headline_szenario_h4">
-    <h4>Phase 1</h4>
+    <h4>Phasen</h4>
 </div>
 <div class="textbox_big_szenario_verwalten">
     <div class="overflow_big_szenario" data-bs-theme="dark">
