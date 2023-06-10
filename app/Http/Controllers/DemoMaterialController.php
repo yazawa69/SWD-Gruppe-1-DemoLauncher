@@ -171,6 +171,3 @@ class DemoMaterialController extends Controller
         return response(200);
     }
 }
-
-    }
-}
