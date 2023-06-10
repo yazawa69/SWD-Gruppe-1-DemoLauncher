@@ -17,14 +17,53 @@
 <script src="{{ asset('js/device-edit.js') }}" defer></script>
 @endsection
 
+<style>    
+
+    /* header{
+        width: 100vw;
+        position: absolute;
+        top: 0;
+    } */
+
+    .headline_new{
+        width: fit-content;
+        margin-left: 15vw;
+        /* margin-right: auto; */
+        /* margin-left: 10vw;
+        margin-right: auto; */
+        /* background-color: #343a40; */
+    }
+
+    .headline_new .heading{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .headline_new .subheading{
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 1.5rem;
+        color: #9a9ea2;
+    }
+
+    .textbox_middle_main_new{
+        width: 100vw;
+        /* margin-top: 5vh; */
+    }
+
+</style>
+
+
 <body>
     <main>
-        @section('content')
-        <div class="headline">
-            <h1>Gerät</h1>
-            <h2>{{ $device_type->name }}</h2>
+        @section('headline')
+        <div class="headline_new">
+            <h1 class="heading">Gerät</h1>
+            <h2 class="subheading">{{ $device_type->name }}</h2>
         </div>
-        <div class="textbox_middle_main">
+        @endsection
+        @section('content')
+        <div class="textbox_middle_main_new">
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center hundred">
@@ -76,7 +115,7 @@
         @endsection
     </main>
     <footer>
-    </footer>
+    </footer> 
 </body>
 
 </html>
