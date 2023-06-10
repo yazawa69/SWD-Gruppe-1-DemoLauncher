@@ -11,7 +11,6 @@ const demo_material_name = document.getElementById('demo_material_name');
 const demo_material_file = document.getElementById('demo_material_file');
 const demo_material_description = document.getElementById('demo_material_description');
 
-demo_materials_save_btn.disabled = true;
 let demo_material_type_id;
 const queryString = window.location.href;
 const pathArray = window.location.pathname.split('/');
@@ -27,8 +26,6 @@ demo_material_file.onchange = function () {
 };
 
 demo_material_description.oninput = function () {
-    if (demo_material_description.value != ""){
-    }
     activate_button();
 };
 

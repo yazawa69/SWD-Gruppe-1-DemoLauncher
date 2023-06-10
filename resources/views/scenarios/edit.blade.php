@@ -35,7 +35,8 @@
     <div class="textbox_middle">
         <label>Beschreibung:</label>
         <div class="overflow_middle" data-bs-theme="dark">
-            <textarea class="form-control description_small" id="scenario_description">{{ $scenario->description }}</textarea>
+            <textarea class="form-control description_small"
+                id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
@@ -74,21 +75,16 @@
     </a>
 </div>
 <div class="three_buttons">
-    <div class="three_buttons_spacing" id="scenario_save_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Speichern
-        </a>
-    </div>
-    <div class="three_buttons_spacing" id="scenario_delete_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Löschen
-        </a>
-    </div>
-    <div onclick="window.location.href='{{ route('scenarios.index') }}';" class="three_buttons_spacing">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Abbrechen
-        </a>
-    </div>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn" disabled>
+        Speichern
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_delete_btn">
+        Löschen
+    </button>
+    <button onclick="window.location.href='{{ route('scenarios.index') }}';"
+        class="three_buttons_spacing button_small btn btn-secondary">
+        Abbrechen
+    </button>
 </div>
 
 <!-- add phase modal -->

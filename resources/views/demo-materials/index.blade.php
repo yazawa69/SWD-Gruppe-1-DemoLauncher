@@ -27,19 +27,15 @@
     <div class="overflow_big">
         <div>
             @foreach($demo_materials as $demo_material)
-            <button onclick="set_demo_material_id({{ $demo_material->id }})" class="btn btn-secondary list">{{ $demo_material->name }}</button>
+            <button onclick="set_demo_material_id({{ $demo_material->id }})"
+                class="btn btn-secondary list">{{ $demo_material->name }}</button>
             @endforeach
         </div>
     </div>
 </div>
-<div class="centered button_middle_main1" id="demo_material_edit_btn">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
-        Material bearbeiten
-    </a>
-</div>
-<div class="centered button_middle_main2" id="demo_material_add_btn">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
-        Material hinzufügen
-    </a>
-</div>
+<button class="three_buttons_spacing button_small btn btn-secondary" id="demo_material_edit_btn">
+</button>
+<button class="three_buttons_spacing button_small btn btn-secondary" id="demo_material_add_btn">
+    Material hinzufügen
+</button>
 @endsection

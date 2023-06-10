@@ -3,6 +3,31 @@ const phase_create_btn = document.getElementById("create_phase_btn");
 const scenario_save_btn = document.getElementById("scenario_save_btn");
 const scenario_delete_btn = document.getElementById("scenario_delete_btn");
 
+const scenario_name = document.getElementById("scenario_name");
+const scenario_description = document.getElementById("scenario_description");
+
+const scenario_name_val = scenario_name.value;
+const scenario_description_val = scenario_description.value;
+
+scenario_name.oninput = function () {
+    activate_button();
+};
+
+scenario_description.oninput = function () {
+    activate_button();
+};
+
+function activate_button(){
+    if (scenario_name.value != "" && scenario_description.value != "") {    
+        if (scenario_name.value != scenario_name_val || scenario_description.value != scenario_description_val) {
+            scenario_save_btn.disabled = false;
+        }
+        else {
+            scenario_save_btn.disabled = true;
+        }
+    }
+};
+
 phase_create_btn.addEventListener("click", phase_edit);
 scenario_save_btn.addEventListener("click", scenario_save);
 scenario_delete_btn.addEventListener("click", scenario_delete);
@@ -45,12 +70,12 @@ function phase_edit(event){
 function scenario_save(event){
     event.preventDefault();
 
-    const scenario_name = document.getElementById("scenario_name").value;
-    const scenario_description = document.getElementById("scenario_description").value;
+    const scenario_name_value = scenario_name.value;
+    const scenario_description_value = scenario_description.value;
 
     const scenario = {
-        name: scenario_name,
-        description: scenario_description
+        name: scenario_name_value,
+        description: scenario_description_value
     }
 
     fetch("/scenarios/" + scenario_id, {

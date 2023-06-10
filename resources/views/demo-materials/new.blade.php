@@ -38,9 +38,9 @@
             <div class="textbox_small">
                 <div class="overflow_small mb-3" data-bs-theme="dark">
                     <div class="row g-3 align-items-center">
-                    <label for="demo_material_file">Datei hochladen</label>
-                    <input name="file" class="form-control" type="file" id="demo_material_file">
-                </div>
+                        <label for="demo_material_file">Datei hochladen</label>
+                        <input name="file" class="form-control" type="file" id="demo_material_file">
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,27 +48,21 @@
             <div class="textbox_big">
                 <div class="overflow_big" data-bs-theme="dark">
                     <label for="demo_material_desc">Beschreibung</label>
-                    <textarea name="description" class="form-control description" id="demo_material_description"></textarea>
+                    <textarea name="description" class="form-control description"
+                        id="demo_material_description"></textarea>
                 </div>
             </div>
         </div>
         <div class="three_buttons">
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_save_btn">
-                {{-- <a class="btn btn-secondary button_small" data-bs-theme="dark">
-                    Speichern
-                </a> --}}
+            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_save_btn" disabled>
                 Speichern
             </button>
-            <div class="three_buttons_spacing" id="demo_materials_delete_btn">
-                <a class="btn btn-secondary button_small" data-bs-theme="dark">
-                    Löschen
-                </a>
-            </div>
-            <div class="three_buttons_spacing" id="demo_materials_cancel_btn">
-                <a class="btn btn-secondary button_small" data-bs-theme="dark">
-                    Abbrechen
-                </a>
-            </div>
+            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_delete_btn">
+                Löschen
+            </button>
+            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_cancel_btn">
+                Abbrechen
+            </button>
         </div>
         @endsection
     </main>

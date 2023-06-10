@@ -10,6 +10,23 @@ scenario_create_btn.addEventListener("click", create_scenario);
 scenario_edit_btn.addEventListener("click", edit_scenario);
 scenario_start_btn.addEventListener("click", start_scenario);
 
+scenario_name.oninput = function () {
+    activate_button();
+};
+
+scenario_description.oninput = function () {
+    activate_button();
+};
+
+function activate_button(){
+    if (scenario_name.value != "" && scenario_description.value != "") {    
+        create_scenario_btn.disabled = false;
+    }
+    else {
+        create_scenario.disabled = true;
+    }
+};
+
 function create_scenario(event){
 
     event.preventDefault();

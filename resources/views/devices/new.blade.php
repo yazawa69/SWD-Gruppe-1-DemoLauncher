@@ -53,20 +53,14 @@
     </div>
 </div>
 <div class="three_buttons">
-    <div class="three_buttons_spacing" id="device_save_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Speichern
-        </a>
-    </div>
-    <div class="three_buttons_spacing" id="device_delete_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Löschen
-        </a>
-    </div>
-    <div class="three_buttons_spacing" id="device_cancel_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Abbrechen
-        </a>
-    </div>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_save_btn" disabled>
+        Speichern
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_delete_btn">
+        Löschen
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_cancel_btn">
+        Abbrechen
+    </button>
 </div>
 @endsection
