@@ -24,19 +24,19 @@
 </div>
 @endsection
 @section('main')
-<div class="small_textbox_container">
-    <div class="small_textbox">
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div>
-                    <label>Name:</label>
+                    <label for="scenario_name">Name</label>
                     <input type="Name" class="form-control" id="scenario_name" value="{{ $scenario->name }}">
                 </div>
             </div>
         </div>
     </div>
-    <div class="small_textbox">
-        <label>Beschreibung:</label>
+    <div class="textbox_small_new">
+        <label for="scenario_description">Beschreibung</label>
         <div class="overflow_middle" data-bs-theme="dark">
             <textarea class="form-control description_small" id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
@@ -44,7 +44,7 @@
 </div>
 
 <div class="textbox_big_headline">
-    <h4>Phase 1</h4>
+    <h4>Phasen</h4>
 </div>
 <div class="textbox_big_padded">
     <div class="overflow_fitted" data-bs-theme="dark">
@@ -71,7 +71,7 @@
         </table>
     </div>
 </div>
-<button class="btn btn-secondary button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
+<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
     <img class="plus_image" src="../images/Pluszeichen.png"></img>
     Phase
 </button>
@@ -99,7 +99,7 @@
 
 @section('modals')
 <!-- add phase modal -->
-<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true">
+<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">

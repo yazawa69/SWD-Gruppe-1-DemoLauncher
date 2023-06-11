@@ -10,6 +10,7 @@ use Exception;
 class DeviceController extends Controller
 {
     protected DeviceRepository $devices;
+    protected DeviceTypeRepository $device_types;
 
     public function __construct(DeviceRepository $devices, DeviceTypeRepository $device_types)
     {
@@ -29,14 +30,14 @@ class DeviceController extends Controller
         {
             return response(500);
         }
-        return view('devices.index', ['devices' => $devices, 'device_type' => $device_type]);
+        return view('new.devices.index', ['devices' => $devices, 'device_type' => $device_type]);
     }
 
     public function new(int $device_type_id)
     {
         $device_types = $this->device_types->getById($device_type_id);
         // TODO: display device creation view
-        return view('devices.new', ['device_type' => $device_types]);
+        return view('new.devices.new', ['device_type' => $device_types]);
     }
 
     public function create(int $device_type_id, Request $req)
@@ -82,7 +83,7 @@ class DeviceController extends Controller
             return response("can't edit device", 500);
         }
         
-        return view('devices.edit', ['device' => $device, 'device_type' => $device_types]);
+        return view('new.devices.edit', ['device' => $device, 'device_type' => $device_types]);
     }
 
     public function update(int $device_id, Request $req)

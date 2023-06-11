@@ -70,7 +70,7 @@ class PhaseController extends Controller
 
             $phase_devices = $phase->phaseDevices;
 
-            return view('phases.edit', ['phase' => $phase, 'phase_devices' => $phase_devices]);
+            return view('new.phases.edit', ['phase' => $phase, 'phase_devices' => $phase_devices]);
         }
 
         public function update(int $scenario_id, int $phase_id, Request $req)
