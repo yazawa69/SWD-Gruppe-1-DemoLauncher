@@ -29,7 +29,7 @@ class DemoMaterialController extends Controller
         {
             return response(500);
         }
-        return view('new.demo-materials.index', ['demo_materials' => $demo_materials, 'demo_material_type' => $demo_material_type]);
+        return view('demo-materials.index', ['demo_materials' => $demo_materials, 'demo_material_type' => $demo_material_type]);
     }
 
     public function new(int $demo_material_type_id)
@@ -38,7 +38,7 @@ class DemoMaterialController extends Controller
 
         $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
 
-        return view('new.demo-materials.new', ['demo_material_type' => $demo_material_type]);
+        return view('demo-materials.new', ['demo_material_type' => $demo_material_type]);
     }
 
     public function create(int $demo_material_type_id, Request $req)
@@ -106,7 +106,7 @@ class DemoMaterialController extends Controller
             return response(500);
         }
         
-        return view('new.demo-materials.edit', ['demo_material_type' => $demo_material_type, 'demo_material' => $demo_material]);
+        return view('demo-materials.edit', ['demo_material_type' => $demo_material_type, 'demo_material' => $demo_material]);
     }
 
     public function update(int $demo_material_type_id, int $demo_material_id, Request $req)

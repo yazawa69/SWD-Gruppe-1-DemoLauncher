@@ -20,13 +20,16 @@
 @livewireStyles
 @endsection
 
+@section('headline')
+    <div class="headline_new">
+        <h1 class="heading">Phase bearbeiten</h1>
+        <h2 class="subheading"></h2>
+    </div>
+@endsection
 
-@section('content')
-<div class="headline">
-    <h1>Szenario verwalten</h1>
-</div>
-<div class="textbox_middle_main">
-    <div class="textbox_small">
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div>
@@ -37,10 +40,10 @@
         </div>
     </div>
 </div>
-<div class="headline_phase_h4">
+<div class="textbox_big_headline">
     <h4>{{ $phase->name }} - Elemente</h4>
 </div>
-<div class="textbox_big_phase_verwalten">
+<div class="textbox_big_phase_verwalten_new">
     <div class="overflow_big_phase" data-bs-theme="dark">
         <table class="table">
             <thead>
@@ -82,7 +85,10 @@
         </table>
     </div>
 </div>
-<div class="three_buttons">
+@endsection
+
+@section('footer')
+<div class="three_buttons_new">
     <div class="three_buttons_spacing" id="phase_save_btn">
         <a class="btn btn-secondary button_small" data-bs-theme="dark">
             Speichern
@@ -99,7 +105,9 @@
         </a>
     </div>
 </div>
+@endsection
 
+@section('modals')
 <!-- add demo material modal -->
 <div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceSelectionModal" aria-hidden="true"
     style="margin-top: 15vh;">

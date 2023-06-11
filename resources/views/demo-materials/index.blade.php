@@ -18,12 +18,14 @@
 @endsection
 
 
-@section('content')
-<div class="headline">
-    <h1>Demomaterial verwalten</h1>
-    <h2>{{ $demo_material_type->filename_extension }}</h2>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Demomaterial verwalten</h1>
+    <h2 class="subheading">{{ $demo_material_type->filename_extension }}</h2>
 </div>
-<div class="textbox_big">
+@endsection
+@section('main')
+<div class="textbox_big_new">
     <div class="overflow_big">
         <div>
             @foreach($demo_materials as $demo_material)
@@ -32,12 +34,12 @@
         </div>
     </div>
 </div>
-<div class="centered button_middle_main1" id="demo_material_edit_btn">
+<div class="centered_new button_middle_container" id="demo_material_edit_btn">
     <a class="btn btn-secondary button_middle" data-bs-theme="dark">
         Material bearbeiten
     </a>
 </div>
-<div class="centered button_middle_main2" id="demo_material_add_btn">
+<div class="centered_new button_middle_container" id="demo_material_add_btn">
     <a class="btn btn-secondary button_middle" data-bs-theme="dark">
         Material hinzufügen
     </a>

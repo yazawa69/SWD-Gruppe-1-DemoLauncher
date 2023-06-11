@@ -17,63 +17,60 @@
 <script src="{{ asset('js/demo-material-edit.js') }}" defer></script>
 @endsection
 
-<body>
-    <main>
-        @section('content')
-        <div class="headline">
-            <h1>Demomaterial bearbeiten</h1>
-            <h2>{{ $demo_material_type->filename_extension }}</h2>
-        </div>
-        <div class="textbox_middle_main">
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="demo_material_name">Datei</label>
-                            <p id="demo_material_name">{{ $demo_material->name }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
-                    <label for="demo_material_file">Datei hochladen</label>
-                    <input name="file" class="form-control" type="file" id="demo_material_file">
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="textbox_big_main">
-            <div class="textbox_big">
-                <div class="overflow_big" data-bs-theme="dark">
-                    <label for="demo_material_desc">Beschreibung</label>
-                    <textarea name="description" class="form-control description" id="demo_material_description">{{ $demo_material->description }}</textarea>
-                </div>
-            </div>
-        </div>
-        <div class="three_buttons">
-            <div class="three_buttons_spacing" id="demo_material_save_btn">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-                    Speichern
-                </a>
-            </div>
-            <div class="three_buttons_spacing" id="demo_material_delete_btn">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-                    Löschen
-                </a>
-            </div>
-            <div class="three_buttons_spacing" id="demo_material_cancel_btn">
-                <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-                    Abbrechen
-                </a>
-            </div>
-        </div>
-        @endsection
-    </main>
-    <footer>
 
-    </footer>
-</body>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Demomaterial bearbeiten</h1>
+    <h2 class="subheading">{{ $demo_material_type->filename_extension }}</h2>
+</div>
 
-</html>
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="demo_material_name">Datei</label>
+                    <p id="demo_material_name">{{ $demo_material->name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center">
+            <label for="demo_material_file">Datei hochladen</label>
+            <input name="file" class="form-control" type="file" id="demo_material_file">
+        </div>
+        </div>
+    </div>
+</div>
+<div class="textbox_big_main_new">
+    <div class="textbox_big_new">
+        <div class="overflow_big" data-bs-theme="dark">
+            <label for="demo_material_desc">Beschreibung</label>
+            <textarea name="description" class="form-control description" id="demo_material_description">{{ $demo_material->description }}</textarea>
+        </div>
+    </div>
+</div>
+@endsection
+@section('footer')
+<div class="three_buttons_new">
+    <div class="three_buttons_spacing" id="demo_material_save_btn">
+        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            Speichern
+        </a>
+    </div>
+    <div class="three_buttons_spacing" id="demo_material_delete_btn">
+        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            Löschen
+        </a>
+    </div>
+    <div class="three_buttons_spacing" id="demo_material_cancel_btn">
+        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
+            Abbrechen
+        </a>
+    </div>
+</div>
+@endsection

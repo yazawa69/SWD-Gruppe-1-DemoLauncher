@@ -24,7 +24,7 @@ class DeviceTypeController extends Controller
         {
             return response(500);
         }
-        return view('new.device-types.index', ['device_types' => $device_types]);
+        return view('device-types.index', ['device_types' => $device_types]);
     }
 
     public function create(Request $req)

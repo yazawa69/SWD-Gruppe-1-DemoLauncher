@@ -17,40 +17,33 @@
 <script src="{{ asset('js/device-index.js') }}" defer></script>
 @endsection
 
-<body>
-    <main>
-        @section('headline')
-        <div class="headline_new">
-            <h1 class="heading">Geräte verwalten</h1>
-            <h2 class="subheading">{{ $device_type->name }}</h2>
-        </div>
-        @endsection
-        @section('content')
-        <div class="textbox_big_new">
-            <div class="overflow_big">
-                <div>
-                    @foreach($devices as $device)
-                    <button class="btn btn-secondary list"
-                        onclick="set_device_id({{ $device->id }})">{{ $device->name }}</button>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="centered button_middle_main1" id="device_edit_btn">
-            <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
-                Gerät bearbeiten
-            </a>
-        </div>
-        <div class="centered button_middle_main2" id="device_add_btn">
-            <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
-                Gerät hinzufügen
-            </a>
-        </div>
-        @endsection
-    </main>
-    <footer>
 
-    </footer>
-</body>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Geräte verwalten</h1>
+    <h2 class="subheading">{{ $device_type->name }}</h2>
+</div>
+@endsection
 
-</html>
+@section('main')
+<div class="textbox_big_new">
+    <div class="overflow_big">
+        <div>
+            @foreach($devices as $device)
+            <button class="btn btn-secondary list"
+                onclick="set_device_id({{ $device->id }})">{{ $device->name }}</button>
+            @endforeach
+        </div>
+    </div>
+</div>
+<div class="centered_new" id="device_edit_btn">
+    <a class="btn btn-secondary button_middle_new" href="#" data-bs-theme="dark">
+        Gerät bearbeiten
+    </a>
+</div>
+<div class="centered_new" id="device_add_btn">
+    <a class="btn btn-secondary button_middle_new" href="#" data-bs-theme="dark">
+        Gerät hinzufügen
+    </a>
+</div>
+@endsection

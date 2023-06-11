@@ -16,13 +16,16 @@
 </script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Art des Demomaterials</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Art des Demomaterials</h1>
+    <h2 class="subheading"></h2>
 </div>
-<div class="textbox_middle_main">
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
     @foreach($demo_material_types as $demo_material_type)
-    <div class="box_middle">
+    <div class="box_middle_new">
         <div onclick="window.location.href='{{ route('demo_material.index', ['demo_material_type_id' => $demo_material_type->id]) }}'"
             class="overflow_middle">
             <img class="selection_image" src="../images/PDF.png"></img>

@@ -23,7 +23,7 @@ class DemoMaterialTypeController extends Controller
         {
             return response(500);
         }
-        return view('new.demo-material-types.index', ['demo_material_types' => $demo_material_types]);
+        return view('demo-material-types.index', ['demo_material_types' => $demo_material_types]);
     }
 
     public function create(Request $req)

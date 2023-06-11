@@ -1,4 +1,4 @@
-@extends('base-test')
+@extends('base')
 
 @section('head')
 <meta charset="UTF-8" />

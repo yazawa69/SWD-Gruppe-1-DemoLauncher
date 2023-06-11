@@ -17,13 +17,18 @@
 <script src="{{ asset('js/device-types.js') }}" defer></script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Gerätekategorie</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Gerätekategorie</h1>
+    <h2 class="subheading"></h2>
 </div>
-<div class="textbox_middle_main">
+@endsection
+
+
+@section('main')
+<div class="textbox_middle_main_new">
     @foreach($device_types as $device_type)
-    <div class="box_middle">
+    <div class="box_middle_new">
         <div onclick="window.location.href='{{ route('device.index', ['device_type_id' => $device_type->id]) }}'" class="overflow_middle">
             <img class="selection_image" src="../images/Bildschirm.png"></img>
             <p class="selection_text text-nowrap">{{ $device_type->name }}</p>

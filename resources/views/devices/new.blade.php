@@ -18,41 +18,48 @@
 @endsection
 
 
-@section('content')
-<div class="headline">
-    <h1>Gerät</h1>
-    <h2>{{ $device_type->name }}</h2>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Gerät</h1>
+    <h2 class="subheading">{{ $device_type->name }}</h2>
 </div>
-<div class="textbox_middle_main">
-    <div class="textbox_small">
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input type="Name" class="form-control" id="device_name" placeholder="Name">
+                    <label for="device_name">Name</label>
+                    <input type="Name" class="form-control" id="device_name" placeholder="Bitte ausfüllen">
                 </div>
             </div>
         </div>
     </div>
-    <div class="textbox_small">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input class="form-control" id="device_oem" placeholder="Hersteller">
+                    <label for="device_oem">Hersteller</label>
+                    <input class="form-control" id="device_oem" placeholder="Bitte ausfüllen">
                 </div>
             </div>
         </div>
     </div>
-    <div class="textbox_small">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <input class="form-control" id="device_serial_number" placeholder="Seriennummer">
+                    <label for="device_serial_number">Seriennummmer</label>
+                    <input class="form-control" id="device_serial_number" placeholder="Bitte ausfüllen">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="three_buttons">
+@endsection
+@section('footer')
+<div class="three_buttons_new">
     <div class="three_buttons_spacing" id="device_save_btn">
         <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
             Speichern
