@@ -696,6 +696,30 @@ body {
 
 /* buttons */
 
+.button_middle_main1_new{
+  
+}
+.button_middle_main2_new{
+  
+}
+.button_middle_main3_new{
+  
+}
+
+.button_middle {
+  width: 80%;
+  height: 50px;
+  margin: 6px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #03b670 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .index_edit_button_div_new {
   width: 100%;
   margin-top: 5%;
@@ -750,7 +774,7 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  
+  z-index: 10;
 }
 
 #navbar_container{
@@ -776,6 +800,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.centered_new {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 

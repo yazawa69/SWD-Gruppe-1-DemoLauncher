@@ -1,4 +1,4 @@
-@extends('base')
+@extends('base-test')
 
 @section('head')
 <meta charset="UTF-8" />
@@ -17,11 +17,14 @@
 <script src="{{ asset('js/scenario-index.js') }}" defer></script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Szenarien verwalten</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Szenarios</h1>
+    <h2 class="subheading"> Verwalten</h2>
 </div>
-<div class="textbox_big">
+@endsection
+@section('main')
+<div class="textbox_big_new">
     <div class="overflow_big">
         <div>
             @foreach ($scenarios as $scenario)
@@ -30,23 +33,29 @@
         </div>
     </div>
 </div>
-<div class="centered button_middle_main1">
+<div class="centered_new">
     <a class="btn btn-secondary button_middle" data-bs-theme="dark" id="scenario_edit_btn">
         Szenario bearbeiten
     </a>
 </div>
-<div class="centered button_middle_main2">
+<div class="centered_new">
     <a class="btn btn-secondary button_middle" data-bs-toggle="modal" data-bs-target="#scenario_modal"
         data-bs-theme="dark">
         Szenario erstellen
     </a>
 </div>
-<div class="centered button_middle_main3">
+<div class="centered_new">
     <a class="btn btn-secondary button_middle" data-bs-theme="dark" id="scenario_start_btn">
         Ausgewähltes Szenario starten
     </a>
 </div>
 
+@endsection
+@section('footer')
+
+@endsection
+
+@section('modals')
 <!-- add scenario modal -->
 <div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
@@ -76,5 +85,4 @@
         </div>
     </div>
 </div>
-
 @endsection

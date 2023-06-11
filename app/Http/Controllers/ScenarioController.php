@@ -22,7 +22,7 @@ class ScenarioController extends Controller
         {
             return response(500);
         }
-        return view('new.scenarios.landing', ['scenarios' => $scenarios]);
+        return view('scenarios.landing', ['scenarios' => $scenarios]);
     }
 
     public function index()
@@ -33,13 +33,13 @@ class ScenarioController extends Controller
         {
             return response(500);
         }
-        return view('new.scenarios.index', ['scenarios' => $scenarios]);
+        return view('scenarios.index', ['scenarios' => $scenarios]);
     }
 
     public function new()
     {
         // TODO: display scenario creation view
-        return view('new.scenarios.scenario-new');
+        return view('scenarios.scenario-new');
     }
 
     public function create(Request $req)
@@ -67,7 +67,7 @@ class ScenarioController extends Controller
             return response(500);
         }
         
-        return view('new.scenarios.edit', ['scenario' => $scenario, 'phases' => $scenario->phases]);
+        return view('scenarios.edit', ['scenario' => $scenario, 'phases' => $scenario->phases]);
     }
 
     public function update(int $scenario_id, Request $req)
@@ -106,7 +106,7 @@ class ScenarioController extends Controller
         }
         $phase_devices = $phase->phaseDevices;
         
-        return view('new.scenarios.run', ['scenario' => $scenario, 'phases' => $scenario->phases, 'phase' => $phase, 'phase_devices' => $phase_devices]);
+        return view('scenarios.run', ['scenario' => $scenario, 'phases' => $scenario->phases, 'phase' => $phase, 'phase_devices' => $phase_devices]);
     }
 
 }
