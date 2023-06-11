@@ -20,25 +20,23 @@
 
 @section('content')
 <div class="headline">
-    <h1>Demomaterial</h1>
+    <h1>Demomaterial verwalten</h1>
+    <h2>{{ $demo_material_type->filename_extension }}</h2>
 </div>
 <div class="textbox_big">
     <div class="overflow_big">
         <div>
             @foreach($demo_materials as $demo_material)
-            <button onclick="set_demo_material_id({{ $demo_material->id }})" class="btn btn-secondary list">{{ $demo_material->name }}</button>
+            <button onclick="set_demo_material_id({{ $demo_material->id }})"
+                class="btn btn-secondary list">{{ $demo_material->name }}</button>
             @endforeach
         </div>
     </div>
 </div>
-<div class="centered button_middle_main1" id="demo_material_edit_btn">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
-        Material bearbeiten
-    </a>
-</div>
-<div class="centered button_middle_main2" id="demo_material_add_btn">
-    <a class="btn btn-secondary button_middle" data-bs-theme="dark">
-        Material hinzufügen
-    </a>
-</div>
+<button class="centered button_middle_main1 btn btn-secondary button_middle" id="demo_material_edit_btn" disabled>
+    Material bearbeiten
+</button>
+<button class="centered button_middle_main2 btn btn-secondary button_middle" id="demo_material_add_btn">
+    Material hinzufügen
+</button>
 @endsection

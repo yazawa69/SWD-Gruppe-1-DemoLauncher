@@ -35,12 +35,13 @@
     <div class="textbox_middle">
         <label>Beschreibung:</label>
         <div class="overflow_middle" data-bs-theme="dark">
-            <textarea class="form-control description_small" id="scenario_description">{{ $scenario->description }}</textarea>
+            <textarea class="form-control description_small"
+                id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
 <div class="headline_szenario_h4">
-    <h4>Phase 1</h4>
+    <h4>Phasen</h4>
 </div>
 <div class="textbox_big_szenario_verwalten">
     <div class="overflow_big_szenario" data-bs-theme="dark">
@@ -74,25 +75,20 @@
     </a>
 </div>
 <div class="three_buttons">
-    <div class="three_buttons_spacing" id="scenario_save_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Speichern
-        </a>
-    </div>
-    <div class="three_buttons_spacing" id="scenario_delete_btn">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Löschen
-        </a>
-    </div>
-    <div onclick="window.location.href='{{ route('scenarios.index') }}';" class="three_buttons_spacing">
-        <a class="btn btn-secondary button_small" href="#" data-bs-theme="dark">
-            Abbrechen
-        </a>
-    </div>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn" disabled>
+        Speichern
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_delete_btn">
+        Löschen
+    </button>
+    <button onclick="window.location.href='{{ route('scenarios.index') }}';"
+        class="three_buttons_spacing button_small btn btn-secondary">
+        Abbrechen
+    </button>
 </div>
 
 <!-- add phase modal -->
-<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true">
+<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -108,7 +104,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                <button type="button" class="btn btn-primary" id="create_phase_btn">Erstellen</button>
+                <button type="button" class="btn btn-primary" id="create_phase_btn" disabled>Erstellen</button>
             </div>
         </div>
     </div>

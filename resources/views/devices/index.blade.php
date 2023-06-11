@@ -21,7 +21,8 @@
     <main>
         @section('content')
         <div class="headline">
-            <h1>Geräte</h1>
+            <h1>Geräte verwalten</h1>
+            <h2>{{ $device_type->name }}</h2>
         </div>
         <div class="textbox_big">
             <div class="overflow_big">
@@ -33,16 +34,12 @@
                 </div>
             </div>
         </div>
-        <div class="centered button_middle_main1" id="device_edit_btn">
-            <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
-                Gerät bearbeiten
-            </a>
-        </div>
-        <div class="centered button_middle_main2" id="device_add_btn">
-            <a class="btn btn-secondary button_middle" href="#" data-bs-theme="dark">
-                Gerät hinzufügen
-            </a>
-        </div>
+        <button class="centered button_middle_main1 btn btn-secondary button_middle" id="device_edit_btn" disabled>
+            Gerät bearbeiten
+        </button>
+        <button class="centered button_middle_main2 btn btn-secondary button_middle" id="device_add_btn">
+            Gerät hinzufügen
+        </button>
         @endsection
     </main>
     <footer>

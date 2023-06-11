@@ -35,7 +35,10 @@
     @endif
     <ul class="dropdown-menu" data-bs-theme="dark">
         @foreach ($scenarios as $scenario)
-        <li><button class="dropdown-item" onclick="select_scenario({{ $scenario->id }})">{{ $scenario->name }}</button>
+        @php
+        $scenario_data = json_encode(['id' => $scenario->id, 'name' => $scenario->name, 'description' => $scenario->description]);
+        @endphp
+        <li><button class="dropdown-item" onclick="select_scenario({{ $scenario_data }})">{{ $scenario->name }}</button>
         </li>
         @endforeach
     </ul>
@@ -49,13 +52,13 @@
 </div>
 <div class="centered index_edit_button_div">
     <button class="btn btn-secondary index_edit_button" type="button" id="scenario_edit_btn"
-        data-bs-theme="dark">
+        data-bs-theme="dark" disabled>
         Szenario bearbeiten
     </button>
 </div>
 <div class="centered start_end_button_div">
     <button class="btn btn-secondary start_end_button" id="scenario_start_btn"
-        type="button" data-bs-theme="dark">
+        type="button" data-bs-theme="dark" disabled>
         Start
     </button>
 </div>

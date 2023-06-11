@@ -23,7 +23,7 @@
 
 @section('content')
 <div class="headline">
-    <h1>Szenario verwalten</h1>
+    <h1>Phase verwalten</h1>
 </div>
 <div class="textbox_middle_main">
     <div class="textbox_small">
@@ -52,19 +52,26 @@
             </thead>
             <tbody>
                 @for ($i = 0; $i < count($phase_devices); $i++) <tr>
-                    <th>{{ $phase_devices[$i]->device->name }}</th>
+                    <th>{{ $phase_devices[$i]->device->name }}
+                        <img class="x_image_2" src="../images/X-Icon.png" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
+                    </th>
                     <td>
                         @foreach ($phase_devices[$i]->demoMaterials as $demo_material)
+                        @php
+                        $demo_material_data = json_encode(['phase_device_id' => $phase_devices[$i]->id, 'demo_material_id' => $demo_material->id]);
+                        @endphp
                         <div class="textbox_very_small">
                             <div class="overflow_very_small">
                                 <p class="text_phase">{{ $demo_material->name }}</p>
-                                <img class="x_image_2" src="../images/X-Icon.png"></img>
+                                <img class="x_image_2" src="../images/X-Icon.png"
+                                    onclick="demo_material_remove({{ $demo_material_data }})"></img>
                             </div>
                         </div>
                         @endforeach
                         <div class="textbox_very_small">
                             <div class="overflow_very_small" data-bs-toggle="modal"
-                            data-bs-target="#demo-material-selection-modal" onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
+                                data-bs-target="#demo-material-selection-modal"
+                                onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
                                 <img class="x_image_2" src="../images/Pluszeichen.png"></img>
                                 <p class="text_phase">Hinzufügen</p>
                             </div>

@@ -20,6 +20,7 @@
 @section('content')
 <div class="headline">
     <h1>Szenario läuft</h1>
+    <h2>{{ $scenario->name }}</h2>
 </div>
 <div class="textbox_middle_main">
     <div class="textbox_middle">
@@ -59,7 +60,7 @@
                         <thead>
                             <tr>
                                 <th>Auswahl</th>
-                                <th>{{ count($phases) }}</th>
+                                <th>Steuerung</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,7 +73,7 @@
 
                                 @if($phase_devices[$x]->demoMaterials()->exists())
                                 <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ "0" . $x }}">
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}">
                                     {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                 </td>
 
@@ -180,6 +181,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         @endfor
         @endfor
