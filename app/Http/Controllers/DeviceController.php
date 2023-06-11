@@ -10,6 +10,7 @@ use Exception;
 class DeviceController extends Controller
 {
     protected DeviceRepository $devices;
+    protected DeviceTypeRepository $device_types;
 
     public function __construct(DeviceRepository $devices, DeviceTypeRepository $device_types)
     {

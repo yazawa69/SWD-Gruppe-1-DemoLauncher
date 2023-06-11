@@ -17,61 +17,57 @@
 <script src="{{ asset('js/device-edit.js') }}" defer></script>
 @endsection
 
-<body>
-    <main>
-        @section('content')
-        <div class="headline">
-            <h1>Gerät bearbeiten</h1>
-            <h2>{{ $device_type->name }}</h2>
-        </div>
-        <div class="textbox_middle_main">
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center hundred">
-                        <div class="col-auto">
-                            <label>Name:</label>
-                            <input type="Name" class="form-control" value="{{ $device->name }}" id="device_name">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center hundred">
-                        <div class="col-auto">
-                            <label>Hersteller:</label>
-                            <input type="Name" class="form-control" value="{{ $device->oem }}" id="device_oem">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center hundred">
-                        <div class="col-auto">
-                            <label>Seriennummer:</label>
-                            <input type="Name" class="form-control" value="{{ $device->serial_number }}"
-                                id="device_serial_number">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="three_buttons">
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="device_save_btn" disabled>
-                Speichern
-            </button>
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="device_delete_btn">
-                Löschen
-            </button>
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="device_cancel_btn">
-                Abbrechen
-            </button>
-        </div>
-        @endsection
-    </main>
-    <footer>
-    </footer>
-</body>
 
-</html>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Gerät bearbeiten</h1>
+    <h2 class="subheading">{{ $device_type->name }}</h2>
+</div>
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center hundred">
+                <div class="col-auto">
+                    <label>Name:</label>
+                    <input type="Name" class="form-control" value="{{ $device->name }}" id="device_name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center hundred">
+                <div class="col-auto">
+                    <label>Hersteller:</label>
+                    <input type="Name" class="form-control" value="{{ $device->oem }}" id="device_oem">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center hundred">
+                <div class="col-auto">
+                    <label>Seriennummer:</label>
+                    <input type="Name" class="form-control" value="{{ $device->serial_number }}" id="device_serial_number">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('footer')
+<div class="three_buttons_new">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_save_btn" disabled>
+        Speichern
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_delete_btn">
+        Löschen
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_cancel_btn">
+        Abbrechen
+    </button>
+</div>
+@endsection

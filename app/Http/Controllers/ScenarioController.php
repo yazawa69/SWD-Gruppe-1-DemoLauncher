@@ -39,7 +39,7 @@ class ScenarioController extends Controller
     public function new()
     {
         // TODO: display scenario creation view
-        return view('scenario-new');
+        return view('scenarios.scenario-new');
     }
 
     public function create(Request $req)

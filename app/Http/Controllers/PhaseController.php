@@ -59,8 +59,9 @@ class PhaseController extends Controller
             return view('phase', ['phase' => $phase, 'phase_devices' => $phase_devices]);
         }
 
-        public function edit(int $scenario_id, int $phase_id)
+        public function edit(int $scenario_id, int $phase_id, Request $req)
         {
+
             // TODO: will return the edit phase view
             $phase = $this->phases->getById($phase_id);
             if (!$phase)

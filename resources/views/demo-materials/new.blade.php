@@ -17,58 +17,52 @@
 <script src="{{ asset('js/demo-material-new.js') }}" defer></script>
 @endsection
 
-<body>
-    <main>
-        @section('content')
-        <div class="headline">
-            <h1>Demomaterial hinzufügen</h1>
-            <h2>{{ $demo_material_type->filename_extension }}</h2>
-        </div>
-        <div class="textbox_middle_main">
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="demo_material_name">Datei</label>
-                            <p id="demo_material_name">Bitte Datei hochladen...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="textbox_small">
-                <div class="overflow_small mb-3" data-bs-theme="dark">
-                    <div class="row g-3 align-items-center">
-                        <label for="demo_material_file">Datei hochladen</label>
-                        <input name="file" class="form-control" type="file" id="demo_material_file">
-                    </div>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Demomaterial hinzufügen</h1>
+    <h2 class="subheading">{{ $demo_material_type->filename_extension }}</h2>
+</div>
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="demo_material_name">Datei</label>
+                    <p id="demo_material_name">Bitte Datei hochladen...</p>
                 </div>
             </div>
         </div>
-        <div class="textbox_big_main">
-            <div class="textbox_big">
-                <div class="overflow_big" data-bs-theme="dark">
-                    <label for="demo_material_desc">Beschreibung</label>
-                    <textarea name="description" class="form-control description"
-                        id="demo_material_description"></textarea>
-                </div>
-            </div>
+    </div>
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center">
+            <label for="demo_material_file">Datei hochladen</label>
+            <input name="file" class="form-control" type="file" id="demo_material_file">
         </div>
-        <div class="three_buttons">
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_save_btn" disabled>
-                Speichern
-            </button>
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_delete_btn">
-                Löschen
-            </button>
-            <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_cancel_btn">
-                Abbrechen
-            </button>
         </div>
-        @endsection
-    </main>
-    <footer>
-
-    </footer>
-</body>
-
-</html>
+    </div>
+</div>
+<div class="textbox_big_main_new">
+    <div class="textbox_big_new">
+        <div class="overflow_big" data-bs-theme="dark">
+            <label for="demo_material_desc">Beschreibung</label>
+            <textarea name="description" class="form-control description" id="demo_material_description"></textarea>
+        </div>
+    </div>
+</div>
+@endsection
+@section('footer')
+<div class="three_buttons_new">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_save_btn" disabled>
+        Speichern
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_delete_btn">
+        Löschen
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_materials_cancel_btn">
+        Abbrechen
+    </button>
+</div>
+@endsection

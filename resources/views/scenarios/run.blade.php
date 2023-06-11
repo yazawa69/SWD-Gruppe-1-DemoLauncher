@@ -17,13 +17,16 @@
 @endsection
 
 
-@section('content')
-<div class="headline">
-    <h1>Szenario läuft</h1>
-    <h2>{{ $scenario->name }}</h2>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Szenario läuft</h1>
+    <h2 class="subheading">Running "{{ $scenario->name }}"</h2>
 </div>
-<div class="textbox_middle_main">
-    <div class="textbox_middle">
+@endsection
+
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_middle_new">
         <div class="overflow_middle_running">
             <p>
                 {{ $scenario->description }}
@@ -32,26 +35,11 @@
     </div>
 </div>
 
-<style>
-.textbox_big_szenario_new {
-    /* position: fixed; */
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-top: 30vh;
-    width: 80vw;
-    padding: 15px;
-    height: 30vh;
-    border: solid 3px #03b670;
-    border-radius: 15px;
-}
-</style>
-
-
 {{-- create the initial carousel slide --}}
 <div id="carouselExample" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="headline_szenario_h3">
+            <div class="textbox_big_headline">
                 <h3>{{ $phase->name }}</h3>
             </div>
             <div class="textbox_big_szenario_new" data-bs-theme="dark">
@@ -88,7 +76,7 @@
 
         {{-- create carousel items for each phase --}}
         @for($i = 1; $i < count($phases); $i++) <div class="carousel-item">
-            <div class="headline_szenario_h3">
+            <div class="textbox_big_headline">
                 <h3>{{ $phases[$i]->name }}</h3>
             </div>
             <div class="textbox_big_szenario_new" data-bs-theme="dark">
@@ -134,34 +122,31 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
 </button>
-{{-- <a class="carousel-control-prev" data-bs-target="#carouselExample" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" data-bs-target="#carouselExample" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a> --}}
+
 
 <div class="steuerung">
     <button class="btn"><img src="../images/iconback.png" alt=""></button>
     <button class="btn"><img src="../images/iconplay.png" alt=""></button>
     <button class="btn"><img src="../images/iconforward.png" alt=""></button>
 </div>
+@endsection
+
+@section('footer')
 <div class="centered">
-    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button" type="button"
+    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new" type="button"
         data-bs-theme="dark">
         Beenden
     </button>
 </div>
+@endsection
 
-
+@section('modals')
 {{-- create modal for each phase device x in each phase i --}}
 @for($i = 0; $i < count($phases); $i++) @php $phase_devices=$phases[$i]->phaseDevices;
     @endphp
     @for ($x=0; $x < count($phase_devices); $x++) <div class="modal fade" id="RunningPopUp{{ $i.$x }}" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="dark">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Material auswählen</h1>

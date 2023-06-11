@@ -3,10 +3,11 @@
     <head>
         @yield('head')
     </head>
-    <body>
-        <header>
+    
+    <body class="spec_body">
+        <header class="spec_header">
             <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-                <div class="container-fluid">
+                <div class="container-fluid" id="navbar_container">
                   <a class="navbar-brand" href="./Index.html">
                     <img class="logo_image" src="{{ asset('images/Logo.png') }}"></img>
                   </a>
@@ -14,7 +15,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul id="nav_list_container" class="navbar-nav">
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">Startseite</a>
                       </li>
@@ -31,12 +32,15 @@
                   </div>
                 </div>
               </nav>
-          </header>
-          <main>
-            @yield('content')
-          </main>
-          <footer>
+            @yield('headline')
+        </header>
 
-          </footer>
+        <main class="spec_main">
+            @yield('main')
+        </main>
+        <footer class="spec_footer">
+            @yield('footer')
+        </footer>    
+      @yield('modals')
     </body>
 </html>

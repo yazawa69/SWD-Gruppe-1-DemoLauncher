@@ -17,34 +17,29 @@
 <script src="{{ asset('js/device-index.js') }}" defer></script>
 @endsection
 
-<body>
-    <main>
-        @section('content')
-        <div class="headline">
-            <h1>Geräte verwalten</h1>
-            <h2>{{ $device_type->name }}</h2>
-        </div>
-        <div class="textbox_big">
-            <div class="overflow_big">
-                <div>
-                    @foreach($devices as $device)
-                    <button class="btn btn-secondary list"
-                        onclick="set_device_id({{ $device->id }})">{{ $device->name }}</button>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <button class="centered button_middle_main1 btn btn-secondary button_middle" id="device_edit_btn" disabled>
-            Gerät bearbeiten
-        </button>
-        <button class="centered button_middle_main2 btn btn-secondary button_middle" id="device_add_btn">
-            Gerät hinzufügen
-        </button>
-        @endsection
-    </main>
-    <footer>
 
-    </footer>
-</body>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Geräte verwalten</h1>
+    <h2 class="subheading">{{ $device_type->name }}</h2>
+</div>
+@endsection
 
-</html>
+@section('main')
+<div class="textbox_big_new">
+    <div class="overflow_big">
+        <div>
+            @foreach($devices as $device)
+            <button class="btn btn-secondary list"
+                onclick="set_device_id({{ $device->id }})">{{ $device->name }}</button>
+            @endforeach
+        </div>
+    </div>
+</div>
+<button class="centered_new btn btn-secondary button_middle_new" id="device_edit_btn" disabled>
+    Gerät bearbeiten
+</button>
+<button class="centered_new btn btn-secondary button_middle_new" id="device_add_btn">
+    Gerät hinzufügen
+</button>
+@endsection

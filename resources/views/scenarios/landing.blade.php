@@ -17,11 +17,14 @@
 <script src="{{ asset('js/scenario-landing.js') }}" defer></script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Startseite</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Startseite</h1>
+    <h2 class="subheading">Starte ein Szenario</h2>
 </div>
-<div class="dropdown szenario">
+@endsection
+@section('main')
+<div class="dropdown szenario_dropdown_container">
     @if (count($scenarios) > 0)
     <button class="btn btn-secondary dropdown-toggle gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button"
         id="add_scenario_button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-theme="dark">
@@ -43,26 +46,32 @@
         @endforeach
     </ul>
 </div>
-<div class="textbox_big">
-    <div class="overflow_big">
+<div class="textbox_big_new">
+    <div class="overflow_big_new">
         <p id="scenario_description">
             Beschreibung
         </p>
     </div>
 </div>
-<div class="centered index_edit_button_div">
+<div class="centered index_edit_button_div_new">
     <button class="btn btn-secondary index_edit_button" type="button" id="scenario_edit_btn"
         data-bs-theme="dark" disabled>
         Szenario bearbeiten
     </button>
 </div>
-<div class="centered start_end_button_div">
-    <button class="btn btn-secondary start_end_button" id="scenario_start_btn"
+@endsection
+
+@section('footer')
+<div class="centered start_end_button_div_new">
+    <button class="btn btn-secondary start_end_button_new" id="scenario_start_btn"
         type="button" data-bs-theme="dark" disabled>
         Start
     </button>
 </div>
+@endsection
 
+
+@section('modals')
 <!-- add scenario modal -->
 <div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">

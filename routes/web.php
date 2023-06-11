@@ -14,6 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
+// other css test
+Route::get('/test', function () {
+    return view('test');
+});
+
+// css test
+Route::get('/css-test', function () {
+    return view('css-test');
+});
+
+
 // return landing page
 Route::get('/', [ScenarioController::class, 'landing']);
 

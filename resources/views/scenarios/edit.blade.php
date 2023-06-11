@@ -17,34 +17,38 @@
 <script src="{{ asset('js/scenario-edit.js') }}" defer></script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Szenario verwalten</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Szenario bearbeiten</h1>
+    <h2 class="subheading"></h2>
 </div>
-<div class="textbox_middle_main">
-    <div class="textbox_small">
+@endsection
+@section('main')
+<div class="textbox_middle_main_new">
+    <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div>
-                    <label>Name:</label>
+                    <label for="scenario_name">Name</label>
                     <input type="Name" class="form-control" id="scenario_name" value="{{ $scenario->name }}">
                 </div>
             </div>
         </div>
     </div>
-    <div class="textbox_middle">
-        <label>Beschreibung:</label>
+    <div class="textbox_small_new">
+        <label for="scenario_description">Beschreibung</label>
         <div class="overflow_middle" data-bs-theme="dark">
             <textarea class="form-control description_small"
                 id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
-<div class="headline_szenario_h4">
+
+<div class="textbox_big_headline">
     <h4>Phasen</h4>
 </div>
-<div class="textbox_big_szenario_verwalten">
-    <div class="overflow_big_szenario" data-bs-theme="dark">
+<div class="textbox_big_padded">
+    <div class="overflow_fitted" data-bs-theme="dark">
         <table class="table">
             <thead>
                 <tr>
@@ -68,13 +72,14 @@
         </table>
     </div>
 </div>
-<div class="plus_phase">
-    <a class="btn btn-secondary button_small" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
-        <img class="plus_image" src="../images/Pluszeichen.png"></img>
-        Phase
-    </a>
-</div>
-<div class="three_buttons">
+<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
+    <img class="plus_image" src="../images/Pluszeichen.png"></img>
+    Phase
+</button>
+@endsection
+
+@section('footer')
+<div class="three_buttons_new">
     <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn" disabled>
         Speichern
     </button>
@@ -86,7 +91,9 @@
         Abbrechen
     </button>
 </div>
+@endsection
 
+@section('modals')
 <!-- add phase modal -->
 <div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true" data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">

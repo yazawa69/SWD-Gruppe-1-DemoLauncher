@@ -4,6 +4,7 @@ const scenario_create_btn = document.getElementById("create_scenario_btn");
 const scenario_edit_btn = document.getElementById("scenario_edit_btn");
 const scenario_start_btn = document.getElementById("scenario_start_btn");
 
+// scenario id for global access when running scenario
 let scenario_id;
 
 scenario_create_btn.addEventListener("click", create_scenario);

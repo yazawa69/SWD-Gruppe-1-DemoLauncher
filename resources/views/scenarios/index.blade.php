@@ -17,11 +17,14 @@
 <script src="{{ asset('js/scenario-index.js') }}" defer></script>
 @endsection
 
-@section('content')
-<div class="headline">
-    <h1>Szenarien verwalten</h1>
+@section('headline')
+<div class="headline_new">
+    <h1 class="heading">Szenarios</h1>
+    <h2 class="subheading"> Verwalten</h2>
 </div>
-<div class="textbox_big">
+@endsection
+@section('main')
+<div class="textbox_big_new">
     <div class="overflow_big">
         <div>
             @foreach ($scenarios as $scenario)
@@ -31,38 +34,43 @@
         </div>
     </div>
 </div>
-<button class="centered button_middle_main1 btn btn-secondary button_middle" id="scenario_edit_btn" disabled>
+<button class="centered_new btn btn-secondary button_middle_new" id="scenario_edit_btn" disabled>
     Szenario bearbeiten
 </button>
-<button class="centered button_middle_main2 btn btn-secondary button_middle" data-bs-toggle="modal"
+<button class="centered_new  btn btn-secondary button_middle_new" data-bs-toggle="modal"
     data-bs-target="#scenario_modal">
     Szenario erstellen
-    </buttonv>
-    <button class="centered button_middle_main3 btn btn-secondary button_middle" id="scenario_start_btn" disabled>
-        Ausgewähltes Szenario starten
-    </button>
+</button>
+<button class="centered_new  btn btn-secondary button_middle_new" id="scenario_start_btn" disabled>
+    Ausgewähltes Szenario starten
+</button>
 
-    <!-- add scenario modal -->
-    <div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="scenarioModal">Szenario erstellen</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+@endsection
+@section('footer')
+
+@endsection
+
+@section('modals')
+<!-- add scenario modal -->
+<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Szenario erstellen</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mx-2 mb-3">
+                    <label for="scenario-creation-title">Titel</label>
+                    <input name="scenario-creation-title" type="text" class="form-control modal_textbox container-fluid"
+                        id="scenario-creation-name" placeholder=". . ." required="">
                 </div>
-                <div class="modal-body">
-                    <div class="form-group mx-2 mb-3">
-                        <label for="scenario-creation-title">Titel</label>
-                        <input name="scenario-creation-title" type="text"
-                            class="form-control modal_textbox container-fluid" id="scenario-creation-name"
-                            placeholder=". . ." required="">
-                    </div>
-                    <div class="form-group mx-2">
-                        <label for="scenario-creation-description">Beschreibung</label>
-                        <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
-                            name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
-                            required></textarea>
-                    </div>
+                <div class="form-group mx-2">
+                    <label for="scenario-creation-description">Beschreibung</label>
+                    <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
+                        name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
+                        required></textarea>
+                </div>
 
                 </div>
                 <div class="modal-footer">
@@ -72,5 +80,5 @@
             </div>
         </div>
     </div>
-
-    @endsection
+</div>
+@endsection
