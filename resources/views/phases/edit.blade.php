@@ -32,7 +32,7 @@
     <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-                <div>
+                <div> 
                     <label>Titel:</label>
                     <input type="Name" class="form-control" value="{{ $phase->name }}" id="phase_name">
                 </div>
