@@ -1,0 +1,203 @@
+/* Old css */
+
+body {
+    background-color: #2b3035 !important;
+    color: white !important;
+  }
+
+.logo_image {
+    width: 40px;
+    height: 40px;
+  }
+
+/* new CSS added by Ethan (for css-testing) */
+.headline_new{
+    width: fit-content;
+    margin-left: 10%;
+    /* background-color: #343a40; */
+  }
+  
+  .headline_new .heading{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .headline_new .subheading{
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 1.5rem;
+    color: #9a9ea2;
+  }
+  
+  .textbox_big_new{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    padding: 15px;
+    height: 300px;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+  }
+  
+  .body_container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .three_buttons_new {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  
+  .spec_body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+  }
+  
+  .spec_header{
+    height: 20%;
+    /* flex-grow: 1; */
+    /* flex-basis: 0; */
+  }
+  
+  .spec_main{
+    height: 70%;
+    /* flex-grow: 6; */
+    /* flex-basis: 0; */
+  
+  }
+  
+  .spec_footer{
+    height: 10%;
+    /* flex-grow: 1; */
+    /* flex-basis: 0; */
+  
+  }
+  
+  /* new textboxes */
+  .textbox_big_new {
+    margin: 0;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 300px;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+  }
+  
+  .textbox_middle_main_new {
+    margin: 0;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+  }
+  
+  .small_textbox_container{
+    margin: 0;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .small_textbox{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 13px;
+    height: 90px;
+    margin-bottom: 5%;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+  }
+  
+  .textbox_small_new {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 13px;
+    height: 90px;
+    margin-bottom: 5%;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+  }
+  
+  .textbox_big_padded{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: 15px;
+    height: 45%;
+    border: solid 3px #03b670;
+    border-radius: 15px;
+  }
+  
+  .input_container{
+  
+  }
+  
+  /* textbox headlines */
+  
+  .textbox_big_headline{
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* buttons */
+  
+  /* .add_phase_btn {
+    display: flex;
+    margin-left: 10%;
+    margin-right: auto;
+  
+  } */
+  
+  .button_small_new{
+    margin-left: 10%;
+    width: 20%;
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    background-color: #03b670 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /* overflow stuff */
+  .overflow_fitted{
+    overflow: scroll;
+    height: 100%;
+  }
+  
+  /* navbar stuff */
+  #navbarNav{
+    background-color:#2b3035;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  #navbar_container{
+    position: relative;
+  }
+  
+  #nav_list_container{
+    border-style: solid;
+    border-color: #9a9ea2;
+    border-radius: 1rem;
+    /* background-color: black; */
+  
+  }
+  
