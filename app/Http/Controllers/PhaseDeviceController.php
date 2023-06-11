@@ -75,10 +75,9 @@ class PhaseDeviceController extends Controller
         return response(200);
     }
 
-    public function removeDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req)
+    public function removeDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id,  int $demo_material_id)
     {
-        $data = $req->all();
-        if (!$this->phase_devices->removeDemoMaterial($phase_device_id, $data['demo_material_id']))
+        if (!$this->phase_devices->removeDemoMaterial($phase_device_id, $demo_material_id))
         {
             return response(500);
         }

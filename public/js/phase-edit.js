@@ -9,7 +9,6 @@ phase_cancel_btn.addEventListener("click", phase_cancel);
 
 let scenario_id;
 let phase_id;
-let phase_device_id;
 const queryString = window.location.href;
 const pathArray = window.location.pathname.split('/');
 for (i=0; i < pathArray.length; i++) {
@@ -120,4 +119,34 @@ function add_demo_material(demo_material_id){
         console.error('An error occurred:', error);
     });
 
+}
+
+function phase_device_remove(phase_device_id){
+    console.log(phase_device_id);
+
+    fetch("/scenarios/" + scenario_id + "/phases/" + phase_id + "/phasedevices/" + phase_device_id, {
+        method: "DELETE"
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
+}
+
+function demo_material_remove(demo_material_data){
+    phase_device_id = demo_material_data['phase_device_id'];
+    demo_material_id = demo_material_data['demo_material_id'];
+
+
+    fetch("/scenarios/" + scenario_id + "/phases/" + phase_id + "/phasedevices/" + phase_device_id + "/demomaterials/" + demo_material_id, {
+        method: "DELETE"
+    })
+    .then(() => {
+        location.reload();
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
 }
