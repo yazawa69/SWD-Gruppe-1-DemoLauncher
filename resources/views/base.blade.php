@@ -38,7 +38,6 @@
         <main class="spec_main">
             @yield('main')
         </main>
-
         <footer class="spec_footer">
             @yield('footer')
         </footer>    

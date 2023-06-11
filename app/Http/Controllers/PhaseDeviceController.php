@@ -68,6 +68,14 @@ class PhaseDeviceController extends Controller
     public function addDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req)
     {
         $data = $req->all();
+
+        $phase_device_demo_materials = $this->phase_devices->getById($phase_device_id)->demoMaterials;
+
+        if ($phase_device_demo_materials->contains($data['demo_material_id']))
+        {
+            return response()->json(['error' => 'Demo material already added'], 500);
+        }
+
         if (!$this->phase_devices->addDemoMaterial($phase_device_id, $data['demo_material_id']))
         {
             return response()->json(['error' => 'Could not add demo material'], 500);
@@ -75,7 +83,7 @@ class PhaseDeviceController extends Controller
         return response(200);
     }
 
-    public function removeDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req)
+    public function removeDemoMaterial(int $scenario_id, int $phase_id, int $phase_device_id, int $demo_material_id, Request $req)
     {
         $data = $req->all();
         if (!$this->phase_devices->removeDemoMaterial($phase_device_id, $data['demo_material_id']))

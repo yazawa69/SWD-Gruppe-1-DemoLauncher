@@ -66,6 +66,7 @@ class PhaseDeviceRepository
         }
 
         $phase_device->demoMaterials()->detach($demo_material);
+        return true;
     }
 
 }
