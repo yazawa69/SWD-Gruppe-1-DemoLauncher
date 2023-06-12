@@ -14,6 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/scenario-run.js') }}" defer></script>
 @endsection
 
 
@@ -61,7 +62,8 @@
 
                                 @if($phase_devices[$x]->demoMaterials()->exists())
                                 <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}">
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
+                                    onclick="set_button_id({{ $x }})">
                                     {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                 </td>
 
@@ -134,8 +136,8 @@
 
 @section('footer')
 <div class="centered">
-    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new" type="button"
-        data-bs-theme="dark">
+    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new"
+        type="button" data-bs-theme="dark">
         Beenden
     </button>
 </div>
@@ -159,7 +161,11 @@
                             <div>
 
                                 @foreach($phase_devices[$x]->demoMaterials as $demo_material)
-                                <button class="btn btn-secondary list" data-bs-dismiss="modal">{{ $demo_material->name
+                                @php
+                                $demo_material_data = json_encode(['demo_material_name' => $demo_material->name]);
+                                @endphp
+                                <button class="btn btn-secondary list" data-bs-dismiss="modal"
+                                    onclick="set_demo_material_name({{ $demo_material_data }})">{{ $demo_material->name
                                 }}</button>
                                 @endforeach
                             </div>

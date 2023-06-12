@@ -19,7 +19,7 @@
 
 @section('headline')
 <div class="headline_new">
-    <h1 class="heading">Szenarios</h1>
+    <h1 class="heading">Szenarien</h1>
     <h2 class="subheading"> Verwalten</h2>
 </div>
 @endsection
