@@ -35,10 +35,10 @@
         </div>
     </div>
 </div>
-<button class="centered_new button_middle_container btn btn-secondary button_middle" id="demo_material_edit_btn" disabled>
+<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="demo_material_edit_btn" disabled>
     Material bearbeiten
 </button>
-<button class="centered_new button_middle_container btn btn-secondary button_middle" id="demo_material_add_btn">
+<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="demo_material_add_btn">
     Material hinzufügen
 </button>
 @endsection

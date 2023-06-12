@@ -36,10 +36,10 @@
         </div>
     </div>
 </div>
-<button class="centered_new btn btn-secondary button_middle_new" id="device_edit_btn" disabled>
+<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="device_edit_btn" disabled>
     Gerät bearbeiten
 </button>
-<button class="centered_new btn btn-secondary button_middle_new" id="device_add_btn">
+<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="device_add_btn">
     Gerät hinzufügen
 </button>
 @endsection

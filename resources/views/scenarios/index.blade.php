@@ -34,14 +34,14 @@
         </div>
     </div>
 </div>
-<button class="centered_new btn btn-secondary button_middle_new" id="scenario_edit_btn" disabled>
+<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_edit_btn" disabled>
     Szenario bearbeiten
 </button>
-<button class="centered_new  btn btn-secondary button_middle_new" data-bs-toggle="modal"
+<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" data-bs-toggle="modal"
     data-bs-target="#scenario_modal">
     Szenario erstellen
 </button>
-<button class="centered_new  btn btn-secondary button_middle_new" id="scenario_start_btn" disabled>
+<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_start_btn" disabled>
     Ausgewähltes Szenario starten
 </button>
 
