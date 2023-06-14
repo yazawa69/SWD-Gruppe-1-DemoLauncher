@@ -86,10 +86,11 @@ class DeviceController extends Controller
         return view('devices.edit', ['device' => $device, 'device_type' => $device_types]);
     }
 
-    public function update(int $device_id, Request $req)
+    public function update(int $device_type_id, int $device_id, Request $req)
     {
         // TODO: this should update and then redirect to the show view of the updated device
         $data = $req->all();
+        $device_types = $this->device_types->getById($device_type_id);
         if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['serial_number']))
         {
             return response(500);
