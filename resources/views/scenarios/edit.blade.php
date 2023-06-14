@@ -47,8 +47,8 @@
 <div class="textbox_big_headline">
     <h4>Phasen</h4>
 </div>
-<div class="textbox_big_padded">
-    <div class="overflow_fitted" data-bs-theme="dark">
+<div class="textbox_big_padded no_sidescroll">
+    <div class="overflow_fitted no_sidescroll" data-bs-theme="dark">
         <table class="table">
             <thead>
                 <tr>
@@ -60,7 +60,7 @@
             <tbody>
                 @for ($i = 0; $i < count($phases); $i++) <tr>
                     <th>{{ $i + 1 }}</th>
-                    <td>{{ $phases[$i]->name }}</td>
+                    <td> <p class="text_no_overflow_ellipsis">{{ $phases[$i]->name }}</p> </td>
                     <td class="right">
                         <button
                             onclick="window.location.href = '{{ route('phases.edit', ['scenario_id' => $scenario->id, 'phase_id' => $phases[$i]->id]) }}'"
@@ -105,7 +105,7 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="phase-creation-title">Titel</label>
-                    <input type="text" class="form-control modal_textbox container-fluid" maxlength="10" id="phase_creation_title"
+                    <input type="text" class="form-control modal_textbox" container-fluid id="phase_creation_title"
                         placeholder=". . ." required="">
                 </div>
             </div>

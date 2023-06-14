@@ -88,8 +88,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Auswahl</th>
                                 <th>Steuerung</th>
+                                <th>Auswahl</th>
                             </tr>
                         </thead>
                         <tbody>

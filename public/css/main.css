@@ -839,5 +839,19 @@ body {
   
 }
 
+.text_no_overflow_ellipsis{
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.no_sidescroll{
+  overflow-x: hidden;
+}
 
 /*# sourceMappingURL=main.css.map */
