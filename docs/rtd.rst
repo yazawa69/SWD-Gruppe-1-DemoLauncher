@@ -7,8 +7,9 @@ Read the Docs
    Dokumentation noch in Bearbeitung
 
 
+#################################
 Allgemeine Informationen
-================================
+#################################
 Diese Dokumentation wurde mit `Read the Docs <https://readthedocs.org/>`_ erstellt. 
 Hier werden nur projektspezifische Anpassungen beschrieben, die für die Erstellung 
 der Dokumentation notwendig sind. Für weitere Informationen gibt es das offizielle 

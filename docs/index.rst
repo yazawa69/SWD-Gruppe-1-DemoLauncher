@@ -1,6 +1,6 @@
-##########################
+==========================
 Demo Launcher
-##########################
+==========================
 
 Mit unserer Anwendung wollen wir Mitarbeitern des Instituts für 
 Intelligente Interaktive Ubiquitäre Systeme die Planung und Inszenierung 
