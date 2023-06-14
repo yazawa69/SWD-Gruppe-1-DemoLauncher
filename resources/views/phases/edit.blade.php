@@ -14,8 +14,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
-{{-- <script src="../JavaScript-Dateien/main.js" defer></script> --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('js/phase-edit.js') }}" defer></script>
 @livewireStyles
 @endsection
@@ -95,7 +93,7 @@
 
 @section('footer')
 <div class="three_buttons_new">
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn" disabled>
         Speichern
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_delete_btn">

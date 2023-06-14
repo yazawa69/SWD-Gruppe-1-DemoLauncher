@@ -16,10 +16,10 @@ der Dokumentation notwendig sind. Für weitere Informationen gibt es das offizie
 
 Relevante Dateien
 ================================
-Alle relevanten Dateien befinden sich im Ordner ``docs``. Die Dateien sind wie folgt:
+Fast alle relevanten Dateien befinden sich im Ordner ``docs``. Die Dateien sind wie folgt:
 
+* ``.readthedocs.yaml``: Konfigurationsdatei für Read the Docs
 * ``docs/conf.py``: Konfigurationsdatei für Sphinx
-* ``docs/.readthedocs.yaml``: Konfigurationsdatei für Read the Docs
 * ``docs/index.rst``: Hauptdatei der Dokumentation
 * ``docs/user_manual.rst``: Nutzerhandbuch
 * ``docs/frontend.rst``: Frontend-Dokumentation

@@ -3,6 +3,8 @@ const phase_delete_btn = document.getElementById("phase_delete_btn");
 const phase_cancel_btn = document.getElementById("phase_cancel_btn");
 const phase_name = document.getElementById("phase_name");
 
+const phase_name_val = phase_name.value;
+
 phase_save_btn.addEventListener("click", phase_save);
 phase_delete_btn.addEventListener("click", phase_delete);
 phase_cancel_btn.addEventListener("click", phase_cancel);
@@ -19,6 +21,15 @@ for (i=0; i < pathArray.length; i++) {
         phase_id = pathArray[i+1];
     }
 }
+
+phase_name.oninput = function () {
+    if (phase_name.value != "" && phase_name.value != phase_name_val) {
+        phase_save_btn.disabled = false;
+    }
+    else {
+        phase_save_btn.disabled = true;
+    }
+};
 
 function phase_save(event){
     event.preventDefault();

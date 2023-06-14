@@ -14,7 +14,7 @@ Dieses Projekt entsteht im Rahmen der Veranstaltung Softwaredesign bei
 Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der
 `Hochschule Furtwangen <https://www.hs-furtwangen.de/>`_.
 
-Das Projekt auf `GitHub <https://github.com/GuidoGruen/Softwaredesign_Frontend.git>`_
+Das Projekt auf `GitHub <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
 
 .. note::
 
@@ -26,6 +26,5 @@ Inhalt
 .. toctree::
 
    user_manual
-   frontend
-   backend
+   tech_stack
    rtd
