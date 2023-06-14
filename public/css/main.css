@@ -68,13 +68,12 @@ body {
 }
 
 .x_image_2 {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   margin: 5%;
   border: solid 1px #03b670;
   border-radius: 15px;
   text-align: right;
-  margin-left: 10%;
 }
 
 /*textboxen*/
@@ -102,12 +101,15 @@ body {
 }
 .overflow_big {
   overflow: scroll;
-  height: 270px;
+  height: 100%;
 }
 .textbox_big_main{
   position: fixed;
   margin-top: 15vh;
   width: 100vw;
+}
+.textbox_big_main_new{
+  height: 50%;
 }
 
 .textbox_big_szenario {
@@ -275,7 +277,18 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.two_button_small{
+    width: 39.5vw;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    background-color: #03b670 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 .button_small_popup {
   width: 35vw;
   height: 50px;
@@ -300,6 +313,11 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.button_very_small_grey{
+  width: 30vw;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .button_very_small_outline {
   width: 100px;
@@ -424,7 +442,7 @@ body {
   position: fixed;
   display: flex;
   justify-content: center;
-  margin-top: 62vh;
+  margin-top: 5vh;
   width: 100vw;
 }
 
@@ -482,7 +500,7 @@ body {
 
 /*FORMAT STUFF*/
 .space {
-  height: 60px
+  margin-top: 1vh;
 }
 .hundred{
   width: 100%;
@@ -498,14 +516,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: fixed;
   width: 100%;
 }
-
+.vertically_centered{
+  display: flex;
+  height: 100%;
+}
 .right {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
+}
+.carousel_arrow{
+  margin-top: 5vh;
 }
 
 /* new CSS added by Ethan (for css-testing) */
@@ -559,7 +582,7 @@ body {
 
 .spec_footer{
   height: 10%;
- 
+ display: flex;
 
 }
 
@@ -569,13 +592,21 @@ body {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 10%;
   padding: 15px;
-  height: 300px;
+  height: 100%;
   border: solid 3px #03b670;
   border-radius: 15px;
 }
-
+.textbox_big_new_start{
+  margin: 0;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 15px;
+  height: 70%;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
 
 
 .textbox_big_szenario_new {
@@ -587,7 +618,15 @@ body {
   border: solid 3px #03b670;
   border-radius: 15px;
 }
-
+.textbox_big_szenario_running{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 80vw;
+  padding: 15px;
+  height: 30vh;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
 
 .textbox_middle_main_new {
   margin: 0;
@@ -625,7 +664,7 @@ body {
   margin-right: 10%;
   width: 80%;
   padding: 15px;
-  height: 45%;
+  height: 35%;
   border: solid 3px #03b670;
   border-radius: 15px;
 }
@@ -693,9 +732,10 @@ body {
 }
 
 .other_button_small_new{
+  margin-top: 2%;
   margin-left: 10%;
-  width: 20%;
-  height: 40px;
+  width: 25%;
+  height: 45px;
   border-radius: 15px;
   text-align: center;
   color: white;
@@ -718,7 +758,7 @@ body {
   text-align: center;
   border-color: #03b670 !important;
   border-width: 2px;
-  background-color: #2b3035;
+  background-color: #03b670 !important;
 }
 
 .start_end_button:focus {

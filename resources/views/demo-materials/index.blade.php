@@ -35,10 +35,14 @@
         </div>
     </div>
 </div>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="demo_material_edit_btn" disabled>
-    Material bearbeiten
-</button>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="demo_material_add_btn">
-    Material hinzufügen
-</button>
+@endsection
+@section('footer')
+<div class="three_buttons_new space">
+    <button class="three_buttons_spacing two_button_small btn btn-secondary" id="demo_material_edit_btn" disabled>
+    Bearbeiten
+    </button>
+    <button class="three_buttons_spacing two_button_small btn btn-secondary" id="demo_material_add_btn">
+    Hinzufügen
+    </button>
+</div>
 @endsection

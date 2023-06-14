@@ -27,7 +27,7 @@
     @foreach($demo_material_types as $demo_material_type)
     <div class="box_middle_new">
         <div onclick="window.location.href='{{ route('demo_material.index', ['demo_material_type_id' => $demo_material_type->id]) }}'"
-            class="overflow_middle">
+            class="vertically_centered">
             <img class="selection_image" src="../images/PDF.png"></img>
             <p class="selection_text">{{ $demo_material_type->filename_extension }}</p>
         </div>

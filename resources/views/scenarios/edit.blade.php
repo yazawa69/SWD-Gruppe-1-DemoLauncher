@@ -26,8 +26,8 @@
 @section('main')
 <div class="textbox_middle_main_new">
     <div class="textbox_small_new">
-        <div class="overflow_small mb-3" data-bs-theme="dark">
-            <div class="row g-3 align-items-center">
+        <div class="vertically_centered mb-3" data-bs-theme="dark">
+            <div class="hundred">
                 <div>
                     <label for="scenario_name">Name</label>
                     <input type="Name" class="form-control" id="scenario_name" value="{{ $scenario->name }}">
@@ -73,7 +73,7 @@
     </div>
 </div>
 <button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
-    <img class="plus_image" src="../images/Pluszeichen.png"></img>
+    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
     Phase
 </button>
 @endsection
@@ -105,13 +105,13 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="phase-creation-title">Titel</label>
-                    <input type="text" class="form-control modal_textbox container-fluid" id="phase_creation_title"
+                    <input type="text" class="form-control modal_textbox container-fluid" maxlength="10" id="phase_creation_title"
                         placeholder=". . ." required="">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                <button type="button" class="btn btn-primary" id="create_phase_btn" disabled>Erstellen</button>
+                <button type="button" class="btn button_small btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                <button type="button" class="btn button_small btn-secondary" id="create_phase_btn" disabled>Erstellen</button>
             </div>
         </div>
     </div>

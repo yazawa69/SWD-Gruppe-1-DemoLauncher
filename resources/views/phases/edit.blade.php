@@ -31,8 +31,8 @@
 <div class="textbox_middle_main_new">
     <div class="textbox_small_new">
         <div class="overflow_small mb-3" data-bs-theme="dark">
-            <div class="row g-3 align-items-center">
-                <div> 
+            <div class="hundred vertically_centered">
+                <div class="hundred"> 
                     <label>Titel:</label>
                     <input type="Name" class="form-control" value="{{ $phase->name }}" id="phase_name">
                 </div>
@@ -56,7 +56,7 @@
             <tbody>
                 @for ($i = 0; $i < count($phase_devices); $i++) <tr>
                     <th>{{ $phase_devices[$i]->device->name }}
-                        <img class="x_image_2" src="../images/X-Icon.png" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
+                        <img class="x_image_2" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
                     </th>
                     <td>
                         @foreach ($phase_devices[$i]->demoMaterials as $demo_material)
@@ -66,17 +66,16 @@
                         <div class="textbox_very_small">
                             <div class="overflow_very_small">
                                 <p class="text_phase">{{ $demo_material->name }}</p>
-                                <img class="x_image_2" src="../images/X-Icon.png"
+                                <img class="x_image_2" src="{{ asset('images/X-Icon.png') }}"
                                     onclick="demo_material_remove({{ $demo_material_data }})"></img>
                             </div>
                         </div>
                         @endforeach
                         <div class="textbox_very_small">
-                            <div class="overflow_very_small" data-bs-toggle="modal"
+                            <div class="centered" data-bs-toggle="modal"
                                 data-bs-target="#demo-material-selection-modal"
                                 onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
-                                <img class="x_image_2" src="../images/Pluszeichen.png"></img>
-                                <p class="text_phase">Hinzufügen</p>
+                                <img class="x_image_2" src="{{ asset('images/Pluszeichen.png') }}"></img>
                             </div>
                         </div>
                     </td>
@@ -84,8 +83,8 @@
                     @endfor
                     <tr>
                         <th>
-                            <img class="plus_image" id="add-phase-device-btn" data-bs-toggle="modal"
-                                data-bs-target="#device-selection-modal" src="../images/Pluszeichen.png"></img>
+                            <img class="x_image_2" id="add-phase-device-btn" data-bs-toggle="modal"
+                                data-bs-target="#device-selection-modal" src="{{ asset('images/Pluszeichen.png') }}"></img>
                         </th>
                     </tr>
             </tbody>
@@ -110,7 +109,7 @@
 
 @section('modals')
 <!-- add demo material modal -->
-<div class="modal fade" id="device-selection-modal" aria-labelledby="DeviceSelectionModal" aria-hidden="true"
+<div class="modal fade" data-bs-theme="dark" id="device-selection-modal" aria-labelledby="DeviceSelectionModal" aria-hidden="true"
     style="margin-top: 15vh;">
     @livewire('device-selection-modal')
 </div>

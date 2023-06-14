@@ -36,10 +36,14 @@
         </div>
     </div>
 </div>
-<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="device_edit_btn" disabled>
-    Gerät bearbeiten
-</button>
-<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="device_add_btn">
-    Gerät hinzufügen
-</button>
+@endsection
+@section('footer')
+<div class="three_buttons_new space">
+    <button class="three_buttons_spacing two_button_small btn btn-secondary" id="device_edit_btn" disabled>
+        Bearbeiten
+    </button>
+    <button class="three_buttons_spacing two_button_small btn btn-secondary" id="device_add_btn">
+        Hinzufügen
+    </button>
+</div>
 @endsection

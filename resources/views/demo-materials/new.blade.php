@@ -26,7 +26,7 @@
 @section('main')
 <div class="textbox_middle_main_new">
     <div class="textbox_small_new">
-        <div class="overflow_small mb-3" data-bs-theme="dark">
+        <div class="vertically_centered mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label for="demo_material_name">Datei</label>
@@ -36,9 +36,8 @@
         </div>
     </div>
     <div class="textbox_small_new">
-        <div class="overflow_small mb-3" data-bs-theme="dark">
+        <div class="vertically_centered mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-            <label for="demo_material_file">Datei hochladen</label>
             <input name="file" class="form-control" type="file" id="demo_material_file">
         </div>
         </div>

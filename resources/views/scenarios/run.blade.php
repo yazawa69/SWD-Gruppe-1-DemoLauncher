@@ -43,7 +43,7 @@
             <div class="textbox_big_headline">
                 <h3>{{ $phase->name }}</h3>
             </div>
-            <div class="textbox_big_szenario_new" data-bs-theme="dark">
+            <div class="textbox_big_szenario_running" data-bs-theme="dark">
                 <div class="overflow_big_szenario">
                     <table class="table">
                         <thead>
@@ -81,7 +81,7 @@
             <div class="textbox_big_headline">
                 <h3>{{ $phases[$i]->name }}</h3>
             </div>
-            <div class="textbox_big_szenario_new" data-bs-theme="dark">
+            <div class="textbox_big_szenario_running" data-bs-theme="dark">
                 <div class="overflow_big_szenario_new">
                     <table class="table">
                         <thead>
@@ -116,11 +116,11 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev fixed" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+<button class="carousel-control-prev carousel_arrow" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Prev</span>
 </button>
-<button class="carousel-control-next fixed" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+<button class="carousel-control-next carousel_arrow" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
 </button>
@@ -128,9 +128,9 @@
 
 
 <div class="steuerung">
-    <button class="btn"><img src="../images/iconback.png" alt=""></button>
-    <button class="btn"><img src="../images/iconplay.png" alt=""></button>
-    <button class="btn"><img src="../images/iconforward.png" alt=""></button>
+    <button class="btn"><img src="{{ asset('images/iconback.png') }}" alt=""></button>
+    <button class="btn"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn"><img src="{{ asset('images/iconforward.png') }}" alt=""></button>
 </div>
 @endsection
 

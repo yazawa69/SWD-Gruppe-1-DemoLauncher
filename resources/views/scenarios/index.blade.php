@@ -34,20 +34,21 @@
         </div>
     </div>
 </div>
-<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_edit_btn" disabled>
-    Szenario bearbeiten
-</button>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" data-bs-toggle="modal"
-    data-bs-target="#scenario_modal">
-    Szenario erstellen
-</button>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_start_btn" disabled>
-    Ausgewähltes Szenario starten
-</button>
 
 @endsection
 @section('footer')
-
+<div class="three_buttons_new space">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_edit_btn" disabled>
+        Bearbeiten
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#scenario_modal">
+        Erstellen
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_start_btn" disabled>
+        Starten
+    </button>
+</div>
 @endsection
 
 @section('modals')
@@ -62,7 +63,7 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" class="form-control modal_textbox container-fluid"
+                    <input name="scenario-creation-title" type="text" maxlength="20" class="form-control modal_textbox container-fluid"
                         id="scenario-creation-name" placeholder=". . ." required="">
                 </div>
                 <div class="form-group mx-2">
@@ -74,8 +75,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="submit" class="btn btn-primary" id="create_scenario_btn" disabled>Erstellen</button>
+                    <button type="button" class="btn button_small_popup btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    <button type="submit" class="btn button_small_popup btn-secondary" id="create_scenario_btn" disabled>Erstellen</button>
                 </div>
             </div>
         </div>

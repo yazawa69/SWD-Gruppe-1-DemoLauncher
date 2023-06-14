@@ -46,7 +46,7 @@
         @endforeach
     </ul>
 </div>
-<div class="textbox_big_new">
+<div class="textbox_big_new_start">
     <div class="overflow_big_new">
         <p id="scenario_description">
             Beschreibung

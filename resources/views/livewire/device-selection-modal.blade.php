@@ -125,7 +125,7 @@
                     <div class="box_middle" wire:key="device_type-{{ $device_type->id }}"
                         wire:click="loadDevices({{ $device_type->id }})">
                         <div class="overflow_middle">
-                            <img class="selection_image" src="../images/Bildschirm.png"></img>
+                            <img class="selection_image" src="{{ asset('images/Bildschirm.png') }}"></img>
                             <p class="selection_text text-nowrap">{{ $device_type->name }}</p>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                         <div class="box_middle" wire:key="device-{{ $device->id }}"
                             onclick="add_phase_device({{ $device->id }})">
                             <div class="overflow_middle">
-                                <img class="selection_image" src="../images/Bildschirm.png"></img>
+                                <img class="selection_image" src="{{ asset('images/Bildschirm.png') }}"></img>
                                 <p class="selection_text text-nowrap">{{ $device->name }}</p>
                             </div>
                         </div>
