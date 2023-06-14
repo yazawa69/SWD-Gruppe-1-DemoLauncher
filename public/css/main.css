@@ -332,6 +332,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .button_very_small_outline:focus {
   background-color: #03b670 !important;
@@ -593,7 +595,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   padding: 15px;
-  height: 100%;
+  height: 75%;
   border: solid 3px #03b670;
   border-radius: 15px;
 }
@@ -819,6 +821,22 @@ body {
 .middle_button_extra_positioner{
   margin-left: auto;
   margin-right: auto;
+}
+
+.button_very_small_grey_new{
+  width: 100px;
+  height: 25px;
+  padding: 0%;
+  border-style: solid;
+  border-color: #03b670;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #2b3035 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 

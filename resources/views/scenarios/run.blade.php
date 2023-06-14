@@ -48,8 +48,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Auswahl</th>
                                 <th>Steuerung</th>
+                                <th>Auswahl</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,10 +61,12 @@
                                 </th>
 
                                 @if($phase_devices[$x]->demoMaterials()->exists())
-                                <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
+                                <td> 
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
                                     data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
                                     onclick="set_button_id({{ $x }})">
-                                    {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                        {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
                                 </td>
 
                                 @endif
