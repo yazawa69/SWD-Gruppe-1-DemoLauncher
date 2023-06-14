@@ -32,8 +32,6 @@ device_name.oninput = function () {
 };
 
 device_oem.oninput = function () {
-    console.log(device_oem_val);
-    console.log(device_oem.value);
     activate_button();
 };
 
