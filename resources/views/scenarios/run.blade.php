@@ -103,9 +103,12 @@
                                     </button>
                                 </th>
                                 @if($phase_devices[$x]->demoMaterials()->exists())
-                                <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
+
+                                <td>
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
                                     data-bs-target="#RunningPopUp{{ $i.$x }}">
-                                    {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                        {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
                                 </td>
                                 @endif
                                 </tr>
