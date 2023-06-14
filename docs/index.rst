@@ -16,6 +16,9 @@ Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der
 
 Das Projekt auf `GitHub <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
 
+Projektmitglieder: Nico Berndt, Vadim Borejko, Ethan Fuchs, Guido Grün, 
+Lea Hergert, Lisa Kutowinski, Mattis Petroll, Marit Zenker
+
 .. note::
 
    Dieses Projekt befindet sich noch in Entwicklung.
