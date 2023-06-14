@@ -26,7 +26,7 @@ Route::get('/css-test', function () {
 
 
 // return landing page
-Route::get('/', [ScenarioController::class, 'landing']);
+Route::get('/', [ScenarioController::class, 'landing'])->name('landing');
 
 // fetch scenario overview view
 Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
