@@ -1,11 +1,15 @@
+// Get buttons
 const demo_material_edit_btn = document.getElementById("demo_material_edit_btn");
 const demo_material_add_btn = document.getElementById("demo_material_add_btn");
 
+// Add event listeners
+demo_material_edit_btn.addEventListener("click", edit_demo_material);
+demo_material_add_btn.addEventListener("click", add_demo_material);
+
+// Demo material id for global access
 let demo_material_id;
 
-demo_material_edit_btn.addEventListener("click", demo_material_edit_btn);
-demo_material_add_btn.addEventListener("click", demo_material_add_btn);
-
+// Get demo material type id from url
 let demo_material_type_id;
 const queryString = window.location.href;
 const pathArray = window.location.pathname.split('/');
@@ -15,14 +19,13 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
-demo_material_edit_btn.addEventListener("click", edit_demo_material);
-demo_material_add_btn.addEventListener("click", add_demo_material);
-
+// Called when selecting demo material from list, enable edit button
 function set_demo_material_id(id){
     demo_material_id = id;
     demo_material_edit_btn.disabled = false;
 }
 
+// Redirect to edit demo material page with selected demo material id
 function edit_demo_material(event){
     event.preventDefault();
 
@@ -31,6 +34,7 @@ function edit_demo_material(event){
     }
 }
 
+// Redirect to add demo material page
 function add_demo_material(event){
     event.preventDefault();
 
