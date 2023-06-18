@@ -28,7 +28,7 @@
     <div class="overflow_big">
         <div>
             @foreach ($scenarios as $scenario)
-            <button class="btn btn-secondary list"
+            <button class="btn btn-secondary list text_no_overflow_ellipsis_2"
                 onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button>
             @endforeach
         </div>

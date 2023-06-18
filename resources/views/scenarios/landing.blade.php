@@ -26,7 +26,7 @@
 @section('main')
 <div class="dropdown szenario_dropdown_container">
     @if (count($scenarios) > 0)
-    <button class="btn btn-secondary dropdown-toggle gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button"
+    <button class="btn btn-secondary text_no_overflow_ellipsis_2 dropdown-toggle gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px szenario_button"
         id="add_scenario_button" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-theme="dark">
         Szenario auswählen
     </button>
@@ -41,7 +41,7 @@
         @php
         $scenario_data = json_encode(['id' => $scenario->id, 'name' => $scenario->name, 'description' => $scenario->description]);
         @endphp
-        <li><button class="dropdown-item" onclick="select_scenario({{ $scenario_data }})">{{ $scenario->name }}</button>
+        <li><button class="dropdown-item text_no_overflow_ellipsis_2" onclick="select_scenario({{ $scenario_data }})">{{ $scenario->name }}</button>
         </li>
         @endforeach
     </ul>

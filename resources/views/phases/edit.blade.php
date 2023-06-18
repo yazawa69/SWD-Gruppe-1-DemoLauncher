@@ -39,7 +39,10 @@
     </div>
 </div>
 <div class="textbox_big_headline">
-    <h4>{{ $phase->name }} - Elemente</h4>
+    <h4> <div class="elemente">
+        {{ $phase->name }}
+        </div>Elemente
+    </h4>
 </div>
 <div class="textbox_big_phase_verwalten_new">
     <div class="overflow_big_phase" data-bs-theme="dark">
@@ -53,8 +56,11 @@
             </thead>
             <tbody>
                 @for ($i = 0; $i < count($phase_devices); $i++) <tr>
-                    <th>{{ $phase_devices[$i]->device->name }}
-                        <img class="x_image_2" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
+                    <th>
+                        <div class="margin">
+                            {{ $phase_devices[$i]->device->name }}
+                            <img class="image_2" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
+                        </div>
                     </th>
                     <td>
                         @foreach ($phase_devices[$i]->demoMaterials as $demo_material)
@@ -63,8 +69,8 @@
                         @endphp
                         <div class="textbox_very_small">
                             <div class="overflow_very_small">
-                                <p class="text_phase">{{ $demo_material->name }}</p>
-                                <img class="x_image_2" src="{{ asset('images/X-Icon.png') }}"
+                                <p class="text_phase text_no_overflow_ellipsis_2">{{ $demo_material->name }}</p>
+                                <img class="image_2" src="{{ asset('images/X-Icon.png') }}"
                                     onclick="demo_material_remove({{ $demo_material_data }})"></img>
                             </div>
                         </div>
@@ -73,7 +79,7 @@
                             <div class="centered" data-bs-toggle="modal"
                                 data-bs-target="#demo-material-selection-modal"
                                 onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
-                                <img class="x_image_2" src="{{ asset('images/Pluszeichen.png') }}"></img>
+                                <img class="image_2" src="{{ asset('images/Pluszeichen.png') }}"></img>
                             </div>
                         </div>
                     </td>

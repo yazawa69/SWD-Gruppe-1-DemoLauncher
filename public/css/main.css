@@ -49,28 +49,11 @@ body {
   padding: 2px;
 }
 
-.plus_image_2 {
-  width: 15px;
-  height: 15px;
-  margin: 5%;
-  border: solid 1px #03b670;
-  border-radius: 15px;
-  text-align: left;
-  margin-right: 10%;
-}
 
-.x_image {
-  width: 25px;
-  height: 25px;
-  margin: 5%;
-  border: solid 2px #03b670;
-  border-radius: 15px;
-}
-
-.x_image_2 {
+.image_2 {
   width: 20px;
   height: 20px;
-  margin: 5%;
+  margin: 2%;
   border: solid 1px #03b670;
   border-radius: 15px;
   text-align: right;
@@ -238,6 +221,7 @@ body {
 .overflow_very_small {
   display: flex;
   height: 20px;
+  /* justify-content: space-between; */
 }
 
 /*BUTTONS*/
@@ -479,7 +463,7 @@ body {
 
 .text_phase {
   padding-left: 5%;
-  width: 100px;
+  width: 120px;
   height: 20px;
   overflow: hidden;
 }
@@ -610,7 +594,6 @@ body {
   border-radius: 15px;
 }
 
-
 .textbox_big_szenario_new {
   margin-left: 10vw;
   margin-right: 10vw;
@@ -634,10 +617,8 @@ body {
   margin: 0;
   width: 80%;
   margin-left: 10%;
-  margin-right: 10%;
-  
+  margin-right: 10%; 
 }
-
 
 .textbox_middle_new {
   margin: 0;
@@ -676,7 +657,7 @@ body {
   margin-right: 10vw;
   width: 80%;
   padding: 15px;
-  height: 45vh;
+  height: 40vh;
   border: solid 3px #03b670;
   border-radius: 15px;
 }
@@ -850,8 +831,27 @@ body {
   
 }
 
+.text_no_overflow_ellipsis_2{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
 .no_sidescroll{
   overflow-x: hidden;
+}
+
+.elemente {
+  margin:auto;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin {
+  margin:5%;
 }
 
 /*# sourceMappingURL=main.css.map */
