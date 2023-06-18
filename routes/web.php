@@ -32,7 +32,7 @@ Route::get('/', [ScenarioController::class, 'landing'])->name('landing');
 Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
 
 // fetch scenario creation view
-Route::get('/scenarios/new', [ScenarioController::class, 'new']);
+Route::get('/scenarios/{scenario_id}/new', [ScenarioController::class, 'new'])->name('scenarios.new');
 
 // add new scenario
 Route::post('/scenarios', [ScenarioController::class, 'create'])->name('scenarios.create');

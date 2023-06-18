@@ -42,7 +42,7 @@
         Bearbeiten
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
-        data-bs-target="#scenario_modal">
+        data-bs-target="#scenario_modal" onclick="empty_modal()">
         Erstellen
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_start_btn" disabled>

@@ -36,10 +36,16 @@ class ScenarioController extends Controller
         return view('scenarios.index', ['scenarios' => $scenarios]);
     }
 
-    public function new()
+    public function new(int $scenario_id)
     {
         // display scenario creation view
-        return view('scenarios.scenario-new');
+            $scenario = $this->scenarios->getById($scenario_id);
+            if (!$scenario)
+            {
+                return response(500);
+            }
+            
+            return view('scenarios.new', ['scenario' => $scenario, 'phases' => $scenario->phases]);
     }
 
     public function create(Request $req)

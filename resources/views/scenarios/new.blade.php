@@ -14,12 +14,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
-<script src="{{ asset('js/scenario-edit.js') }}" defer></script>
+<script src="{{ asset('js/scenario-new.js') }}" defer></script>
 @endsection
 
 @section('headline')
 <div class="headline_new">
-    <h1 class="heading">Szenario bearbeiten</h1>
+    <h1 class="heading">Szenario erstellen</h1>
     <h2 class="subheading"></h2>
 </div>
 @endsection
@@ -35,12 +35,11 @@
             </div>
         </div>
     </div>
-    <div class="textbox_small_scenario">
-        <div class="overflow_middle_scenario" data-bs-theme="dark">
-            <label for="scenario_description">Beschreibung</label>
-            <textarea name="scenario_desciption" class="form-control description_small"
-                id="scenario_description">{{ $scenario->description }}
-            </textarea>
+    <div class="textbox_small_new">
+        <label for="scenario_description">Beschreibung</label>
+        <div class="overflow_middle" data-bs-theme="dark">
+            <textarea class="form-control description_small"
+                id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
@@ -73,7 +72,7 @@
         </table>
     </div>
 </div>
-<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark" onclick="empty_modal()">
+<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark">
     <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
     Phase
 </button>
@@ -81,15 +80,14 @@
 
 @section('footer')
 <div class="three_buttons_new">
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn" disabled>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn">
         Speichern
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
         data-bs-target="#scenario_delete_modal">
         Löschen
     </button>
-    <button onclick="window.location.href='{{ route('scenarios.index') }}';"
-        class="three_buttons_spacing button_small btn btn-secondary">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_cancel_btn">
         Abbrechen
     </button>
 </div>

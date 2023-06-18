@@ -72,7 +72,7 @@ function create_scenario(event){
         id = data.scenario.id;
     })
     .then(() => {
-        window.location.href = "/scenarios/" + id + "/edit";
+        window.location.href = "/scenarios/" + id + "/new";
     })
     .catch(error => {
         console.error('An error occurred:', error);
@@ -103,4 +103,10 @@ function start_scenario(event) {
     if (scenario_id != null) {
         window.location.href = "/scenarios/" + scenario_id + "/run/phases/" + 1;
     }
+}
+
+// Clear modal input fields
+function empty_modal() {
+    scenario_name.value = "";
+    scenario_description.value = "";
 }
