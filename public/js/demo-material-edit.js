@@ -1,18 +1,20 @@
 // Get buttons
-const save_btn = document.getElementById("demo_material_save_btn");
-const delete_btn = document.getElementById("demo_material_delete_btn");
-const cancel_btn = document.getElementById("demo_material_cancel_btn");
+const demo_materials_save_btn = document.getElementById("demo_material_save_btn");
+const demo_materials_delete_btn = document.getElementById("demo_material_delete_btn");
+const demo_materials_cancel_btn = document.getElementById("demo_material_cancel_btn");
 
 // Add event listeners
-save_btn.addEventListener("click", demo_material_save);
-delete_btn.addEventListener("click", demo_material_delete);
-cancel_btn.addEventListener("click", demo_material_cancel);
+demo_materials_save_btn.addEventListener("click", demo_material_save);
+demo_materials_delete_btn.addEventListener("click", demo_material_delete);
+demo_materials_cancel_btn.addEventListener("click", demo_material_cancel);
 
 
 // Get input fields
-const demo_material_name = document.getElementById('demo_material_name');
 const demo_material_file = document.getElementById('demo_material_file');
 const demo_material_description = document.getElementById('demo_material_description');
+
+// Get input values
+const demo_material_description_val = demo_material_description.value;
 
 // Get demo_material_type_id and demo_material_id from url
 let demo_material_type_id;
@@ -28,10 +30,29 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
-// Set demo_material_name to uploaded file name
+// Called when uploading file, update demo_material_name to file name without extension
 demo_material_file.onchange = function () {
-    demo_material_name.innerHTML = demo_material_file.files[0].name.replace(/\.[^/.]+$/, ""); // filename without extension
-}
+    demo_material_name.innerHTML = demo_material_file.files[0].name.replace(/\.[^/.]+$/, ""); // Filename without extension
+    activate_button();
+};
+
+// Called when changing demo_material_description
+demo_material_description.oninput = function () {
+    activate_button();
+};
+
+// Activate save button when all fields are filled
+function activate_button(){
+    if (demo_material_file.value != "") {
+        demo_materials_save_btn.disabled = false;
+    }
+    else if (demo_material_description.value != "" && demo_material_description.value != demo_material_description_val) {
+        demo_materials_save_btn.disabled = false;
+    }
+    else {
+        demo_materials_save_btn.disabled = true;
+    }
+};
 
 // Save demo_material in database and redirect to previous page
 function demo_material_save(event){
