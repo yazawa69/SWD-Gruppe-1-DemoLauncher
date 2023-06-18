@@ -31,16 +31,6 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
-// Called when inputting phase name, activates save button if input field is filled
-phase_name.oninput = function () {
-    if (phase_name.value != "" && phase_name.value != phase_name_val) {
-        phase_save_btn.disabled = false;
-    }
-    else {
-        phase_save_btn.disabled = true;
-    }
-};
-
 // Save phase to database and redirect to scenario edit page
 function phase_save(event){
     event.preventDefault();

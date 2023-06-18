@@ -103,10 +103,10 @@ Route::get('/device-types/{device_type_id}/devices/{device_id}', [DeviceControll
 // fetch device edit view
 Route::get('/device-types/{device_type_id}/devices/{device_id}/edit', [DeviceController::class, 'edit']);
 
-// TODO: update device
+// update device
 Route::patch('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'update']);
 
-// TODO: delete device
+// delete device
 Route::delete('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'destroy']);
 
 // device types

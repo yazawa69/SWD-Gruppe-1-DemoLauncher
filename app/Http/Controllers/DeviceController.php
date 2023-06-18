@@ -21,7 +21,7 @@ class DeviceController extends Controller
 
     public function index(int $device_type_id)
     {
-        // TODO: will return view with all devices of specified type
+        // return view with all devices of specified type
         $device_type = $this->device_types->getById($device_type_id);
         
         
@@ -36,7 +36,7 @@ class DeviceController extends Controller
     public function new(int $device_type_id)
     {
         $device_types = $this->device_types->getById($device_type_id);
-        // TODO: display device creation view
+        // display device creation view
         return view('devices.new', ['device_type' => $device_types]);
     }
 
@@ -64,7 +64,7 @@ class DeviceController extends Controller
 
     public function show(int $device_id)
     {
-        // TODO: will return the single device view
+        // return the single device view
         $device = $this->devices->getById($device_id);
         if (!$device)
         {
@@ -75,7 +75,7 @@ class DeviceController extends Controller
 
     public function edit(int $device_type_id, int $device_id)
     {
-        // TODO: will return the edit device view
+        // return the edit device view
         $device_types = $this->device_types->getById($device_type_id);
         $device = $this->devices->getById($device_id);
         if (!$device)
@@ -88,7 +88,7 @@ class DeviceController extends Controller
 
     public function update(int $device_type_id, int $device_id, Request $req)
     {
-        // TODO: this should update and then redirect to the show view of the updated device
+        // update device
         $data = $req->all();
         $device_types = $this->device_types->getById($device_type_id);
         if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['serial_number']))
@@ -98,9 +98,10 @@ class DeviceController extends Controller
         return response(200);
     }
 
-    public function destroy(int $device_id)
+    public function destroy(int $device_type_id, int $device_id)
     {
-        // TODO: this should redirect to the index view
+        // delete device
+        $device_types = $this->device_types->getById($device_type_id);
         if (!$this->devices->deleteById($device_id))
         {
             return response(500);
