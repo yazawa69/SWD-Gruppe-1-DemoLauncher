@@ -57,7 +57,7 @@
                         <tbody>
                             @for ($x = 0; $x < count($phase_devices); $x++) <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark" onclick="toggle_demo_material_controls()">{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
@@ -98,7 +98,8 @@
                             @php
                             $phase_devices = $phases[$i]->phaseDevices;
                             @endphp
-                            @for ($x = 0; $x < count($phase_devices); $x++) <tr>
+                            @for ($x = 0; $x < count($phase_devices); $x++)
+                            <tr>
                                 <th>
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
                                         $phase_devices[$x]->device->name }}
@@ -132,7 +133,7 @@
 
 
 
-<div class="steuerung">
+<div class="steuerung" id="demo_material_controls" hidden>
     <button class="btn"><img src="{{ asset('images/iconback.png') }}" alt=""></button>
     <button class="btn"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
     <button class="btn"><img src="{{ asset('images/iconforward.png') }}" alt=""></button>
