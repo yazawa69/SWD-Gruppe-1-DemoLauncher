@@ -35,11 +35,12 @@
             </div>
         </div>
     </div>
-    <div class="textbox_small_new">
-        <label for="scenario_description">Beschreibung</label>
-        <div class="overflow_middle" data-bs-theme="dark">
-            <textarea class="form-control description_small"
-                id="scenario_description">{{ $scenario->description }}</textarea>
+    <div class="textbox_small_scenario">
+        <div class="overflow_middle_scenario" data-bs-theme="dark">
+            <label for="scenario_description">Beschreibung</label>
+            <textarea name="scenario_desciption" class="form-control description_small"
+                id="scenario_description">{{ $scenario->description }}
+            </textarea>
         </div>
     </div>
 </div>

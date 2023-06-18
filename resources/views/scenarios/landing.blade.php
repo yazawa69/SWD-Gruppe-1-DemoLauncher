@@ -48,7 +48,7 @@
 </div>
 <div class="textbox_big_new_start">
     <div class="overflow_big_new">
-        <p id="scenario_description">
+        <p class="word" id="scenario_description">
             Beschreibung
         </p>
     </div>

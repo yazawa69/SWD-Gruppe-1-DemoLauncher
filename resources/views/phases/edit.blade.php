@@ -45,48 +45,52 @@
     </h4>
 </div>
 <div class="textbox_big_phase_verwalten_new">
-    <div class="overflow_big_phase" data-bs-theme="dark">
+    <div class="overflow_big_phase no_sidescroll" data-bs-theme="dark">
+        <div class="">
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Gerät</th>
-                    <th>Demomaterial</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for ($i = 0; $i < count($phase_devices); $i++) <tr>
-                    <th>
-                        <div class="margin">
-                            {{ $phase_devices[$i]->device->name }}
-                            <img class="image_2" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
-                        </div>
-                    </th>
-                    <td>
-                        @foreach ($phase_devices[$i]->demoMaterials as $demo_material)
-                        @php
-                        $demo_material_data = json_encode(['phase_device_id' => $phase_devices[$i]->id, 'demo_material_id' => $demo_material->id]);
-                        @endphp
-                        <div class="textbox_very_small">
-                            <div class="overflow_very_small">
-                                <p class="text_phase text_no_overflow_ellipsis_2">{{ $demo_material->name }}</p>
-                                <img class="image_2" src="{{ asset('images/X-Icon.png') }}"
-                                    onclick="demo_material_remove({{ $demo_material_data }})"></img>
-                            </div>
-                        </div>
-                        @endforeach
-                        <div class="textbox_very_small">
-                            <div class="centered" data-bs-toggle="modal"
-                                data-bs-target="#demo-material-selection-modal"
-                                onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
-                                <img class="image_2" src="{{ asset('images/Pluszeichen.png') }}"></img>
-                            </div>
-                        </div>
-                    </td>
+                <thead>
+                    <tr>
+                        <th>Gerät</th>
+                        <th>Demomaterial</th>
+                        <th></th>
                     </tr>
-                    @endfor
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @for ($i = 0; $i < count($phase_devices); $i++) <tr>
+                        <th>
+                            <div class="margin">
+                                <div class="overflow_very_small">
+                                    <div class="text_no_overflow_ellipsis_phase_edit">{{ $phase_devices[$i]->device->name }} </div>
+                                    <img class="image_2 inline" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
+                                </div>
+                            </div>
+                        </th>
+                        <td>
+                            @foreach ($phase_devices[$i]->demoMaterials as $demo_material)
+                            @php
+                            $demo_material_data = json_encode(['phase_device_id' => $phase_devices[$i]->id, 'demo_material_id' => $demo_material->id]);
+                            @endphp
+                            <div class="textbox_very_small">
+                                <div class="overflow_very_small">
+                                    <p class="text_phase text_no_overflow_ellipsis_2">{{ $demo_material->name }}</p>
+                                    <img class="image_2" src="{{ asset('images/X-Icon.png') }}"
+                                        onclick="demo_material_remove({{ $demo_material_data }})"></img>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="textbox_very_small">
+                                <div class="centered" data-bs-toggle="modal"
+                                    data-bs-target="#demo-material-selection-modal"
+                                    onclick="set_phase_device_id({{ $phase_devices[$i]->id }})">
+                                    <img class="image_2" src="{{ asset('images/Pluszeichen.png') }}"></img>
+                                </div>
+                            </div>
+                        </td>
+                        </tr>
+                        @endfor
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <button class="btn btn-secondary other_button_small_new" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" data-bs-theme="dark">

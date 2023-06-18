@@ -70,9 +70,9 @@
                 </div>
                 <div class="form-group mx-2">
                     <label for="scenario-creation-description">Beschreibung</label>
-                    <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
+                    <textarea class="form-control modal_textbox container-fluid"
                         name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
-                        required>
+                        placeholder=". . ." required>
                     </textarea>
                 </div>
 

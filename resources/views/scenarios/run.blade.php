@@ -21,7 +21,9 @@
 @section('headline')
 <div class="headline_new">
     <h1 class="heading">Szenario läuft</h1>
-    <h2 class="subheading">Running "{{ $scenario->name }}"</h2>
+    <h2 class="subheading">
+        <div class="text_no_overflow_ellipsis_running"> {{ $scenario->name }} </div>
+    </h2>
 </div>
 @endsection
 
@@ -29,7 +31,7 @@
 <div class="textbox_middle_main_new">
     <div class="textbox_middle_new">
         <div class="overflow_middle_running">
-            <p>
+            <p class="word">
                 {{ $scenario->description }}
             </p>
         </div>
@@ -121,13 +123,11 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev carousel_arrow" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Prev</span>
+<button class="carousel-control-prev carousel_arrow" type="button" >
+    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev"></img>
 </button>
-<button class="carousel-control-next carousel_arrow" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+<button class="carousel-control-next carousel_arrow" type="button">
+    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next"></img>
 </button>
 
 

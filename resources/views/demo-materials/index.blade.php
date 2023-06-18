@@ -30,7 +30,7 @@
         <div>
             @foreach($demo_materials as $demo_material)
             <button onclick="set_demo_material_id({{ $demo_material->id }})"
-                class="btn btn-secondary list">{{ $demo_material->name }}</button>
+                class="btn text_no_overflow_ellipsis_2 btn-secondary list">{{ $demo_material->name }}</button>
             @endforeach
         </div>
     </div>

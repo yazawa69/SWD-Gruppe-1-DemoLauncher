@@ -49,6 +49,17 @@ body {
   padding: 2px;
 }
 
+.pfeil_image_links {
+  width: 15px;
+  height: 40px;
+  margin-right: 35%;
+}
+
+.pfeil_image_rechts {
+  width: 15px;
+  height: 40px;
+  margin-left: 35%;
+}
 
 .image_2 {
   width: 20px;
@@ -83,7 +94,7 @@ body {
   border-radius: 15px;
 }
 .overflow_big {
-  overflow: scroll;
+  overflow: hidden;
   height: 100%;
 }
 .textbox_big_main{
@@ -138,7 +149,7 @@ body {
 
 .overflow_big_phase{
   overflow: scroll;
-  height: 40vh;
+  height: 36vh;
 }
 
 .box_middle {
@@ -173,12 +184,14 @@ body {
   width: 100%;
 }
 .overflow_middle {
-  display: flex;
   overflow: scroll;
   height: 6vh;
 }
+.overflow_middle_scenario {
+  overflow: hidden;
+  height: 14vh;
+}
 .overflow_middle_running {
-  display: flex;
   overflow: scroll;
   height: 10vh;
 }
@@ -221,7 +234,7 @@ body {
 .overflow_very_small {
   display: flex;
   height: 20px;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 /*BUTTONS*/
@@ -304,19 +317,16 @@ body {
   text-overflow: ellipsis;
 }
 .button_very_small_outline {
-  width: 100px;
+  width:120px;
   height: 25px;
   padding: 0%;
+  padding-left: 4%;
   border-style: solid;
   border-color: #03b670;
   border-radius: 15px;
   text-align: center;
   background-color: #2b3035 !important;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .button_very_small_outline:focus {
@@ -383,7 +393,7 @@ body {
 .start_end_button {
   padding: 0px;
   margin-top: 10px;
-  font-size: 50px;
+  font-size: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -642,6 +652,16 @@ body {
   border-radius: 15px;
 }
 
+.textbox_small_scenario {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 13px;
+  height: 18vh;
+  margin-bottom: 5%;
+  border: solid 3px #03b670;
+  border-radius: 15px;
+}
+
 .textbox_big_padded{
   margin-left: 10%;
   margin-right: 10%;
@@ -731,7 +751,7 @@ body {
 
 .start_end_button_new {
   padding: 0px;
-  font-size: 40px;
+  font-size: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -838,13 +858,28 @@ body {
   
 }
 
+.text_no_overflow_ellipsis_running{
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text_no_overflow_ellipsis_phase_edit{
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
 .no_sidescroll{
   overflow-x: hidden;
 }
 
 .elemente {
   margin:auto;
-  width: 80%;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -852,6 +887,14 @@ body {
 
 .margin {
   margin:5%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.word {
+  word-wrap:break-word;
 }
 
 /*# sourceMappingURL=main.css.map */
