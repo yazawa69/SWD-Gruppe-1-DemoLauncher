@@ -22,7 +22,7 @@ class DemoMaterialController extends Controller
 
     public function index(int $demo_material_type_id)
     {
-        // TODO: will return view with all demo material of specified type
+        // return view with all demo material of specified type
         $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
         $demo_materials = $this->demo_materials->getAllByType($demo_material_type_id);
         if (!$demo_materials)
@@ -34,7 +34,7 @@ class DemoMaterialController extends Controller
 
     public function new(int $demo_material_type_id)
     {
-        // TODO: display demo material creation view
+        // display demo material creation view
 
         $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
 
@@ -85,7 +85,7 @@ class DemoMaterialController extends Controller
 
     public function show(int $demo_material_type_id, int $demo_material_id)
     {
-        // TODO: will return the single demo material view
+        // return the single demo material view
         $demo_material = $this->demo_materials->getById($demo_material_id);
         if (!$demo_material)
         {
@@ -96,7 +96,7 @@ class DemoMaterialController extends Controller
 
     public function edit(int $demo_material_type_id, int $demo_material_id)
     {
-        // TODO: will return the edit demo materials view
+        // return the edit demo materials view
 
         $demo_material_type = $this->demo_material_types->getById($demo_material_type_id);
 

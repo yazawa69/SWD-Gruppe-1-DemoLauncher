@@ -18,7 +18,7 @@ class DeviceTypeController extends Controller
 
     public function index()
     {
-        // TODO: display device types type overview view
+        // display device types type overview view
         $device_types = $this->device_types->getAll();
         if(!$device_types)
         {

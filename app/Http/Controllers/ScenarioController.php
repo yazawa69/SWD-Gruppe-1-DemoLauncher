@@ -27,7 +27,7 @@ class ScenarioController extends Controller
 
     public function index()
     {
-        // TODO: display scenario overview view
+        // display scenario overview view
         $scenarios = $this->scenarios->getAll();
         if (!$scenarios)
         {
@@ -38,7 +38,7 @@ class ScenarioController extends Controller
 
     public function new()
     {
-        // TODO: display scenario creation view
+        // display scenario creation view
         return view('scenarios.scenario-new');
     }
 
@@ -52,15 +52,10 @@ class ScenarioController extends Controller
         }
         return response()->json(['scenario' => $scenario]);
     }
-
-    public function show($scenario_id)
-    {
-        // TODO: remove this method - not necessary for scenarios. Should be documented in some way. 
-    }
     
     public function edit(int $scenario_id)
     {
-        // TODO: will return the edit scenario view
+        // return the edit scenario view
         $scenario = $this->scenarios->getById($scenario_id);
         if (!$scenario)
         {
@@ -72,7 +67,7 @@ class ScenarioController extends Controller
 
     public function update(int $scenario_id, Request $req)
     {
-        // TODO: this should update and then redirect to the show view of the updated scenario
+        // update scenario
         $data = $req->all();
         if (!$this->scenarios->updateById($scenario_id, $data['name'], $data['description']))
         {
@@ -83,7 +78,7 @@ class ScenarioController extends Controller
 
     public function destroy(int $scenario_id)
     {
-        // TODO: this should redirect to the index view
+        // delete scenario
         if (!$this->scenarios->deleteById($scenario_id))
         {
             return response(500);

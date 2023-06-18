@@ -17,7 +17,7 @@ class DemoMaterialTypeController extends Controller
 
     public function index()
     {
-        // TODO: display demo material type overview view
+        // display demo material type overview view
         $demo_material_types = $this->demo_material_types->getAll();
         if(!$demo_material_types)
         {
