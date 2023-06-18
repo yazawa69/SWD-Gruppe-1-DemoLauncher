@@ -20,14 +20,14 @@
 @section('headline')
 <div class="headline_new">
     <h1 class="heading">Demomaterial hinzufügen</h1>
-    <h2 class="subheading">{{ $demo_material_type->filename_extension }}</h2>
+    <h2 class="subheading ">{{ $demo_material_type->filename_extension }}</h2>
 </div>
 @endsection
 @section('main')
 <div class="textbox_middle_main_new">
     <div class="textbox_small_new">
         <div class="vertically_centered mb-3" data-bs-theme="dark">
-            <div class="row g-3 align-items-center">
+            <div class="row g-3 align-items-center text_no_overflow_ellipsis_2">
                 <div class="col-auto">
                     <label for="demo_material_name">Datei</label>
                     <p id="demo_material_name">Bitte Datei hochladen...</p>

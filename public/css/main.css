@@ -94,7 +94,7 @@ body {
   border-radius: 15px;
 }
 .overflow_big {
-  overflow: hidden;
+  overflow-y: scroll;
   height: 100%;
 }
 .textbox_big_main{
@@ -188,8 +188,8 @@ body {
   height: 6vh;
 }
 .overflow_middle_scenario {
-  overflow: hidden;
-  height: 14vh;
+  overflow-y: scroll;
+  height: 13.5vh;
 }
 .overflow_middle_running {
   overflow: scroll;
@@ -422,7 +422,7 @@ body {
 }
 
 .description {
-  height: 250px;
+  height: 180px;
 }
 
 .description::placeholder{
@@ -431,7 +431,7 @@ body {
  }
 
 .description_small {
-  height: 120px;
+  height: 100px;
 }
 
 .steuerung{

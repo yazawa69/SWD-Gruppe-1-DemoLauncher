@@ -29,7 +29,7 @@
 <div class="textbox_middle_main_new">
     <div class="textbox_small_new">
         <div class="vertically_centered mb-3" data-bs-theme="dark">
-            <div class="row g-3 align-items-center">
+            <div class="row g-3 align-items-center text_no_overflow_ellipsis_2">
                 <div class="col-auto">
                     <label for="demo_material_name">Datei</label>
                     <p id="demo_material_name">{{ $demo_material->name }}</p>
