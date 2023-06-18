@@ -96,7 +96,8 @@
     <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn">
         Speichern
     </button>
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_delete_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#phase_delete_modal">
         Löschen
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_cancel_btn">
@@ -117,6 +118,23 @@
     @livewire('demo-material-selection-modal')
 </div>
 
+<!-- add phase delete modal -->
+<div class="modal fade" id="phase_delete_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Phase wirklich löschen?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary" id="phase_delete_btn">Löschen</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @livewireScripts
 @endsection

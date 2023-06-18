@@ -53,7 +53,8 @@
 
 @section('modals')
 <!-- add scenario modal -->
-<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
+<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -63,21 +64,26 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" maxlength="20" class="form-control modal_textbox container-fluid"
-                        id="scenario-creation-name" placeholder=". . ." required="">
+                    <input name="scenario-creation-title" type="text" maxlength="20"
+                        class="form-control modal_textbox container-fluid" id="scenario-creation-name"
+                        placeholder=". . ." required="">
                 </div>
                 <div class="form-group mx-2">
                     <label for="scenario-creation-description">Beschreibung</label>
                     <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
                         name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
-                        required></textarea>
+                        required>
+                    </textarea>
                 </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn button_small_popup btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="submit" class="btn button_small_popup btn-secondary" id="create_scenario_btn" disabled>Erstellen</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Schließen
+                </button>
+                <button type="submit" class="btn button_small_popup btn-secondary" id="create_scenario_btn"
+                    disabled>Erstellen
+                </button>
             </div>
         </div>
     </div>

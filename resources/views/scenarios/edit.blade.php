@@ -83,7 +83,8 @@
     <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_save_btn" disabled>
         Speichern
     </button>
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_delete_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#scenario_delete_modal">
         Löschen
     </button>
     <button onclick="window.location.href='{{ route('scenarios.index') }}';"
@@ -112,6 +113,24 @@
             <div class="modal-footer">
                 <button type="button" class="btn button_small btn-secondary" data-bs-dismiss="modal">Schließen</button>
                 <button type="button" class="btn button_small btn-secondary" id="create_phase_btn" disabled>Erstellen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add scenario delete modal -->
+<div class="modal fade" id="scenario_delete_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Szenario wirklich löschen?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary" id="scenario_delete_btn">Löschen</button>
             </div>
         </div>
     </div>
