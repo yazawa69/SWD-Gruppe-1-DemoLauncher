@@ -20,7 +20,7 @@ let phase_device_id;
 // Get scenario_id and phase_id from url
 let scenario_id;
 let phase_id;
-const queryString = window.location.href;
+let url = window.location.href;
 const pathArray = window.location.pathname.split('/');
 for (i=0; i < pathArray.length; i++) {
     if (pathArray[i] == "scenarios") {
@@ -30,6 +30,33 @@ for (i=0; i < pathArray.length; i++) {
         phase_id = pathArray[i+1];
     }
 }
+
+// Check if button should be enabled
+var urlParams = new URLSearchParams(window.location.search);
+var shouldEnableButton = urlParams.get('enableButton');
+if (shouldEnableButton === 'true') {
+    // Enable the button
+    phase_save_btn.disabled = false;
+}
+
+phase_name.oninput = function () {
+    if (phase_name.value != "" && phase_name.value != phase_name_val) {
+        phase_save_btn.disabled = false;
+    }
+    else {
+        phase_save_btn.disabled = true;
+    }
+};
+
+function activate_button(){
+    console.log("test");
+    url = window.location.href;
+        if (url.indexOf('?') === -1) {
+            url += '?enableButton=true';
+        } else {
+            url += '&enableButton=true';
+        } 
+};
 
 // Save phase to database and redirect to scenario edit page
 function phase_save(event){
@@ -105,7 +132,9 @@ function add_phase_device(device_id){
         body: JSON.stringify(phase_device)
     })
     .then(() => {
-        location.reload();
+        activate_button();
+        // Reload the page
+        window.location.href = url;
     })
     .catch(error => {
         console.error('An error occurred:', error);
@@ -138,7 +167,9 @@ function add_demo_material(demo_material_id){
         body: JSON.stringify(demo_material)
     })
     .then(() => {
-        location.reload();
+        activate_button();
+        // Reload the page
+        window.location.href = url;
     })
     .catch(error => {
         console.error('An error occurred:', error);
@@ -152,7 +183,9 @@ function phase_device_remove(phase_device_id){
         method: "DELETE"
     })
     .then(() => {
-        location.reload();
+        activate_button();
+        // Reload the page
+        window.location.href = url;
     })
     .catch(error => {
         console.error('An error occurred:', error);
@@ -170,7 +203,9 @@ function demo_material_remove(demo_material_data){
         method: "DELETE"
     })
     .then(() => {
-        location.reload();
+        activate_button();
+        // Reload the page
+        window.location.href = url;
     })
     .catch(error => {
         console.error('An error occurred:', error);

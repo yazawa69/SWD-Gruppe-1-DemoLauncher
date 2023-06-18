@@ -94,14 +94,14 @@
     </div>
 </div>
 <button class="btn btn-secondary other_button_small_new" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" data-bs-theme="dark">
-    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
+    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}" onclick="enable_button()"></img>
     Gerät
 </button>
 @endsection
 
 @section('footer')
 <div class="three_buttons_new">
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn" disabled>
         Speichern
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
