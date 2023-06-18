@@ -38,9 +38,8 @@
     <div class="textbox_small_scenario">
         <div class="overflow_middle_scenario" data-bs-theme="dark">
             <label for="scenario_description">Beschreibung</label>
-            <textarea name="scenario_desciption" class="form-control description_small"
-                id="scenario_description">{{ $scenario->description }}
-            </textarea>
+            <textarea name="scenario_description" class="form-control description_small"
+                id="scenario_description">{{ $scenario->description }}</textarea>
         </div>
     </div>
 </div>
@@ -61,7 +60,9 @@
             <tbody>
                 @for ($i = 0; $i < count($phases); $i++) <tr>
                     <th>{{ $i + 1 }}</th>
-                    <td> <p class="text_no_overflow_ellipsis">{{ $phases[$i]->name }}</p> </td>
+                    <td>
+                        <p class="text_no_overflow_ellipsis">{{ $phases[$i]->name }}</p>
+                    </td>
                     <td class="right">
                         <button
                             onclick="window.location.href = '{{ route('phases.edit', ['scenario_id' => $scenario->id, 'phase_id' => $phases[$i]->id]) }}'"
@@ -73,7 +74,8 @@
         </table>
     </div>
 </div>
-<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal" data-bs-theme="dark" onclick="empty_modal()">
+<button class="btn btn-secondary other_button_small_new" data-bs-toggle="modal" data-bs-target="#phase_modal"
+    data-bs-theme="dark" onclick="empty_modal()">
     <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
     Phase
 </button>
@@ -97,7 +99,8 @@
 
 @section('modals')
 <!-- add phase modal -->
-<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true" data-bs-theme="dark">
+<div class="modal fade" id="phase_modal" tabindex="-1" aria-labelledby="phaseModal" aria-hidden="true"
+    data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -113,7 +116,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn button_small btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                <button type="button" class="btn button_small btn-secondary" id="create_phase_btn" disabled>Erstellen</button>
+                <button type="button" class="btn button_small btn-secondary" id="create_phase_btn"
+                    disabled>Erstellen</button>
             </div>
         </div>
     </div>
@@ -131,7 +135,8 @@
             <div class="modal-footer">
                 <button type="button" class="btn button_small_popup btn-secondary"
                     data-bs-dismiss="modal">Abbrechen</button>
-                <button type="button" class="btn button_small_popup btn-secondary" id="scenario_delete_btn">Löschen</button>
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    id="scenario_delete_btn">Löschen</button>
             </div>
         </div>
     </div>
