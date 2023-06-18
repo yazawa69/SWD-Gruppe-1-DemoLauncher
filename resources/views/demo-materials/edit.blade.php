@@ -40,8 +40,8 @@
     <div class="textbox_small_new">
         <div class="vertically_centered mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-            <input name="file" class="form-control" type="file" id="demo_material_file">
-        </div>
+                <input name="file" class="form-control" type="file" accept="{{ $demo_material_type->filename_extension }}" id="demo_material_file">
+            </div>
         </div>
     </div>
 </div>
@@ -49,7 +49,8 @@
     <div class="textbox_big_new">
         <div class="overflow_big" data-bs-theme="dark">
             <label for="demo_material_desc">Beschreibung</label>
-            <textarea name="description" class="form-control description" id="demo_material_description">{{ $demo_material->description }}</textarea>
+            <textarea name="description" class="form-control description"
+                id="demo_material_description">{{ $demo_material->description }}</textarea>
         </div>
     </div>
 </div>
@@ -59,11 +60,32 @@
     <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_material_save_btn" disabled>
         Speichern
     </button>
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_material_delete_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#demo_material_delete_modal">
         Löschen
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" id="demo_material_cancel_btn">
         Abbrechen
     </button>
+</div>
+@endsection
+
+@section('modals')
+<!-- add demo material delete modal -->
+<div class="modal fade" id="demo_material_delete_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Demomaterial wirklich löschen?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary" id="demo_material_delete_btn">Löschen</button>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

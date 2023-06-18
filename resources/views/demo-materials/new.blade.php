@@ -38,7 +38,7 @@
     <div class="textbox_small_new">
         <div class="vertically_centered mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
-            <input name="file" class="form-control" type="file" id="demo_material_file">
+            <input name="file" class="form-control" type="file" accept="{{ $demo_material_type->filename_extension }}" id="demo_material_file">
         </div>
         </div>
     </div>
