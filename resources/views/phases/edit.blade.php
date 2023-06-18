@@ -31,7 +31,7 @@
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="hundred vertically_centered">
                 <div class="hundred"> 
-                    <label>Titel:</label>
+                    <label>Titel</label>
                     <input type="Name" class="form-control" value="{{ $phase->name }}" id="phase_name">
                 </div>
             </div>
@@ -79,16 +79,14 @@
                     </td>
                     </tr>
                     @endfor
-                    <tr>
-                        <th>
-                            <img class="x_image_2" id="add-phase-device-btn" data-bs-toggle="modal"
-                                data-bs-target="#device-selection-modal" src="{{ asset('images/Pluszeichen.png') }}"></img>
-                        </th>
-                    </tr>
             </tbody>
         </table>
     </div>
 </div>
+<button class="btn btn-secondary other_button_small_new" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" data-bs-theme="dark">
+    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
+    Gerät
+</button>
 @endsection
 
 @section('footer')
