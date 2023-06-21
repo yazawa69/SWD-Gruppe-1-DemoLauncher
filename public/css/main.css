@@ -150,7 +150,7 @@ body {
 
 .overflow_big_phase{
   overflow: scroll;
-  height: 36vh;
+  height: 30vh;
 }
 
 .box_middle {
@@ -236,6 +236,7 @@ body {
   display: flex;
   height: 20px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /*BUTTONS*/
@@ -677,7 +678,7 @@ body {
   margin-right: 10vw;
   width: 80%;
   padding: 15px;
-  height: 40vh;
+  height: 35vh;
   border: solid 3px #03b670;
   border-radius: 15px;
 }
@@ -887,6 +888,7 @@ body {
 
 .margin {
   margin:5%;
+  margin-bottom: 4vh;
 }
 
 .inline {
