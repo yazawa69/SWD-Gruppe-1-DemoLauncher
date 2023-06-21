@@ -50,10 +50,8 @@ phase_name.oninput = function () {
 
 function activate_button(){
     url = window.location.href;
-        if (url.indexOf('?') === -1) {
+        if (shouldEnableButton !== 'true') {
             url += '?enableButton=true';
-        } else {
-            url += '&enableButton=true';
         } 
 };
 
