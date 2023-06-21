@@ -49,7 +49,6 @@ phase_name.oninput = function () {
 };
 
 function activate_button(){
-    console.log("test");
     url = window.location.href;
         if (url.indexOf('?') === -1) {
             url += '?enableButton=true';
