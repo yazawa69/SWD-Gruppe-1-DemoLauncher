@@ -94,7 +94,7 @@
     </div>
 </div>
 <button class="btn btn-secondary other_button_small_new" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" data-bs-theme="dark">
-    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}" onclick="enable_button()"></img>
+    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
     Gerät
 </button>
 @endsection
