@@ -59,7 +59,7 @@
                     @for ($i = 0; $i < count($phase_devices); $i++) <tr>
                         <th>
                             <div class="margin">
-                                <div class="overflow_very_small">
+                                <div class="overflow_very_small_warp">
                                     <div class="text_no_overflow_ellipsis_phase_edit">{{ $phase_devices[$i]->device->name }} </div>
                                     <img class="image_2 inline" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
                                 </div>

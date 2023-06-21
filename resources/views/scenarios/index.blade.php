@@ -64,7 +64,7 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" maxlength="20"
+                    <input name="scenario-creation-title" type="text" 
                         class="form-control modal_textbox container-fluid" id="scenario-creation-name"
                         placeholder=". . ." required="">
                 </div>

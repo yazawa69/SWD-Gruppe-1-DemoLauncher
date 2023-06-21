@@ -207,6 +207,7 @@ body {
   border: solid 3px #03b670;
   border-radius: 15px;
 }
+
 .textbox_small_geraete {
   margin-left: auto;
   margin-right: auto;
@@ -233,6 +234,12 @@ body {
 }
 
 .overflow_very_small {
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.overflow_very_small_warp {
   display: flex;
   height: 20px;
   justify-content: space-between;
