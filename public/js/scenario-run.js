@@ -7,6 +7,9 @@ let button_id;
 // Device button id for global access
 let device_button_id;
 
+// Demo material playing state for global access
+let playing;
+
 // Set unique button id for each demo material
 function set_button_id(id){
     button_id = id;
@@ -23,25 +26,40 @@ function set_demo_material_name(demo_material_data){
 
 // Show or hide demo material controls
 function toggle_demo_material_controls(phase, id) {
-  if (device_button_id != null && device_button_id != id) {
+  // Check if device button pressed is not the same as the previous one and if the demo material is not playing
+  if (device_button_id != null && device_button_id != id && !playing) {
+    // Hide demo material controls
     demo_material_controls.hidden = false;
+    // Set color of previously pressed button to default
     const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
     old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    // Set color of newly pressed button to green
     const new_device_btn = document.getElementById("device_btn_" + phase + "_" + id);
     new_device_btn.style.setProperty("background-color", "#03b670", "important");
+    // Set device button id to id of pressed button
+    device_button_id = id;
   }
+  //Else if device button pressed is the same as the previous one
   else {
+    // Get device button
     const device_btn = document.getElementById("device_btn_" + phase + "_" + id);
+    // Check if demo material controls are hidden
     if (demo_material_controls.hidden == true) {
-        demo_material_controls.hidden = false;
-        device_btn.style.setProperty("background-color", "#03b670", "important");
+      // Unhide demo material controls
+      demo_material_controls.hidden = false;
+      // Set device button background color to green
+      device_btn.style.setProperty("background-color", "#03b670", "important");
+      // Set device button id to id of pressed button
+      device_button_id = id;
     }
-    else {
-        demo_material_controls.hidden = true;
-        device_btn.style.setProperty("background-color", "#2b3035", "important");
+    // Else if demo material controls are not hidden
+    else if (!playing) {
+      // Unhide demo material controls
+      demo_material_controls.hidden = true;
+      // Set device button background color to default
+      device_btn.style.setProperty("background-color", "#2b3035", "important");
     }
   } 
-  device_button_id = id;
 };
 
 // Show/Hide the Play and Pause Button in the run.blade.php
@@ -54,12 +72,15 @@ function toggleImage() {
     imgpause.classList.remove('play');
     imgplay.classList.add('play');
     imgplay.classList.remove('pause');
+    // Set playing state to false
+    playing = false;
   } else {
     imgplay.classList.add('pause');
     imgplay.classList.remove('play');
     imgpause.classList.add('play');
     imgpause.classList.remove('pause');
+    // Set playing state to true
+    playing = true;
   }
-
   buttonClicked = !buttonClicked;
 }
