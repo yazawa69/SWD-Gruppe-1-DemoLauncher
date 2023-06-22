@@ -25,6 +25,12 @@ function set_demo_material_id(id){
     demo_material_edit_btn.disabled = false;
 }
 
+// Called when deselecting a demo material, sets demo_material_id to null
+function unset_demo_material_id() {
+    demo_material_id = null;
+    demo_material_edit_btn.disabled = true;
+}
+
 // Redirect to edit demo material page with selected demo material id
 function edit_demo_material(event){
     event.preventDefault();

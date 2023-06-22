@@ -25,7 +25,6 @@ for (i=0; i < pathArray.length; i++) {
 
 // Called when uploading file, update demo_material_name to file name without extension
 demo_material_file.onchange = function () {
-    console.log("t");
     demo_material_name.innerHTML = demo_material_file.files[0].name.replace(/\.[^/.]+$/, ""); // Filename without extension
     activate_button();
 };

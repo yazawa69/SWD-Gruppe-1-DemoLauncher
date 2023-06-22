@@ -87,6 +87,13 @@ function set_scenario_id(id) {
     scenario_start_btn.disabled = false;
 }
 
+// Called when deselecting a scenario, sets scenario_id to null
+function unset_scenario_id() {
+    scenario_id = null;
+    scenario_edit_btn.disabled = true;
+    scenario_start_btn.disabled = true;
+}
+
 // Redirect to scenario edit page of selected scenario
 function edit_scenario(event) {
     event.preventDefault();

@@ -25,6 +25,12 @@ function set_device_id(id) {
     device_edit_btn.disabled = false;
 }
 
+// Called when deselecting a device, sets device_id to null
+function unset_device_id() {
+    device_id = null;
+    device_edit_btn.disabled = true;
+}
+
 // Redirect to edit device page with selected device id
 function edit_device(event){
     event.preventDefault();
