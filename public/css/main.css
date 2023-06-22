@@ -190,7 +190,7 @@ body {
 }
 .overflow_middle_scenario {
   overflow-y: scroll;
-  height: 13.5vh;
+  height: 10vh;
 }
 .overflow_middle_running {
   overflow: scroll;
@@ -224,9 +224,14 @@ body {
   overflow: scroll;
   height: 65px;
 }
+.overflow_small_new {
+  display: flex;
+  overflow: scroll;
+  height: 70%;
+}
 
 .textbox_very_small {
-  width: 100%;
+  width: 93%;
   height: 30px;
   margin: 5%;
   border: solid 2px #03b670;
