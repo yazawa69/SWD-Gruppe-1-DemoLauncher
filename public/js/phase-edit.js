@@ -76,7 +76,7 @@ function phase_save(event){
         body: JSON.stringify(phase)
     })
     .then(() => {
-        window.location.href = "/scenarios/" + scenario_id + "/edit";
+        window.location.href = "/scenarios/" + scenario_id + "/edit?enableButton=true"; 
     })
     .catch(error => {
         console.error('An error occurred:', error);
@@ -91,7 +91,7 @@ function phase_delete(event){
         method: "DELETE"
     })
     .then(() => {
-        window.location.href = "/scenarios/" + scenario_id + "/edit";
+        window.location.href = "/scenarios/" + scenario_id + "/edit?enableButton=true";
     })
     .catch(error => {
         console.error('An error occurred:', error);

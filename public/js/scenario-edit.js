@@ -24,6 +24,14 @@ for (i=0; i < pathArray.length; i++) {
     }
 }
 
+// Check if button should be enabled
+var urlParams = new URLSearchParams(window.location.search);
+var shouldEnableButton = urlParams.get('enableButton');
+if (shouldEnableButton === 'true') {
+    // Enable the button
+    scenario_save_btn.disabled = false;
+}
+
 // Add event listeners
 phase_create_btn.addEventListener("click", phase_create);
 scenario_save_btn.addEventListener("click", scenario_save);
@@ -87,7 +95,7 @@ function phase_create(event){
         }
     })
     .then(() => {
-        window.location.href = "/scenarios/" + scenario_id + "/edit";
+        window.location.href = "/scenarios/" + scenario_id + "/edit?enableButton=true";
     })
 }
 
