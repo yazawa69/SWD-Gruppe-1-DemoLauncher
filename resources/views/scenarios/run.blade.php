@@ -109,7 +109,7 @@
 
                                 <td>
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ $i.$x }}">
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}" onclick="set_button_id({{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
                                 </td>
@@ -165,15 +165,19 @@
                     <div class="textbox_big_popup">
                         <div class="overflow_big">
                             <div>
-
-                                @foreach($phase_devices[$x]->demoMaterials as $demo_material)
                                 @php
-                                $demo_material_data = json_encode([
-                                    'demo_material_id' => $demo_material->id]
-                                    'demo_material_name' => $demo_material->name]);
+                                    $phase_device = $phase_devices[$x];
+                                @endphp
+                                @foreach($phase_device->demoMaterials as $demo_material)
+                                @php
+                                $phase_device_and_material_data = json_encode([
+                                    'phase_device_id' => $phase_device->id,
+                                    'demo_material_id' => $demo_material->id,
+                                    'demo_material_name' => $demo_material->name
+                                ])
                                 @endphp
                                 <button class="btn btn-secondary list" data-bs-dismiss="modal"
-                                    onclick="set_demo_material_name({{ $demo_material_data }})">{{ $demo_material->name
+                                    onclick="material_button_click({{ $phase_device_and_material_data }})">{{ $demo_material->name
                                 }}</button>
                                 @endforeach
                             </div>

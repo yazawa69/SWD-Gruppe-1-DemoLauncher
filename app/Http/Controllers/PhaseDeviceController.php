@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\PhaseDeviceRepository;
 use Illuminate\Support\Facades\Http;
-use App\Http\Services\HololensStreamService;
+use App\Http\Services\Hololens\HololensClient;
 
 use Exception;
+// use HololensClient;
 
 class PhaseDeviceController extends Controller
 {
@@ -95,25 +96,25 @@ class PhaseDeviceController extends Controller
         return response(200);
     }
 
-    public function loadMaterial(int $phase_device_id, int $material_id){
+    public function loadMaterial(int $scenario_id, int $phase_id, int $phase_device_id, int $demo_material_id){
         
         // get phase device id
         
         // request to flask with device id
-
         $request = Http::withHeaders([
-            'DeviceId' => 'hello',
-        ])->get('http://192.168.188.28:5000/print');
-        return $request;
+            'Deviceid' => strval($phase_device_id),
+        ])->get('http://192.168.188.28:5000/live-stream-listener');
         
-
         // wait for response and flask starts a thread with req to getLivestream
-
     }
 
-    public function getLivestream(int $phase_device_id){
+    public function getLivestream(Request $req){
         
-        
+        // $data = $req->all();
+        // $ip = $data['ip'];
+        $ip = "192.168.188.27";
+        $hololens = new HololensClient($ip);
+        return $hololens->getStreamHtml();
 
     }
 
