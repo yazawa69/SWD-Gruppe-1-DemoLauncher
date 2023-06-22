@@ -135,7 +135,8 @@
 
 <div class="steuerung" id="demo_material_controls" hidden>
     <button class="btn"><img src="{{ asset('images/iconback.png') }}" alt=""></button>
-    <button class="btn"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn play" id="playButton" onclick="toggleImage()"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn pause" id="pauseButton" onclick="toggleImage()"><img src="{{ asset('images/iconpause.png') }}" alt=""></button>
     <button class="btn"><img src="{{ asset('images/iconforward.png') }}" alt=""></button>
 </div>
 @endsection

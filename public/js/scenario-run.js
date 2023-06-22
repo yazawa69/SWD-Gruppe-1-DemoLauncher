@@ -27,3 +27,23 @@ function toggle_demo_material_controls() {
         demo_material_controls.hidden = true;
     }
 };
+
+// Show/Hide the Play and Pause Button in the run.blade.php
+var buttonClicked = false;
+function toggleImage() {
+  var imgplay = document.getElementById('playButton');
+  var imgpause = document.getElementById('pauseButton');
+  if (buttonClicked) {
+    imgpause.classList.add('pause');
+    imgpause.classList.remove('play');
+    imgplay.classList.add('play');
+    imgplay.classList.remove('pause');
+  } else {
+    imgplay.classList.add('pause');
+    imgplay.classList.remove('play');
+    imgpause.classList.add('play');
+    imgpause.classList.remove('pause');
+  }
+
+  buttonClicked = !buttonClicked;
+}

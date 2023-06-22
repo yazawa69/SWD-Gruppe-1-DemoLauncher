@@ -813,7 +813,12 @@ body {
 }
 
 /* random */
-
+.play{
+  display: inline;
+}
+.pause{
+  display: none;
+}
 .szenario_dropdown_container {
   z-index: 1;
   width: 100%;
