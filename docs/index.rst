@@ -30,4 +30,5 @@ Inhalt
 
    user_manual
    tech_stack
+   server
    rtd
