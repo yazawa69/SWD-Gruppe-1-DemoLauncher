@@ -50,8 +50,8 @@
         <div class="overflow_small mb-3" data-bs-theme="dark">
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
-                    <label for="device_serial_number">Seriennummmer</label>
-                    <input class="form-control" id="device_serial_number" placeholder="Bitte ausfüllen">
+                    <label for="device_serial_number">Seriennummer</label>
+                    <input class="form-control" type="number" id="device_serial_number" placeholder="Bitte ausfüllen">
                 </div>
             </div>
         </div>

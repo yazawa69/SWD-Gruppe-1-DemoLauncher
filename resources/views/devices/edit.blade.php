@@ -51,7 +51,7 @@
             <div class="row g-3 align-items-center hundred">
                 <div class="col-auto">
                     <label>Seriennummer:</label>
-                    <input type="Name" class="form-control" value="{{ $device->serial_number }}" id="device_serial_number">
+                    <input type="Name" class="form-control" type="number" value="{{ $device->serial_number }}" id="device_serial_number">
                 </div>
             </div>
         </div>
@@ -63,11 +63,32 @@
     <button class="three_buttons_spacing button_small btn btn-secondary" id="device_save_btn" disabled>
         Speichern
     </button>
-    <button class="three_buttons_spacing button_small btn btn-secondary" id="device_delete_btn">
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#device_delete_modal">
         Löschen
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" id="device_cancel_btn">
         Abbrechen
     </button>
+</div>
+@endsection
+
+@section('modals')
+<!-- add device delete modal -->
+<div class="modal fade" id="device_delete_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Gerät wirklich löschen?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary" id="device_delete_btn">Löschen</button>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

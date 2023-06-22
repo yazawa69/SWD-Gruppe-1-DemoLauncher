@@ -19,7 +19,7 @@ class PhaseController extends Controller
 
         public function new(Request $req)
         {
-            // TODO: display phase creation view
+            // display phase creation view
             return view('phase-new');
         }
 
@@ -47,7 +47,7 @@ class PhaseController extends Controller
 
         public function show(int $scenario_id, int $phase_id)
         {
-            // TODO: will return the single phase view
+            // return the single phase view
             $phase = $this->phases->getById($phase_id);
             if (!$phase)
             {
@@ -62,7 +62,7 @@ class PhaseController extends Controller
         public function edit(int $scenario_id, int $phase_id, Request $req)
         {
 
-            // TODO: will return the edit phase view
+            // return the edit phase view
             $phase = $this->phases->getById($phase_id);
             if (!$phase)
             {

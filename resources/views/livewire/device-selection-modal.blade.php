@@ -122,10 +122,10 @@
                 </div>
                 <div class="gapped_flex_container">
                     @foreach($device_types as $device_type)
-                    <div class="box_middle" wire:key="device_type-{{ $device_type->id }}"
+                    <div class="box_middle text_no_overflow_ellipsis_2" wire:key="device_type-{{ $device_type->id }}"
                         wire:click="loadDevices({{ $device_type->id }})">
                         <div class="overflow_middle">
-                            <img class="selection_image" src="../images/Bildschirm.png"></img>
+                            <img class="selection_image" src="{{ asset('images/Bildschirm.png') }}"></img>
                             <p class="selection_text text-nowrap">{{ $device_type->name }}</p>
                         </div>
                     </div>
@@ -138,10 +138,10 @@
                 <div class="textbox_middle_main_modal">
                     <div class="gapped_flex_container">
                         @foreach($devices as $device)
-                        <div class="box_middle" wire:key="device-{{ $device->id }}"
+                        <div class="box_middle text_no_overflow_ellipsis_2" wire:key="device-{{ $device->id }}"
                             onclick="add_phase_device({{ $device->id }})">
                             <div class="overflow_middle">
-                                <img class="selection_image" src="../images/Bildschirm.png"></img>
+                                <img class="selection_image" src="{{ asset('images/Bildschirm.png') }}"></img>
                                 <p class="selection_text text-nowrap">{{ $device->name }}</p>
                             </div>
                         </div>

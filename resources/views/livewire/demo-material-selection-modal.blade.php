@@ -123,7 +123,10 @@
         border-color: #495057;
         /* border-bottom: 0 none; */
     }
-
+    .overflow{
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
     .modal-footer {
         border-color: #495057;
         border-top: 0 none;
@@ -158,7 +161,7 @@
                     <div class="box_middle" wire:key="demo_material_type-{{ $demo_material_type->id }}"
                         wire:click="loadDemoMaterials({{ $demo_material_type->id }})">
                         <div class="overflow_middle">
-                            <img class="selection_image" src="../images/Bildschirm.png"></img>
+                            <img class="selection_image" src="{{ asset('images/PDF.png') }}"></img>
                             <p class="selection_text text-nowrap">{{ $demo_material_type->filename_extension }}</p>
                         </div>
                     </div>
@@ -172,7 +175,7 @@
                     <div class="overflow_big">
                         @foreach($demo_materials as $demo_material)
                         <div>
-                            <button class="btn btn-secondary list"
+                            <button class="btn btn-secondary list overflow"
                                 onclick="add_demo_material({{ $demo_material->id }})">{{ $demo_material->name }}</button>
                         </div>
                         @endforeach

@@ -11,6 +11,7 @@ const scenario_description_val = scenario_description.value;
 const phase_create_btn = document.getElementById("create_phase_btn");
 const scenario_save_btn = document.getElementById("scenario_save_btn");
 const scenario_delete_btn = document.getElementById("scenario_delete_btn");
+const scenario_cancel_btn = document.getElementById("scenario_cancel_btn");
 
 // Scenario id for global access
 let scenario_id;
@@ -28,6 +29,7 @@ for (i=0; i < pathArray.length; i++) {
 phase_create_btn.addEventListener("click", phase_create);
 scenario_save_btn.addEventListener("click", scenario_save);
 scenario_delete_btn.addEventListener("click", scenario_delete);
+scenario_cancel_btn.addEventListener("click", scenario_delete);
 
 // Called when inputting scenario name
 scenario_name.oninput = function () {
@@ -42,12 +44,10 @@ scenario_description.oninput = function () {
 // Activate create scenario button if both input fields are filled
 function activate_button(){
     if (scenario_name.value != "" && scenario_description.value != "") {    
-        if (scenario_name.value != scenario_name_val || scenario_description.value != scenario_description_val) {
             scenario_save_btn.disabled = false;
-        }
-        else {
-            scenario_save_btn.disabled = true;
-        }
+    }
+    else {
+        scenario_save_btn.disabled = true;
     }
 };
 
@@ -87,7 +87,7 @@ function phase_create(event){
         }
     })
     .then(() => {
-        window.location.href = "/scenarios/" + scenario_id + "/edit";
+        location.reload();
     })
 }
 
@@ -144,9 +144,4 @@ function scenario_delete(event){
     .catch(error => {
         console.error('An error occurred:', error);
     });
-}
-
-// Clear modal input fields
-function empty_modal() {
-    phase_name.value = "";
 }

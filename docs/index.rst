@@ -1,4 +1,6 @@
-## Demo Launcher
+==========================
+Demo Launcher
+==========================
 
 Mit unserer Anwendung wollen wir Mitarbeitern des Instituts für 
 Intelligente Interaktive Ubiquitäre Systeme die Planung und Inszenierung 
@@ -9,11 +11,23 @@ Arbeitsaufwand minimiert und Mitarbeitern mit weniger spezifischem
 Fachwissen eine sichere Durchführung ermöglicht.
 
 Dieses Projekt entsteht im Rahmen der Veranstaltung Softwaredesign bei 
-Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der [Hochschule Furtwangen](https://www.hs-furtwangen.de/).
+Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der
+`Hochschule Furtwangen <https://www.hs-furtwangen.de/>`_.
 
-Das Projekt auf [Github](https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git)
-
-[Dokumentation](https://softwaredesign.readthedocs.io/de/latest/index.html)
+Das Projekt auf `GitHub <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
 
 Projektmitglieder: Nico Berndt, Vadim Borejko, Ethan Fuchs, Guido Grün, 
 Lea Hergert, Lisa Kutowinski, Mattis Petroll, Marit Zenker
+
+.. note::
+
+   Dieses Projekt befindet sich noch in Entwicklung.
+
+
+Inhalt
+==============
+.. toctree::
+
+   user_manual
+   tech_stack
+   rtd

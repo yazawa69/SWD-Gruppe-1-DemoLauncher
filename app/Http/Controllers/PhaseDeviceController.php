@@ -18,7 +18,7 @@ class PhaseDeviceController extends Controller
 
     public function new(int $scenario_id, int $phase_id, Request $req)
     {
-        // TODO: display phase device creation view
+        // display phase device creation view
         return response(200);
     }
 
@@ -46,7 +46,7 @@ class PhaseDeviceController extends Controller
 
     public function show(int $scenario_id, int $phase_id, $phase_device_id)
     {
-        // TODO: will return the single phase device view
+        // return the single phase device view
         $phase_device = $this->phase_devices->getById($phase_device_id);
         if (!$phase_device)
         {
@@ -57,7 +57,7 @@ class PhaseDeviceController extends Controller
     
     public function destroy(int $scenario_id, int $phase_id, int $phase_device_id)
     {
-        // TODO: this should redirect to the index view
+        // delete the phase device
         if (!$this->phase_devices->deleteById($phase_device_id))
         {
             return response(500);

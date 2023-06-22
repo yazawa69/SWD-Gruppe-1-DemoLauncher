@@ -14,13 +14,16 @@
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/scenario-run.js') }}" defer></script>
 @endsection
 
 
 @section('headline')
 <div class="headline_new">
     <h1 class="heading">Szenario läuft</h1>
-    <h2 class="subheading">Running "{{ $scenario->name }}"</h2>
+    <h2 class="subheading">
+        <div class="text_no_overflow_ellipsis_running"> {{ $scenario->name }} </div>
+    </h2>
 </div>
 @endsection
 
@@ -28,7 +31,7 @@
 <div class="textbox_middle_main_new">
     <div class="textbox_middle_new">
         <div class="overflow_middle_running">
-            <p>
+            <p class="word">
                 {{ $scenario->description }}
             </p>
         </div>
@@ -42,27 +45,30 @@
             <div class="textbox_big_headline">
                 <h3>{{ $phase->name }}</h3>
             </div>
-            <div class="textbox_big_szenario_new" data-bs-theme="dark">
+            <div class="textbox_big_szenario_running" data-bs-theme="dark">
                 <div class="overflow_big_szenario">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Auswahl</th>
                                 <th>Steuerung</th>
+                                <th>Auswahl</th>
                             </tr>
                         </thead>
                         <tbody>
                             @for ($x = 0; $x < count($phase_devices); $x++) <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark" onclick="toggle_demo_material_controls()">{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
 
                                 @if($phase_devices[$x]->demoMaterials()->exists())
-                                <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}">
-                                    {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                <td> 
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
+                                    onclick="set_button_id({{ $x }})">
+                                        {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
                                 </td>
 
                                 @endif
@@ -79,29 +85,33 @@
             <div class="textbox_big_headline">
                 <h3>{{ $phases[$i]->name }}</h3>
             </div>
-            <div class="textbox_big_szenario_new" data-bs-theme="dark">
+            <div class="textbox_big_szenario_running" data-bs-theme="dark">
                 <div class="overflow_big_szenario_new">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Auswahl</th>
                                 <th>Steuerung</th>
+                                <th>Auswahl</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php
                             $phase_devices = $phases[$i]->phaseDevices;
                             @endphp
-                            @for ($x = 0; $x < count($phase_devices); $x++) <tr>
+                            @for ($x = 0; $x < count($phase_devices); $x++)
+                            <tr>
                                 <th>
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
                                 @if($phase_devices[$x]->demoMaterials()->exists())
-                                <td class="btn btn-secondary button_very_small_grey" data-bs-toggle="modal"
+
+                                <td>
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
                                     data-bs-target="#RunningPopUp{{ $i.$x }}">
-                                    {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                        {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
                                 </td>
                                 @endif
                                 </tr>
@@ -114,28 +124,26 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev fixed" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Prev</span>
+<button class="carousel-control-prev carousel_arrow" type="button" >
+    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev"></img>
 </button>
-<button class="carousel-control-next fixed" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+<button class="carousel-control-next carousel_arrow" type="button">
+    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next"></img>
 </button>
 
 
 
-<div class="steuerung">
-    <button class="btn"><img src="../images/iconback.png" alt=""></button>
-    <button class="btn"><img src="../images/iconplay.png" alt=""></button>
-    <button class="btn"><img src="../images/iconforward.png" alt=""></button>
+<div class="steuerung" id="demo_material_controls" hidden>
+    <button class="btn"><img src="{{ asset('images/iconback.png') }}" alt=""></button>
+    <button class="btn"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn"><img src="{{ asset('images/iconforward.png') }}" alt=""></button>
 </div>
 @endsection
 
 @section('footer')
 <div class="centered">
-    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new" type="button"
-        data-bs-theme="dark">
+    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new"
+        type="button" data-bs-theme="dark">
         Beenden
     </button>
 </div>
@@ -159,7 +167,11 @@
                             <div>
 
                                 @foreach($phase_devices[$x]->demoMaterials as $demo_material)
-                                <button class="btn btn-secondary list" data-bs-dismiss="modal">{{ $demo_material->name
+                                @php
+                                $demo_material_data = json_encode(['demo_material_name' => $demo_material->name]);
+                                @endphp
+                                <button class="btn btn-secondary list" data-bs-dismiss="modal"
+                                    onclick="set_demo_material_name({{ $demo_material_data }})">{{ $demo_material->name
                                 }}</button>
                                 @endforeach
                             </div>

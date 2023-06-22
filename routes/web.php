@@ -26,13 +26,13 @@ Route::get('/css-test', function () {
 
 
 // return landing page
-Route::get('/', [ScenarioController::class, 'landing']);
+Route::get('/', [ScenarioController::class, 'landing'])->name('landing');
 
 // fetch scenario overview view
 Route::get('/scenarios', [ScenarioController::class, 'index'])->name('scenarios.index');
 
 // fetch scenario creation view
-Route::get('/scenarios/new', [ScenarioController::class, 'new']);
+Route::get('/scenarios/{scenario_id}/new', [ScenarioController::class, 'new'])->name('scenarios.new');
 
 // add new scenario
 Route::post('/scenarios', [ScenarioController::class, 'create'])->name('scenarios.create');
@@ -103,10 +103,10 @@ Route::get('/device-types/{device_type_id}/devices/{device_id}', [DeviceControll
 // fetch device edit view
 Route::get('/device-types/{device_type_id}/devices/{device_id}/edit', [DeviceController::class, 'edit']);
 
-// TODO: update device
+// update device
 Route::patch('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'update']);
 
-// TODO: delete device
+// delete device
 Route::delete('/device-types/{device_type_id}/devices/{device_id}', [DeviceController::class, 'destroy']);
 
 // device types

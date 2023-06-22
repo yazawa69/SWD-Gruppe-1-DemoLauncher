@@ -19,7 +19,7 @@
 
 @section('headline')
 <div class="headline_new">
-    <h1 class="heading">Szenarios</h1>
+    <h1 class="heading">Szenarien</h1>
     <h2 class="subheading"> Verwalten</h2>
 </div>
 @endsection
@@ -28,31 +28,33 @@
     <div class="overflow_big">
         <div>
             @foreach ($scenarios as $scenario)
-            <button class="btn btn-secondary list"
+            <button class="btn btn-secondary list text_no_overflow_ellipsis_2"
                 onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button>
             @endforeach
         </div>
     </div>
 </div>
-<button class="centered_new btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_edit_btn" disabled>
-    Szenario bearbeiten
-</button>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" data-bs-toggle="modal"
-    data-bs-target="#scenario_modal">
-    Szenario erstellen
-</button>
-<button class="centered_new  btn btn-secondary button_middle_new middle_button_extra_positioner" id="scenario_start_btn" disabled>
-    Ausgewähltes Szenario starten
-</button>
 
 @endsection
 @section('footer')
-
+<div class="three_buttons_new space">
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_edit_btn" disabled>
+        Bearbeiten
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
+        data-bs-target="#scenario_modal" onclick="empty_modal()">
+        Erstellen
+    </button>
+    <button class="three_buttons_spacing button_small btn btn-secondary" id="scenario_start_btn" disabled>
+        Starten
+    </button>
+</div>
 @endsection
 
 @section('modals')
 <!-- add scenario modal -->
-<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true" data-bs-theme="dark">
+<div class="modal fade" id="scenario_modal" tabindex="-1" aria-labelledby="scenarioModal" aria-hidden="true"
+    data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,21 +64,26 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" class="form-control modal_textbox container-fluid"
-                        id="scenario-creation-name" placeholder=". . ." required="">
+                    <input name="scenario-creation-title" type="text" maxlength="20"
+                        class="form-control modal_textbox container-fluid" id="scenario-creation-name"
+                        placeholder=". . ." required="">
                 </div>
                 <div class="form-group mx-2">
                     <label for="scenario-creation-description">Beschreibung</label>
-                    <textarea class="form-control modal_textbox container-fluid" placeholder=". . ."
+                    <textarea class="form-control modal_textbox container-fluid"
                         name="scenario-creation-description" id="scenario-creation-description" cols="30" rows="10"
-                        required></textarea>
+                        placeholder=". . ." required>
+                    </textarea>
                 </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="submit" class="btn btn-primary" id="create_scenario_btn" disabled>Erstellen</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Schließen
+                </button>
+                <button type="submit" class="btn button_small_popup btn-secondary" id="create_scenario_btn"
+                    disabled>Erstellen
+                </button>
             </div>
         </div>
     </div>
