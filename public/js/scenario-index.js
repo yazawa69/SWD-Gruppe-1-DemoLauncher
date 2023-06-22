@@ -7,6 +7,14 @@ const scenario_create_btn = document.getElementById("create_scenario_btn");
 const scenario_edit_btn = document.getElementById("scenario_edit_btn");
 const scenario_start_btn = document.getElementById("scenario_start_btn");
 
+// Check if click is outside of scenario list, if so, unset device id
+document.addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.id != "scenario_list" && target.id != "scenario_edit_btn" && target.id != "scenario_start_btn") {
+        unset_scenario_id();
+    }  
+}, false);
+
 // Scenario id for global access when running scenario
 let scenario_id;
 

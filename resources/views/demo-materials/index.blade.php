@@ -29,8 +29,8 @@
     <div class="overflow_big">
         <div>
             @foreach($demo_materials as $demo_material)
-            <button onclick="set_demo_material_id({{ $demo_material->id }})" onblur="unset_demo_material_id()"
-                class="btn text_no_overflow_ellipsis_2 btn-secondary list">{{ $demo_material->name }}</button>
+            <button onclick="set_demo_material_id({{ $demo_material->id }})" 
+                class="btn text_no_overflow_ellipsis_2 btn-secondary list" id="demo_material_list">{{ $demo_material->name }}</button>
             @endforeach
         </div>
     </div>

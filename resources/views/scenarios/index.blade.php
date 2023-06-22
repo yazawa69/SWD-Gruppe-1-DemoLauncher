@@ -29,7 +29,7 @@
         <div>
             @foreach ($scenarios as $scenario)
             <button class="btn btn-secondary list text_no_overflow_ellipsis_2"
-                onclick="set_scenario_id({{ $scenario->id }})" onblur="unset_scenario_id()">{{ $scenario->name }}</button>
+                onclick="set_scenario_id({{ $scenario->id }})" id="scenario_list">{{ $scenario->name }}</button>
             @endforeach
         </div>
     </div>

@@ -6,6 +6,14 @@ const demo_material_add_btn = document.getElementById("demo_material_add_btn");
 demo_material_edit_btn.addEventListener("click", edit_demo_material);
 demo_material_add_btn.addEventListener("click", add_demo_material);
 
+// Check if click is outside of demo material list, if so, unset device id
+document.addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.id != "demo_material_list" && target.id != "demo_material_edit_btn") {
+        unset_demo_material_id();
+    }  
+}, false);
+
 // Demo material id for global access
 let demo_material_id;
 
