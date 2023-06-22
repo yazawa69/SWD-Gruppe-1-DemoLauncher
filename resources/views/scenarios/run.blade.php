@@ -143,8 +143,9 @@
 
 @section('footer')
 <div class="centered">
-    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new"
-        type="button" data-bs-theme="dark">
+    <button class="btn btn-secondary start_end_button_new"
+        type="button" data-bs-theme="dark" data-bs-toggle="modal"
+        data-bs-target="#exit_modal">
         Beenden
     </button>
 </div>
@@ -182,6 +183,25 @@
             </div>
         </div>
         </div>
-        @endfor
-        @endfor
-        @endsection
+    @endfor
+@endfor
+
+<!-- add scenario delete modal -->
+<div class="modal fade" id="exit_modal" tabindex="-1" aria-labelledby="exitModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Szenario wirklich beenden?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary"
+                onclick="window.location.href='{{ url('/') }}';">Beenden</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
