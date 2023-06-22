@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\PhaseDeviceRepository;
+use Illuminate\Support\Facades\Http;
+use App\Http\Services\HololensStreamService;
+
 use Exception;
 
 class PhaseDeviceController extends Controller
@@ -91,4 +94,29 @@ class PhaseDeviceController extends Controller
         }
         return response(200);
     }
+
+    public function loadMaterial(int $phase_device_id, int $material_id){
+        
+        // get phase device id
+        
+        // request to flask with device id
+
+        $request = Http::withHeaders([
+            'DeviceId' => 'hello',
+        ])->get('http://192.168.188.28:5000/print');
+        return $request;
+        
+
+        // wait for response and flask starts a thread with req to getLivestream
+
+    }
+
+    public function getLivestream(int $phase_device_id){
+        
+        
+
+    }
+
 }
+
+

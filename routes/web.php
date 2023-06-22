@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceController, PhaseDeviceController, DeviceTypeController, DemoMaterialController, DemoMaterialTypeController};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -146,6 +148,23 @@ Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])
 
 Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
 
+// load material
+Route::post('/scenarios/{scenario_id}/phases/{phase_id}/phasedevices/{phase_device_id}/demomaterials/{demo_material_id}/load', [PhaseDeviceController::class, 'loadMaterial']);
 
+// stream to rpi
+
+
+
+
+Route::get('/get-stream', function(){
+
+    // $word = "hello";
+    // echo $word;
+    $request = Http::withHeaders([
+        'DeviceId' => 'hello',
+    ])->get('http://192.168.188.28:5000/print');
+    return $request;
+
+});
 
 

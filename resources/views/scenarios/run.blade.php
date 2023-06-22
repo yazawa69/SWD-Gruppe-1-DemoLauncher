@@ -168,7 +168,9 @@
 
                                 @foreach($phase_devices[$x]->demoMaterials as $demo_material)
                                 @php
-                                $demo_material_data = json_encode(['demo_material_name' => $demo_material->name]);
+                                $demo_material_data = json_encode([
+                                    'demo_material_id' => $demo_material->id]
+                                    'demo_material_name' => $demo_material->name]);
                                 @endphp
                                 <button class="btn btn-secondary list" data-bs-dismiss="modal"
                                     onclick="set_demo_material_name({{ $demo_material_data }})">{{ $demo_material->name
