@@ -4,6 +4,9 @@ const demo_material_controls = document.getElementById("demo_material_controls")
 // Button id for global access
 let button_id;
 
+// Device button id for global access
+let device_button_id;
+
 // Set unique button id for each demo material
 function set_button_id(id){
     button_id = id;
@@ -19,8 +22,16 @@ function set_demo_material_name(demo_material_data){
 };
 
 // Show or hide demo material controls
-function toggle_demo_material_controls(i, x) {
-  const device_btn = document.getElementById("device_btn_" + i + "_" + x);
+function toggle_demo_material_controls(phase, id) {
+  if (device_button_id != null && device_button_id != id) {
+    demo_material_controls.hidden = false;
+    const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
+    old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    const new_device_btn = document.getElementById("device_btn_" + phase + "_" + id);
+    new_device_btn.style.setProperty("background-color", "#03b670", "important");
+  }
+  else {
+    const device_btn = document.getElementById("device_btn_" + phase + "_" + id);
     if (demo_material_controls.hidden == true) {
         demo_material_controls.hidden = false;
         device_btn.style.setProperty("background-color", "#03b670", "important");
@@ -29,6 +40,8 @@ function toggle_demo_material_controls(i, x) {
         demo_material_controls.hidden = true;
         device_btn.style.setProperty("background-color", "#2b3035", "important");
     }
+  } 
+  device_button_id = id;
 };
 
 // Show/Hide the Play and Pause Button in the run.blade.php
