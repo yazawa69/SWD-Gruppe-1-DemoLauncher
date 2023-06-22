@@ -1,5 +1,7 @@
 // Get demo material controls
 const demo_material_controls = document.getElementById("demo_material_controls");
+const carousel_prev_btn = document.getElementById("carousel_prev_btn");
+const carousel_next_btn = document.getElementById("carousel_next_btn");
 
 // Button id for global access
 let button_id;
@@ -74,6 +76,7 @@ function toggleImage() {
     imgplay.classList.remove('pause');
     // Set playing state to false
     playing = false;
+    enable_carousel_controls();
   } else {
     imgplay.classList.add('pause');
     imgplay.classList.remove('play');
@@ -81,6 +84,19 @@ function toggleImage() {
     imgpause.classList.remove('pause');
     // Set playing state to true
     playing = true;
+    disable_carousel_controls();
   }
   buttonClicked = !buttonClicked;
+}
+
+// Disable carousel controls when demo material is playing
+function disable_carousel_controls() {
+  carousel_prev_btn.hidden = true;
+  carousel_next_btn.hidden = true;
+}
+
+// Enable carousel controls when demo material is not playing
+function enable_carousel_controls() {
+  carousel_prev_btn.hidden = false;
+  carousel_next_btn.hidden = false;
 }

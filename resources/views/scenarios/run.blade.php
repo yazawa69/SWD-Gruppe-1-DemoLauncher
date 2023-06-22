@@ -124,7 +124,7 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev carousel_arrow" type="button" >
+<button class="carousel-control-prev carousel_arrow" type="button">
     <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev"></img>
 </button>
 <button class="carousel-control-next carousel_arrow" type="button">
