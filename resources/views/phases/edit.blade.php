@@ -102,7 +102,7 @@
 @section('footer')
 <div class="three_buttons_new">
     <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn" disabled>
-        Speichern
+        Anwenden
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
         data-bs-target="#phase_delete_modal">

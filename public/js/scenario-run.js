@@ -19,12 +19,15 @@ function set_demo_material_name(demo_material_data){
 };
 
 // Show or hide demo material controls
-function toggle_demo_material_controls() {
+function toggle_demo_material_controls(i, x) {
+  const device_btn = document.getElementById("device_btn_" + i + "_" + x);
     if (demo_material_controls.hidden == true) {
         demo_material_controls.hidden = false;
+        device_btn.style.setProperty("background-color", "#03b670", "important");
     }
     else {
         demo_material_controls.hidden = true;
+        device_btn.style.setProperty("background-color", "#2b3035", "important");
     }
 };
 

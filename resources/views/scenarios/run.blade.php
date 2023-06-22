@@ -57,7 +57,7 @@
                         <tbody>
                             @for ($x = 0; $x < count($phase_devices); $x++) <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark" onclick="toggle_demo_material_controls()">{{
+                                    <button class="btn btn-secondary button_very_small_outline" id="device_btn_{{ 0 }}_{{ $x }}" data-bs-theme="dark" onclick="toggle_demo_material_controls(0, {{ $x }})" >{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
@@ -101,7 +101,7 @@
                             @for ($x = 0; $x < count($phase_devices); $x++)
                             <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
+                                    <button class="btn btn-secondary button_very_small_outline" id="device_btn_{{ $i }}_{{ $x }}" data-bs-theme="dark" onclick="toggle_demo_material_controls({{ $i }}, {{ $x }})">{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>

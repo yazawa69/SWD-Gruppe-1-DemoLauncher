@@ -343,9 +343,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.button_very_small_outline:focus {
-  background-color: #03b670 !important;
-}
 .three_buttons {
   position: fixed;
   margin-top: 80vh;
