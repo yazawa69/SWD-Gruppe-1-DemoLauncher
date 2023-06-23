@@ -337,7 +337,7 @@ body {
   padding: 0%;
   padding-left: 4%;
   border-style: solid;
-  border-color: #03b670;
+  border-color: #03b670 !important;
   border-radius: 15px;
   text-align: center;
   background-color: #2b3035 !important;
