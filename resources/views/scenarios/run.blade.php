@@ -69,6 +69,9 @@
                                     onclick="set_button_id(0, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
+                                    <button class="btn btn-secondary button_very_small_number" data-bs-toggle="modal">
+                                        <p> 10 </p>
+                                    </button>
                                 </td>
 
                                 @endif
@@ -111,6 +114,9 @@
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
                                     data-bs-target="#RunningPopUp{{ $i.$x }}" id="demo_material_{{ $i }}_{{ $x }}" onclick="set_button_id({{ $i }}, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
+                                    <button class="btn btn-secondary button_very_small_number" >
+                                        <p> 10 </p>
                                     </button>
                                 </td>
                                 @endif
