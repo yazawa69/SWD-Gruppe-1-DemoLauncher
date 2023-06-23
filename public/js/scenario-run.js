@@ -22,6 +22,7 @@ let button_id;
 // Set unique button id for each demo material
 function set_button_id(id){
     button_id = id;
+    console.log(button_id);
 }
 
 // demo material selection stuff

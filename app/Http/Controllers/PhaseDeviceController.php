@@ -99,7 +99,7 @@ class PhaseDeviceController extends Controller
     public function loadMaterial(int $scenario_id, int $phase_id, int $phase_device_id, int $demo_material_id){
         
         // get phase device id
-        
+    
         // request to flask with device id
         $request = Http::withHeaders([
             'Deviceid' => strval($phase_device_id),

@@ -70,10 +70,17 @@
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
                                 </td>
-
+                                @else
+                                <td> 
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
+                                    onclick="set_button_id({{ $x }})">
+                                        Auswählen
+                                    </button>
+                                </td>
                                 @endif
-                                </tr>
                                 @endfor
+                                
                         </tbody>
                     </table>
                 </div>
@@ -111,6 +118,14 @@
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
                                     data-bs-target="#RunningPopUp{{ $i.$x }}" onclick="set_button_id({{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
+                                    </button>
+                                </td>
+                                @else
+                                <td> 
+                                    <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}" id="button_{{ $x }}"
+                                    onclick="set_button_id({{ $x }})">
+                                        Auswählen
                                     </button>
                                 </td>
                                 @endif
@@ -151,7 +166,9 @@
 
 @section('modals')
 {{-- create modal for each phase device x in each phase i --}}
-@for($i = 0; $i < count($phases); $i++) @php $phase_devices=$phases[$i]->phaseDevices;
+@for($i = 0; $i < count($phases); $i++) 
+    @php 
+    $phase_devices=$phases[$i]->phaseDevices;
     @endphp
     @for ($x=0; $x < count($phase_devices); $x++) <div class="modal fade" id="RunningPopUp{{ $i.$x }}" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="dark">
@@ -168,18 +185,43 @@
                                 @php
                                     $phase_device = $phase_devices[$x];
                                 @endphp
+                                {{-- regular materials logic --}}
                                 @foreach($phase_device->demoMaterials as $demo_material)
-                                @php
-                                $phase_device_and_material_data = json_encode([
-                                    'phase_device_id' => $phase_device->id,
-                                    'demo_material_id' => $demo_material->id,
-                                    'demo_material_name' => $demo_material->name
-                                ])
-                                @endphp
-                                <button class="btn btn-secondary list" data-bs-dismiss="modal"
-                                    onclick="material_button_click({{ $phase_device_and_material_data }})">{{ $demo_material->name
-                                }}</button>
+                                    @php
+                                    $phase_device_and_material_data = json_encode([
+                                        'phase_device_id' => $phase_device->id,
+                                        'demo_material_id' => $demo_material->id,
+                                        'demo_material_name' => $demo_material->name
+                                    ])
+                                    @endphp
+                                    <button class="btn btn-secondary list" data-bs-dismiss="modal"
+                                        onclick="material_button_click({{ $phase_device_and_material_data }})">{{ $demo_material->name
+                                    }}</button>
                                 @endforeach
+                                {{-- livestream logic --}}
+                                @php
+                                    $curr_device_type_name = $phase_device->device->deviceType->name;
+                                @endphp
+                                @if ($curr_device_type_name == "TV")
+                                @foreach ($phase_devices as $phase_device)
+                                    @php
+                                        $device = $phase_device->device;
+                                        $deviceType = $device->deviceType;
+                                    @endphp
+                                    @if ($deviceType->name == "VR")
+                                        @php
+                                        $phase_device_and_material_data = json_encode([
+                                            'phase_device_id' => $phase_device->id,
+                                            'demo_material_id' => 1,
+                                            'demo_material_name' => $device->name. " live"
+                                        ])
+                                        @endphp
+                                        <button class="btn btn-secondary list" data-bs-dismiss="modal"
+                                        onclick="material_button_click({{ $phase_device_and_material_data }})">{{ $device->name. " live"
+                                        }}</button> 
+                                    @endif
+                                @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -190,3 +232,4 @@
         @endfor
         @endfor
         @endsection
+

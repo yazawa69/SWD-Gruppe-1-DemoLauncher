@@ -14,11 +14,13 @@ class Device extends Model
         'name',
         'oem',
         'serial_number',
+        'ip_address'
     ];
     
     private $name;
     private $oem;
     private $serial_number;
+    private $ip_address;
 
     public function phaseDevices(): HasMany
     {

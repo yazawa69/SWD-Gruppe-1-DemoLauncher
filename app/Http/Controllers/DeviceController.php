@@ -47,7 +47,7 @@ class DeviceController extends Controller
         // catch DB related errors
         try 
         {
-            $saved = $this->devices->createAndSave($device_type_id, $data['name'], $data['oem'], $data['serial_number']);
+            $saved = $this->devices->createAndSave($device_type_id, $data['name'], $data['oem'], $data['serial_number'], $data['ip_address']);
         }
         catch(Exception $e)
         {
@@ -91,7 +91,7 @@ class DeviceController extends Controller
         // update device
         $data = $req->all();
         $device_types = $this->device_types->getById($device_type_id);
-        if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['serial_number']))
+        if (!$this->devices->updateById($device_id, $data['name'], $data['oem'], $data['serial_number'], $data['ip_address']))
         {
             return response(500);
         }

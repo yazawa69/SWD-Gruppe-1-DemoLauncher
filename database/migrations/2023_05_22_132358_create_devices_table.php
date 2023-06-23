@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('oem');
             $table->string('serial_number');
+            $table->string('ip_address');
 
         });
     }

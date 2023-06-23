@@ -2,6 +2,7 @@
 const device_name = document.getElementById("device_name");
 const device_oem = document.getElementById("device_oem");
 const device_serial_number = document.getElementById("device_serial_number");
+const device_ip_address = document.getElementById("device_ip_address");
 
 // Get input values
 const device_name_val = device_name.value;
@@ -68,12 +69,14 @@ function device_save(event){
     const device_name_value = device_name.value;
     const device_oem_value = device_oem.value;
     const device_serial_number_value = device_serial_number.value;
+    const device_ip_address_value = device_ip_address.value;
 
     // Create device object
     const device = {
         name: device_name_value,
         oem: device_oem_value,
-        serial_number: device_serial_number_value
+        serial_number: device_serial_number_value,
+        ip_address: device_ip_address_value,
     }
 
     // Send device object to server

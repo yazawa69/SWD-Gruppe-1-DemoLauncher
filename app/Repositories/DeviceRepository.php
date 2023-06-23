@@ -6,13 +6,14 @@ use App\Models\Device;
 
 class DeviceRepository
 {
-    public function createAndSave(int $device_type_id, String $name, String $oem, String $serial_number)
+    public function createAndSave(int $device_type_id, String $name, String $oem, String $serial_number, String $ip_address)
     {
         $device = new Device();
 
         $device->name = $name;
         $device->oem = $oem;
         $device->serial_number = $serial_number;
+        $device->ip_address = $ip_address;
         $device->device_type_id = $device_type_id;
 
         return $device->save();
@@ -30,12 +31,13 @@ class DeviceRepository
         return $device;
     }
 
-    public function updateById(int $device_id, String $name, String $oem, String $serial_number)
+    public function updateById(int $device_id, String $name, String $oem, String $serial_number, String $ip_address)
     {
         $device = Device::find($device_id);
         $device->name = $name;
         $device->oem = $oem;
         $device->serial_number = $serial_number;
+        $device->ip_address = $ip_address;
         return $device->save();
     }
 

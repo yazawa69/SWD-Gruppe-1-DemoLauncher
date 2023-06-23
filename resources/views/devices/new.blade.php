@@ -56,6 +56,16 @@
             </div>
         </div>
     </div>
+    <div class="textbox_small_new">
+        <div class="overflow_small mb-3" data-bs-theme="dark">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="device_serial_number">IP-Adresse</label>
+                    <input class="form-control" type="number" id="device_ip_address" placeholder="Bitte ausfüllen">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 @section('footer')
