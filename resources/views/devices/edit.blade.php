@@ -61,7 +61,7 @@
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label for="device_serial_number">IP-Adresse</label>
-                    <input class="form-control" type="number" id="device_ip_address" value="{{ $device->ip_address }}">
+                    <input class="form-control"  id="device_ip_address" value="{{ $device->ip_address }}">
                 </div>
             </div>
         </div>

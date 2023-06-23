@@ -65,7 +65,7 @@
                                 @if($phase_devices[$x]->demoMaterials()->exists())
                                 <td> 
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="demo_material_{{ 0 }}_{{ $x }}"
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="demo_material_0_{{ $x }}"
                                     onclick="set_button_id(0, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
@@ -73,14 +73,13 @@
                                 @else
                                 <td> 
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
-                                    onclick="set_button_id({{ $x }})">
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="demo_material_0_{{ $x }}"
+                                    onclick="set_button_id(0, {{ $x }})">
                                         Auswählen
                                     </button>
                                 </td>
                                 @endif
                                 @endfor
-                                
                         </tbody>
                     </table>
                 </div>
@@ -123,8 +122,8 @@
                                 @else
                                 <td> 
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ $i.$x }}" id="button_{{ $x }}"
-                                    onclick="set_button_id({{ $x }})">
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}" id="demo_material_{{ $i }}_{{ $x }}"
+                                    onclick="set_button_id({{ $i }}, {{ $x }})">
                                         Auswählen
                                     </button>
                                 </td>
@@ -192,6 +191,7 @@
                                     @php
                                     $phase_device_and_material_data = json_encode([
                                         'phase_device_id' => $phase_device->id,
+                                        'live_stream_device_id' => null,
                                         'demo_material_id' => $demo_material->id,
                                         'demo_material_name' => $demo_material->name
                                     ])
@@ -202,6 +202,7 @@
                                 @endforeach
                                 {{-- livestream logic --}}
                                 @php
+                                    $curr_phase_device_id = $phase_device->id;
                                     $curr_device_type_name = $phase_device->device->deviceType->name;
                                 @endphp
                                 @if ($curr_device_type_name == "TV")
@@ -213,7 +214,8 @@
                                     @if ($deviceType->name == "VR")
                                         @php
                                         $phase_device_and_material_data = json_encode([
-                                            'phase_device_id' => $phase_device->id,
+                                            'phase_device_id' => $curr_phase_device_id,
+                                            'live_stream_device_id' => $phase_device->id,
                                             'demo_material_id' => 1,
                                             'demo_material_name' => $device->name. " live"
                                         ])

@@ -149,7 +149,7 @@ Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])
 Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
 
 // load material
-Route::get('/scenarios/{scenario_id}/run/phases/{phase_id}/phasedevices/{phase_device_id}/demomaterials/{demo_material_id}/load', [PhaseDeviceController::class, 'loadMaterial']);
+Route::get('/scenarios/{scenario_id}/run/phases/{phase_id}/phasedevices/{phase_device_id}/initiate-live-stream', [PhaseDeviceController::class, 'loadMaterial']);
 
 // stream to rpi
 Route::get('livestream', [PhaseDeviceController::class, 'getLivestream']);

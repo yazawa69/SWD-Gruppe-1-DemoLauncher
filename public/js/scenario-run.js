@@ -37,25 +37,36 @@ function set_button_id(phase_id, demo_material_id){
 }
 
 // demo material selection stuff
-// let selected_demo_material_id;
+let selected_demo_material_id;
 
 function material_button_click(phase_device_and_material_data){
     selected_phase_device_id = phase_device_and_material_data['phase_device_id']; 
+    live_stream_device_id = phase_device_and_material_data['live_stream_device_id'];
     selected_demo_material_id = phase_device_and_material_data['demo_material_id'];
-        
-    fetch("/scenarios/" + scenario_id + "/run/phases/" + phase_id + "/phasedevices/" + selected_phase_device_id + "/demomaterials/ "+ selected_demo_material_id + "/load", {
-        method: "GET",
-    })
-    .then(() => {
-        console.log("success")
-    })
-    .catch(error => {
-        console.error('An error occurred:', error);
-    });
-
-
-    console.log(phase_device_and_material_data);
+    
     set_demo_material_name(phase_device_and_material_data['demo_material_name']);
+
+    if (live_stream_device_id != null) {
+        console.log("/scenarios/" + scenario_id + "/run/phases/" + phase_id + "/phasedevices/" + selected_phase_device_id + "/initiate-live-stream");
+        fetch("/scenarios/" + scenario_id + "/run/phases/" + phase_id + "/phasedevices/" + selected_phase_device_id + "/initiate-live-stream", {
+            method: "GET",
+            headers: {
+                'live_stream_device_id': live_stream_device_id
+            }
+        })
+        .then((response) => {
+            if (!response.ok){
+                console.log("Could not load the material.")
+            }
+            else{
+                console.log("Successfully loaded material.")
+            }
+        })
+        .catch(error => {
+            console.error('An error occurred:', error);
+        });
+    }
+    
 }
 
 // Called when selecting new demo material, set demo material name in phase overview
