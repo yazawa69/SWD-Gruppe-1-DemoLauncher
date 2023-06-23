@@ -36,6 +36,7 @@ function toggle_demo_material_controls(phase, id) {
   if (device_button_id != null && device_button_id != id && !playing) {
     // Hide demo material controls
     demo_material_controls.hidden = false;
+    enable_carousel_controls()
     // Set color of previously pressed button to default
     const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
     old_device_btn.style.setProperty("background-color", "#2b3035", "important");
@@ -53,6 +54,7 @@ function toggle_demo_material_controls(phase, id) {
     if (demo_material_controls.hidden == true) {
       // Unhide demo material controls
       demo_material_controls.hidden = false;
+      disable_carousel_controls()
       // Set device button background color to green
       device_btn.style.setProperty("background-color", "#03b670", "important");
       // Set device button id to id of pressed button
@@ -60,8 +62,9 @@ function toggle_demo_material_controls(phase, id) {
     }
     // Else if demo material controls are not hidden
     else if (!playing) {
-      // Unhide demo material controls
+      // Hide demo material controls
       demo_material_controls.hidden = true;
+      enable_carousel_controls()
       // Set device button background color to default
       device_btn.style.setProperty("background-color", "#2b3035", "important");
     }

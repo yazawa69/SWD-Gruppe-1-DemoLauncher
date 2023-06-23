@@ -131,10 +131,10 @@
 </div>
 
 <button class="carousel-control-prev carousel_arrow" type="button">
-    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev" id="carousel_prev_btn"></img>
+    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev" id="carousel_prev_btn" onclick="hide_demo_material_controls()"></img>
 </button>
 <button class="carousel-control-next carousel_arrow" type="button">
-    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next" id="carousel_next_btn"></img>
+    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next" id="carousel_next_btn" onclick="hide_demo_material_controls()"></img>
 </button>
 
 
