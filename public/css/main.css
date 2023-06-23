@@ -354,6 +354,8 @@ body {
   border-radius: 15px;
   text-align: center;
   background-color: #2b3035 !important;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .three_buttons {
   position: fixed;
