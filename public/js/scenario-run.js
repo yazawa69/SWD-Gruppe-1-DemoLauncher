@@ -86,7 +86,6 @@ function toggleImage() {
     imgplay.classList.remove('pause');
     // Set playing state to false
     playing = false;
-    enable_carousel_controls();
   } else {
     imgplay.classList.add('pause');
     imgplay.classList.remove('play');
@@ -94,7 +93,6 @@ function toggleImage() {
     imgpause.classList.remove('pause');
     // Set playing state to true
     playing = true;
-    disable_carousel_controls();
   }
   buttonClicked = !buttonClicked;
 }
