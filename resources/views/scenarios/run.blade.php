@@ -69,7 +69,7 @@
                                     onclick="set_button_id(0, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
-                                    <p clasS="button_very_small_number"> 10 weitere</p>
+                                    <p clasS="button_very_small_number"> {{ count($phase_devices[$x]->demoMaterials)-1 }} weitere</p>
                                 </td>
 
                                 @endif
@@ -113,7 +113,7 @@
                                     data-bs-target="#RunningPopUp{{ $i.$x }}" id="demo_material_{{ $i }}_{{ $x }}" onclick="set_button_id({{ $i }}, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
-                                    <p clasS="button_very_small_number"> 10 Materialien</p>
+                                    <p clasS="button_very_small_number"> {{ count($phase_devices[$x]->demoMaterials)-1 }} weitere</p>
                                 </td>
                                 @endif
                                 </tr>
