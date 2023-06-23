@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <video controls autoplay width="814">
+    <video autoplay controls width="814">
         <source src="{{ $stream_url }}" type="video/mp4">
     </video>
 </body>

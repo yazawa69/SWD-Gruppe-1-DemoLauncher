@@ -117,7 +117,11 @@ class PhaseDeviceController extends Controller
         $ip = $this->phase_devices->getById($live_stream_device_id)->device->ip_address;
 
         $hololens = new HololensClient($ip);
+        // OPTION A
         return $hololens->getStreamHtmlString();
+
+        // OPTION B
+        // return $hololens->getStreamRaw();
 
     }
 

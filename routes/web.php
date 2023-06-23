@@ -5,7 +5,7 @@ use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceContr
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\View;
-
+use App\Http\Services\Hololens\HololensClient;
 
 /*
 |--------------------------------------------------------------------------
@@ -187,4 +187,7 @@ Route::get('test-local', function(){
     return $html_string;
 });
 
-
+Route::get('test-direct-link', function(){
+    $hololens_client = new HololensClient("4");
+    return $hololens_client->getStream();
+});
