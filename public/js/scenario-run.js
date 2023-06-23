@@ -2,6 +2,8 @@
 const demo_material_controls = document.getElementById("demo_material_controls");
 const carousel_prev_btn = document.getElementById("carousel_prev_btn");
 const carousel_next_btn = document.getElementById("carousel_next_btn");
+const menu = document.getElementById("menu");
+menu.hidden = true;
 
 // Button id for global access
 let button_id;
