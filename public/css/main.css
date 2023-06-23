@@ -190,7 +190,7 @@ body {
 }
 .overflow_middle_scenario {
   overflow-y: scroll;
-  height: 13.5vh;
+  height: 10vh;
 }
 .overflow_middle_running {
   overflow: scroll;
@@ -207,6 +207,7 @@ body {
   border: solid 3px #03b670;
   border-radius: 15px;
 }
+
 .textbox_small_geraete {
   margin-left: auto;
   margin-right: auto;
@@ -223,9 +224,14 @@ body {
   overflow: scroll;
   height: 65px;
 }
+.overflow_small_new {
+  display: flex;
+  overflow: scroll;
+  height: 70%;
+}
 
 .textbox_very_small {
-  width: 100%;
+  width: 93%;
   height: 30px;
   margin: 5%;
   border: solid 2px #03b670;
@@ -233,6 +239,12 @@ body {
 }
 
 .overflow_very_small {
+  display: flex;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.overflow_very_small_warp {
   display: flex;
   height: 20px;
   justify-content: space-between;
@@ -330,9 +342,6 @@ body {
   background-color: #2b3035 !important;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.button_very_small_outline:focus {
-  background-color: #03b670 !important;
 }
 .three_buttons {
   position: fixed;
@@ -801,7 +810,12 @@ body {
 }
 
 /* random */
-
+.play{
+  display: inline;
+}
+.pause{
+  display: none;
+}
 .szenario_dropdown_container {
   z-index: 1;
   width: 100%;

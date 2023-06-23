@@ -29,7 +29,7 @@
         <div>
             @foreach ($scenarios as $scenario)
             <button class="btn btn-secondary list text_no_overflow_ellipsis_2"
-                onclick="set_scenario_id({{ $scenario->id }})">{{ $scenario->name }}</button>
+                onclick="set_scenario_id({{ $scenario->id }})" id="scenario_list">{{ $scenario->name }}</button>
             @endforeach
         </div>
     </div>
@@ -64,7 +64,7 @@
             <div class="modal-body">
                 <div class="form-group mx-2 mb-3">
                     <label for="scenario-creation-title">Titel</label>
-                    <input name="scenario-creation-title" type="text" maxlength="20"
+                    <input name="scenario-creation-title" type="text" 
                         class="form-control modal_textbox container-fluid" id="scenario-creation-name"
                         placeholder=". . ." required="">
                 </div>

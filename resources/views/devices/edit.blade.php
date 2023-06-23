@@ -51,7 +51,7 @@
             <div class="row g-3 align-items-center hundred">
                 <div class="col-auto">
                     <label>Seriennummer:</label>
-                    <input type="Name" class="form-control" type="number" value="{{ $device->serial_number }}" id="device_serial_number">
+                    <input type="Name" class="form-control" value="{{ $device->serial_number }}" id="device_serial_number">
                 </div>
             </div>
         </div>

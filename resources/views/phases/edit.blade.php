@@ -59,7 +59,7 @@
                     @for ($i = 0; $i < count($phase_devices); $i++) <tr>
                         <th>
                             <div class="margin">
-                                <div class="overflow_very_small">
+                                <div class="overflow_very_small_warp">
                                     <div class="text_no_overflow_ellipsis_phase_edit">{{ $phase_devices[$i]->device->name }} </div>
                                     <img class="image_2 inline" src="{{ asset('images/X-Icon.png') }}" onclick="phase_device_remove({{ $phase_devices[$i]->id }})"></img>
                                 </div>
@@ -94,7 +94,7 @@
     </div>
 </div>
 <button class="btn btn-secondary other_button_small_new" id="add-phase-device-btn" data-bs-toggle="modal" data-bs-target="#device-selection-modal" data-bs-theme="dark">
-    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}" onclick="enable_button()"></img>
+    <img class="plus_image" src="{{ asset('images/Pluszeichen.png') }}"></img>
     Gerät
 </button>
 @endsection
@@ -102,7 +102,7 @@
 @section('footer')
 <div class="three_buttons_new">
     <button class="three_buttons_spacing button_small btn btn-secondary" id="phase_save_btn" disabled>
-        Speichern
+        Anwenden
     </button>
     <button class="three_buttons_spacing button_small btn btn-secondary" data-bs-toggle="modal"
         data-bs-target="#phase_delete_modal">

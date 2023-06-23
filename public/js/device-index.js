@@ -6,6 +6,15 @@ const device_add_btn = document.getElementById("device_add_btn");
 device_edit_btn.addEventListener("click", edit_device);
 device_add_btn.addEventListener("click", add_device);
 
+// Check if click is outside of device list, if so, unset device id
+document.addEventListener('click', function(e) {
+    const target = e.target;
+    if (target.id != "device_list" && target.id != "device_edit_btn") {
+        unset_device_id();
+    }  
+}, false);
+
+
 // Device id for global access when editing device
 let device_id;
 
@@ -23,6 +32,12 @@ for (i=0; i < pathArray.length; i++) {
 function set_device_id(id) {
     device_id = id;
     device_edit_btn.disabled = false;
+}
+
+// Called when deselecting a device, sets device_id to null
+function unset_device_id() {
+    device_id = null;
+    device_edit_btn.disabled = true;
 }
 
 // Redirect to edit device page with selected device id

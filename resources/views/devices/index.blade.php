@@ -31,7 +31,7 @@
         <div>
             @foreach($devices as $device)
             <button class="btn btn-secondary list text_no_overflow_ellipsis_2"
-                onclick="set_device_id({{ $device->id }})">{{ $device->name }}</button>
+                onclick="set_device_id({{ $device->id }})" id="device_list">{{ $device->name }}</button>
             @endforeach
         </div>
     </div>

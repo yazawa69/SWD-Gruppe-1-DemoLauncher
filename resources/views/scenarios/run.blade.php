@@ -57,7 +57,7 @@
                         <tbody>
                             @for ($x = 0; $x < count($phase_devices); $x++) <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark" onclick="toggle_demo_material_controls()">{{
+                                    <button class="btn btn-secondary button_very_small_outline" id="device_btn_{{ 0 }}_{{ $x }}" data-bs-theme="dark" onclick="toggle_demo_material_controls(0, {{ $x }})" >{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
@@ -65,8 +65,8 @@
                                 @if($phase_devices[$x]->demoMaterials()->exists())
                                 <td> 
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
-                                    onclick="set_button_id({{ $x }})">
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="demo_material_{{ 0 }}_{{ $x }}"
+                                    onclick="set_button_id(0, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
                                 </td>
@@ -108,7 +108,7 @@
                             @for ($x = 0; $x < count($phase_devices); $x++)
                             <tr>
                                 <th>
-                                    <button class="btn btn-secondary button_very_small_outline" data-bs-theme="dark">{{
+                                    <button class="btn btn-secondary button_very_small_outline" id="device_btn_{{ $i }}_{{ $x }}" data-bs-theme="dark" onclick="toggle_demo_material_controls({{ $i }}, {{ $x }})">{{
                                         $phase_devices[$x]->device->name }}
                                     </button>
                                 </th>
@@ -116,7 +116,7 @@
 
                                 <td>
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ $i.$x }}" onclick="set_button_id({{ $x }})">
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}" id="demo_material_{{ $i }}_{{ $x }}" onclick="set_button_id({{ $i }}, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
                                 </td>
@@ -139,7 +139,7 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev carousel_arrow" type="button" >
+<button class="carousel-control-prev carousel_arrow" type="button">
     <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev"></img>
 </button>
 <button class="carousel-control-next carousel_arrow" type="button">
@@ -150,15 +150,17 @@
 
 <div class="steuerung" id="demo_material_controls" hidden>
     <button class="btn"><img src="{{ asset('images/iconback.png') }}" alt=""></button>
-    <button class="btn"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn play" id="playButton" onclick="toggleImage()"><img src="{{ asset('images/iconplay.png') }}" alt=""></button>
+    <button class="btn pause" id="pauseButton" onclick="toggleImage()"><img src="{{ asset('images/iconpause.png') }}" alt=""></button>
     <button class="btn"><img src="{{ asset('images/iconforward.png') }}" alt=""></button>
 </div>
 @endsection
 
 @section('footer')
 <div class="centered">
-    <button onclick="window.location.href='{{ url('/') }}';" class="btn btn-secondary start_end_button_new"
-        type="button" data-bs-theme="dark">
+    <button class="btn btn-secondary start_end_button_new"
+        type="button" data-bs-theme="dark" data-bs-toggle="modal"
+        data-bs-target="#exit_modal">
         Beenden
     </button>
 </div>
@@ -229,7 +231,25 @@
             </div>
         </div>
         </div>
-        @endfor
-        @endfor
-        @endsection
+    @endfor
+@endfor
 
+<!-- add scenario delete modal -->
+<div class="modal fade" id="exit_modal" tabindex="-1" aria-labelledby="exitModal" aria-hidden="true"
+    data-bs-theme="dark">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="scenarioModal">Szenario wirklich beenden?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button_small_popup btn-secondary"
+                    data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn button_small_popup btn-secondary"
+                onclick="window.location.href='{{ url('/') }}';">Beenden</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
