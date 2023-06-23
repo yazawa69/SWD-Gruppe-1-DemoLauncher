@@ -36,10 +36,13 @@ function toggle_demo_material_controls(phase, id) {
   if (device_button_id != null && device_button_id != id && !playing) {
     // Hide demo material controls
     demo_material_controls.hidden = false;
-    enable_carousel_controls()
+    disable_carousel_controls()
     // Set color of previously pressed button to default
-    const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
-    old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    try {
+      const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
+      old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    } catch (error) {
+    }
     // Set color of newly pressed button to green
     const new_device_btn = document.getElementById("device_btn_" + phase + "_" + id);
     new_device_btn.style.setProperty("background-color", "#03b670", "important");
