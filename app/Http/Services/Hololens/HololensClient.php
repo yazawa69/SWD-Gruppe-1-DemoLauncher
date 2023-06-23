@@ -18,11 +18,11 @@ class HololensClient
     }
 
 
-    public function getStreamHtml()
+    public function getStreamHtmlString()
     {
         $query_string = "?holo=true&pv=true&mic=false&loopback=false";
         $stream_url = "https://".$this->username.":".$this->password."@".$this->ip.$this->api_stream_path;
-        return view('livestream.hololens', ['stream_url' => $stream_url]);
+        return view('livestream.hololens', ['stream_url' => $stream_url])->render();
     }
 
 

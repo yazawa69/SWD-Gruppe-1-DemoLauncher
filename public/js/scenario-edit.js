@@ -1,4 +1,4 @@
-// Get input fields
+ // Get input fields
 const phase_name = document.getElementById("phase_creation_title");
 const scenario_name = document.getElementById("scenario_name");
 const scenario_description = document.getElementById("scenario_description");

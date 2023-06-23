@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{Test, ScenarioController, PhaseController, DeviceController, PhaseDeviceController, DeviceTypeController, DemoMaterialController, DemoMaterialTypeController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\View;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -165,6 +167,24 @@ Route::get('/get-stream', function(){
     ])->get('http://192.168.188.28:5000/print');
     return $request;
 
+});
+
+Route::get('testing-render', function(){
+    $view = view('welcome');
+    $html_string = $view->render();
+    echo $html_string;
+    return $html_string;
+});
+
+
+Route::get('test-local', function(){
+    $view = view('welcome');
+    // $html_string = View::make($view)->render();
+    $html_string = $view->render();
+
+    // echo $html_string;
+    // $view->render
+    return $html_string;
 });
 
 
