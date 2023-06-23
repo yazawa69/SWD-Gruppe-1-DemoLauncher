@@ -1,8 +1,13 @@
 // Get demo material controls
 const demo_material_controls = document.getElementById("demo_material_controls");
+const carousel_prev_btn = document.getElementById("carousel_prev_btn");
+const carousel_next_btn = document.getElementById("carousel_next_btn");
+const menu = document.getElementById("menu");
+menu.hidden = true;
 
 // Button id for global access
-let button_id;
+let btn_phase_id;
+let btn_demo_material_id;
 
 // Device button id for global access
 let device_button_id;
@@ -11,8 +16,9 @@ let device_button_id;
 let playing;
 
 // Set unique button id for each demo material
-function set_button_id(id){
-    button_id = id;
+function set_button_id(phase_id, demo_material_id){
+  btn_phase_id = phase_id;
+  btn_demo_material_id = demo_material_id;
 }
 
 // Called when selecting new demo material, set demo material name in phase overview
@@ -20,7 +26,7 @@ function set_demo_material_name(demo_material_data){
     // Get demo material name
     const demo_material_name = demo_material_data['demo_material_name'];
     // Set demo material name in corresponding button
-    const button = document.getElementById("button_" + button_id);
+    const button = document.getElementById("demo_material_" + btn_phase_id + "_" + btn_demo_material_id);
     button.innerHTML = demo_material_name;
 };
 
@@ -30,9 +36,13 @@ function toggle_demo_material_controls(phase, id) {
   if (device_button_id != null && device_button_id != id && !playing) {
     // Hide demo material controls
     demo_material_controls.hidden = false;
+    disable_carousel_controls()
     // Set color of previously pressed button to default
-    const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
-    old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    try {
+      const old_device_btn = document.getElementById("device_btn_" + phase + "_" + device_button_id);
+      old_device_btn.style.setProperty("background-color", "#2b3035", "important");
+    } catch (error) {
+    }
     // Set color of newly pressed button to green
     const new_device_btn = document.getElementById("device_btn_" + phase + "_" + id);
     new_device_btn.style.setProperty("background-color", "#03b670", "important");
@@ -47,6 +57,7 @@ function toggle_demo_material_controls(phase, id) {
     if (demo_material_controls.hidden == true) {
       // Unhide demo material controls
       demo_material_controls.hidden = false;
+      disable_carousel_controls()
       // Set device button background color to green
       device_btn.style.setProperty("background-color", "#03b670", "important");
       // Set device button id to id of pressed button
@@ -54,8 +65,9 @@ function toggle_demo_material_controls(phase, id) {
     }
     // Else if demo material controls are not hidden
     else if (!playing) {
-      // Unhide demo material controls
+      // Hide demo material controls
       demo_material_controls.hidden = true;
+      enable_carousel_controls()
       // Set device button background color to default
       device_btn.style.setProperty("background-color", "#2b3035", "important");
     }
@@ -83,4 +95,16 @@ function toggleImage() {
     playing = true;
   }
   buttonClicked = !buttonClicked;
+}
+
+// Disable carousel controls when demo material is playing
+function disable_carousel_controls() {
+  carousel_prev_btn.hidden = true;
+  carousel_next_btn.hidden = true;
+}
+
+// Enable carousel controls when demo material is not playing
+function enable_carousel_controls() {
+  carousel_prev_btn.hidden = false;
+  carousel_next_btn.hidden = false;
 }

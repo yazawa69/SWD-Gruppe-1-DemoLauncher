@@ -65,10 +65,11 @@
                                 @if($phase_devices[$x]->demoMaterials()->exists())
                                 <td> 
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="button_{{ $x }}"
-                                    onclick="set_button_id({{ $x }})">
+                                    data-bs-target="#RunningPopUp{{ 0 . $x }}" id="demo_material_{{ 0 }}_{{ $x }}"
+                                    onclick="set_button_id(0, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
+                                    <p clasS="button_very_small_number"> {{ count($phase_devices[$x]->demoMaterials)-1 }} weitere</p>
                                 </td>
 
                                 @endif
@@ -109,9 +110,10 @@
 
                                 <td>
                                     <button class="btn btn-secondary button_very_small_outline" data-bs-toggle="modal"
-                                    data-bs-target="#RunningPopUp{{ $i.$x }}">
+                                    data-bs-target="#RunningPopUp{{ $i.$x }}" id="demo_material_{{ $i }}_{{ $x }}" onclick="set_button_id({{ $i }}, {{ $x }})">
                                         {{ $phase_devices[$x]->demoMaterials[0]->name }}
                                     </button>
+                                    <p clasS="button_very_small_number"> {{ count($phase_devices[$x]->demoMaterials)-1 }} weitere</p>
                                 </td>
                                 @endif
                                 </tr>
@@ -124,11 +126,11 @@
     @endfor
 </div>
 
-<button class="carousel-control-prev carousel_arrow" type="button" >
-    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev"></img>
+<button class="carousel-control-prev carousel_arrow" type="button">
+    <img class="pfeil_image_links" aria-hidden="true" src="{{ asset('images/CarousellPfeilLinks.png') }}" data-bs-target="#carouselExample" data-bs-slide="prev" id="carousel_prev_btn"></img>
 </button>
 <button class="carousel-control-next carousel_arrow" type="button">
-    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next"></img>
+    <img class="pfeil_image_rechts" aria-hidden="true" src="{{ asset('images/CarousellPfeilRechts.png') }}" data-bs-target="#carouselExample" data-bs-slide="next" id="carousel_next_btn"></img>
 </button>
 
 
