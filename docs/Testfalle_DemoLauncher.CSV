@@ -1,0 +1,352 @@
+Test-Nr.;Szenario;Voraussetzung;Testfall;Erwarteter Output;Ist Output;Test bestanden?;Anmerkungen;;
+Navigation durch die Anwendung;;;;;;;;;
+1;"Über Logo zurück auf
+Startseite navigieren";-;Auf beliebigen Unterseiten auf das Logo der Anwendung drücken;Zurückleitung zur Startseite;Zurückleitung zur Startseite;Ja;;;
+2;"Durch die Anwendung
+navigieren";Anwendung läuft;"1) Klick auf das Burgermenü
+2) Alle möglichen Unterseiten über Klick aufrufen";"Alle möglichen Unterseiten
+(Startseite, Szenarien verwalten, Geräte verwalten, Demomaterial verwalten) sind aufgelistet 
++
+werden bei Klick entsprechend aufgerufen";"Alle möglichen Unterseiten
+(Startseite, Szenarien verwalten, Geräte verwalten, Demomaterial verwalten) sind aufgelistet 
++
+werden bei Klick entsprechend aufgerufen";Ja;;;
+3;"Von Startseite aus ein Szenario bearbeiten
+";Bereits erstelltes Szenario;"1) Auf Startseite Szenario auswählen (""Szenario auswählen"")
+2) Auf Bearbeiten";"Weiterleitung zum szenariospezfischen ""Szenario bearbeiten""
+";"Weiterleitung zum szenariospezfischen ""Szenario bearbeiten""
+";Ja;;;
+Geräte verwalten (Anmerkung: Testfälle gelten für jede Gerätekategorie);;;;;;;;;
+4;"Neues Gerät 
+hinzufügen";"Gerätekategorie muss bereits
+implementiert sein";"1) Über Burgermenü den Reiter „Geräte verwalten“ auswählen
+2) Gerätekategorie auswählen
+3) Über Button ""Hinzufügen"" neues Gerät hinzufügen
+4) Alle erforderlichen Felder ausfüllen (Name, Hersteller, Seriennummer)
+5) Speichern drücken";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde erfolgreich hinzugefügt";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde erfolgreich hinzugefügt";Ja;;;
+5;"Neues Gerät unvollständig
+hinzufügen";"Gerätekategorie muss bereits
+implementiert sein";"1) Über Burgermenü den Reiter „Geräte verwalten“ auswählen
+2) Gerätekategorie auswählen
+3) Über Button ""Hinzufügen"" neues Gerät hinzufügen
+4) ausfüllbare Felder teilweise unausgefüllt lassen
+5) Speichern drücken";Speichern-Button bleibt so lange ausgegraut und und damit nicht anklickbar, bis alle entsprechenden Felder ausgefüllt wurden;"Speichern-Button bleibt so lange ausgegraut und damit 
+nicht anklickbar, bis alle entsprechenden Felder ausgefüllt
+wurden";Ja;;;
+6;Ausgewähltes Gerät erfolgreich bearbeiten;Gerät wurde hinzugefügt;"1) Über das Burgermenü auf ""Geräte verwalten"" klicken
+2) Eine Geräte-Kategorie auswählen, in der bereits ein Gerät hinzugefügt wurde
+3) Das entsprechende Gerät auswählen
+4) Auf ""Bearbeiten"" klicken
+5) Beliebige Änderungen durchführen
+6) Speichern drücken";"Speichern-Button bleibt so 
+lange ausgegraut und damit nicht anklickbar, bis eine Änderung vorgenommen wurde und keines der ausfüllbaren Felder leer ist.
++
+nach Klick auf Speichern wird man zurück auf die gerätespezifische Seite ""Geräte verwalten"" geleitet, in der das Gerät erfolgreich aktualisiert wurde";"Speichern-Button bleibt so 
+lange ausgegraut und damit nicht anklickbar, bis eine Änderung vorgenommen wurde und keines der ausfüllbaren Felder leer ist.
++
+nach Klick auf Speichern wird man zurück auf die gerätespezifische Seite ""Geräte verwalten"" geleitet, in der das Gerät erfolgreich aktualisiert wurde";Ja;;;
+7;"Ausgewähltes Gerät 
+löschen";Gerät wurde hinzugefügt;"1) Über das Burgermenü auf ""Geräte verwalten"" klicken
+2) Eine Geräte-Kategorie auswählen, in der bereits ein Gerät hinzugefügt wurde
+3) Das entsprechende Gerät auswählen
+4) Auf ""Bearbeiten"" klicken
+5) Auf Löschen drücken
+6) Löschvorgang bestätigen
+";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde erfolgreich entfernt";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde erfolgreich entfernt";Ja;;;
+8;"Gerätebearbeitung 
+abbrechen";Gerät wurde hinzugefügt;"1) Über das Burgermenü auf ""Geräte verwalten"" klicken
+2) Geräte-Kategorie auswählen, in der bereits ein Gerät hinzugefügt wurde
+3) Das entsprechende Gerät auswählen
+4) Auf ""Bearbeiten"" klicken
+5) Beliebige Änderungen vornehmen
+6) Auf Abbrechen drücken
+";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde nicht verändert/ aktualisiert";"Zurückleitung zum gerätespezifischen „Geräte verwalten“
++
+Entsprechendes Gerät wurde nicht verändert/ aktualisiert";Ja;;;
+Funktion: Demomaterial verwalten (Anmerkung: Testfälle gelten für jede Art von Demomaterial);;;;;;;;;
+9;"Neues Demomaterial
+hinzufügen";"Das hinzuzufügende 
+Demomaterial muss einer der aufgeführten Demo-Material-Arten entsprechen";"1) Über das Burgermenü auf ""Demomaterial verwalten"" klicken
+2) Art des Demomaterials auswählen
+3) Hinzufügen klicken
+4) Auf Durchsuchen… klicken und passendes Demomaterial auswählen
+5) Beschreibung ausfüllen
+6) Speichern";"Zurückleitung zu ""Demomaterial verwalten"" innerhalb der entsprechenden Demo-Art
++
+Entsprechendes Demomaterial wurde erfolgreich hinzugefügt";"Zurückleitung zu ""Demomaterial verwalten"" innerhalb der entsprechenden Demo-Art
++
+Entsprechendes Demomaterial wurde erfolgreich hinzugefügt";Ja;;;
+10;"Neues Demomaterial unvollständig
+hinzufügen";;"1) Über Burgermenü den Reiter „Demomaterial verwalten“ auswählen
+2) Art des Demomaterials auswählen
+3) Hinzufügen klicken
+4) ausfüllbare Felder teilweise unausgefüllt lassen
+5) Speichern drücken";Speichern-Button bleibt so lange ausgegraut und und damit nicht anklickbar, bis alle entsprechenden Felder ausgefüllt wurden;Speichern-Button bleibt so lange ausgegraut und und damit nicht anklickbar, bis alle entsprechenden Felder ausgefüllt wurden;Ja;;;
+11;"Hinzufügen neues Demomaterials abbrechen
+";;"1) Über das Burgermenü auf ""Demomaterial verwalten"" klicken
+2) Art des Demomaterials auswählen
+3) Hinzufügen klicken
+4) Auf Durchsuchen… klicken und passendes Demomaterial auswählen
+5) Beschreibung ausfüllen
+6) Abbrechen klicken
+";"Zurückleitung zum demospezifischen ""Demomaterial verwalten""
++
+Entsprechendes Demomaterial wurde nicht hinzugefügt";"Zurückleitung zum demospezifischen ""Demomaterial verwalten""
++
+Entsprechendes Demomaterial wurde nicht hinzugefügt";Ja;;;
+12;"Ausgewähltes Demomaterial bearbeiten/ändern
+";"Demomaterial wurde hinzugefügt
+";"1) Über Burgermenü den Reiter ""Demomaterial verwalten"" auswählen
+2) Art des Demomaterials auswählen, in welchem sich bereits Demomaterial befindet
+3) Demomaterial auswählen
+4) Auf Bearbeiten klicken
+5) Änderungen vornehmen (Datei ändern oder Beschreibung)
+6) Speichern
+";"Speichern-Button bleibt so 
+lange ausgegraut und damit nicht anklickbar, bis eine Änderung vorgenommen wurde und keines der ausfüllbaren Felder leer ist.
++
+nach Klick auf Speichern wird man zurück auf die demospezifische Seite ""Demomaterial verwalten"" geleitet, in der das Demomaterial erfolgreich aktualisiert wurde";"Speichern-Button bleibt so 
+lange ausgegraut und damit nicht anklickbar, bis eine Änderung vorgenommen wurde und keines der ausfüllbaren Felder leer ist.
++
+nach Klick auf Speichern wird man zurück auf die demospezifische Seite ""Demomaterial verwalten"" geleitet, in der das Demomaterial erfolgreich aktualisiert wurde";Ja;;;
+13;"Demobearbeitung abbrechen
+";"Demomaterial wurde hinzugefügt
+";"1) Über Burgermenü den Reiter ""Demomaterial verwalten"" auswählen
+2) Art des Demomaterials auswählen, in welchem sich bereits Demomaterial befindet
+3) Demomaterial auswählen
+4) Auf Bearbeiten klicken
+5) Änderungen vornehmen (Datei ändern oder Beschreibung)
+6) Auf Abbrechen klicken
+
+";"Zurückleitung zum demospezifischen ""Demomaterial verwalten""
++
+Entsprechendes Demomaterial wurde nicht verändert/ aktualisiert";"Zurückleitung zum demospezifischen ""Demomaterial verwalten""
++
+Entsprechendes Demomaterial wurde nicht verändert/ aktualisiert";Ja;;;
+Funktion: Szenarien verwalten;;;;;;;;;
+Szenario bearbeiten;;;;;;;;;
+14;"Neues leeres Szenario erstellen
+";-;"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) Erstellen klicken
+3) Titel und Beschreibung ausfüllen
+4) Erstellen klicken
+5) Speichern";"Speichern-Button ist solange ausgegraut und damit nicht anklickbar, so lange nicht Titel und Beschreibung ausgefüllt sind
+";"Speichern-Button ist solange ausgegraut und damit nicht anklickbar, so lange nicht Titel und Beschreibung ausgefüllt sind
+";Ja;;;
+15;"Erstellung eines neuen Szenarios abbrechen
+";-;"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) Erstellen klicken
+3) Titel und Beschreibung ausfüllen
+4) Erstellen klicken
+5) Abbrechen klicken";"autom. Zurückleitung zu ""Szenarien verwalten""
++
+Entsprechendes Szenario wird nicht aufgelistet";"autom. Zurückleitung zu Szenarien verwalten
++
+Entsprechendes Szenario wird nicht aufgelistet";Ja;;;
+16;"Szenario löschen
+";bestehendes Szenario;"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) zu löschendes Szenario auswählen
+3) Bearbeiten klicken
+4) Löschen klicken
+5) Löschen bestätigen";"autom. Zurückleitung zu ""Szenarien verwalten""
++
+Entsprechendes Szenario wird nicht mehr aufgelistet";"autom. Zurückleitung zu Szenarien verwalten
++
+Entsprechendes Szenario wird nicht mehr aufgelistet";Ja;;;
+Phasen verwalten;;;;;;;;;
+17;Phasen hinzufügen;bestehendes Szenario;"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) + Phase klicken
+5) Titel für Phase vergeben
+6) Anwenden klicken
+
+
+";"autom. Zurückleitung zu ""Szenarien verwalten""
++
+Bei erneutem Bearbeiten des gleichen Szenarios ist die erstellte Phase nun aufgelistet";"autom. Zurückleitung zu ""Szenarien verwalten""
++
+Bei erneutem Bearbeiten des gleichen Szenarios ist die erstellte Phase nun aufgelistet";Nein;;;
+18;"Phase mit Gerät und Demomaterial befüllen
++ Speichern";"bestehendes Szenario
+
+bestehende Phase
+
+mind. 1 Gerät wurde hinzugefügt (unter ""Geräte verwalten"")
+
+mind. 1 Demomaterial wurde hinzugefügt (unter ""Demomaterial verwalten"")";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase drücken
+5) + Gerät auswählen
+6) Geräte-Typ auswählen
+7) Gerät auswählen
+8) Unter Demomaterial den ""+""-Button drücken
+9) Demomaterial-Typ auswählen
+10) Demomaterial auswählen
+11) Anwenden klicken
+12) nach Zurückleitung auf ""Szenario bearbeiten"" auf Speichern drücken
+
+";"Nach autom. Zurückleitung zu ""Szenario bearbeiten"" ist bei erneuter Bearbeitung der selben Phase das entsprechende Gerät und Demomaterial aufgelistet
+ 
++
+
+Szenario kann nach Hinzufügen einer Phase unter ""Szenario bearbeiten"" gespeichert werden durch Klick auf den Speichern-Button";"Nach autom. Zurückleitung zu ""Szenario bearbeiten"" ist bei erneuter Bearbeitung der selben Phase das entsprechende Gerät und Demomaterial aufgelistet
+ 
++
+
+Szenario kann nach Hinzufügen einer Phase unter ""Szenario bearbeiten"" gespeichert werden durch Klick auf den Speichern-Button";Ja;"Anmerkung:
+Eine Phase kann und soll auch gespeichert werden können, wenn kein gerätespezifisches Demomaterial ausgewählt wurde.";;
+19;"Innerhalb einer Phase mehrmals das selbe Gerät hinzufügen
+";"bestehendes Szenario
+
+bestehende Phase
+
+mind. 1 Gerät wurde hinzugefügt (unter ""Geräte verwalten"")";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase drücken
+5) + Gerät auswählen
+6) Geräte-Typ auswählen
+7) Gerät auswählen
+8) + Gerät auswählen
+9) denselben Geräte-Typ auswählen
+10) Das selbe Gerät auswählen
+";"Innerhalb einer Phase sind bereits verwendete Geräte  ausgegraut und damit nicht mehr auswählbar
+";"Innerhalb einer Phase lässt sich das selbe Gerät mehrmals auswählen
+";Nein;;;
+20;"Innerhalb einer Phase an einem Gerät mehrmals das selbe Demomaterial hinzufügen
+";"bestehendes Szenario
+
+bestehende Phase
+
+mind. 1 Gerät wurde hinzugefügt (unter ""Geräte verwalten"")
+
+mind. 1 Demomaterial wurde hinzugefügt (unter ""Demomaterial verwalten"")
+";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase drücken
+5) + Gerät auswählen
+6) Geräte-Typ auswählen
+7) Gerät auswählen
+8) + -Icon neben entsprechendem Gerät klicken
+9) Demomaterial-Typ auswählen
+10) Demomaterial auswählen
+11) + -Icon unter hinzugefügtem Demomaterial anklicken
+12) denselben Demomaterial-Typ auswählen
+13) dasselbe Demomaterial auswählen
+";Das selbe Demomaterial wird nicht nochmals dem Gerät hinzugefügt;Das selbe Demomaterial wird nicht nochmals dem Gerät hinzugefügt;Ja;Ein Hinweis an den User, dass das Material bereits hinzugefügt wurde, fehlt;;
+21;Phasenbearbeitung abbrechen;"bestehendes Szenario
+
+bestehende Phase
+
+mind. 1 Gerät wurde hinzugefügt (unter ""Geräte verwalten"")";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase drücken
+5) + Gerät auswählen
+6) Geräte-Typ auswählen
+7) Gerät auswählen
+8) Auf Abbrechen drücken
+
+";"Bei erneutem Bearbeiten der selben Phase wurde das zunächst hinzugefügte Gerät nicht hinzugefügt und ist somit nicht aufgelistet
+";"Bei erneutem Bearbeiten der selben Phase wurde das zunächst hinzugefügte Gerät dennoch hinzugefügt und ist mitaufgelistet
+--> Die Veränderung wurde also gespeichert";Nein;;;
+22;Phase löschen;"bestehendes Szenario
+
+bestehende Phase";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase drücken
+5) Auf Löschen klicken
+6) Löschen bestätigen
+
+";"autom. Zurückleitung auf ""Szenario bearbeiten""
++
+Entsprechende Phase wurde gelöscht und ist somit nicht mehr unter den Phasen aufgelistet";"autom. Zurückleitung auf ""Szenario bearbeiten""
++
+Entsprechende Phase wurde gelöscht und ist somit nicht mehr unter den Phasen aufgelistet";Ja;;;
+23;"Änderungen in ""Szenario bearbeiten"" verwerfen (durch Abbruch der Bearbeitung), wenn eine Änderung in ""Phase bearbeiten"" vorgenommen wurde";"bestehendes Szenario
+
+bestehende Phase
+
+mind. 1 Gerät wurde hinzugefügt (unter ""Geräte verwalten"")
+";"1) Über Burgermenü den Reiter ""Szenarien verwalten"" auswählen
+2) bestehendes Szenario auswählen
+3) Bearbeiten klicken
+4) Auf ""bearbeiten"" neben bestehender Phase klicken
+5) beliebige Änderung vornehmen (z.B. Gerät hinzufügen oder löschen)
+6) Anwenden klicken
+7) In ""Szenario bearbeiten"" auf Abbrechen drücken
+
+";"autom. Zurückleitung auf ""Szenarien verwalten""
++
+bei Wiederbearbeitung des entsprechenden Szenarios und Bearbeitung der entsprechende Phase wurde die vorgenommene Veränderung nicht übernommen";"autom. Zurückleitung auf ""Szenarien verwalten""
++
+bei Wiederbearbeitung des entsprechenden Szenarios und Bearbeitung der entsprechende Phase wurde die vorgenommene Veränderung übernommen";Nein;;;
+Funktion: Szenario abspielen;;;;;;;;;
+25;"Ansteuerung eines anderen Gerätes, während ein Gerät bereits am Laufen ist
+";"bestehendes Szenario
+
+bestehende Phase mit mind. 2 Geräten inkl. Hinzugefügten Demomaterial
+
+mind. 2 Geräte wurden hinzugefügt (unter ""Geräte verwalten"")
+
+mind. 1 Demomaterial wurde hinzugefügt (unter ""Demomaterial verwalten"")
+";"1) Auf Startseite Szenario auswählen (""Szenario auswählen"")
+2) Auf Start klicken
+3) Gerät auswählen
+4) Play-Button klicken
+5) Andere Geräte anklicken
+6) Pause-Button klicken
+7) Anderes Gerät anklicken";"Während ein Gerät am Laufen ist und der Pause-Button aktiv, kann man nicht zwischen den Geräten wechseln.
+Erst, nachdem der Pause-Button geklickt wurde, kann man zwischen ihnen wechseln.";"Während ein Gerät am Laufen ist und der Pause-Button aktiv, kann man nicht zwischen den Geräten wechseln.
+Erst, nachdem der Pause-Button geklickt wurde, kann man zwischen ihnen wechseln.";Ja;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;

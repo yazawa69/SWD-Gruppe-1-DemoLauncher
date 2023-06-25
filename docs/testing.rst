@@ -33,11 +33,10 @@ Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraus
 
 
 .. csv-table:: Demolauncher Testfälle
-   :file: docs\Testfalle_DemoLauncher.xlsx
-   .. :widths: 30, 70
-   .. :header-rows: 1
-
-
+   :file: docs\Testfalle_DemoLauncher.CSV
+   :widths: 10, 20, 20, 20, 20, 20, 20, 20
+   :header-rows: 1
+   
 
 Auswertung der Testergebnisse und Einhaltung der Anforderungen aus dem Pflichtenheft
 ================================

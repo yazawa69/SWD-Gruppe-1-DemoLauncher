@@ -12,7 +12,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
-    'sphinxcontrib.exceltable',
 ]
 
 intersphinx_mapping = {
