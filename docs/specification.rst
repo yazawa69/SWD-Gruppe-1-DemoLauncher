@@ -154,7 +154,7 @@ ausgestaltet werden müssen.
 
 Use Case Diagramm
 -------------------------------------------
-.. image:: docs\UseCaseDiagramm.jpg
+.. image:: ./UseCaseDiagramm.jpg
   :width: 1275
   :alt: Use Case Diagramm
 
@@ -202,165 +202,165 @@ Use Case Diagramm
 |                   |                          | | Zur Seite "Verbundene Geräte" zurückkehren          |
 +-------------------+--------------------------+-------------------------------------------------------+
 
-=================== ========================= =======================================================
-Use Case "Demomaterial hinzufügen"
-=====================================================================================================
-Ziel                | Demomaterial hinzufügen
-------------------- ---------------------------------------------------------------------------------
-Kurzbeschreibung    | Bereits vorhandenes Demomaterial (Textdokument, Präsentation, Video, ...)
-------------------- ---------------------------------------------------------------------------------
-Auslöser            | Neues Demomaterial
-------------------- ---------------------------------------------------------------------------------
-Akteure             | Experte am Institut
-------------------- ---------------------------------------------------------------------------------
-Vorbedingungen      | Installierte Applikation
-                    | Demomaterial vorhanden und kompatibles Dateiformat
-------------------- ---------------------------------------------------------------------------------
-Nachbedingungen     | Das Demomaterial wurde zur Anwendung hinzugefügt
-------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Daten zu Demomaterial
-Informationen
-------------------- ---------------------------------------------------------------------------------
-Ergebnisse          | Demomaterial wurde hinzugefügt
-------------------- ---------------------------------------------------------------------------------
-Verbindungen        | Szenario erstellen
-------------------- ---------------------------------------------------------------------------------
-Ablauf              | Handlung Benutzer       | Handlung Systeme
-                    ------------------------- -------------------------------------------------------
-                    | Anwendung starten       | Seite "Demomaterial verwalten" öffnen
-                    | Menü öffnen             | Art des Materials und Auswahlmöglichkeiten
-                    | "Demomaterial ver-      
-                    | walten" wählen
-                    ------------------------- -------------------------------------------------------
-                    | Aus Dropdown-Menü ent-  | Seite "Neues Material hinzufügen" öffnen
-                    | sprechendes Dateiformat | Upload- und Eingabefelder anzeigen
-                    | auswählen               |
-                    | "Neues Material hinzu-
-                    | fügen" auswählen
-                    ------------------------- -------------------------------------------------------
-                    | Name und Beschreibung   | Demomaterial und Eingaben speichern
-                    | eingeben                | Zur Seite "Demomaterial verwalten" zurückkehren
-                    | Demomaterial hochladen
-                    | "Speichern" drücken
-=================== ========================= =======================================================
++-------------------+--------------------------+-------------------------------------------------------+
+| Use Case "Demomaterial hinzufügen"                                                                   |
++===================+==========================+=======================================================+
+| Ziel              | Demomaterial hinzufügen                                                          |
++-------------------+--------------------------+-------------------------------------------------------+
+| Kurzbeschreibung  | Bereits vorhandenes Demomaterial (Textdokument, Präsentation, Video, ...)        |
++-------------------+--------------------------+-------------------------------------------------------+
+| Auslöser          | Neues Demomaterial                                                               |
++-------------------+--------------------------+-------------------------------------------------------+
+| Akteure           | Experte am Institut                                                              |                               
++-------------------+--------------------------+-------------------------------------------------------+
+| Vorbedingungen    | Installierte Applikation                                                         |
+|                   | Demomaterial vorhanden und kompatibles Dateiformat                               | 
++-------------------+--------------------------+-------------------------------------------------------+
+| Nachbedingungen   | Das Demomaterial wurde zur Anwendung hinzugefügt                                 |
++-------------------+--------------------------+-------------------------------------------------------+
+| | Eingehende      | Daten zu Demomaterial                                                            |                         
+| | Informationen   |                                                                                  |                                                   
++-------------------+--------------------------+-------------------------------------------------------+
+| Ergebnisse        | Demomaterial wurde hinzugefügt                                                   |                            
++-------------------+--------------------------+-------------------------------------------------------+
+| Verbindungen      | Szenario erstellen                                                               |                    
++-------------------+--------------------------+-------------------------------------------------------+
+| Ablauf            | Handlung Benutzer        | Handlung Systeme                                      |   
+|                   +--------------------------+-------------------------------------------------------+
+|                   | |  Anwendung starten     | | Seite "Demomaterial verwalten" öffnen               |
+|                   | | Menü öffnen            | | Art des Materials und Auswahlmöglichkeiten          | 
+|                   | | "Demomaterial ver-     |                                                       | 
+|                   | | walten" wählen         |                                                       |                        
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Aus Dropdown-Menü ent- | | Seite "Neues Material hinzufügen" öffnen            |
+|                   | | sprechendes Dateiformat| | Upload- und Eingabefelder anzeigen                  |
+|                   | | auswählen              |                                                       |
+|                   | | "Neues Material hinzu- |                                                       |                
+|                   | |fügen" auswählen        |                                                       |                 
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Name und Beschreibung  | | Demomaterial und Eingaben speichern                 |   
+|                   | | eingeben               | | Zur Seite "Demomaterial verwalten" zurückkehren     |
+|                   | | Demomaterial hochladen |                                                       |                            
+|                   | | "Speichern" drücken    |                                                       |    
++-------------------+--------------------------+-------------------------------------------------------+
 
-=================== ========================= =======================================================
-Use Case "Szenario erstellen"
-=====================================================================================================
-Ziel                | Neues Szenario erstellen und speichern
-------------------- ---------------------------------------------------------------------------------
-Kurzbeschreibung    | Ein neues Szenario soll erstellt werden. Dafür muss zunächst ein geeigneter
-                    | Name sowie eine Beschreibung vergeben werden. Dann werden verfügbare Geräte
-                    | sowie ggf. gerätespezifische Medien (Demomaterial) ausgewählt, die beim Starten
-                    | des Szenarios gestartet werden sollen.
-------------------- ---------------------------------------------------------------------------------
-Auslöser            | Neues Szenario soll erstellt werden (z.B. weil neue Geräte verfügbar sind oder
-                    | ein neues Meidm gezeigt werden soll)
-------------------- ---------------------------------------------------------------------------------
-Akteure             | Experte am Institut (für gewünschte Gerät)
-------------------- ---------------------------------------------------------------------------------
-Vorbedingungen      | Installierte Applikation
-                    | Gewünschte Geräte bereits in Anwendung gespeichert und ansteuerbar
-                    | Gewünschte Demos vorhanden und mit gewünschtem Gerät kompatibel
-------------------- ---------------------------------------------------------------------------------
-Nachbedingungen     | Das Szenario wurde erstellt und kann bei Bedarf gestartet werden
-------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Name und Beschreibung für Szenario
-Informationen       | Gewünschte Geräte
-                    | Gewünschte Mediendemos
-                    | Gewünschte Startreihenfolge
-------------------- ---------------------------------------------------------------------------------
-Ergebnisse          | Gewünschtes Szenario wurde erstellt und kann gestartet werden (anderer
-                    | Anwendungsfall)
-------------------- ---------------------------------------------------------------------------------
-Verbindungen        | Szenario starten
-------------------- ---------------------------------------------------------------------------------
-Ablauf              | Handlung Benutzer       | Handlung Systeme
-                    ------------------------- -------------------------------------------------------
-                    | Anwendung starten       | Seite "Szenarien verwalten" öffnen
-                    | Menü öffnen             | 
-                    | "Szenarien verwalten"   |
-                    | wählen                  |
-                    ------------------------- -------------------------------------------------------
-                    | "Neues Szenario er-     | Seite "Neues Szenario erstellen" öffnen
-                    | stellen" auswählen      | Auswahlmöglichkeiten anzeigen
-                    ------------------------- -------------------------------------------------------
-                    | Name und Beschreibung   | Phase auswählen und anzeigen
-                    | eingeben 
-                    | Im Dropdown-Menü Phase
-                    | auswählen bzw. neue
-                    | Phase erstellen
-                    ------------------------- -------------------------------------------------------
-                    | "Gerät hinzufügen"      | Liste mit bereits gespeicherten Geräten anzeigen
-                    | wählen 
-                    ------------------------- -------------------------------------------------------
-                    | Verfügbare Geräte       | Ausgewählte Geräte anzeigen
-                    | auswählen
-                    ------------------------- -------------------------------------------------------
-                    | Optional Demomaterial   | Für Gerät verfügbares Demomaterial anzeigen
-                    | hinzufügen: bei ge-     
-                    | wünschtem Gerät "+"
-                    | drücken 
-                    ------------------------- -------------------------------------------------------
-                    | Gewünschtes Demo-       | Ausgewählte Geräte, Demomaterial und Startreihenfolge
-                    | material auswählen      | speichern
-                    | Optional: Startreihen-  | Zur Startseite zurückkehren
-                    | folge ändern
-                    | "Speichern" drücken              
-=================== ========================= =======================================================
++-------------------+--------------------------+-------------------------------------------------------+
+| Use Case "Szenario erstellen"                                                                        |                  
++-------------------+--------------------------+-------------------------------------------------------+
+| Ziel              | Neues Szenario erstellen und speichern                                           |    
++-------------------+--------------------------+-------------------------------------------------------+
+| Kurzbeschreibung  | | Ein neues Szenario soll erstellt werden. Dafür muss zunächst ein geeigneter    |
+|                   | | Name sowie eine Beschreibung vergeben werden. Dann werden verfügbare Geräte    |
+|                   | | sowie ggf. gerätespezifische Medien (Demomaterial) ausgewählt, die beim        |
+|                   | | Starten des Szenarios gestartet werden sollen.                                 |   
++-------------------+--------------------------+-------------------------------------------------------+
+| Auslöser          | | Neues Szenario soll erstellt werden (z.B. weil neue Geräte verfügbar sind oder |
+|                   | | ein neues Meidm gezeigt werden soll)                                           |
++-------------------+--------------------------+-------------------------------------------------------+
+| Akteure           | Experte am Institut (für gewünschte Gerät)                                       |
++-------------------+--------------------------+-------------------------------------------------------+
+| Vorbedingungen    | | Installierte Applikation                                                       |
+|                   | | Gewünschte Geräte bereits in Anwendung gespeichert und ansteuerbar             |
+|                   | | Gewünschte Demos vorhanden und mit gewünschtem Gerät kompatibel                |
++-------------------+--------------------------+-------------------------------------------------------+
+| Nachbedingungen   | Das Szenario wurde erstellt und kann bei Bedarf gestartet werden                 |
++-------------------+--------------------------+-------------------------------------------------------+
+| | Eingehende      | | Name und Beschreibung für Szenario                                             | 
+| | Informationen   | | Gewünschte Geräte                                                              |            
+|                   | | Gewünschte Mediendemos                                                         |                      
+|                   | | Gewünschte Startreihenfolge                                                    |
++-------------------+--------------------------+-------------------------------------------------------+
+| Ergebnisse        | | Gewünschtes Szenario wurde erstellt und kann gestartet werden (anderer         |
+|                   | | Anwendungsfall)                                                                |                                
++-------------------+--------------------------+-------------------------------------------------------+
+| Verbindungen      | Szenario starten                                                                 |                  
++-------------------+--------------------------+-------------------------------------------------------+
+| Ablauf            | Handlung Benutzer        | Handlung Systeme                                      |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Anwendung starten      | Seite "Szenarien verwalten" öffnen                    |
+|                   | | Menü öffnen            |                                                       |         
+|                   | | "Szenarien verwalten"  |                                                       |                
+|                   | | wählen                 |                                                       |                    
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | "Neues Szenario er-    | | Seite "Neues Szenario erstellen" öffnen             | 
+|                   | | stellen" auswählen     | | Auswahlmöglichkeiten anzeigen                       |     
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Name und Beschreibung  | | Phase auswählen und anzeigen                        |   
+|                   | | eingeben               |                                                       |                     
+|                   | | Im Dropdown-Menü Phase |                                                       |                    
+|                   | | auswählen bzw. neue    |                                                       |                    
+|                   | | Phase erstellen        |                                                       |                                
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | "Gerät hinzufügen"     | Liste mit bereits gespeicherten Geräten anzeigen      |
+|                   | | wählen                 |                                                       |                    
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Verfügbare Geräte      | Ausgewählte Geräte anzeigen                           |
+|                   | | auswählen              |                                                       |                
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Optional Demomaterial  | Für Gerät verfügbares Demomaterial anzeigen           |
+|                   | | hinzufügen: bei ge-    |                                                       |                                
+|                   | | wünschtem Gerät "+"    |                                                       |
+|                   | | drücken                |                                                       |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Gewünschtes Demo-      | | Ausgewählte Geräte, Demomaterial und Startreihen-   |
+|                   | | material auswählen     | | folge speichern                                     |
+|                   | | Optional: Startreihen- | | Zur Startseite zurückkehren                         |                          
+|                   | | folge ändern           |                                                       |                                            
+|                   | | "Speichern" drücken    |                                                       |                        
++-------------------+--------------------------+-------------------------------------------------------+
 
-=================== ========================= =======================================================
-Use Case "Szenario starten"
-=====================================================================================================
-Ziel                | Ausgewühltes Szenario starten
-------------------- ---------------------------------------------------------------------------------
-Kurzbeschreibung    | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.
-                    | In dem Szenario hinterlegte Geräte werden automatisch eingeschaltet, ggf.
-                    | gerätespezifische Medien (Demomaterial) gestartet und der Nutzer wird durch
-                    | die manuellen Schritte geleitet.
-------------------- ---------------------------------------------------------------------------------
-Auslöser            | Demonstrator-Szenario soll ausgeführt werden
-------------------- ---------------------------------------------------------------------------------
-Akteure             | Mitarbeiter am Institut
-------------------- ---------------------------------------------------------------------------------
-Vorbedingungen      | Installierte Applikation
-                    | Geräte mit Applikation verbunden und gespeichert
-                    | Auszuführendes Szenario erstellt und gespeichert
-                    | Geräte ansteuerbar
-------------------- ---------------------------------------------------------------------------------
-Nachbedingungen     | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden
-                    | ausgeschaltet
-------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Auswahl Szenario
-Informationen       | Verfügbarkeit Geräte
-------------------- ---------------------------------------------------------------------------------
-Ergebnisse          | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos
-------------------- ---------------------------------------------------------------------------------
-Verbindungen      
-------------------- ---------------------------------------------------------------------------------
-Ablauf              | Handlung Benutzer       | Handlung Systeme
-                    ------------------------- -------------------------------------------------------
-                    | Anwendung starten       | Gewähltes Szenario laden
-                    | Szenario auswählen      | Informationen zu Szenario anzeigen
-                    ------------------------- -------------------------------------------------------
-                    | Szenario starten        | Zu Szenario gehörige Geräte starten
-                    |                         | Evtl. gerätespezifische Demo laden
-                                              | Informationen zu Szenario anzeigen
-                    ------------------------- -------------------------------------------------------
-                    | Wenn vorhanden Phasen   | Ausgewähltes Demomaterial abspielen
-                    | steuern: "nächste
-                    | Phase" oder "Phase
-                    | zurück" auswählen
-                    ------------------------- -------------------------------------------------------
-                    | Optional wenn Gerät     | Demomaterial pausieren oder abhängig von Art des
-                    | mehrere Demomaterialien | Materials Schritt weiter/zurück (z.B. nächste/
-                    | hat: auf Pfeil neben    | vorherige Folie in Präsentation)
-                    | gewünschtem Material
-                    | klicken 
-                    ------------------------- -------------------------------------------------------
-                    | Szenario beenden        | Demos schließen; Geräte wieder ausschalten
-                    |                         | Zur Startseite zurückkehren
-=================== ========================= =======================================================
++-------------------+--------------------------+-------------------------------------------------------+
+| Use Case "Szenario starten"                                                                          |
++-------------------+--------------------------+-------------------------------------------------------+
+| Ziel              | Ausgewühltes Szenario starten                                                    |
++-------------------+--------------------------+-------------------------------------------------------+
+| Kurzbeschreibung  | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.  |
+|                   | In dem Szenario hinterlegte Geräte werden automatisch eingeschaltet, ggf.        |
+|                   | gerätespezifische Medien (Demomaterial) gestartet und der Nutzer wird durch      |
+|                   | die manuellen Schritte geleitet.                                                 |                   
++-------------------+--------------------------+-------------------------------------------------------+
+| Auslöser          | Demonstrator-Szenario soll ausgeführt werden                                     |
++-------------------+--------------------------+-------------------------------------------------------+
+| Akteure           | Mitarbeiter am Institut                                                          |                           
++-------------------+--------------------------+-------------------------------------------------------+
+| Vorbedingungen    | Installierte Applikation                                                         |
+|                   | Geräte mit Applikation verbunden und gespeichert                                 |
+|                   | Auszuführendes Szenario erstellt und gespeichert                                 |
+|                   | Geräte ansteuerbar                                                               |
++-------------------+--------------------------+-------------------------------------------------------+
+| Nachbedingungen   | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden      |
+|                   | ausgeschaltet                                                                    |
++-------------------+--------------------------+-------------------------------------------------------+
+| | Eingehende      | Auswahl Szenario                                                                 |  
+| | Informationen   | Verfügbarkeit Geräte                                                             |
++-------------------+--------------------------+-------------------------------------------------------+
+| Ergebnisse        | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos          |
++-------------------+--------------------------+-------------------------------------------------------+
+| Verbindungen      |                                                                                  |
++-------------------+--------------------------+-------------------------------------------------------+
+| Ablauf            | Handlung Benutzer        | Handlung Systeme                                      |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Anwendung starten      | | Gewähltes Szenario laden                            |
+|                   | | Szenario auswählen     | | Informationen zu Szenario anzeigen                  |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | Szenario starten         | | Zu Szenario gehörige Geräte starten                 |
+|                   |                          | | Evtl. gerätespezifische Demo laden                  |
+|                   |                          | | Informationen zu Szenario anzeigen                  |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Wenn vorhanden Phasen  | Ausgewähltes Demomaterial abspielen                   |
+|                   | | steuern: "nächste      |                                                       |
+|                   | | Phase" oder "Phase     |                                                       |
+|                   | | zurück" auswählen      |                                                       |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Optional wenn Gerät    | | Demomaterial pausieren oder abhängig von Art des    |
+|                   | | mehrere Demomaterialien| | Materials Schritt weiter/zurück (z.B. nächste/      |
+|                   | | hat: auf Pfeil neben   | | vorherige Folie in Präsentation)                    |
+|                   | | gewünschtem Material   |                                                       |
+|                   | | klicken                |                                                       |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | Szenario beenden         | | Demos schließen; Geräte wieder ausschalten          |
+|                   |                          | | Zur Startseite zurückkehren                         |
++-------------------+--------------------------+-------------------------------------------------------+
 
 7. Rahmenbedingungen
 ================================
