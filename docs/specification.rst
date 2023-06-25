@@ -79,29 +79,29 @@ ausgestaltet werden müssen.
     ================= =================== =========================================== =====
     Rolle             Name                E-Mail                                      Team
     ----------------- ------------------- ------------------------------------------- -----
-    Projektmanager/   Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2
+    | Projektmanager/ Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2
     Backend-  
-    entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    Frontend-         Guido Grün          guido.gruen@hs-furtwangen.de                1
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Frontend-         Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1
+    | Frontend-       Guido Grün          guido.gruen@hs-furtwangen.de                1
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Frontend-         Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
+    | Frontend-       Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Frontend-         Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1
+    | Frontend-       Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Backend-          Vadim Borejko       vadim.borejko@hs-furtwangen.de              2
+    | Frontend-       Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Backend-          Lea Hergert         lea.hergert@hs-furtwangen.de                2
+    | Backend-        Vadim Borejko       vadim.borejko@hs-furtwangen.de              2
     Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    Backend-          Nico Berndt         nico.berndt@hs-furtwangen.de                2
+    | Backend-        Lea Hergert         lea.hergert@hs-furtwangen.de                2
+    Entwicklung  
+    ----------------- ------------------- ------------------------------------------- -----
+    | Backend-        Nico Berndt         nico.berndt@hs-furtwangen.de                2
     Entwicklung  
     ================= =================== =========================================== =====
 
@@ -187,7 +187,7 @@ Vorbedingungen      | Installierte Applikation
 Nachbedingungen     | Das Gerät wurde mit der Anwendung verbunden und von dieser gespeichert und kann
                     | nun ausgeschaltet werden
 ------------------- ---------------------------------------------------------------------------------
-Eingehende          | Daten zu Gerät
+| Eingehende        | Daten zu Gerät
 Informationen  
 ------------------- ---------------------------------------------------------------------------------
 Ergebnisse          | Gerät wurde hinzugefügt
@@ -207,7 +207,7 @@ Ablauf              | Handlung Benutzer       | Handlung Systeme
                     | Name, IP-Adresse und 
                     | Beschreibung eingeben
                     ------------------------- -------------------------------------------------------
-                    |"Speichern" drücken      | Eingaben zu Gerät speichern
+                    | "Speichern" drücken      | Eingaben zu Gerät speichern
                                               | Zur Seite "Verbundene Geräte" zurückkehren
 =================== ========================= =======================================================
 
@@ -227,7 +227,7 @@ Vorbedingungen      | Installierte Applikation
 ------------------- ---------------------------------------------------------------------------------
 Nachbedingungen     | Das Demomaterial wurde zur Anwendung hinzugefügt
 ------------------- ---------------------------------------------------------------------------------
-Eingehende          | Daten zu Demomaterial
+| Eingehende        | Daten zu Demomaterial
 Informationen
 ------------------- ---------------------------------------------------------------------------------
 Ergebnisse          | Demomaterial wurde hinzugefügt
@@ -274,7 +274,7 @@ Vorbedingungen      | Installierte Applikation
 ------------------- ---------------------------------------------------------------------------------
 Nachbedingungen     | Das Szenario wurde erstellt und kann bei Bedarf gestartet werden
 ------------------- ---------------------------------------------------------------------------------
-Eingehende          | Name und Beschreibung für Szenario
+| Eingehende        | Name und Beschreibung für Szenario
 Informationen       | Gewünschte Geräte
                     | Gewünschte Mediendemos
                     | Gewünschte Startreihenfolge
@@ -340,7 +340,7 @@ Vorbedingungen      | Installierte Applikation
 Nachbedingungen     | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden
                     | ausgeschaltet
 ------------------- ---------------------------------------------------------------------------------
-Eingehende          | Auswahl Szenario
+| Eingehende        | Auswahl Szenario
 Informationen       | Verfügbarkeit Geräte
 ------------------- ---------------------------------------------------------------------------------
 Ergebnisse          | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos
