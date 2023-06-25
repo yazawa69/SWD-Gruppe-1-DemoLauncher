@@ -15,8 +15,8 @@ API: Insomnia (Version 2023.2.2)
 
 Testvoraussetzungen
 ================================
-•	Der Computer muss mit dem Internet verbunden sein, um auf die Webanwendung zuzugreifen und externe Ressourcen zu laden.
-•	Bevor getestet werden kann, müssen alle erforderlichen Abhängigkeiten der Webanwendung installiert sein, einschließlich Insomnia und MySQL
+•	Der Computer muss mit dem Internet verbunden sein, um auf die Webanwendung zuzugreifen und externe Ressourcen zu laden. Auch müssen alle weiteren Geräte mit dem selben Netzwerk verbunden sein
+•	Bevor getestet werden kann, müssen alle erforderlichen Abhängigkeiten der Webanwendung installiert sein.
 •	Um den Testbetrieb zu ermöglichen, muss die Testdatenbank korrekt konfiguriert und mit Beispieldaten gefüllt sein. Im Fall des Demo-Launchers werden Gerätekategorien und verschiedene Arten von Demo-Material benötigt.
 •	Die testende Person muss über ausreichende Zugriffsrechte auf die Testdatenbank verfügen zur Gewährleistung des Lese- und Schreibzugriffs für die Webanwendung
 
