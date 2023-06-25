@@ -33,8 +33,8 @@ Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraus
 
 
 .. csv-table:: Demolauncher Testfälle
-   :file: docs\Testfalle_DemoLauncher.CSV
-   :widths: 10, 13, 13, 15, 13, 13, 10, 13
+   :file: docs\docs\Test.CSV
+   :widths: 50, 50
    :header-rows: 1
 
 
