@@ -38,5 +38,5 @@ Backend
 Dokumentation
 ========================
 * `Read the Docs 9.13.3 <https://readthedocs.org/>`_
-* `Sphinx 7.0.1 <https://www.sphinx-doc.org/en/master/>`_	
+* `Sphinx v6.2.1 <https://www.sphinx-doc.org/en/master/>`_	
 * `Python 3.11 <https://www.python.org/>`_
