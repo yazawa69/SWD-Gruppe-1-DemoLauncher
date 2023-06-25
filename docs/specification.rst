@@ -76,34 +76,25 @@ ausgestaltet werden müssen.
     aufgezeigt. Darüber hinaus wird eine Tabelle mit allen Mitwirkenden und 
     den Kontaktdaten angelegt.
     
-    ================= =================== =========================================== =====
-    Rolle             Name                E-Mail                                      Team
-    ----------------- ------------------- ------------------------------------------- -----
-    | Projektmanager/ Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2
-    Backend-  
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Guido Grün          guido.gruen@hs-furtwangen.de                1
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Vadim Borejko       vadim.borejko@hs-furtwangen.de              2
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Lea Hergert         lea.hergert@hs-furtwangen.de                2
-    Entwicklung  
-    ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Nico Berndt         nico.berndt@hs-furtwangen.de                2
-    Entwicklung  
-    ================= =================== =========================================== =====
+    ==================================== =================== =========================================== =====
+    Rolle                                Name                E-Mail                                      Team
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Projektmanager/Backend-Entwicklung   Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2 
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Frontend-Entwicklung                 Guido Grün          guido.gruen@hs-furtwangen.de                1 
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Frontend-Entwicklung                 Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1 
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Frontend-Entwicklung                 Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Frontend-Entwicklung                 Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1 
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Backend-Entwicklung                  Vadim Borejko       vadim.borejko@hs-furtwangen.de              2  
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Backend-Entwicklung                  Lea Hergert         lea.hergert@hs-furtwangen.de                2
+    ------------------------------------ ------------------- ------------------------------------------- -----
+    Backend-Entwicklung                  Nico Berndt         nico.berndt@hs-furtwangen.de                2
+    ==================================== =================== =========================================== =====
 
 3. Konzept
 =========================
@@ -168,48 +159,48 @@ Use Case Diagramm
   :alt: Use Case Diagramm
 
 
-=================== ========================= =======================================================
-Use Case "Gerät hinzufügen"
-=====================================================================================================
-Ziel                | Verfügbares Laborgerät mit Anwendung verbinden und speichern
-------------------- ---------------------------------------------------------------------------------
-Kurzbeschreibung    | Ein im Labor verfügbares Gerät soll mit der Anwendung verbunden werden, um
-                    | gerätespezifische Medien (Demos) hinzuzufügen und das Gerät innerhalb eines
-                    | Szenarios anzusteuern.
-------------------- ---------------------------------------------------------------------------------
-Auslöser            | Neues Gerät im Labor
-------------------- ---------------------------------------------------------------------------------
-Akteure             | Experte am Institut (für hinzuzufügendes Gerät)
-------------------- ---------------------------------------------------------------------------------
-Vorbedingungen      | Installierte Applikation
-                    | Gerät im Labor ansteuerbar
-------------------- ---------------------------------------------------------------------------------
-Nachbedingungen     | Das Gerät wurde mit der Anwendung verbunden und von dieser gespeichert und kann
-                    | nun ausgeschaltet werden
-------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Daten zu Gerät
-Informationen  
-------------------- ---------------------------------------------------------------------------------
-Ergebnisse          | Gerät wurde hinzugefügt
-------------------- ---------------------------------------------------------------------------------
-Verbindungen        | Szenario erstellen
-------------------- ---------------------------------------------------------------------------------
-Ablauf              | Handlung Benutzer       | Handlung Systeme
-                    ------------------------- -------------------------------------------------------
-                    | Anwendung starten       | Seite "Verbundene Geräte" öffnen
-                    | Gerät starten           | Verbundene Geräte und Auswahlmöglichkeiten anzeigen
-                    | Menü öffnen             |
-                    ------------------------- -------------------------------------------------------
-                    | "Neues Gerät hinzu-     | Seite "Neues Gerät hinzufügen" öffnen
-                    | fügen" auswählen        | Eingabefelder anzeigen
-                    ------------------------- -------------------------------------------------------
-                    | Geräte-Kategorie wählen | IP-Adresse suchen und verbinden
-                    | Name, IP-Adresse und 
-                    | Beschreibung eingeben
-                    ------------------------- -------------------------------------------------------
-                    | "Speichern" drücken      | Eingaben zu Gerät speichern
-                                              | Zur Seite "Verbundene Geräte" zurückkehren
-=================== ========================= =======================================================
++-------------------+--------------------------+-------------------------------------------------------+
+| Use Case "Gerät hinzufügen"                                                                          |
++===================+==========================+=======================================================+
+| Ziel              | Verfügbares Laborgerät mit Anwendung verbinden und speichern                     |
++-------------------+--------------------------+-------------------------------------------------------+
+| Kurzbeschreibung  | | Ein im Labor verfügbares Gerät soll mit der Anwendung verbunden werden, um     |
+|                   | | gerätespezifische Medien (Demos) hinzuzufügen und das Gerät innerhalb eines    |
+|                   | | Szenarios anzusteuern.                                                         |                             
++-------------------+--------------------------+-------------------------------------------------------+
+| Auslöser          | Neues Gerät im Labor                                                             |
++-------------------+--------------------------+-------------------------------------------------------+
+| Akteure           | Experte am Institut (für hinzuzufügendes Gerät)                                  |
++-------------------+--------------------------+-------------------------------------------------------+
+|Vorbedingungen     | | Installierte Applikation                                                       |                                                   
+|                   | | Gerät im Labor ansteuerbar                                                     |                                             
++-------------------+--------------------------+-------------------------------------------------------+
+| Nachbedingungen   | | Das Gerät wurde mit der Anwendung verbunden und von dieser gespeichert und     |
+|                   | | kann nun ausgeschaltet werden                                                  |
++-------------------+--------------------------+-------------------------------------------------------+
+| | Eingehende      | Daten zu Gerät                                                                   |                                                    
+| | Informationen   |                                                                                  |                                                  
++-------------------+--------------------------+-------------------------------------------------------+
+| Ergebnisse        | Gerät wurde hinzugefügt                                                          |       
++-------------------+--------------------------+-------------------------------------------------------+
+| Verbindungen      | Szenario erstellen                                                               |                
++-------------------+--------------------------+-------------------------------------------------------+
+| Ablauf            | Handlung Benutzer        | Handlung Systeme                                      |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Anwendung starten      | | Seite "Verbundene Geräte" öffnen                    |
+|                   | | Gerät starten          | | Verbundene Geräte und Auswahlmöglichkeiten anzeigen |
+|                   | | Menü öffnen            |                                                       |                                                        
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | "Neues Gerät hinzu-    | | Seite "Neues Gerät hinzufügen" öffnen               |
+|                   | | fügen" auswählen       | | Eingabefelder anzeigen                              |
+|                   +--------------------------+-------------------------------------------------------+
+|                   | | Geräte-Kategorie wählen| IP-Adresse suchen und verbinden                       |
+|                   | | Name, IP-Adresse und   |                                                       |                            
+|                   | | Beschreibung eingeben  |                                                       |           
+|                   +--------------------------+-------------------------------------------------------+
+|                   | "Speichern" drücken      | | Eingaben zu Gerät speichern                         |     
+|                   |                          | | Zur Seite "Verbundene Geräte" zurückkehren          |
++-------------------+--------------------------+-------------------------------------------------------+
 
 =================== ========================= =======================================================
 Use Case "Demomaterial hinzufügen"
