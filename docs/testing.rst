@@ -31,7 +31,67 @@ Alle Testfälle wurden in einer Tabelle festgehalten und ihren Funktionen entspr
 Die Tabelle dient der Einheitlichkeit der Tests und zur übersichtlichen Strukturierung dieser.
 Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraussetzungen, Testfall, Soll-Output, Ist-Output, Testergebnis und Anmerkungen.
 
+
 .. csv-table:: Demolauncher Testfälle
    :file: docs\Testfalle_DemoLauncher.xlsx
    .. :widths: 30, 70
    .. :header-rows: 1
+
+
+
+Auswertung der Testergebnisse und Einhaltung der Anforderungen aus dem Pflichtenheft
+================================
+Die Anwendung wurde auf die korrekte Implementierung der funktionalen Anforderungen getestet.
+Diese waren im Pflichtenheft wie folgt spezifiziert:
+
+4.1 Anforderung 1
+--------------------------------
+Die Anwendung muss in der Lage sein, verschiedene Demo-Szenarien zu erstellen und zu speichern.
+
+4.2 Anforderung 2
+--------------------------------
+Die Anwendung muss die Möglichkeit bieten, Demo-begleitendes Material anzulegen, sowie bei Bedarf gerätespezifische Anwendungen zu starten.
+
+Wie in Anforderung 1 und 2 spezifiziert, muss die Anwendung in der Lage sein, Szenarien zu Demonstrationszwecken zu erstellen und zu speichern, sowie Demo-begleitendes Material anzulegen und gerätespezifische Anwendungen zu starten.
+Dies wird durch die Implementierung der Funktionen ``Szenarien verwalten``, ``Geräte verwalten`` und ``Demomaterial verwalten`` gewährleistet.
+Geräte können in der Anwendung angelegt und verwaltet werden, sowie Demo-Materialien, die auf den Geräten abgespielt werden können.
+Die Demo-Materialien können dann in Szenarien eingebunden werden, um diese zu erstellen und zu speichern.
+Die Anwendung ist also in der Lage, die funktionalen Anforderungen 1 und 2 zu erfüllen.
+
+Die entprechenden Komponenten wurden auf ihre korrekte Implementierung erfolgreich getestet.
+Es bestehen jedoch noch Fehler bezüglich der korrekten Speicherung der Daten in der Datenbank, welche in der Testphase nicht behoben werden konnten.
+Betroffen ist v.a. die korrekte Speicherung der Daten bei Bearbeitung der Phasen unter ``Phase bearbeiten``in Verbindung mit dem Reiter ``Szenario bearbeiten``.
+Genaue Details zu den Fehlern sind in der Tabelle der Testfälle zu finden.
+
+
+
+Erweiterungen und geplante Wartungen
+================================
+Zunächst angesetzte Erweiterungen
+--------------------------------
+•   Unterschiedliche Steuerungselemente für unterschiedliche Demomaterialien: Die Steuerungselemente für die Demo-Materialien sind aktuell noch nicht auf die jeweiligen Materialien angepasst, sondern sind für alle Materialien gleich.
+    Um die Bedienung der Demo-Materialien zu vereinfachen, sollen die Steuerungselemente für die jeweiligen Materialien angepasst werden.
+    So soll beispielsweise die Steuerung für ein Video aus einem anderen Steuerungselement bestehen als die Steuerung für eine Präsentation.
+    Genauso sind zusätzliche Steuerungselemente denkbar, wie beispielsweise ein Steuerungselement für die Lautstärke eines Videos.
+•	Responsive Design: Die Webanwendung ist aktuell für die Nutzung auf mobilen Endgeräten optimiert, um Demomaterialien ähnlich wie bei einer Fernbedienung leicht bedienen zu können.
+    Jedoch ist die Anwendung nicht für die Nutzung auf Tablets oder Desktop-PCs optimiert, was die Bedienung auf diesen Geräten erschwert.
+    Um die Anwendung auch auf diesen Geräten nutzbar zu machen, ist ein Responsive Design geplant, welches die Anwendung an die Bildschirmgröße des Endgeräts anpasst.
+
+Weitere UI-Verbesserungen
+--------------------------------
+•	Unter ``Szenario bearbeiten`` soll unter Auflistung der Phasen eine visuelle Erweiterung hinzugefügt werden, die anzeigt, welche Geräte einer Phase zugeordnet sind. 
+    Dies soll die Übersichtlichkeit erhöhen und die Zuordnung von Geräten zu Phasen vereinfachen.
+•	Die Reihenfolge der Phasen soll veränderbar sein, um die Erstellung von Szenarien zu vereinfachen. Angedacht ist hierbei ein Drag-and-Drop-Verfahren innerhalb von ``Szenario bearbeiten``.
+•	Ebenfalls soll die Reihenfolge der Geräte innerhalb einer Phase veränderbar sein, um auch hier die Erstellung von Szenarien zu vereinfachen. Angedacht ist hierbei ein Drag-and-Drop-Verfahren innerhalb von ``Phase bearbeiten``.
+•	Unter ``Szenario bearbeiten`` soll außerdem ein visueller Hinweis angezeigt werden, wenn eine Phase noch leer ist.
+•   Die Geräteübersicht soll unter ``Geräte verwalten`` um eine Suchfunktion erweitert werden, um die Suche nach Geräten zu vereinfachen.
+•	Bei der Erstellung eines Szenarios unter ``Szenarien verwalten`` soll die Möglichkeit bestehen, ein Szenario zu duplizieren.
+
+Weitere Funktionalitäten
+--------------------------------
+•   Die Ansteuerung weiterer Gerätekategorien soll implementiert werden. 
+    Aktuell ist die Ansteuerung von VR-Brillen und Bildschirmen möglich. 
+    Die Ansteuerung von weiteren Gerätekategorien wie beispielsweise Audio-Geräten oder Smart-Home-Geräten soll implementiert werden.
+
+
+
