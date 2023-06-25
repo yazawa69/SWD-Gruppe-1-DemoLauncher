@@ -19,7 +19,6 @@ Testvoraussetzungen
 •	Bevor getestet werden kann, müssen alle erforderlichen Abhängigkeiten der Webanwendung installiert sein, einschließlich Insomnia und MySQL
 •	Um den Testbetrieb zu ermöglichen, muss die Testdatenbank korrekt konfiguriert und mit Beispieldaten gefüllt sein. Im Fall des Demo-Launchers werden Gerätekategorien und verschiedene Arten von Demo-Material benötigt.
 •	Die testende Person muss über ausreichende Zugriffsrechte auf die Testdatenbank verfügen zur Gewährleistung des Lese- und Schreibzugriffs für die Webanwendung
- (Testdaten angeben??)
 
  Testbeschreibung
 ================================
@@ -513,18 +512,18 @@ Erweiterungen und geplante Wartungen
 ================================
 Zunächst angesetzte Erweiterungen
 --------------------------------
+•   Um einen Überblick über die Navigation in den unterschiedlichen Unterseiten zu behalten, sind Navigationspfade vorgesehen, die zur erhöhten Benutzerfreundlichkeit beitragen und die Bedienung der Anwendung erleichtern.
 •   Unterschiedliche Steuerungselemente für unterschiedliche Demomaterialien: Die Steuerungselemente für die Demo-Materialien sind aktuell noch nicht auf die jeweiligen Materialien angepasst, sondern sind für alle Materialien gleich.
     Um die Bedienung der Demo-Materialien zu vereinfachen, sollen die Steuerungselemente für die jeweiligen Materialien angepasst werden.
     So soll beispielsweise die Steuerung für ein Video aus einem anderen Steuerungselement bestehen als die Steuerung für eine Präsentation.
     Genauso sind zusätzliche Steuerungselemente denkbar, wie beispielsweise ein Steuerungselement für die Lautstärke eines Videos.
-•	Responsive Design: Die Webanwendung ist aktuell für die Nutzung auf mobilen Endgeräten optimiert, um Demomaterialien ähnlich wie bei einer Fernbedienung leicht bedienen zu können.
+•    Responsive Design: Die Webanwendung ist aktuell für die Nutzung auf mobilen Endgeräten optimiert, um Demomaterialien ähnlich wie bei einer Fernbedienung leicht bedienen zu können.
     Jedoch ist die Anwendung nicht für die Nutzung auf Tablets oder Desktop-PCs optimiert, was die Bedienung auf diesen Geräten erschwert.
     Um die Anwendung auch auf diesen Geräten nutzbar zu machen, ist ein Responsive Design geplant, welches die Anwendung an die Bildschirmgröße des Endgeräts anpasst.
 
 Weitere UI-Verbesserungen
 --------------------------------
-•	Unter ``Szenario bearbeiten`` soll unter Auflistung der Phasen eine visuelle Erweiterung hinzugefügt werden, die anzeigt, welche Geräte einer Phase zugeordnet sind. 
-    Dies soll die Übersichtlichkeit erhöhen und die Zuordnung von Geräten zu Phasen vereinfachen.
+•	Unter ``Szenario bearbeiten`` soll unter Auflistung der Phasen eine visuelle Erweiterung hinzugefügt werden, die anzeigt, welche Geräte einer Phase zugeordnet sind. Dies soll die Übersichtlichkeit erhöhen und die Zuordnung von Geräten zu Phasen vereinfachen.
 •	Die Reihenfolge der Phasen soll veränderbar sein, um die Erstellung von Szenarien zu vereinfachen. Angedacht ist hierbei ein Drag-and-Drop-Verfahren innerhalb von ``Szenario bearbeiten``.
 •	Ebenfalls soll die Reihenfolge der Geräte innerhalb einer Phase veränderbar sein, um auch hier die Erstellung von Szenarien zu vereinfachen. Angedacht ist hierbei ein Drag-and-Drop-Verfahren innerhalb von ``Phase bearbeiten``.
 •	Unter ``Szenario bearbeiten`` soll außerdem ein visueller Hinweis angezeigt werden, wenn eine Phase noch leer ist.
@@ -534,7 +533,7 @@ Weitere UI-Verbesserungen
 Weitere Funktionalitäten
 --------------------------------
 •   Die Ansteuerung weiterer Gerätekategorien soll implementiert werden. 
-    Aktuell ist die Ansteuerung von VR-Brillen und Bildschirmen möglich. 
+    Aktuell ist die Ansteuerung von einer Hololens 1. Gen Brille und eines Flask Servers möglich. 
     Die Ansteuerung von weiteren Gerätekategorien wie beispielsweise Audio-Geräten oder Smart-Home-Geräten soll implementiert werden.
 
 
