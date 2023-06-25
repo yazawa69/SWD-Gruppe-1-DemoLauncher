@@ -213,8 +213,8 @@ Use Case Diagramm
 +-------------------+--------------------------+-------------------------------------------------------+
 | Akteure           | Experte am Institut                                                              |                               
 +-------------------+--------------------------+-------------------------------------------------------+
-| Vorbedingungen    | Installierte Applikation                                                         |
-|                   | Demomaterial vorhanden und kompatibles Dateiformat                               | 
+| Vorbedingungen    | | Installierte Applikation                                                       |
+|                   | | Demomaterial vorhanden und kompatibles Dateiformat                             | 
 +-------------------+--------------------------+-------------------------------------------------------+
 | Nachbedingungen   | Das Demomaterial wurde zur Anwendung hinzugefügt                                 |
 +-------------------+--------------------------+-------------------------------------------------------+
@@ -227,7 +227,7 @@ Use Case Diagramm
 +-------------------+--------------------------+-------------------------------------------------------+
 | Ablauf            | Handlung Benutzer        | Handlung Systeme                                      |   
 |                   +--------------------------+-------------------------------------------------------+
-|                   | |  Anwendung starten     | | Seite "Demomaterial verwalten" öffnen               |
+|                   | | Anwendung starten      | | Seite "Demomaterial verwalten" öffnen               |
 |                   | | Menü öffnen            | | Art des Materials und Auswahlmöglichkeiten          | 
 |                   | | "Demomaterial ver-     |                                                       | 
 |                   | | walten" wählen         |                                                       |                        
@@ -236,7 +236,7 @@ Use Case Diagramm
 |                   | | sprechendes Dateiformat| | Upload- und Eingabefelder anzeigen                  |
 |                   | | auswählen              |                                                       |
 |                   | | "Neues Material hinzu- |                                                       |                
-|                   | |fügen" auswählen        |                                                       |                 
+|                   | | fügen" auswählen        |                                                       |                 
 |                   +--------------------------+-------------------------------------------------------+
 |                   | | Name und Beschreibung  | | Demomaterial und Eingaben speichern                 |   
 |                   | | eingeben               | | Zur Seite "Demomaterial verwalten" zurückkehren     |
@@ -314,25 +314,25 @@ Use Case Diagramm
 +-------------------+--------------------------+-------------------------------------------------------+
 | Ziel              | Ausgewühltes Szenario starten                                                    |
 +-------------------+--------------------------+-------------------------------------------------------+
-| Kurzbeschreibung  | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.  |
-|                   | In dem Szenario hinterlegte Geräte werden automatisch eingeschaltet, ggf.        |
-|                   | gerätespezifische Medien (Demomaterial) gestartet und der Nutzer wird durch      |
-|                   | die manuellen Schritte geleitet.                                                 |                   
+| Kurzbeschreibung  | | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.|
+|                   | | In dem Szenario hinterlegte Geräte werden automatisch eingeschaltet, ggf.      |
+|                   | | gerätespezifische Medien (Demomaterial) gestartet und der Nutzer wird durch    |
+|                   | | die manuellen Schritte geleitet.                                               |                   
 +-------------------+--------------------------+-------------------------------------------------------+
 | Auslöser          | Demonstrator-Szenario soll ausgeführt werden                                     |
 +-------------------+--------------------------+-------------------------------------------------------+
 | Akteure           | Mitarbeiter am Institut                                                          |                           
 +-------------------+--------------------------+-------------------------------------------------------+
-| Vorbedingungen    | Installierte Applikation                                                         |
-|                   | Geräte mit Applikation verbunden und gespeichert                                 |
-|                   | Auszuführendes Szenario erstellt und gespeichert                                 |
-|                   | Geräte ansteuerbar                                                               |
+| Vorbedingungen    | | Installierte Applikation                                                       |
+|                   | | Geräte mit Applikation verbunden und gespeichert                               |
+|                   | | Auszuführendes Szenario erstellt und gespeichert                               |
+|                   | | Geräte ansteuerbar                                                             |
 +-------------------+--------------------------+-------------------------------------------------------+
-| Nachbedingungen   | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden      |
-|                   | ausgeschaltet                                                                    |
+| Nachbedingungen   | | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden    |
+|                   | | ausgeschaltet                                                                  |
 +-------------------+--------------------------+-------------------------------------------------------+
-| | Eingehende      | Auswahl Szenario                                                                 |  
-| | Informationen   | Verfügbarkeit Geräte                                                             |
+| | Eingehende      | | Auswahl Szenario                                                               |  
+| | Informationen   | | Verfügbarkeit Geräte                                                           |
 +-------------------+--------------------------+-------------------------------------------------------+
 | Ergebnisse        | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos          |
 +-------------------+--------------------------+-------------------------------------------------------+
