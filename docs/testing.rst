@@ -31,11 +31,51 @@ Alle Testfälle wurden in einer Tabelle festgehalten und ihren Funktionen entspr
 Die Tabelle dient der Einheitlichkeit der Tests und zur übersichtlichen Strukturierung dieser.
 Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraussetzungen, Testfall, Soll-Output, Ist-Output, Testergebnis und Anmerkungen.
 
+Demolauncher Testfälle
+================================
 
-.. csv-table:: Demolauncher Testfälle
-   :file: docs\docs\Test.CSV
-   :widths: 50, 50
+.. list-table:: Navigation durch die Anwendung
+   :widths: 
    :header-rows: 1
+   * - Test-Nr.
+     - Szenario
+     - Voraussetzungen
+     - Testfall
+     - Erwarteter Output
+     - Ist-Output
+     - Test bestanden?
+     - Anmerkungen
+   * - 1
+     - Über Logo zurück auf Startseite navigieren
+     -
+     - Auf beliebigen Unterseiten auf das Logo der Anwendung drücken
+     - Zurückleitung zur Startseite
+     - Zurückleitng zur Startseite
+     - Ja
+     -
+   * - 2
+     - Durch die Anwendung navigieren
+     - Anwendung läuft
+     - 1. Klick auf das Burgermenü
+     - Alle möglichen Unterseiten über Klick aufrufen
+     - Alle möglichen Unterseiten (Startseite, Szenarien verwalten, 
+     Geräte verwalten, Demomaterial verwalten) sind aufgelistet + werden bei Klick entsprechend aufgerufen
+     - Alle möglichen Unterseiten (Startseite, Szenarien verwalten,
+       Geräte verwalten, Demomaterial verwalten) sind aufgelistet + werden bei Klick entsprechend aufgerufen
+     - Ja
+     -
+   * - 3
+     - Von Startseite aus ein Szenario bearbeiten
+     - Bereits erstelltes Szenario
+     - 1. Auf Startseite Szenario auswählen ("Szenario auswählen") 2. Auf Bearbeiten klicken
+     - Weiterleitung zum szenariospezifischen "Szenario bearbeiten"
+     - Weiterleitung zum szenariospezifischen "Szenario bearbeiten"
+     - Ja
+     - 
+
+
+
+   
 
 
 Auswertung der Testergebnisse und Einhaltung der Anforderungen aus dem Pflichtenheft
