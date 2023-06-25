@@ -29,6 +29,7 @@ Inhalt
 .. toctree::
 
    user_manual
+   specification
    tech_stack
    server
    testing
