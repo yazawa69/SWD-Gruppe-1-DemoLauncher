@@ -62,6 +62,9 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
                                                | wählen")           | bearbeiten"        | bearbeiten"
                                                | 2. Auf bearbeiten
                                                | klicken
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 Funktion: Geräte verwalten (Anmerkung: Testfälle gelten für jede Gerätekategorie)
 ======================================================================================================================================
 Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
@@ -150,6 +153,9 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
                                                | rungen vornehmen
                                                | 6. Auf Abbrechen
                                                | klicken
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 Funktion: Demomaterial verwalten (Anmerkung: Testfälle felten für jede Art von Demomaterial)
 ======================================================================================================================================
 Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
@@ -243,6 +249,9 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
                                                | schreibung ändern)
                                                | 6. Abbrechen
                                                | klicken
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 Funktion: Szenarien verwalten
 ======================================================================================================================================
 Szenario bearbeiten
@@ -285,6 +294,9 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
                                                | 4. Löschen klicken
                                                | 5. Löschen bestä-
                                                | tigen
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 Phasen verwalten
 --------------------------------------------------------------------------------------------------------------------------------------
 Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
@@ -446,6 +458,9 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
                                                | 7. In "Szenario
                                                | bearbeiten" auf
                                                | Abbrechen klicken
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 Funktion: Demomaterial verwalten (Anmerkung: Testfälle felten für jede Art von Demomaterial)
 ======================================================================================================================================
 Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
