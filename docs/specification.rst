@@ -1,9 +1,9 @@
 =============================
-L² GmbH (LackingLogic GmbH)
+Pflichtenheft
 =============================
 
 ##################
-Pflichtenheft
+L² GmbH (LackingLogic GmbH)
 ##################
 
 ===================== ==================================================
@@ -79,30 +79,30 @@ ausgestaltet werden müssen.
     ================= =================== =========================================== =====
     Rolle             Name                E-Mail                                      Team
     ----------------- ------------------- ------------------------------------------- -----
-    | Projektmanager/ Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2
-    | Backend-
-    | entwicklung
+    Projektmanager/   Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2
+    Backend-  
+    entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Guido Grün          guido.gruen@hs-furtwangen.de                1
-    | Entwicklung
+    Frontend-         Guido Grün          guido.gruen@hs-furtwangen.de                1
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1
-    | Entwicklung
+    Frontend-         Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
-    | Entwicklung
+    Frontend-         Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Frontend-       Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1
-    | Entwicklung
+    Frontend-         Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Vadim Borejko       vadim.borejko@hs-furtwangen.de              2
-    | Entwicklung
+    Backend-          Vadim Borejko       vadim.borejko@hs-furtwangen.de              2
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Lea Hergert         lea.hergert@hs-furtwangen.de                2
-    | Entwicklung
+    Backend-          Lea Hergert         lea.hergert@hs-furtwangen.de                2
+    Entwicklung  
     ----------------- ------------------- ------------------------------------------- -----
-    | Backend-        Nico Berndt         nico.berndt@hs-furtwangen.de                2
-    | Entwicklung
+    Backend-          Nico Berndt         nico.berndt@hs-furtwangen.de                2
+    Entwicklung  
     ================= =================== =========================================== =====
 
 3. Konzept
@@ -171,30 +171,30 @@ Use Case Diagramm
 =================== ========================= =======================================================
 Use Case "Gerät hinzufügen"
 =====================================================================================================
-| Ziel              | Verfügbares Laborgerät mit Anwendung verbinden und speichern
+Ziel                | Verfügbares Laborgerät mit Anwendung verbinden und speichern
 ------------------- ---------------------------------------------------------------------------------
-| Kurzbeschreibung  | Ein im Labor verfügbares Gerät soll mit der Anwendung verbunden werden, um
+Kurzbeschreibung    | Ein im Labor verfügbares Gerät soll mit der Anwendung verbunden werden, um
                     | gerätespezifische Medien (Demos) hinzuzufügen und das Gerät innerhalb eines
                     | Szenarios anzusteuern.
 ------------------- ---------------------------------------------------------------------------------
-| Auslöser          | Neues Gerät im Labor
+Auslöser            | Neues Gerät im Labor
 ------------------- ---------------------------------------------------------------------------------
-| Akteure           | Experte am Institut (für hinzuzufügendes Gerät)
+Akteure             | Experte am Institut (für hinzuzufügendes Gerät)
 ------------------- ---------------------------------------------------------------------------------
-| Vorbedingungen    | Installierte Applikation
+Vorbedingungen      | Installierte Applikation
                     | Gerät im Labor ansteuerbar
 ------------------- ---------------------------------------------------------------------------------
-| Nachbedingungen   | Das Gerät wurde mit der Anwendung verbunden und von dieser gespeichert und kann
+Nachbedingungen     | Das Gerät wurde mit der Anwendung verbunden und von dieser gespeichert und kann
                     | nun ausgeschaltet werden
 ------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Daten zu Gerät
-| Informationen
+Eingehende          | Daten zu Gerät
+Informationen  
 ------------------- ---------------------------------------------------------------------------------
-| Ergebnisse        | Gerät wurde hinzugefügt
+Ergebnisse          | Gerät wurde hinzugefügt
 ------------------- ---------------------------------------------------------------------------------
-| Verbindungen      | Szenario erstellen
+Verbindungen        | Szenario erstellen
 ------------------- ---------------------------------------------------------------------------------
-| Ablauf            | Handlung Benutzer       | Handlung Systeme
+Ablauf              | Handlung Benutzer       | Handlung Systeme
                     ------------------------- -------------------------------------------------------
                     | Anwendung starten       | Seite "Verbundene Geräte" öffnen
                     | Gerät starten           | Verbundene Geräte und Auswahlmöglichkeiten anzeigen
@@ -214,27 +214,27 @@ Use Case "Gerät hinzufügen"
 =================== ========================= =======================================================
 Use Case "Demomaterial hinzufügen"
 =====================================================================================================
-| Ziel              | Demomaterial hinzufügen
+Ziel                | Demomaterial hinzufügen
 ------------------- ---------------------------------------------------------------------------------
-| Kurzbeschreibung  | Bereits vorhandenes Demomaterial (Textdokument, Präsentation, Video, ...)
+Kurzbeschreibung    | Bereits vorhandenes Demomaterial (Textdokument, Präsentation, Video, ...)
 ------------------- ---------------------------------------------------------------------------------
-| Auslöser          | Neues Demomaterial
+Auslöser            | Neues Demomaterial
 ------------------- ---------------------------------------------------------------------------------
-| Akteure           | Experte am Institut
+Akteure             | Experte am Institut
 ------------------- ---------------------------------------------------------------------------------
-| Vorbedingungen    | Installierte Applikation
+Vorbedingungen      | Installierte Applikation
                     | Demomaterial vorhanden und kompatibles Dateiformat
 ------------------- ---------------------------------------------------------------------------------
-| Nachbedingungen   | Das Demomaterial wurde zur Anwendung hinzugefügt
+Nachbedingungen     | Das Demomaterial wurde zur Anwendung hinzugefügt
 ------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Daten zu Demomaterial
-| Informationen
+Eingehende          | Daten zu Demomaterial
+Informationen
 ------------------- ---------------------------------------------------------------------------------
-| Ergebnisse        | Demomaterial wurde hinzugefügt
+Ergebnisse          | Demomaterial wurde hinzugefügt
 ------------------- ---------------------------------------------------------------------------------
-| Verbindungen      | Szenario erstellen
+Verbindungen        | Szenario erstellen
 ------------------- ---------------------------------------------------------------------------------
-| Ablauf            | Handlung Benutzer       | Handlung Systeme
+Ablauf              | Handlung Benutzer       | Handlung Systeme
                     ------------------------- -------------------------------------------------------
                     | Anwendung starten       | Seite "Demomaterial verwalten" öffnen
                     | Menü öffnen             | Art des Materials und Auswahlmöglichkeiten
@@ -256,35 +256,35 @@ Use Case "Demomaterial hinzufügen"
 =================== ========================= =======================================================
 Use Case "Szenario erstellen"
 =====================================================================================================
-| Ziel              | Neues Szenario erstellen und speichern
+Ziel                | Neues Szenario erstellen und speichern
 ------------------- ---------------------------------------------------------------------------------
-| Kurzbeschreibung  | Ein neues Szenario soll erstellt werden. Dafür muss zunächst ein geeigneter
+Kurzbeschreibung    | Ein neues Szenario soll erstellt werden. Dafür muss zunächst ein geeigneter
                     | Name sowie eine Beschreibung vergeben werden. Dann werden verfügbare Geräte
                     | sowie ggf. gerätespezifische Medien (Demomaterial) ausgewählt, die beim Starten
                     | des Szenarios gestartet werden sollen.
 ------------------- ---------------------------------------------------------------------------------
-| Auslöser          | Neues Szenario soll erstellt werden (z.B. weil neue Geräte verfügbar sind oder
+Auslöser            | Neues Szenario soll erstellt werden (z.B. weil neue Geräte verfügbar sind oder
                     | ein neues Meidm gezeigt werden soll)
 ------------------- ---------------------------------------------------------------------------------
-| Akteure           | Experte am Institut (für gewünschte Gerät)
+Akteure             | Experte am Institut (für gewünschte Gerät)
 ------------------- ---------------------------------------------------------------------------------
-| Vorbedingungen    | Installierte Applikation
+Vorbedingungen      | Installierte Applikation
                     | Gewünschte Geräte bereits in Anwendung gespeichert und ansteuerbar
                     | Gewünschte Demos vorhanden und mit gewünschtem Gerät kompatibel
 ------------------- ---------------------------------------------------------------------------------
-| Nachbedingungen   | Das Szenario wurde erstellt und kann bei Bedarf gestartet werden
+Nachbedingungen     | Das Szenario wurde erstellt und kann bei Bedarf gestartet werden
 ------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Name und Beschreibung für Szenario
-| Informationen     | Gewünschte Geräte
+Eingehende          | Name und Beschreibung für Szenario
+Informationen       | Gewünschte Geräte
                     | Gewünschte Mediendemos
                     | Gewünschte Startreihenfolge
 ------------------- ---------------------------------------------------------------------------------
-| Ergebnisse        | Gewünschtes Szenario wurde erstellt und kann gestartet werden (anderer
+Ergebnisse          | Gewünschtes Szenario wurde erstellt und kann gestartet werden (anderer
                     | Anwendungsfall)
 ------------------- ---------------------------------------------------------------------------------
-| Verbindungen      | Szenario starten
+Verbindungen        | Szenario starten
 ------------------- ---------------------------------------------------------------------------------
-| Ablauf            | Handlung Benutzer       | Handlung Systeme
+Ablauf              | Handlung Benutzer       | Handlung Systeme
                     ------------------------- -------------------------------------------------------
                     | Anwendung starten       | Seite "Szenarien verwalten" öffnen
                     | Menü öffnen             | 
@@ -321,33 +321,33 @@ Use Case "Szenario erstellen"
 =================== ========================= =======================================================
 Use Case "Szenario starten"
 =====================================================================================================
-| Ziel              | Ausgewühltes Szenario starten
+Ziel                | Ausgewühltes Szenario starten
 ------------------- ---------------------------------------------------------------------------------
-| Kurzbeschreibung  | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.
+Kurzbeschreibung    | Ein bereits erstelltes Szenario wird in der Anwendung ausgewählt und gestartet.
                     | In dem Szenario hinterlegte Geräte werden automatisch eingeschaltet, ggf.
                     | gerätespezifische Medien (Demomaterial) gestartet und der Nutzer wird durch
                     | die manuellen Schritte geleitet.
 ------------------- ---------------------------------------------------------------------------------
-| Auslöser          | Demonstrator-Szenario soll ausgeführt werden
+Auslöser            | Demonstrator-Szenario soll ausgeführt werden
 ------------------- ---------------------------------------------------------------------------------
-| Akteure           | Mitarbeiter am Institut
+Akteure             | Mitarbeiter am Institut
 ------------------- ---------------------------------------------------------------------------------
-| Vorbedingungen    | Installierte Applikation
+Vorbedingungen      | Installierte Applikation
                     | Geräte mit Applikation verbunden und gespeichert
                     | Auszuführendes Szenario erstellt und gespeichert
                     | Geräte ansteuerbar
 ------------------- ---------------------------------------------------------------------------------
-| Nachbedingungen   | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden
+Nachbedingungen     | Das Szenario wurde ausgeführt, wird beendet und entsprechende Geräte werden
                     | ausgeschaltet
 ------------------- ---------------------------------------------------------------------------------
-| Eingehende        | Auswahl Szenario
-| Informationen     | Verfügbarkeit Geräte
+Eingehende          | Auswahl Szenario
+Informationen       | Verfügbarkeit Geräte
 ------------------- ---------------------------------------------------------------------------------
-| Ergebnisse        | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos
+Ergebnisse          | Anwendung startet entsprechende Geräte und ggf. gerätespezifische Demos
 ------------------- ---------------------------------------------------------------------------------
-| Verbindungen      
+Verbindungen      
 ------------------- ---------------------------------------------------------------------------------
-| Ablauf            | Handlung Benutzer       | Handlung Systeme
+Ablauf              | Handlung Benutzer       | Handlung Systeme
                     ------------------------- -------------------------------------------------------
                     | Anwendung starten       | Gewähltes Szenario laden
                     | Szenario auswählen      | Informationen zu Szenario anzeigen
