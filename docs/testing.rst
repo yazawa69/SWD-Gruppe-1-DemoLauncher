@@ -156,7 +156,7 @@ Nr.  Szenario             Voraussetzung        Testfall             Soll-Output 
 ==== ==================== ==================== ==================== ==================== ==================== =========== ============
 
 ==== ==================== ==================== ==================== ==================== ==================== =========== ============
-Funktion: Demomaterial verwalten (Anmerkung: Testfälle felten für jede Art von Demomaterial)
+Funktion: Demomaterial verwalten (Anmerkung: Testfälle gelten für jede Art von Demomaterial)
 ======================================================================================================================================
 Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
 ---- -------------------- -------------------- -------------------- -------------------- -------------------- ----------- ------------
