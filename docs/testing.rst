@@ -32,6 +32,6 @@ Die Tabelle dient der Einheitlichkeit der Tests und zur übersichtlichen Struktu
 Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraussetzungen, Testfall, Soll-Output, Ist-Output, Testergebnis und Anmerkungen.
 
 .. csv-table:: Demolauncher Testfälle
-   :file: CSV file path and name
-   :widths: 30, 70
-   :header-rows: 1
+   :file: docs\Testfalle_DemoLauncher.xlsx
+   .. :widths: 30, 70
+   .. :header-rows: 1
