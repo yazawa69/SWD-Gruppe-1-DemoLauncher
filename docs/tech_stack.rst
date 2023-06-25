@@ -2,10 +2,6 @@
 Tech Stack
 ==========================
 
-.. note::
-
-   Dokumentation noch in Bearbeitung
-
 #########################
 Verwendete Technologien:
 #########################
@@ -33,6 +29,14 @@ Backend
 * `Mockery 1.5.1 <https://github.com/mockery/mockery>`_
 * `Nunomaduro/collision v7.5.2 <https://packagist.org/packages/nunomaduro/collision>`_
 * `Spatie/laravel-ignition 2.1.2 <https://packagist.org/packages/spatie/ignition>`_
+
+Server
+========================
+* `Ubuntu 20.04 <https://ubuntu.com/>`_
+* `Apache 2 <https://www.apache.org/>`_
+* `MySQL <https://www.mysql.com/de/>`_
+* `Nginx <https://www.nginx.com/>`_
+
 
 
 Dokumentation
