@@ -34,49 +34,36 @@ Die Tabelle ist in acht Spalten unterteilt: Testfallnummer, Beschreibung, Voraus
 Demolauncher Testfälle
 ================================
 
-.. list-table:: Navigation durch die Anwendung
-   :widths: 10 13 13 13 15 13 13 10
-   :header-rows: 1
-   
-   * - Test-Nr.
-     - Szenario
-     - Voraussetzungen
-     - Testfall
-     - Erwarteter Output
-     - Ist-Output
-     - Test bestanden?
-     - Anmerkungen
-   * - 1
-     - Über Logo zurück auf Startseite navigieren
-     -
-     - Auf beliebigen Unterseiten auf das Logo der Anwendung drücken
-     - Zurückleitung zur Startseite
-     - Zurückleitng zur Startseite
-     - Ja
-     -
-   * - 2
-     - Durch die Anwendung navigieren
-     - Anwendung läuft
-     - 1. Klick auf das Burgermenü
-     - Alle möglichen Unterseiten über Klick aufrufen
-     - Alle möglichen Unterseiten (Startseite, Szenarien verwalten, 
-     Geräte verwalten, Demomaterial verwalten) sind aufgelistet + werden bei Klick entsprechend aufgerufen
-     - Alle möglichen Unterseiten (Startseite, Szenarien verwalten,
-       Geräte verwalten, Demomaterial verwalten) sind aufgelistet + werden bei Klick entsprechend aufgerufen
-     - Ja
-     -
-   * - 3
-     - Von Startseite aus ein Szenario bearbeiten
-     - Bereits erstelltes Szenario
-     - 1. Auf Startseite Szenario auswählen ("Szenario auswählen") 2. Auf Bearbeiten klicken
-     - Weiterleitung zum szenariospezifischen "Szenario bearbeiten"
-     - Weiterleitung zum szenariospezifischen "Szenario bearbeiten"
-     - Ja
-     - 
 
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
+Navigation durch die Anwendung
+======================================================================================================================================
+Nr.  Szenario             Voraussetzung        Testfall             Soll-Output          Ist-Output           Best.       Anmerkung
+---- -------------------- -------------------- -------------------- -------------------- -------------------- ----------- ------------
+1     Startseite                               | Auf beliebigen     | Zurückleitung      | Zurückleitung      Ja          
+                                               | Unterseiten auf    | zur Startseite     | zur Startseite 
+                                               | das Logo der An-   
+                                               | wendung drücken              
+---- -------------------- -------------------- -------------------- -------------------- -------------------- ----------- ------------
+2    | Durch die An-      Anwendung läuft      | 1. Klick auf das   | Alle möglichen     | Alle möglichen     Ja
+     | wendung navigieren                      | Burgermenü         | Unterseiten        | Unterseiten 
+                                               | 2. Alle möglichen  | (Startseite, Sze-  | (Startseite, Sze-
+                                               | Unterseiten über   | narien verwalten,  | narien verwalten,
+                                               | Klick aufrufen     | Demomaterial       | Demomaterial
+                                                                    | verwalten) sind    | verwalten) sind
+                                                                    | aufgelistet +      | aufgelistet +  
+                                                                    | werden bei Klick   | werden bei Klick 
+                                                                    | entsprechend       | entsprechend 
+                                                                    | aufgerufen         | aufgerufen 
+---- -------------------- -------------------- -------------------- -------------------- -------------------- ----------- ------------
+3    | Von Startseite     | Bereits erstell-   | 1. Auf Startseite  | Weiterleitung zum  | Weiterleitung zum  Ja
+     | aus ein Szenario   | tes Szenario       | Szenario auswählen | szenariospezifi-   | szenariospezifi-
+     | bearbeiten                              | ("Szenario aus-    | schen "Szenario    | schen "Szenario
+                                               | wählen")           | bearbeiten"        | bearbeiten"
+                                               | 2. Auf bearbeiten
+                                               | klicken
+==== ==================== ==================== ==================== ==================== ==================== =========== ============
 
-
-   
 
 
 Auswertung der Testergebnisse und Einhaltung der Anforderungen aus dem Pflichtenheft
