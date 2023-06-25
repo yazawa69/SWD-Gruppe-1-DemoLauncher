@@ -44,13 +44,13 @@ Auswertung der Testergebnisse und Einhaltung der Anforderungen aus dem Pflichten
 Die Anwendung wurde auf die korrekte Implementierung der funktionalen Anforderungen getestet.
 Diese waren im Pflichtenheft wie folgt spezifiziert:
 
+
 4.1 Anforderung 1
---------------------------------
-Die Anwendung muss in der Lage sein, verschiedene Demo-Szenarien zu erstellen und zu speichern.
+   Die Anwendung muss in der Lage sein, verschiedene Demo-Szenarien zu erstellen und zu speichern.
 
 4.2 Anforderung 2
---------------------------------
-Die Anwendung muss die Möglichkeit bieten, Demo-begleitendes Material anzulegen, sowie bei Bedarf gerätespezifische Anwendungen zu starten.
+   Die Anwendung muss die Möglichkeit bieten, demo-begleitendes Material anzulegen, sowie bei Bedarf gerätespezifische Anwendungen zu starten.
+
 
 Wie in Anforderung 1 und 2 spezifiziert, muss die Anwendung in der Lage sein, Szenarien zu Demonstrationszwecken zu erstellen und zu speichern, sowie Demo-begleitendes Material anzulegen und gerätespezifische Anwendungen zu starten.
 Dies wird durch die Implementierung der Funktionen ``Szenarien verwalten``, ``Geräte verwalten`` und ``Demomaterial verwalten`` gewährleistet.
@@ -60,7 +60,7 @@ Die Anwendung ist also in der Lage, die funktionalen Anforderungen 1 und 2 zu er
 
 Die entprechenden Komponenten wurden auf ihre korrekte Implementierung erfolgreich getestet.
 Es bestehen jedoch noch Fehler bezüglich der korrekten Speicherung der Daten in der Datenbank, welche in der Testphase nicht behoben werden konnten.
-Betroffen ist v.a. die korrekte Speicherung der Daten bei Bearbeitung der Phasen unter ``Phase bearbeiten``in Verbindung mit dem Reiter ``Szenario bearbeiten``.
+Betroffen ist v.a. die korrekte Speicherung der Daten bei Bearbeitung der Phasen unter ``Phase bearbeiten`` in Verbindung mit dem Reiter ``Szenario bearbeiten``.
 Genaue Details zu den Fehlern sind in der Tabelle der Testfälle zu finden.
 
 
