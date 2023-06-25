@@ -23,9 +23,11 @@ Fast alle relevanten Dateien befinden sich im Ordner ``docs``. Die Dateien sind 
 * ``docs/conf.py``: Konfigurationsdatei für Sphinx
 * ``docs/index.rst``: Hauptdatei der Dokumentation
 * ``docs/user_manual.rst``: Nutzerhandbuch
-* ``docs/frontend.rst``: Frontend-Dokumentation
-* ``docs/backend.rst``: Backend-Dokumentation
+* ``docs/tech_stack.rst``: Tech Stack
+* ``docs/server.rst``: Bericht über Aufsetzen des Servers
+* ``docs/testing.rst``: Informationen über Tests
 * ``docs/rts.rst``: Informationen über Read the Docs
+
 
 Die Konfigurationsdateien ``conf.py`` und ``.readthedocs.yaml`` sollten nicht mehr 
 verändert werden, da sie bereits für die Erstellung der Dokumentation angepasst wurden.
