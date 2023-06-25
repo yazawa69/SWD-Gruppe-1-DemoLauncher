@@ -35,7 +35,7 @@ Demolauncher Testfälle
 ================================
 
 .. list-table:: Navigation durch die Anwendung
-   :widths: 
+   :widths: 10, 13, 13, 13, 15, 13, 13, 10
    :header-rows: 1
    * - Test-Nr.
      - Szenario
