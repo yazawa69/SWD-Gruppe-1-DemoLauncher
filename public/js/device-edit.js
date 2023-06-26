@@ -8,6 +8,7 @@ const device_ip_address = document.getElementById("device_ip_address");
 const device_name_val = device_name.value;
 const device_oem_val = device_oem.value;
 const device_serial_number_val = device_serial_number.value;
+const device_ip_address_val = device_ip_address.value;
 
 // Get buttons
 const save_btn = document.getElementById("device_save_btn");
@@ -48,10 +49,15 @@ device_serial_number.oninput = function () {
     activate_button();
 };
 
+// Called when inputting device ip address
+device_ip_address.oninput = function () {
+    activate_button();
+};
+
 // Activate save device button if all input fields are filled
 function activate_button(){
-    if (device_name.value != "" && device_oem.value != "" && device_serial_number.value != "") { 
-        if (device_name_val != device_name.value || device_oem_val != device_oem.value || device_serial_number_val != device_serial_number.value) {
+    if (device_name.value != "" && device_oem.value != "" && device_serial_number.value != "" && device_ip_address.value != "") { 
+        if (device_name_val != device_name.value || device_oem_val != device_oem.value || device_serial_number_val != device_serial_number.value || device_ip_address_val != device_ip_address.value) {
             device_save_btn.disabled = false;
         } 
         else {
