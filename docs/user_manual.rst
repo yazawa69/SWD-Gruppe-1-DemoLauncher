@@ -73,7 +73,7 @@ beim Start des Szenarios automatisch geladen und abgespielt und kann zudem - je 
 über die Anwendung gesteuert werden. Ein Gerät kann auch mehr als ein Demomaterial besitzen. Der Nutzer kann 
 dann während der Demonstration zwischen den hinzugefügten Demomaterialien wechseln.
 
-Untersützte Dateitypen:
+Unterstützte Dateitypen:
 
 * .pdf
 * .mp4
@@ -95,7 +95,7 @@ Geräte
 Gerät hinzufügen
 ********************************
 Um ein Gerät hinzuzufügen über das Burgermenü zur Seite ``Geräte verwalten`` navigieren und anschließend 
-passende Gerätekategorie auswählen. Auf der nächsten Seite nun :guilabel:`neues Gerät hinzufügen` auswählen.
+passende Gerätekategorie auswählen. Auf der nächsten Seite nun :guilabel:`Hinzufügen` auswählen.
 Nun kann ein Titel sowie eine Beschreibung für das Gerät angegeben werden. Das Verbinden des Gerätes mit der 
 Anwendung kann beispielsweise über die IP-Adresse erfolgen, dies hängt allerdings von der Art des Geräts ab.
 Über den Knopf :guilabel:`Speichern` kann das Gerät gespeichert werden und es wird wieder die Seite 
@@ -105,14 +105,14 @@ Gerät bearbeiten
 ********************************
 Um ein bereits vorhandenes Gerät zu bearbeiten ähnlich vorgehen wie beim Hinzufügen: Zuerst zu ``Geräte verwalten``
 navigieren und dann die entsprechende Gerätekategorie auswählen. Nun werden bereits vorhandene Geräte von der 
-ausgewählten Kategorie angezeigt. Das zu bearbeitende Gerät auswählen und :guilabel:`ausgewähltes Gerät bearbeiten` 
+ausgewählten Kategorie angezeigt. Das zu bearbeitende Gerät auswählen und :guilabel:`Bearbeiten` 
 drücken. Hier können nun Titel und Beschreibung des Geräts geändert werden. Abschließend :guilabel:`Speichern` 
 drücken und zur Seite ``Geräte verwalten`` zurückkehren.
 
 Gerät löschen
 ********************************
 Ähnlich vorgehen wie bei *Gerät bearbeiten*: Zu ``Geräte verwalten`` navigieren, dann die entsprechende 
-Gerätekategorie und schließlich das zu löschende Gerät auswählen. Anschließend :guilabel:`ausgewähltes Gerät bearbeiten` 
+Gerätekategorie und schließlich das zu löschende Gerät auswählen. Anschließend :guilabel:`Bearbeiten` 
 drücken. Auf der folgenden Seite befindet sich unten am Bildschirmrand der Knopf :guilabel:`Löschen`, der 
 das Gerät entfernen wird.
 
@@ -124,8 +124,8 @@ Demomaterial hinzufügen
 ********************************
 Über das Burgermenü zur Seite ``Demomaterial verwalten`` navigieren und gewünschtes Dateiformat auswählen. 
 Oben werden nun die Gerätekategorien angezeigt, die das gewählte Dateiformat unterstützen und abspielen können.
-Um neues Demomaterial hinzuzufügen den Knopf :guilabel:`neues Demomaterial hinzufügen` am unteren Bildschirmrand 
-drücken. Nun Kann ein Name und eine Beschreibung für das Material hinzugefügt werden. Über das Uploadfeld 
+Um neues Demomaterial hinzuzufügen den Knopf :guilabel:`Hinzufügen` am rechten unteren Bildschirmrand 
+drücken. Nun kann ein Name und eine Beschreibung für das Material hinzugefügt werden. Über das Uploadfeld 
 :guilabel:`Datei hochladen` kann das Demomaterial hochgeladen und schließlich über den Knopf 
 :guilabel:`Speichern` gespeichert werden.
 
@@ -133,7 +133,7 @@ Demomaterial bearbeiten
 ********************************
 Zunächst ebenfalls zur Seite ``Demomaterial verwalten`` navigieren und das gewünschte Dateiformat auswählen. 
 Aus der Liste in der Mitte des Bildschirms das zu bearbeitende Demomaterial auswählen und unten auf 
-:guilabel:`ausgewähltes Demomaterial bearbeiten` klicken. Nun können Name und Beschreibung der Datei 
+:guilabel:`Bearbeiten` klicken. Nun können Name und Beschreibung der Datei 
 geändert sowie eine neue Datei hochgeladen werden, die die ursprüngliche Datei ersetzt. 
 Abschließend :guilabel:`Speichern` drücken und zur Seite ``Demomaterial verwalten`` zurückkehren.
 
@@ -142,7 +142,7 @@ Demomaterial löschen
 Ähnlich vorgehen wie bei *Demomaterial bearbeiten*: Zu ``Demomaterial verwalten`` navigieren, dann das entsprechende 
 Dateiformat und schließlich das zu löschende Demomaterial auswählen. Anschließend 
 :guilabel:`ausgewähltes Demomaterial bearbeiten` drücken. Auf der folgenden Seite befindet sich unten am 
-Bildschirmrand der Knopf :guilabel:`Löschen`, der das Demomaterial entfernen wird.
+Bildschirmrand der Knopf :guilabel:`Löschen`, der das Demomaterial nach Bestätigung entfernen wird.
 
 Szenarien
 ================================
@@ -151,22 +151,22 @@ Szenario erstellen
 ********************************
 .. note::
 
-   Achtung: Um ein neues Szenario zu erstellen müssen zu verwendende Geräte sowie Demomaterial bereits angelegt sein.
+   Achtung: Um ein neues Szenario zu erstellen müssen zu verwendende Geräte sowie Demomaterial bereits angelegt worden sein.
 
 Zur Seite ``Szenarien verwalten`` navigieren und :guilabel:`neues Szenario erstellen` auswählen. Nun müssen zunächst 
 ein Titel sowie eine Beschreibung für das Szenario eingegeben werden. Falls beim Abspielen des Szenarios Besonderheiten 
 berücksichtigt werden müssen, sollte dies ebenfalls in der Beschreibung angegeben werden. 
 
-Darunter werden die Phasen des Szenarios angezeigt. Bei einfachen Szenarien mit wenigen Geräten reicht eine Phase aus, 
-die bereits erstellt wurde. Zusätzliche Phasen können über :guilabel:`⊕ Phase` erstellt werden. Über den Knopf 
+Darunter werden die Phasen des Szenarios angezeigt. Bei einfachen Szenarien mit wenigen Geräten reicht eine Phase aus.
+Phasen können über :guilabel:`⊕ Phase` erstellt werden. Über den Knopf 
 :guilabel:`bearbeiten` rechts neben dem Titel der Phase kann diese bearbeitet werden. Nun kann zunächst der Titel 
-festgelegt werden.Unter "Elemente" können nun über den Knopf :guilabel:`⊕ Gerät` zunächst Geräte zur Phase 
+festgelegt werden. Unter "Elemente" können nun über den Knopf :guilabel:`⊕ Gerät` zunächst Geräte zur Phase 
 hinzugefügt werden. Wurde bereits ein Gerät hinzugefügt, kann für dieses Gerät passendes Demomaterial hinzugefügt 
 werden. Dafür den Knopf :guilabel:`⊕ Demomaterial` rechts neben dem zu bearbeitenden Gerät drücken und aus der Liste 
 das gewünschte Demomaterial auswählen. Demomaterial kann über das kleine :guilabel:`ⓧ` Symbol neben dem Namen des 
 Materials wieder aus dem Szenario entfernt werden. Ein Gerät kann über das große :guilabel:`ⓧ` Symbol rechts in der 
-Zeile entfernt werden. Nach dem Bearbeiten einer Phase :guilabel:`Speichern` drücken um zurück zur Auswahl über die 
-verschiedenen Phasen zu kommen. Ist das Szenario fertig, :guilabel:`Speichern` drücken und zur Seite 
+Zeile entfernt werden. Nach dem Bearbeiten einer Phase :guilabel:`Anwenden` drücken, um zurück zur Auswahl über die 
+verschiedenen Phasen zu kommen. Ist das Szenario fertig, :guilabel:`Speichern` drücken und damit zur Seite 
 ``Szenarien verwalten`` zurückkehren.
 
 Szenario bearbeiten
@@ -209,8 +209,8 @@ In dem Feld unter "Phase 1" werden in der linken Spalte die gerade aktiven Gerä
 falls vorhanden, das entsprechende aktive Demomaterial für jedes Gerät angezeigt. Falls ein Gerät nur ein Demomaterial 
 besitzt, wird dieses automatisch gestartet. Ist mehr als ein Demomaterial vorhanden, wird unter dem aktiven Demomaterial 
 ein Symbol angezeigt, das anzeigt, wie viele zusätzliche Demomaterialien vorhanden sind.
-Mit einem Klick auf das Geräte-Icon (linke Spalte) öffnet sich, falls vorhanden, ein Pop-Up-Menü zur Auswahl des 
-gerade aktiven Demomaterials.
+Mit einem Klick auf das aktive Demo-Material (rechte Spalte) öffnet sich, falls vorhanden, ein Pop-Up-Menü zur Auswahl 
+weiterer Demomaterialien, die für dieses Gerät in dieser Phase zur Auswahl stehen.
 Je nach Demomaterial gibt es außerdem unterschiedliche Steuerungsmöglichkeiten. Diese öffnen sich mit einem Klick auf das 
 gerade aktive Demomaterial.
 
@@ -226,17 +226,17 @@ Die entsprechenden Möglichkeiten werden auch mit einem Klick auf das Infosymbol
 
 Nächste Phase
 --------------------------------
-Auf den Pfeil rechts am Bildschirmrand klicken, um in die nächste Phase zu gelangen. Hier muss erneut der Wechsel in 
-die nächste Phase bestätigt werden, um versehentliche Wechsel zu vermeiden. Falls vorhanden ist auch ein Wechsel in die 
+Auf den Pfeil rechts am Bildschirmrand klicken, um in die nächste Phase zu gelangen. Falls vorhanden ist auch ein Wechsel in die 
 vorherige Phase durch einen Klick auf den Pfeil links am Bildschirmrand möglich.
+Eine Phase kann nur dann gewechselt werden, wenn keines der Geräte der aktuellen Phase angesteuert wird.
 
 Szenario beenden
 --------------------------------
-Zum Beenden des Szenarios den Knopf :guilabel:`Beenden` am unteren Bildschirmrand gedrückt halten. Im Szenario verwendete 
+Zum Beenden des Szenarios den Knopf :guilabel:`Beenden` am unteren Bildschirmrand drücken und bestätigen. Im Szenario verwendete 
 Geräte werden ausgeschaltet und es öffnet sich die Startseite.
 
 Szenario löschen
 ********************************
 Ähnlich vorgehen wie bei *Szenario bearbeiten*: Zu ``Szenarien verwalten`` navigieren, dann das entsprechende 
 Szenario auswählen und schließlich :guilabel:`ausgewähltes Szenario bearbeiten` drücken. Auf der folgenden Seite befindet 
-sich unten am Bildschirmrand der Knopf :guilabel:`Löschen`, der das Szenario entfernen wird.
+sich unten am Bildschirmrand der Knopf :guilabel:`Löschen`, der das Szenario nach Bestätigung entfernen wird.

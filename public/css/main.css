@@ -97,6 +97,7 @@ body {
 .overflow_big {
   overflow-y: scroll;
   height: 100%;
+  overflow-x: hidden;
 }
 .textbox_big_main{
   position: fixed;
@@ -331,17 +332,28 @@ body {
   text-overflow: ellipsis;
 }
 .button_very_small_outline {
-  width:120px;
+  width:110px;
   height: 25px;
   padding: 0%;
   padding-left: 4%;
   border-style: solid;
-  border-color: #03b670;
+  border-color: #03b670 !important;
   border-radius: 15px;
   text-align: center;
   background-color: #2b3035 !important;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.button_very_small_number {
+  width:110px;
+  height: 25px;
+  padding: 4%;
+  margin: 0%;
+  font-style: italic;
+  text-align: right;
+  background-color: #2b3035 !important;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 .three_buttons {
   position: fixed;

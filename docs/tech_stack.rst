@@ -2,10 +2,6 @@
 Tech Stack
 ==========================
 
-.. note::
-
-   Dokumentation noch in Bearbeitung
-
 #########################
 Verwendete Technologien:
 #########################
@@ -34,9 +30,17 @@ Backend
 * `Nunomaduro/collision v7.5.2 <https://packagist.org/packages/nunomaduro/collision>`_
 * `Spatie/laravel-ignition 2.1.2 <https://packagist.org/packages/spatie/ignition>`_
 
+Server
+========================
+* `Ubuntu 20.04 <https://ubuntu.com/>`_
+* `Apache 24.41 <https://www.apache.org/>`_
+* `MySQL 8.0 <https://www.mysql.com/de/>`_
+* `PHP 8.2.7 <https://www.php.net/>`_
+
+
 
 Dokumentation
 ========================
 * `Read the Docs 9.13.3 <https://readthedocs.org/>`_
-* `Sphinx 7.0.1 <https://www.sphinx-doc.org/en/master/>`_	
+* `Sphinx v6.2.1 <https://www.sphinx-doc.org/en/master/>`_	
 * `Python 3.11 <https://www.python.org/>`_

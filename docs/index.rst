@@ -14,7 +14,13 @@ Dieses Projekt entsteht im Rahmen der Veranstaltung Softwaredesign bei
 Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der
 `Hochschule Furtwangen <https://www.hs-furtwangen.de/>`_.
 
-Das Projekt auf `GitHub <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
+GitHub
+--------------
+`Frontend <https://github.com/GuidoGruen/Softwaredesign_Frontend.git>`_
+
+`Backend (+ Frontend) <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
+
+`Flask <https://github.com/yazawa69/flask_code.git>`_
 
 Projektmitglieder: Nico Berndt, Vadim Borejko, Ethan Fuchs, Guido Grün, 
 Lea Hergert, Lisa Kutowinski, Mattis Petroll, Marit Zenker
@@ -29,6 +35,9 @@ Inhalt
 .. toctree::
 
    user_manual
+   specification
    tech_stack
    server
+   device_control
+   testing
    rtd

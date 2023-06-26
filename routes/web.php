@@ -158,36 +158,5 @@ Route::get('livestream', [PhaseDeviceController::class, 'getLivestream']);
 
 
 
-Route::get('/get-stream', function(){
-
-    // $word = "hello";
-    // echo $word;
-    $request = Http::withHeaders([
-        'DeviceId' => 'hello',
-    ])->get('http://192.168.188.28:5000/print');
-    return $request;
-
-});
-
-Route::get('testing-render', function(){
-    $view = view('welcome');
-    $html_string = $view->render();
-    echo $html_string;
-    return $html_string;
-});
 
 
-Route::get('test-local', function(){
-    $view = view('welcome');
-    // $html_string = View::make($view)->render();
-    $html_string = $view->render();
-
-    // echo $html_string;
-    // $view->render
-    return $html_string;
-});
-
-Route::get('test-direct-link', function(){
-    $hololens_client = new HololensClient("4");
-    return $hololens_client->getStream();
-});
