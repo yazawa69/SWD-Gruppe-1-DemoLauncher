@@ -36,5 +36,6 @@ Inhalt
    specification
    tech_stack
    server
+   device_control
    testing
    rtd
