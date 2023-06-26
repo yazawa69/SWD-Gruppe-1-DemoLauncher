@@ -17,7 +17,9 @@ Prof. Dr. Thomas Schlegel an der Fakultät Digitale Medien der
 GitHub
 --------------
 `Frontend <https://github.com/GuidoGruen/Softwaredesign_Frontend.git>`_
+
 `Backend (+ Frontend) <https://github.com/yazawa69/SWD-Gruppe-1-DemoLauncher.git>`_
+
 `Flask <https://github.com/yazawa69/flask_code.git>`_
 
 Projektmitglieder: Nico Berndt, Vadim Borejko, Ethan Fuchs, Guido Grün, 
