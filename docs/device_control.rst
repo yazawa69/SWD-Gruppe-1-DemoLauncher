@@ -19,3 +19,5 @@ von Laravel requestet und dann in einem Browser tab geöffnet und dargestellt.
 
 Der Flask Server ist unter folgendem Link zu finden: `Flask Server <https://github.com/yazawa69/flask_code/blob/main/flask_test.py/>`_.
 
+Text von Nico
+

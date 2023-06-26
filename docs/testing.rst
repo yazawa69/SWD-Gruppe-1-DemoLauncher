@@ -537,4 +537,5 @@ Weitere Funktionalitäten
     Die Ansteuerung von weiteren Gerätekategorien wie beispielsweise Audio-Geräten oder Smart-Home-Geräten soll implementiert werden.
 
 
+Tests von Lisa
 
