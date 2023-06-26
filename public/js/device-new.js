@@ -39,9 +39,14 @@ device_serial_number.oninput = function () {
     activate_button();
 };
 
+// Called when inputting device ip address
+device_ip_address.oninput = function () {
+    activate_button();
+};
+
 // Activate create device button if all input fields are filled
 function activate_button(){
-    if (device_name.value != "" && device_oem.value != "" && device_serial_number.value != "") {    
+    if (device_name.value != "" && device_oem.value != "" && device_serial_number.value != "" && device_ip_address.value != "") {    
         device_save_btn.disabled = false;
     }
     else {
