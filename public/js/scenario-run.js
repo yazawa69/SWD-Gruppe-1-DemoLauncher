@@ -20,6 +20,10 @@ const carousel_next_btn = document.getElementById("carousel_next_btn");
 const menu = document.getElementById("menu");
 menu.hidden = true;
 
+// add end scenario listener
+const end_scenario_btn = document.getElementById("end_scenario_button");
+end_scenario_btn.addEventListener("click", end_scenario);
+
 // Button id for global access
 let btn_phase_id;
 let btn_demo_material_id;
@@ -38,6 +42,25 @@ function set_button_id(phase_id, demo_material_id){
 
 // demo material selection stuff
 let selected_demo_material_id;
+
+function end_scenario(){
+    fetch("http://192.168.188.31:5000/close-live-stream", {
+        method: "GET"
+    })
+    .then((response) => {
+        if (!response.ok){
+            console.log("Could not end scenario.")
+        }
+        else{
+            console.log("Successfully ended scenario.")
+        }
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+    });
+}
+
+
 
 function material_button_click(phase_device_and_material_data){
     selected_phase_device_id = phase_device_and_material_data['phase_device_id']; 

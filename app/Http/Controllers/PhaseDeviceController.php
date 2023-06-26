@@ -98,6 +98,8 @@ class PhaseDeviceController extends Controller
 
     public function loadMaterial(int $scenario_id, int $phase_id, int $phase_device_id, Request $req){
         
+        $flask_host = ":5000";
+
         // the following code only loads material in case a livestream capapable device is found in the frontend and was selected as the material
         // get request data
         $ip = $this->phase_devices->getById($phase_device_id)->device->ip_address;
@@ -106,7 +108,7 @@ class PhaseDeviceController extends Controller
         // request to flask with device id
         $request = Http::withHeaders([
             'Deviceid' => strval($live_stream_device_id),
-        ])->get('http://'. $ip .'/live-stream-listener');
+        ])->get('http://'. $ip . $flask_host . '/live-stream-listener');
         
         // wait for response and flask starts a thread with req to getLivestream
     }
@@ -118,10 +120,10 @@ class PhaseDeviceController extends Controller
 
         $hololens = new HololensClient($ip);
         // OPTION A
-        return $hololens->getStreamHtmlString();
+        // return $hololens->getStreamHtmlString();
 
         // OPTION B
-        // return $hololens->getStreamRaw();
+        return $hololens->getStreamRaw();
 
     }
 

@@ -236,7 +236,7 @@
     @endfor
 @endfor
 
-<!-- add scenario delete modal -->
+<!-- add end scenario modal -->
 <div class="modal fade" id="exit_modal" tabindex="-1" aria-labelledby="exitModal" aria-hidden="true"
     data-bs-theme="dark">
     <div class="modal-dialog modal-dialog-centered">
@@ -248,7 +248,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn button_small_popup btn-secondary"
                     data-bs-dismiss="modal">Abbrechen</button>
-                <button type="button" class="btn button_small_popup btn-secondary"
+                <button id="end_scenario_button" type="button" class="btn button_small_popup btn-secondary"
                 onclick="window.location.href='{{ url('/') }}';">Beenden</button>
             </div>
         </div>
