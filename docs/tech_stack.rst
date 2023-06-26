@@ -33,9 +33,9 @@ Backend
 Server
 ========================
 * `Ubuntu 20.04 <https://ubuntu.com/>`_
-* `Apache 2 <https://www.apache.org/>`_
-* `MySQL <https://www.mysql.com/de/>`_
-* `Nginx <https://www.nginx.com/>`_
+* `Apache 24.41 <https://www.apache.org/>`_
+* `MySQL 8.0 <https://www.mysql.com/de/>`_
+* `PHP 8.2.7 <https://www.php.net/>`_
 
 
 

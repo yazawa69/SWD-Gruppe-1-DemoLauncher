@@ -145,7 +145,3 @@ Route::delete('/demo-material-types/{demo_material_type_id}/demo-materials/{demo
 Route::get('/demo-material-types', [DemoMaterialTypeController::class, 'index'])->name('demo-material-types.index');
 
 Route::post('/demo-material-types', [DemoMaterialTypeController::class, 'create'])->name('demo-material-types.create');
-
-
-
-
