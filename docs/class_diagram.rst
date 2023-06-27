@@ -2,6 +2,6 @@
 Klassendiagramm
 =================
 
-.. image:: ./Klassendiagramm.jpg
+.. image:: ./Klassendiagramm.png
   :width: 1275
   :alt: Klassendiagramm

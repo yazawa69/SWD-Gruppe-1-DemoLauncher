@@ -45,109 +45,109 @@ ausgestaltet werden müssen.
 2. Allgemeines
 ==============================
 
-    2.1. Ziel und Zweck des Dokuments
-    ----------------------------------------------
-    Das Ziel des Pflichtenhefts ist es, die Anforderungen und Spezifikationen 
-    für die Entwicklung einer Webanwendung zu definieren, die die Planung und 
-    Durchführung von Vorstellungen und Demonstrationen der Geräte im Labor 
-    erleichtert. Das Pflichtenheft soll sicherstellen, dass die Anwendung 
-    den Anforderungen und Bedürfnissen der Mitarbeiter des Instituts für 
-    Intelligente Interaktive Ubiquitäre Systeme entspricht und die Effizienz 
-    bei der Planung und Durchführung von Vorstellungen und Demonstrationen erhöht.
+2.1. Ziel und Zweck des Dokuments
+----------------------------------------------
+Das Ziel des Pflichtenhefts ist es, die Anforderungen und Spezifikationen 
+für die Entwicklung einer Webanwendung zu definieren, die die Planung und 
+Durchführung von Vorstellungen und Demonstrationen der Geräte im Labor 
+erleichtert. Das Pflichtenheft soll sicherstellen, dass die Anwendung 
+den Anforderungen und Bedürfnissen der Mitarbeiter des Instituts für 
+Intelligente Interaktive Ubiquitäre Systeme entspricht und die Effizienz 
+bei der Planung und Durchführung von Vorstellungen und Demonstrationen erhöht.
 
-    2.2. Ausgangssituation
-    ----------------------------------------------
-    Die Ausgangssituation des Projekts ist, dass Mitarbeiter des Instituts für 
-    Intelligente Interaktive Ubiquitäre Systeme bei der Demonstration von Geräten 
-    im Labor viel manuellen Arbeitsaufwand haben und oft spezifisches Fachwissen 
-    benötigen. Das Ziel ist es, eine Webanwendung zu entwickeln, die die Planung 
-    und Durchführung von Vorstellungen und Demonstrationen der im Labor vorhandenen 
-    Geräte erleichtert und dabei den manuellen Arbeitsaufwand minimiert. Die 
-    Anwendung soll auch Mitarbeitern mit weniger spezifischem Fachwissen eine 
-    sichere Durchführung ermöglichen.
-    Die Anwendung soll mit der bestehenden Infrastruktur des Labors und dem 
-    vorhandenen Equipment kompatibel sein und moderne und wartbare Technologien 
-    nutzen. Sie soll sinnvoll für den Zweck der Webanwendung sein, und es soll 
-    überzeugend dargelegt werden, warum diese Technologien gewählt wurden.
+2.2. Ausgangssituation
+----------------------------------------------
+Die Ausgangssituation des Projekts ist, dass Mitarbeiter des Instituts für 
+Intelligente Interaktive Ubiquitäre Systeme bei der Demonstration von Geräten 
+im Labor viel manuellen Arbeitsaufwand haben und oft spezifisches Fachwissen 
+benötigen. Das Ziel ist es, eine Webanwendung zu entwickeln, die die Planung 
+und Durchführung von Vorstellungen und Demonstrationen der im Labor vorhandenen 
+Geräte erleichtert und dabei den manuellen Arbeitsaufwand minimiert. Die 
+Anwendung soll auch Mitarbeitern mit weniger spezifischem Fachwissen eine 
+sichere Durchführung ermöglichen.
+Die Anwendung soll mit der bestehenden Infrastruktur des Labors und dem 
+vorhandenen Equipment kompatibel sein und moderne und wartbare Technologien 
+nutzen. Sie soll sinnvoll für den Zweck der Webanwendung sein, und es soll 
+überzeugend dargelegt werden, warum diese Technologien gewählt wurden.
 
-    2.3. Teams und Schnittstellen
-    ----------------------------------------------
-    Mitwirkende am Projekt werden möglichst genau benannt und die Schnittstellen 
-    aufgezeigt. Darüber hinaus wird eine Tabelle mit allen Mitwirkenden und 
-    den Kontaktdaten angelegt.
-    
-    ==================================== =================== =========================================== =====
-    Rolle                                Name                E-Mail                                      Team
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Projektmanager/Backend-Entwicklung   Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2 
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Frontend-Entwicklung                 Guido Grün          guido.gruen@hs-furtwangen.de                1 
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Frontend-Entwicklung                 Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1 
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Frontend-Entwicklung                 Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Frontend-Entwicklung                 Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1 
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Backend-Entwicklung                  Vadim Borejko       vadim.borejko@hs-furtwangen.de              2  
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Backend-Entwicklung                  Lea Hergert         lea.hergert@hs-furtwangen.de                2
-    ------------------------------------ ------------------- ------------------------------------------- -----
-    Backend-Entwicklung                  Nico Berndt         nico.berndt@hs-furtwangen.de                2
-    ==================================== =================== =========================================== =====
+2.3. Teams und Schnittstellen
+----------------------------------------------
+Mitwirkende am Projekt werden möglichst genau benannt und die Schnittstellen 
+aufgezeigt. Darüber hinaus wird eine Tabelle mit allen Mitwirkenden und 
+den Kontaktdaten angelegt.
+
+==================================== =================== =========================================== =====
+Rolle                                Name                E-Mail                                      Team
+------------------------------------ ------------------- ------------------------------------------- -----
+Projektmanager/Backend-Entwicklung   Ethan Fuchs         ethan.alexander.fuchs@hs-furtwangen.de      2 
+------------------------------------ ------------------- ------------------------------------------- -----
+Frontend-Entwicklung                 Guido Grün          guido.gruen@hs-furtwangen.de                1 
+------------------------------------ ------------------- ------------------------------------------- -----
+Frontend-Entwicklung                 Marit Zenker        marit.luise.zenker@hs-furtwangen.de         1 
+------------------------------------ ------------------- ------------------------------------------- -----
+Frontend-Entwicklung                 Mattis Petroll      mattis.frederik.petroll@hs-furtwangen.de    1
+------------------------------------ ------------------- ------------------------------------------- -----
+Frontend-Entwicklung                 Lisa Kutowinski     lisa.anne-maria.kutowinski@hs-furtwangen.de 1 
+------------------------------------ ------------------- ------------------------------------------- -----
+Backend-Entwicklung                  Vadim Borejko       vadim.borejko@hs-furtwangen.de              2  
+------------------------------------ ------------------- ------------------------------------------- -----
+Backend-Entwicklung                  Lea Hergert         lea.hergert@hs-furtwangen.de                2
+------------------------------------ ------------------- ------------------------------------------- -----
+Backend-Entwicklung                  Nico Berndt         nico.berndt@hs-furtwangen.de                2
+==================================== =================== =========================================== =====
 
 3. Konzept
 =========================
 
-    3.1. Ziel(e) und Nutzen der Anwender:innen
-    ----------------------------------------------
-    Die angebotene Web-Applikation ermöglicht die Planung und Inszenierung von Vorführungen 
-    und Demonstrationen im Labor. Die Anwendung ist kompatibel mit der bestehenden Labor 
-    Infrastruktur und dem vorhandenen Equipment und kann auf verschiedenen Endgeräten 
-    genutzt werden. Die Anwendung ermöglicht es Benutzern, verschiedene Demo-Szenarien zu 
-    erstellen und diese automatisch oder manuell auszuführen.
+3.1. Ziel(e) und Nutzen der Anwender:innen
+----------------------------------------------
+Die angebotene Web-Applikation ermöglicht die Planung und Inszenierung von Vorführungen 
+und Demonstrationen im Labor. Die Anwendung ist kompatibel mit der bestehenden Labor 
+Infrastruktur und dem vorhandenen Equipment und kann auf verschiedenen Endgeräten 
+genutzt werden. Die Anwendung ermöglicht es Benutzern, verschiedene Demo-Szenarien zu 
+erstellen und diese automatisch oder manuell auszuführen.
 
-    3.2. Zielgruppe(n)
-    ----------------------------------------------
-    Die Zielgruppe zeichnet sich durch technisches Wissen an den vorhandenen Technologien 
-    aus. Sie verfügen über grundlegende Kenntnisse im Umgang mit den Laborgeräten.
+3.2. Zielgruppe(n)
+----------------------------------------------
+Die Zielgruppe zeichnet sich durch technisches Wissen an den vorhandenen Technologien 
+aus. Sie verfügen über grundlegende Kenntnisse im Umgang mit den Laborgeräten.
 
 4. Funktionale Anforderungen
 ========================================
     
-    4.1. Anforderung 1
-    -------------------------------------------
-    Die Anwendung muss in der Lage sein, verschiedene Demo-Szenarien zu erstellen und 
-    zu speichern.
+4.1. Anforderung 1
+-------------------------------------------
+Die Anwendung muss in der Lage sein, verschiedene Demo-Szenarien zu erstellen und 
+zu speichern.
 
-    4.2. Anforderung 2
-    -------------------------------------------
-    Die Anwendung muss die Möglichkeit bieten, Demo-begleitendes Material anzulegen, 
-    sowie bei Bedarf gerätespezifische Anwendungen zu starten.
+4.2. Anforderung 2
+-------------------------------------------
+Die Anwendung muss die Möglichkeit bieten, Demo-begleitendes Material anzulegen, 
+sowie bei Bedarf gerätespezifische Anwendungen zu starten.
 
 5. Nichtfunktionale Anforderungen
 ===================================
 
-    5.1. Allgemeine Anforderungen
-    -------------------------------------------
-    Die Anwendung soll eine Hilfestellung bei der Planung und Inszenierung von 
-    Vorführungen und Demonstrationen im Labor sein.
+5.1. Allgemeine Anforderungen
+-------------------------------------------
+Die Anwendung soll eine Hilfestellung bei der Planung und Inszenierung von 
+Vorführungen und Demonstrationen im Labor sein.
 
-    5.2. Technische Anforderungen
-    -------------------------------------------
-    1. Kompatibilität mit der vorhandenen Infrastruktur und dem Equipment: Die 
-    Anwendung muss so entwickelt werden, dass sie mit den vorhandenen Geräten 
-    und der Infrastruktur des Labors kompatibel ist, um eine reibungslose 
-    Integration zu gewährleisten.
-    2. Benutzerfreundlichkeit und Sicherheit: Die Anwendung muss 
-    benutzerfreundlich sein und die sichere Durchführung von Vorstellungen 
-    und Demonstrationen ermöglichen. Dies erfordert eine intuitive 
-    Benutzeroberfläche, die es auch Mitarbeitern mit weniger spezifischem 
-    Fachwissen ermöglicht, die Anwendung sicher zu nutzen.
-    3. Dokumentation und Wartbarkeit: Die Anwendung sollte gut dokumentiert 
-    und wartbar sein. Eine ordnungsgemäße Dokumentation des 
-    Entwicklungsprozesses sowie des Codes erleichtert die Nachvollziehbarkeit 
-    und die zukünftige Wartung der Anwendung.
+5.2. Technische Anforderungen
+-------------------------------------------
+1. Kompatibilität mit der vorhandenen Infrastruktur und dem Equipment: Die 
+Anwendung muss so entwickelt werden, dass sie mit den vorhandenen Geräten 
+und der Infrastruktur des Labors kompatibel ist, um eine reibungslose 
+Integration zu gewährleisten.
+2. Benutzerfreundlichkeit und Sicherheit: Die Anwendung muss 
+benutzerfreundlich sein und die sichere Durchführung von Vorstellungen 
+und Demonstrationen ermöglichen. Dies erfordert eine intuitive 
+Benutzeroberfläche, die es auch Mitarbeitern mit weniger spezifischem 
+Fachwissen ermöglicht, die Anwendung sicher zu nutzen.
+3. Dokumentation und Wartbarkeit: Die Anwendung sollte gut dokumentiert 
+und wartbar sein. Eine ordnungsgemäße Dokumentation des 
+Entwicklungsprozesses sowie des Codes erleichtert die Nachvollziehbarkeit 
+und die zukünftige Wartung der Anwendung.
 
 6. Use Cases
 =======================
@@ -365,41 +365,44 @@ Use Case Diagramm
 7. Rahmenbedingungen
 ================================
 
-    7.1. Zeitplan
-    -------------------------------------------
-    1. Planungsphase (3 Wochen)
-        * Anforderungsanalyse und Spezifikationen erstellen
-        * Design und Architektur der Anwendung entwerfen
-        * Auswahl geeigneter Technologien
-    2. Implementierungsphase (5 Wochen)
-        * Entwicklung der Szenarienerstellung und Szenarien-Ausführung Funktionen
-        * Integration der Komponenten und Gerätesteuerung
-        * Erstellung von Demo-Material-Verwaltungsfunktionen
-        * Implementierung von Automatisierung und Protokollierung
-    3. Testphase (2 Wochen)
-        * Durchführung von Funktions- und Integrationstests
-        * Fehlerbehebung und Optimierung der Anwendung
-    4. Dokumentations- und Wartungsphase (1 Woche)
-        * Erstellung von Anwender- und Entwickler-Dokumentationen
-        * Überprüfung der Codequalität und Wartbarkeit
-        * Bereitstellung der Anwendung für den Einsatz im Institut
+7.1. Zeitplan
+-------------------------------------------
+1. Planungsphase (3 Wochen)
+    * Anforderungsanalyse und Spezifikationen erstellen
+    * Design und Architektur der Anwendung entwerfen
+    * Auswahl geeigneter Technologien
+2. Implementierungsphase (5 Wochen)
+    * Entwicklung der Szenarienerstellung und Szenarien-Ausführung Funktionen
+    * Integration der Komponenten und Gerätesteuerung
+    * Erstellung von Demo-Material-Verwaltungsfunktionen
+    * Implementierung von Automatisierung und Protokollierung
+3. Testphase (2 Wochen)
+    * Durchführung von Funktions- und Integrationstests
+    * Fehlerbehebung und Optimierung der Anwendung
+4. Dokumentations- und Wartungsphase (1 Woche)
+    * Erstellung von Anwender- und Entwickler-Dokumentationen
+    * Überprüfung der Codequalität und Wartbarkeit
+    * Bereitstellung der Anwendung für den Einsatz im Institut
 
-    7.2. Problemanalyse
-    -------------------------------------------
-    1. Kompatibilität: Die Anwendung soll mit der vorhandenen Infrastruktur des 
-    Labors und dem vorhandenen Equipment kompatibel sein.
-    2. Benutzerfreundlichkeit: Die Anwendung soll für Mitarbeiter mit weniger 
-    spezifischem Fachwissen einfach zu bedienen sein. 
-    3. Zuverlässigkeit: Fehler oder Abstürze der Anwendung während einer Vorstellung 
-    können zu Unterbrechungen und Unannehmlichkeiten führen.
-    4. Wartbarkeit: Der Code der Anwendung sollte gut lesbar und wartbar sein, um 
-    eventuelle spätere Änderungen oder Weiterentwicklungen zu erleichtern.
+7.2. Problemanalyse
+-------------------------------------------
+1. Kompatibilität: Die Anwendung soll mit der vorhandenen Infrastruktur des 
+Labors und dem vorhandenen Equipment kompatibel sein.
 
-    7.3. Qualität
-    -------------------------------------------
-    Der Entwicklungsprozess soll sinnvoll dokumentiert werden und der entstehende 
-    Code gut lesbar und wartbar sein. Zudem sollte der Code regelmäßig getestet 
-    werden, um die Fehlerquote so gering wie möglich zu halten.
+2. Benutzerfreundlichkeit: Die Anwendung soll für Mitarbeiter mit weniger 
+spezifischem Fachwissen einfach zu bedienen sein. 
+
+3. Zuverlässigkeit: Fehler oder Abstürze der Anwendung während einer Vorstellung 
+können zu Unterbrechungen und Unannehmlichkeiten führen.
+
+4. Wartbarkeit: Der Code der Anwendung sollte gut lesbar und wartbar sein, um 
+eventuelle spätere Änderungen oder Weiterentwicklungen zu erleichtern.
+
+7.3. Qualität
+-------------------------------------------
+Der Entwicklungsprozess soll sinnvoll dokumentiert werden und der entstehende 
+Code gut lesbar und wartbar sein. Zudem sollte der Code regelmäßig getestet 
+werden, um die Fehlerquote so gering wie möglich zu halten.
 
 8. Liefer- und Abnahmebedingungen
 =======================================
