@@ -36,6 +36,7 @@ Inhalt
 
    user_manual
    specification
+   class_diagram
    tech_stack
    server
    device_control
