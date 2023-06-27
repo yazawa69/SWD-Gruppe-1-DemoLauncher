@@ -139,11 +139,13 @@ Vorführungen und Demonstrationen im Labor sein.
 Anwendung muss so entwickelt werden, dass sie mit den vorhandenen Geräten 
 und der Infrastruktur des Labors kompatibel ist, um eine reibungslose 
 Integration zu gewährleisten.
+
 2. Benutzerfreundlichkeit und Sicherheit: Die Anwendung muss 
 benutzerfreundlich sein und die sichere Durchführung von Vorstellungen 
 und Demonstrationen ermöglichen. Dies erfordert eine intuitive 
 Benutzeroberfläche, die es auch Mitarbeitern mit weniger spezifischem 
 Fachwissen ermöglicht, die Anwendung sicher zu nutzen.
+
 3. Dokumentation und Wartbarkeit: Die Anwendung sollte gut dokumentiert 
 und wartbar sein. Eine ordnungsgemäße Dokumentation des 
 Entwicklungsprozesses sowie des Codes erleichtert die Nachvollziehbarkeit 
